@@ -167,10 +167,10 @@ svgEditorAPI = (function(){
 	
 	return {
 		makeCursorFat:function(){
-			cursor.width.baseVal.value=20;
+			cursor.makeCursorFat();
 		},
 		makeCursorThin:function(){
-			cursor.width.baseVal.value=1;
+			cursor.makeCursorThin();
 		},
 		updateModeText:function(s){
 			modeText.textContent = s; 
@@ -200,13 +200,15 @@ svgEditorAPI = (function(){
 			currentLine.writeBackspace(cursor.cursorPosition)
 		},
 		install:function(sc){
-			/*
 			var scInstance = new sc();
 			//start mainloop
 			scInstance.initialize();  
 
 			//FIXME: how do we capture <esc>? requires crazy hack? maybe...
 			var eventMap = {
+				8:  "backspace",
+				13: "enter",
+				27: "esc",
 				37: "left",
 				38: "up",
 				39: "right",
@@ -214,21 +216,22 @@ svgEditorAPI = (function(){
 			}
 
 			root.addEventListener("keypress",function(e){
-				console.log(e);
+				//console.log(e);
+				e.preventDefault();
 
 				if(eventMap[e.keyCode]){
 					scInstance[eventMap[e.keyCode]](e)
-				}else if(itoa(e.keyCode)){
-					scInstance.GEN(itoa(e.keyCode),e)
+				}else if(e.charCode){
+					scInstance.GEN(String.fromCharCode(e.charCode),e)
 				}else{
-					console.log("fail")
+					console.log("fail",e)
 				}
 			},true)
 
 			//send init event
 			scInstance.init(this);
-			*/
 
+			/*
 			var eventMap = {
 				8:  this.writeBackspace,
 				13: this.writeNewLine,
@@ -248,6 +251,7 @@ svgEditorAPI = (function(){
 					self.writeChar(e.charCode);
 				}
 			},true)
+			*/
 		}
 	}
 })()

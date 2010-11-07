@@ -74,6 +74,13 @@
 				controller.moveLeft()
 			</script>
 		</transition>
+
+		<transition event="backspace" target="normal_mode">
+			<script>
+				controller.moveLeft()
+			</script>
+		</transition>
+
 		<transition event="l" target="normal_mode">
 			<script>
 				controller.moveRight()
@@ -89,6 +96,12 @@
 				controller.moveDown()
 			</script>
 		</transition>
+
+		<transition event="enter" target="normal_mode">
+			<script>
+				controller.moveDown()
+			</script>
+		</transition>
 	</state>
 
 	<state id="insert_mode">
@@ -100,6 +113,41 @@
 		</onentry>
 
 		<transition event="esc" target="normal_mode"/>
+
+		<!-- FIXME: these should be static reactions, and should be moved up to parent SCXML -->
+		<transition event="left" target="insert_mode">
+			<script>
+				controller.moveLeft()
+			</script>
+		</transition>
+		<transition event="right" target="insert_mode">
+			<script>
+				controller.moveRight()
+			</script>
+		</transition>
+		<transition event="up" target="insert_mode">
+			<script>
+				controller.moveUp()
+			</script>
+		</transition>
+		<transition event="down" target="insert_mode">
+			<script>
+				controller.moveDown()
+			</script>
+		</transition>
+
+		<transition event="enter" target="insert_mode">
+			<script>
+				controller.writeNewLine()
+			</script>
+		</transition>
+
+		<transition event="backspace" target="insert_mode">
+			<script>
+				controller.writeBackspace()
+			</script>
+		</transition>
+
 
 		<!-- everything else -->
 		<!-- FIXME: should be SR -->
