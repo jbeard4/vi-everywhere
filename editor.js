@@ -25,10 +25,9 @@ svgEditorAPI = (function(){
 	function Cursor(pos){
 		this.cursorPosition = 0;
 
-		cursorNode.x.baseVal.value=0;
 		cursorNode.y.baseVal.value=0;
-		cursorNode.height.baseVal.value = textExtent.height;
 		cursorNode.width.baseVal.value = textExtent.width;
+
 
 		function moveCursor(dx,dy){
 				cursorNode.x.baseVal.value+=dx;
@@ -62,28 +61,6 @@ svgEditorAPI = (function(){
 		}
 
 		this.moveUp=function(){
-			var nextLine = lines[currentLineIndex+1];
-			if(nextLine){
-
-				currentLineIndex+=1;
-				currentLine = lines[currentLineIndex];
-
-				var numChars = nextLine.getTotalNumberOfChars();
-				if( numChars <= this.cursorPosition){
-					//var r = nextLine.getExtentOfCharAt(this.cursorPosition);
-					//cursor.x.baseVal.value+=r.x;
-					//cursor.width.baseVal.value = r.width;
-					//TODO: compute
-					//moveCursor(r)
-				}else{
-					var r = nextLine.getExtentOfCharAt(numChars);
-					//TODO: compute
-					//moveCursor(r)
-				}
-			}
-		}
-
-		this.moveDown=function(){
 			var nextLine = lines[currentLineIndex-1];
 			if(nextLine){
 
@@ -91,23 +68,63 @@ svgEditorAPI = (function(){
 				currentLine = lines[currentLineIndex];
 
 				var numChars = nextLine.getTotalNumberOfChars();
-				if( numChars <= this.cursorPosition){
+				if( this.cursorPosition < numChars ){
 					//var r = nextLine.getExtentOfCharAt(this.cursorPosition);
 					//cursor.x.baseVal.value+=r.x;
 					//cursor.width.baseVal.value = r.width;
-					//TODO: compute
-					//moveCursor(r)
+					moveCursor(0,-textExtent.height)
 				}else{
-					//var r = nextLine.getExtentOfCharAt(numChars);
-					//TODO: compute
-					//moveCursor(r)
+					moveCursor(numChars*textExtent.width-this.cursorPosition*textExtent.width,-textExtent.height)
+					this.cursorPosition = numChars;
 				}
 			}
 		}
+
+		this.moveDown=function(){
+			var nextLine = lines[currentLineIndex+1];
+			if(nextLine){
+
+				currentLineIndex+=1;
+				currentLine = lines[currentLineIndex];
+
+				var numChars = nextLine.getTotalNumberOfChars();
+				if( this.cursorPosition < numChars ){
+					//var r = nextLine.getExtentOfCharAt(this.cursorPosition);
+					//cursor.x.baseVal.value+=r.x;
+					//cursor.width.baseVal.value = r.width;
+					moveCursor(0,textExtent.height)
+				}else{
+					//var r = nextLine.getExtentOfCharAt(numChars);
+					moveCursor(numChars*textExtent.width-this.cursorPosition*textExtent.width,textExtent.height)
+					this.cursorPosition = numChars;
+				}
+			}
+		}
+
+		this.makeCursorFat = function(){
+			cursorNode.x.baseVal.value = textExtent.width * this.cursorPosition-1; 
+			cursorNode.width.baseVal.value = textExtent.width;
+		}
+
+		this.makeCursorThin = function(){
+			cursorNode.x.baseVal.value = textExtent.width * this.cursorPosition; 
+			cursorNode.width.baseVal.value = 1;
+		}
+
+		this.moveCursorTo = function(pos,lineNumber){
+			moveTo(textExtent.width * this.cursorPosition,lineNumber*textExtent.height)
+		}
+
+		this.makeCursorThin();
 	}
 
 	function Line(pos){
 		var currenttspan = document.createElementNS(svgNS,"tspan");
+
+		if(pos > 0){
+			currenttspan.setAttributeNS(null,"dy",textExtent.height);
+			currenttspan.setAttributeNS(null,"x",0);
+		}
 	
 		//FIXME: this is wrong. we need to append by the sum(numtspans,0:pos)
 		txt.appendChild(currenttspan)
@@ -122,6 +139,11 @@ svgEditorAPI = (function(){
 			//TODO: wordwrap
 			var tv = currenttspan.textContent;
 			currenttspan.textContent = tv.substring(0,pos) + c + tv.substring(pos,tv.length);
+		}
+
+		this.writeBackspace = function(pos){
+			var tv = currenttspan.textContent;
+			currenttspan.textContent = tv.substring(0,pos) + tv.substring(pos+1,tv.length);
 		}
 
 		this.getExtentOfCharAt = function(pos){
@@ -167,8 +189,15 @@ svgEditorAPI = (function(){
 		},
 		writeChar:function(c){
 			currentLine.writeCharAt(String.fromCharCode(c),cursor.cursorPosition)
-			//cursor.cursorPosition++
 			cursor.moveRight();
+		},
+		writeNewLine:function(){
+			new Line(currentLineIndex+1)
+			cursor.moveDown()
+		},
+		writeBackspace:function(){
+			cursor.moveLeft();
+			currentLine.writeBackspace(cursor.cursorPosition)
 		},
 		install:function(sc){
 			/*
@@ -201,6 +230,8 @@ svgEditorAPI = (function(){
 			*/
 
 			var eventMap = {
+				8:  this.writeBackspace,
+				13: this.writeNewLine,
 				37: this.moveLeft,
 				38: this.moveUp,
 				39: this.moveRight,
@@ -210,6 +241,7 @@ svgEditorAPI = (function(){
 			var self = this;
 			root.addEventListener("keypress",function(e){
 				e.preventDefault();
+				console.log(e)
 				if(eventMap[e.keyCode]){
 					eventMap[e.keyCode]()
 				}else{
