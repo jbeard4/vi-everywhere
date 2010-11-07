@@ -102,13 +102,13 @@ svgEditorAPI = (function(){
 		}
 
 		this.makeCursorFat = function(){
-			cursorNode.x.baseVal.value = textExtent.width * this.cursorPosition-1; 
 			cursorNode.width.baseVal.value = textExtent.width;
+			cursorNode.setAttributeNS(null,"transform","translate(" + -textExtent.width + ",0)" ); //reflection, so he overs the thing he is currently on
 		}
 
 		this.makeCursorThin = function(){
-			cursorNode.x.baseVal.value = textExtent.width * this.cursorPosition; 
 			cursorNode.width.baseVal.value = 1;
+			cursorNode.removeAttributeNS(null,"transform");
 		}
 
 		this.moveCursorTo = function(pos,lineNumber){
