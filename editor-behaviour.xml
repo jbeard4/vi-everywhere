@@ -1,0 +1,114 @@
+<scxml xmlns="http://www.w3.org/2005/07/scxml" profile="ecmascript" version="1.0" name="viBehaviour">
+
+	<initial>
+		<transition target="initial_default"/>
+	</initial>
+
+	<datamodel>
+		<data id="controller"/>
+	</datamodel>
+
+	<state id="initial_default">
+		<transition event="init" target="normal_mode">
+			<assign location="controller" expr="_event.data"/>	
+		</transition>
+	</state>
+
+	<state id="normal_mode">
+		<onentry>
+			<script>
+				controller.makeCursorFat()
+				controller.updateModeText("-- NORMAL --")
+			</script>
+		</onentry>
+
+		<transition event="i" target="insert_mode"/>
+
+		<!-- FIXME: should be SR -->
+		<!-- FIXME: must add support for multiple events on transitions -->
+		<!--
+		<transition event="left h" target="normal_mode">
+			<script>
+				controller.moveLeft()
+			</script>
+		</transition>
+		<transition event="right l" target="normal_mode">
+			<script>
+				controller.moveRight()
+			</script>
+		</transition>
+		<transition event="up k" target="normal_mode">
+			<script>
+				controller.moveUp()
+			</script>
+		</transition>
+		<transition event="down j" target="normal_mode">
+			<script>
+				controller.moveDown()
+			</script>
+		</transition>
+		-->
+		<transition event="left" target="normal_mode">
+			<script>
+				controller.moveLeft()
+			</script>
+		</transition>
+		<transition event="right" target="normal_mode">
+			<script>
+				controller.moveRight()
+			</script>
+		</transition>
+		<transition event="up" target="normal_mode">
+			<script>
+				controller.moveUp()
+			</script>
+		</transition>
+		<transition event="down" target="normal_mode">
+			<script>
+				controller.moveDown()
+			</script>
+		</transition>
+
+		<transition event="h" target="normal_mode">
+			<script>
+				controller.moveLeft()
+			</script>
+		</transition>
+		<transition event="l" target="normal_mode">
+			<script>
+				controller.moveRight()
+			</script>
+		</transition>
+		<transition event="k" target="normal_mode">
+			<script>
+				controller.moveUp()
+			</script>
+		</transition>
+		<transition event="j" target="normal_mode">
+			<script>
+				controller.moveDown()
+			</script>
+		</transition>
+	</state>
+
+	<state id="insert_mode">
+		<onentry>
+			<script>
+				controller.makeCursorThin()
+				controller.updateModeText("-- INSERT --")
+			</script>
+		</onentry>
+
+		<transition event="esc" target="normal_mode"/>
+
+		<!-- everything else -->
+		<!-- FIXME: should be SR -->
+		<transition event="*" target="insert_mode">
+			<script>
+				controller.writeChar(_event.data.charCode)
+			</script>
+		</transition>
+	</state>
+	
+</scxml>
+
