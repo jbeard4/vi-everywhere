@@ -48,7 +48,7 @@ svgEditorAPI = (function(){
 				moveCursor(-1*textExtent.width,0)
 			}
 
-			//console.log("position: ", this.cursorPosition)
+			console.log("position: ", this.cursorPosition)
 		}
 
 		this.moveRight=function(includeRightmostChar){
@@ -57,6 +57,7 @@ svgEditorAPI = (function(){
 			var condition = includeRightmostChar ? 
 				this.cursorPosition < numChars : 
 				this.cursorPosition < numChars-1;
+
 			if(condition){
 				//var r = currentLine.getExtentOfCharAt(this.cursorPosition)
 				this.cursorPosition+=1
@@ -65,7 +66,7 @@ svgEditorAPI = (function(){
 				moveCursor(textExtent.width,0)
 			}
 
-			//console.log("position: ", this.cursorPosition)
+			console.log("position: ", this.cursorPosition)
 		}
 
 		this.moveUp=function(){
@@ -186,8 +187,8 @@ svgEditorAPI = (function(){
 		moveLeft:function(){
 			cursor.moveLeft()
 		},
-		moveRight:function(){
-			cursor.moveRight()
+		moveRight:function(includeRightmostChar){
+			cursor.moveRight(includeRightmostChar)
 		},
 		moveUp:function(){
 			cursor.moveUp()

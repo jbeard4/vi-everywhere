@@ -24,6 +24,12 @@
 
 		<transition event="i" target="insert_mode"/>
 
+		<transition event="a" target="insert_mode">
+			<script>
+				controller.moveRight(true);
+			</script>
+		</transition>
+
 		<!-- FIXME: should be SR -->
 		<!-- FIXME: must add support for multiple events on transitions -->
 		<!--
