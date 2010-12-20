@@ -55,7 +55,7 @@
 		</transition>
 		<transition event="right" target="normal_mode">
 			<script>
-				controller.moveRight()
+				controller.moveRight(false)
 			</script>
 		</transition>
 		<transition event="up" target="normal_mode">
@@ -83,7 +83,7 @@
 
 		<transition event="l" target="normal_mode">
 			<script>
-				controller.moveRight()
+				controller.moveRight(false)
 			</script>
 		</transition>
 		<transition event="k" target="normal_mode">
@@ -112,7 +112,11 @@
 			</script>
 		</onentry>
 
-		<transition event="esc" target="normal_mode"/>
+		<transition event="esc" target="normal_mode">
+			<script>
+				controller.moveLeft()
+			</script>
+		</transition>
 
 		<!-- FIXME: these should be static reactions, and should be moved up to parent SCXML -->
 		<transition event="left" target="insert_mode">
@@ -122,7 +126,7 @@
 		</transition>
 		<transition event="right" target="insert_mode">
 			<script>
-				controller.moveRight()
+				controller.moveRight(true)
 			</script>
 		</transition>
 		<transition event="up" target="insert_mode">

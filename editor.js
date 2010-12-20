@@ -47,17 +47,25 @@ svgEditorAPI = (function(){
 				//cursor.width.baseVal.value = r.width;
 				moveCursor(-1*textExtent.width,0)
 			}
+
+			//console.log("position: ", this.cursorPosition)
 		}
 
-		this.moveRight=function(){
+		this.moveRight=function(includeRightmostChar){
 			//FIXME: off-by-one error?
-			if(this.cursorPosition < currentLine.getTotalNumberOfChars()){
+			var numChars = currentLine.getTotalNumberOfChars();
+			var condition = includeRightmostChar ? 
+				this.cursorPosition < numChars : 
+				this.cursorPosition < numChars-1;
+			if(condition){
 				//var r = currentLine.getExtentOfCharAt(this.cursorPosition)
 				this.cursorPosition+=1
 				//cursor.x.baseVal.value+=r.x;
 				//cursor.width.baseVal.value = r.width;
 				moveCursor(textExtent.width,0)
 			}
+
+			//console.log("position: ", this.cursorPosition)
 		}
 
 		this.moveUp=function(){
@@ -103,12 +111,12 @@ svgEditorAPI = (function(){
 
 		this.makeCursorFat = function(){
 			cursorNode.width.baseVal.value = textExtent.width;
-			cursorNode.setAttributeNS(null,"transform","translate(" + -textExtent.width + ",0)" ); //reflection, so he overs the thing he is currently on
+			//cursorNode.setAttributeNS(null,"transform","translate(" + -textExtent.width + ",0)" ); //reflection, so he overs the thing he is currently on
 		}
 
 		this.makeCursorThin = function(){
 			cursorNode.width.baseVal.value = 1;
-			cursorNode.removeAttributeNS(null,"transform");
+			//cursorNode.removeAttributeNS(null,"transform");
 		}
 
 		this.moveCursorTo = function(pos,lineNumber){
@@ -189,7 +197,7 @@ svgEditorAPI = (function(){
 		},
 		writeChar:function(c){
 			currentLine.writeCharAt(String.fromCharCode(c),cursor.cursorPosition)
-			cursor.moveRight();
+			cursor.moveRight(true);
 		},
 		writeNewLine:function(){
 			new Line(currentLineIndex+1)
