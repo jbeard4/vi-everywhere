@@ -46,7 +46,7 @@ svgEditorAPI = (function(){
 				moveCursor(-1*textExtent.width,0)
 			}
 
-			console.log("position: ", this.cursorPosition)
+			//console.log("position: ", this.cursorPosition)
 		}
 
 		this.moveRight=function(includeRightmostChar){
@@ -64,7 +64,7 @@ svgEditorAPI = (function(){
 				moveCursor(textExtent.width,0)
 			}
 
-			console.log("position: ", this.cursorPosition)
+			//console.log("position: ", this.cursorPosition)
 		}
 
 		this.moveUp=function(){
@@ -120,6 +120,8 @@ svgEditorAPI = (function(){
 			lineNumber = lineNumber || currentLineIndex;	//default to currentLineIndex
 
 			var nextLine = lines[lineNumber];
+
+			//TODO: make sure we are not moving him somewhere illegal
 			if(nextLine){ 
 				this.cursorPosition = pos;
 				currentLineIndex = lineNumber;
@@ -129,6 +131,65 @@ svgEditorAPI = (function(){
 
 
 		}
+
+		this.moveToStartOfNextWord = function(){
+			var currentLine = lines[currentLineIndex];
+			var tc = currentLine.getTextContent()  
+			var re = /\b\w/g;
+
+			var match;
+
+			while ((match = re.exec(tc)) && match.index < this.cursorPosition);
+
+			if (match){
+				this.moveCursorTo(match.index);
+			}else{
+				this.moveCursorTo(tc.length-1);	//move cursor to end of line
+			}
+			
+		}
+
+		this.moveToEndOfNextWord = function(){
+			var currentLine = lines[currentLineIndex];
+			var tc = currentLine.getTextContent()  
+			var re = /\w\b/g;
+
+			var match;
+
+			while ((match = re.exec(tc)) && match.index < this.cursorPosition);
+
+			if (match){
+				this.moveCursorTo(match.index);
+			}else{
+				this.moveCursorTo(tc.length-1);	//move cursor to end of line
+			}
+			
+		}
+
+		this.moveToStartOfPreviousWord = function(){
+			var currentLine = lines[currentLineIndex];
+			var tc = currentLine.getTextContent()  
+			var re = /\b\w/g;
+
+			var matches = [];
+			var match;
+
+			while (match = re.exec(tc)){
+				matches.push(match)
+			}
+
+			var self = this;
+
+			var matchBeforeCursor = matches.filter(function(m){return m.index < self.cursorPosition}).pop()
+
+			if (matchBeforeCursor){
+				this.moveCursorTo(matchBeforeCursor.index);
+			}else{
+				this.moveCursorTo(0);	//move cursor to start of line
+			}
+			
+		}
+
 
 		this.makeCursorThin();
 	}
@@ -183,6 +244,10 @@ svgEditorAPI = (function(){
 			tspan.textContent = tspan.textContent.substring(0,from) + tspan.textContent.substring(to) 
 			return toReturn
 		}
+
+		this.getTextContent = function(){
+			return tspans.map(function(ts){return ts.textContent}).reduce(function(l1,l2){return l1+l2})
+		}
 	}
 
 
@@ -234,6 +299,15 @@ svgEditorAPI = (function(){
 		writeBackspace:function(){
 			cursor.moveLeft();
 			lines[currentLineIndex].writeBackspace(cursor.cursorPosition)
+		},
+		moveToStartOfNextWord:function(){
+			cursor.moveToStartOfNextWord();
+		},
+		moveToEndOfNextWord:function(){
+			cursor.moveToEndOfNextWord();
+		},
+		moveToStartOfPreviousWord:function(){
+			cursor.moveToStartOfPreviousWord();
 		},
 		install:function(sc){
 			var scInstance = new sc();

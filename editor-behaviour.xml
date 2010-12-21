@@ -54,6 +54,24 @@
 			</script>
 		</transition>
 		-->
+
+		<transition event="w" target="normal_mode">
+			<script>
+				controller.moveToStartOfNextWord()
+			</script>
+		</transition>
+		<transition event="e" target="normal_mode">
+			<script>
+				controller.moveToEndOfNextWord()
+			</script>
+		</transition>
+		<transition event="b" target="normal_mode">
+			<script>
+				controller.moveToStartOfPreviousWord()
+			</script>
+		</transition>
+
+
 		<transition event="left" target="normal_mode">
 			<script>
 				controller.moveLeft()
