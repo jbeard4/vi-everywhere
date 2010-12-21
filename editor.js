@@ -17,10 +17,8 @@ svgEditorAPI = (function(){
 
 	//TODO: we need to figure out how to get the width/heigh of each glyph... we could do it by getting the bbox of the next glyph
 	
-	var 	currentLineIndex = 0,		//current line index in lines[]
-		currentLine = null;		//current line in lines[]
-	
-	var lines=[];	//each line is based around a set of tspan elements. a set, because we may want wordwrap later
+	var currentLineIndex = 0;		//current line index in lines[]
+	var lines=[];				//each line is based around a set of tspan elements. a set, because we may want wordwrap later
 
 	function Cursor(pos){
 		this.cursorPosition = 0;
@@ -42,7 +40,7 @@ svgEditorAPI = (function(){
 		this.moveLeft=function(){
 			if(this.cursorPosition > 0){
 				this.cursorPosition-=1
-				//var r = currentLine.getExtentOfCharAt(this.cursorPosition)
+				//var r = lines[currentLineIndex].getExtentOfCharAt(this.cursorPosition)
 				//cursor.x.baseVal.value-=r.x;
 				//cursor.width.baseVal.value = r.width;
 				moveCursor(-1*textExtent.width,0)
@@ -53,13 +51,13 @@ svgEditorAPI = (function(){
 
 		this.moveRight=function(includeRightmostChar){
 			//FIXME: off-by-one error?
-			var numChars = currentLine.getTotalNumberOfChars();
+			var numChars = lines[currentLineIndex].getTotalNumberOfChars();
 			var condition = includeRightmostChar ? 
 				this.cursorPosition < numChars : 
 				this.cursorPosition < numChars-1;
 
 			if(condition){
-				//var r = currentLine.getExtentOfCharAt(this.cursorPosition)
+				//var r = lines[currentLineIndex].getExtentOfCharAt(this.cursorPosition)
 				this.cursorPosition+=1
 				//cursor.x.baseVal.value+=r.x;
 				//cursor.width.baseVal.value = r.width;
@@ -74,7 +72,6 @@ svgEditorAPI = (function(){
 			if(nextLine){
 
 				currentLineIndex-=1;
-				currentLine = lines[currentLineIndex];
 
 				var numChars = nextLine.getTotalNumberOfChars();
 				if( this.cursorPosition < numChars ){
@@ -94,7 +91,6 @@ svgEditorAPI = (function(){
 			if(nextLine){
 
 				currentLineIndex+=1;
-				currentLine = lines[currentLineIndex];
 
 				var numChars = nextLine.getTotalNumberOfChars();
 				if( this.cursorPosition < numChars ){
@@ -121,28 +117,44 @@ svgEditorAPI = (function(){
 		}
 
 		this.moveCursorTo = function(pos,lineNumber){
-			moveTo(textExtent.width * this.cursorPosition,lineNumber*textExtent.height)
+			lineNumber = lineNumber || currentLineIndex;	//default to currentLineIndex
+
+			var nextLine = lines[lineNumber];
+			if(nextLine){ 
+				this.cursorPosition = pos;
+				currentLineIndex = lineNumber;
+
+				moveCursorTo(textExtent.width * this.cursorPosition,lineNumber*textExtent.height)
+			}
+
+
 		}
 
 		this.makeCursorThin();
 	}
 
-	function Line(pos){
+	function Line(lineIndex,initialText){
 		var currenttspan = document.createElementNS(svgNS,"tspan");
 
-		if(pos > 0){
+		if(initialText){
+			currenttspan.textContent = initialText;
+		}
+
+		if(lineIndex > 0){
 			currenttspan.setAttributeNS(null,"dy",textExtent.height);
 			currenttspan.setAttributeNS(null,"x",0);
 		}
 	
-		//FIXME: this is wrong. we need to append by the sum(numtspans,0:pos)
-		txt.appendChild(currenttspan)
-		//set dx as needed
 
 		var tspans = [currenttspan];
 
+		//add him to nodelist
+		//TODO: have special data structure that binds arra data model to nodelist data model
+		var lineToInsertBefore = txt.childNodes[lineIndex];
+		txt.insertBefore(currenttspan,lineToInsertBefore);
+
 		//put him into lines
-		lines.splice(pos,0,this);
+		lines.splice(lineIndex,0,this);	
 		
 		this.writeCharAt = function(c,pos){
 			//TODO: wordwrap
@@ -163,6 +175,14 @@ svgEditorAPI = (function(){
 		this.getTotalNumberOfChars = function(){
 			return tspans.map(function(ts){return ts.textContent.length}).reduce(function(l1,l2){return l1+l2})
 		}
+
+		this.deleteRange = function(from,to){
+			//FIXME, TODO: deal with case of multiple tspans
+			var tspan = tspans[0];
+			var toReturn = tspan.textContent.substring(from,to)
+			tspan.textContent = tspan.textContent.substring(0,from) + tspan.textContent.substring(to) 
+			return toReturn
+		}
 	}
 
 
@@ -170,7 +190,7 @@ svgEditorAPI = (function(){
 	//if we are starting a new text document, create a line
 	//FIXME: for now we just do this
 	currentLineIndex = 0;
-	currentLine  = new Line(currentLineIndex)
+	new Line(currentLineIndex)
 
 	var cursor = new Cursor();
 	
@@ -197,16 +217,23 @@ svgEditorAPI = (function(){
 			cursor.moveDown()
 		},
 		writeChar:function(c){
-			currentLine.writeCharAt(String.fromCharCode(c),cursor.cursorPosition)
+			lines[currentLineIndex].writeCharAt(String.fromCharCode(c),cursor.cursorPosition)
 			cursor.moveRight(true);
 		},
 		writeNewLine:function(){
-			new Line(currentLineIndex+1)
-			cursor.moveDown()
+			//delete everything on current line from cursor position to the end
+			var currentLine = lines[currentLineIndex];
+			var deletedChars = currentLine.deleteRange(cursor.cursorPosition,currentLine.getTotalNumberOfChars())
+
+			//create a new line with this text
+			new Line(currentLineIndex+1,deletedChars)
+			//cursor.moveDown()
+
+			cursor.moveCursorTo(0,currentLineIndex+1)
 		},
 		writeBackspace:function(){
 			cursor.moveLeft();
-			currentLine.writeBackspace(cursor.cursorPosition)
+			lines[currentLineIndex].writeBackspace(cursor.cursorPosition)
 		},
 		install:function(sc){
 			var scInstance = new sc();
