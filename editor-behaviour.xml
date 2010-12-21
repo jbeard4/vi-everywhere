@@ -70,6 +70,16 @@
 				controller.moveToStartOfPreviousWord()
 			</script>
 		</transition>
+		<transition event="zero" target="normal_mode">
+			<script>
+				controller.moveToStartOfLine()
+			</script>
+		</transition>
+		<transition event="bling" target="normal_mode">
+			<script>
+				controller.moveToEndOfLine()
+			</script>
+		</transition>
 
 
 		<transition event="left" target="normal_mode">

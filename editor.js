@@ -309,6 +309,12 @@ svgEditorAPI = (function(){
 		moveToStartOfPreviousWord:function(){
 			cursor.moveToStartOfPreviousWord();
 		},
+		moveToStartOfLine:function(){
+			cursor.moveCursorTo(0)
+		},
+		moveToEndOfLine:function(){
+			cursor.moveCursorTo(lines[currentLineIndex].getTotalNumberOfChars()-1)
+		},
 		install:function(sc){
 			var scInstance = new sc();
 			//start mainloop
@@ -325,12 +331,22 @@ svgEditorAPI = (function(){
 				40: "down",
 			}
 
+			var charCodeEventMap = {
+				36: "bling",
+				48 : "zero",
+				49 : "one",
+				50 : "two",
+				51 : "three",
+				52 : "four"
+				
+			}
+
 			root.addEventListener("keypress",function(e){
 				//console.log(e);
 				e.preventDefault();
 
-				if(eventMap[e.keyCode]){
-					scInstance[eventMap[e.keyCode]](e)
+				if(eventMap[e.keyCode] || charCodeEventMap[e.charCode] ){
+					scInstance[eventMap[e.keyCode] || charCodeEventMap[e.charCode]](e)
 				}else if(e.charCode){
 					scInstance.GEN(String.fromCharCode(e.charCode),e)
 				}else{
