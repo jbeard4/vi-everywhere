@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="200">
 	<style type="text/css">
 		text,tspan {
 			font-family: "Nimbus Mono L", "Courier New", Courier, monospace;
@@ -16,10 +16,38 @@
 	<rect id="cursor" x="0" y="0" width="1" height="12pt" stroke="none" fill="black"/>
 	<text id="mode-text" x="0" y="100%" stroke="none" fill="black"></text>
 	<text id="location-text" x="300" y="400"></text>
+	<script>
+		svgNS = "http://www.w3.org/2000/svg";
+	</script>
 	<script xlink:href="editor.js"/>
 	<script xlink:href="out.js"/>
-	<script>
-		svgEditorAPI.install(viBehaviourStatechartExecutionContext) 
-	</script>
+	<script><![CDATA[
+		function main(){
+			//here we pull this out of the document, but, thanks to clean design, 
+			//all text nodes and whatnot could be created dynamically to allow instantiation of multiple text editors in a single page
+			var root = document.documentElement;
+			var txt = document.getElementById("main")
+			var cursorNode = document.getElementById("cursor")
+			var modeText = document.getElementById("mode-text")
+			var locationText = document.getElementById("location-text")
+				
+			//there may be a nicer way to do this, but we assume a fixed-width font, so here we create a character, insert it into DOM to get its dimensions, then remove it
+			var textExtent;
+			var tmptxt = document.createElementNS(svgNS,"text");
+			tmptxt.textContent="b";
+			document.documentElement.appendChild(tmptxt)
+			textExtent = tmptxt.getExtentOfChar(0)
+			document.documentElement.removeChild(tmptxt)
+			//console.log("textExtent",textExtent)
+
+			//TODO: figure out how to make this dynamic with width="100%"
+			var width = document.documentElement.width.baseVal.value;
+
+			var editor = SVGEditorFactory.createNewSVGEditorInstance(root,txt,cursorNode,modeText,locationText,textExtent,width);
+			editor.install(); 
+		}
+
+		main();
+	]]></script>
 </svg>
 

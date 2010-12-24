@@ -81,6 +81,21 @@
 			</script>
 		</transition>
 
+		<transition event="G" target="normal_mode">
+			<script>	
+				controller.moveToLastLineOfDocument()
+			</script>
+		</transition>
+
+		<transition event="g" target="after_g"/>
+
+		<state id="after_g">
+			<script>
+				controller.moveToFirstLineOfDocument()
+			</script>
+		</state>
+
+
 
 		<transition event="left" target="normal_mode">
 			<script>
