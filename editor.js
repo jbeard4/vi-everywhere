@@ -347,20 +347,31 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 
 	initialText = initialText || "";
 
-	//TODO: wordwrap the initial text
-	var currenttspan = document.createElementNS(svgNS,"tspan");
-	currenttspan.textContent = initialText;
+	//TODO: move this initialization logic into its own function. would be cleaner
+	//wordwrap the initial text
+	var tspans = [];
+	do{
+		var tmpTspanTxt = initialText.substring(0,displayManager.displayCharWidth);
+		var currenttspan = document.createElementNS(svgNS,"tspan");
+		currenttspan.setAttributeNS(null,"x",0);
+		currenttspan.textContent = tmpTspanTxt;
 
-	if(!isFirstLine){
-		currenttspan.setAttributeNS(null,"dy",displayManager.textExtent.height);
-	}
-	currenttspan.setAttributeNS(null,"x",0);
+		tspans.push(currenttspan);
+
+		initialText = initialText.slice(displayManager.displayCharWidth);
+	}while(initialText.length)
+
+	var dyIndex = isFirstLine ? 1 : 0;
+	tspans.slice(dyIndex).forEach(function(tspan){tspan.setAttributeNS(null,"dy",displayManager.textExtent.height)});
 
 	var tspanToInsertBefore = lineToInsertBefore && lineToInsertBefore.getFirstTSpan(); 
 
-	textNode.insertBefore(currenttspan,tspanToInsertBefore);
+	tspans.reverse().reduce(function(tmpTspanToInsertBefore,currenttspan){
+		textNode.insertBefore(currenttspan,tmpTspanToInsertBefore);
+		return currenttspan;
+	},tspanToInsertBefore); 
 
-	var tspans = [currenttspan];
+	tspans.reverse();	//reverse changes the array, so we need to reverse him back to the right order
 
 	//public methods
 
@@ -377,8 +388,10 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 	this.getCoords = function(colNum){
 		var yPos = Math.floor(colNum / displayManager.displayCharWidth);
 		var xPos = colNum - (yPos * displayManager.displayCharWidth);
+		console.log("ypos :", yPos )
+		console.log("xpos :", xPos )
 
-		var y = yPos * displayManager.textExtent.width;
+		var y = yPos * displayManager.textExtent.height;
 		var x = xPos  * displayManager.textExtent.width;
 		return {x:x,y:y};
 	}
@@ -389,15 +402,92 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 	}
 
 	this.writeCharAt = function(c,pos){
-		//TODO: wordwrap
+		//get the tspan where the cursor is at, and see if we've exceed the acceptable number of characters
+		var yPos = Math.floor(pos / displayManager.displayCharWidth);
+		var xPos = pos - (yPos * displayManager.displayCharWidth);
+
+		var currenttspan = tspans[yPos];
+
+		if(currenttspan === undefined){
+			//create new tspan if we're starting a new line
+			var newtspan = document.createElementNS(svgNS,"tspan");
+			newtspan.setAttributeNS(null,"dy",displayManager.textExtent.height);
+			newtspan.setAttributeNS(null,"x",0);
+
+			textNode.appendChild(newtspan);
+			tspans.push(newtspan); 
+
+			currenttspan = newtspan;
+		}
+
 		var tv = currenttspan.textContent;
-		currenttspan.textContent = tv.substring(0,pos) + c + tv.substring(pos,tv.length);
+		currenttspan.textContent = tv.substring(0,xPos) + c + tv.substring(xPos,tv.length);
+
+		if(currenttspan.textContent.length > displayManager.displayCharWidth){
+			//apply wordwrap if needed... actually letterwrap, as is currently done in vim
+			//insert the character, then take the last character, and move him to the front of the next line. continue this for all other lines
+
+			//check whether last line is full. if so, add a new tspan element to the end
+			if(tspans[tspans.length-1].textContent.length+1 > displayManager.displayCharWidth){
+				var newtspan = document.createElementNS(svgNS,"tspan");
+				newtspan.setAttributeNS(null,"dy",displayManager.textExtent.height);
+				newtspan.setAttributeNS(null,"x",0);
+
+				var tspanToInsertBefore = tspans[tspans.length-1].nextSibling;
+
+				textNode.insertBefore(newtspan,tspanToInsertBefore);
+				tspans.push(newtspan); //FIXME: instead of push, I think we need to use splice
+			}
+
+			var charToAddToNextLine,tspanToUpdate;
+			for(var i=yPos,l=tspans.length;i<l-1;i++){
+				tspanToUpdate = tspans[i];
+
+				//update text
+				if(charToAddToNextLine){
+					tspanToUpdate.textContent = charToAddToNextLine + tspanToUpdate.textContent;
+				}
+
+				var tc = tspanToUpdate.textContent;
+				charToAddToNextLine = tc[tc.length-1];
+				tspanToUpdate.textContent = tc.slice(0,tc.length-1);
+			}
+
+			tspanToUpdate = tspans[tspans.length-1];
+			if(charToAddToNextLine){
+				tspanToUpdate.textContent = charToAddToNextLine + tspanToUpdate.textContent;
+			}
+
+		}	
 	}
 
 	this.writeBackspace = function(pos){
-		//TODO: wordwrap
+		var yPos = Math.floor(pos / displayManager.displayCharWidth);
+		var xPos = pos - (yPos * displayManager.displayCharWidth);
+
+		var currenttspan = tspans[yPos];
+
 		var tv = currenttspan.textContent;
-		currenttspan.textContent = tv.substring(0,pos) + tv.substring(pos+1,tv.length);
+		currenttspan.textContent = tv.substring(0,xPos) + tv.substring(xPos+1,tv.length);
+
+		//apply wordwrap to all following rows by taking the first character of the next line and adding it to the end of the current line
+		var charToAddToCurrentLine,tspanToUpdate,nextTspan;
+		for(var i=yPos,l=tspans.length;i<l-1;i++){
+			tspanToUpdate = tspans[i];
+			nextTspan = tspans[i+1];
+			charToAddToCurrentLine = nextTspan[0]; 
+
+			tspanToUpdate.textContent = tspanToUpdate.textContent + charToAddToCurrentLine;
+			nextTspan.textContent = nextTspan.textContent.substring(1);
+		}
+
+		//delete last tspan if it is empty
+		var lastTspan = tspans[tspans.length-1];
+		if(!lastTspan.textContent.length){
+			//delete tspan
+			tspans.pop()
+			textNode.removeChild(lastTspan);
+		}
 	}
 
 	this.getTotalNumberOfChars = function(){
@@ -405,11 +495,87 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 	}
 
 	this.deleteRange = function(from,to){
-		//FIXME, TODO: deal with case of multiple tspans
+		//up to, but not including "from" (like Array.slice or String.substring)
+		//but does include "to"
+
+		var yPosFrom = Math.floor(from / displayManager.displayCharWidth);
+		var xPosFrom = from - (yPosFrom * displayManager.displayCharWidth);
+		var currenttspanFrom = tspans[yPosFrom];
+
+		var yPosTo = Math.floor((to-1) / displayManager.displayCharWidth);
+		var xPosTo = to - (yPosTo * displayManager.displayCharWidth);
+		var currenttspanTo = tspans[yPosTo];
+
+		if(currenttspanTo === undefined){
+			throw new Error("currenttspanTo is undefined");
+		}
+
+		//compute return value
+		var toReturn;
+
+		if(currenttspanFrom === currenttspanTo){
+			var tspan = currenttspanFrom;
+			toReturn = tspan.textContent.substring(xPosFrom,xPosTo);
+			tspan.textContent = tspan.textContent.substring(0,xPosFrom) + tspan.textContent.substring(xPosTo); 
+		}else{
+			//remove all middle tspans
+			var middleTspans = tspans.splice(yPosFrom+1,yPosTo-1 - yPosFrom);
+			middleTspans.forEach(function(tspan){textNode.removeChild(tspan)});
+
+			toReturn = "";
+			toReturn += currenttspanFrom.textContent.substring(xPosFrom);
+			toReturn += middleTspans.map(function(tspan){return tspan.textContent}).reduce(sum,"");
+			toReturn += currenttspanTo.textContent.substring(0,xPosTo);
+
+			//alter text on currenttspanFrom by slicing xPosFrom:
+			currenttspanFrom.textContent = currenttspanFrom.textContent.substring(0,xPosFrom);
+
+			//alter text on currenttspanTo by slicing :xPosTo
+			currenttspanTo.textContent = currenttspanTo.textContent.substring(xPosTo);
+
+			//delete currenttspanTo if it is empty
+			if(!currenttspanTo.textContent.length){
+				//delete tspan
+				tspans.splice(tspans.indexOf(currenttspanTo),1);
+				textNode.removeChild(currenttspanTo);
+			}
+		}
+
+
+		//then perform wordwrap... but we can't assume only one character has been deleted. 
+		//have to do it for as many characters as have been deleted, or until until it is in a legal configuration
+		
+		//TODO:this code is just copy-pasted from the above. move this out into a function
+		//apply wordwrap to all following rows by taking the first character of the next line and adding it to the end of the current line
+
+		while(!tspans.slice(0,-1).every(function(tspan){return tspan.textContent.length === displayManager.displayCharWidth})){
+			var charToAddToCurrentLine,tspanToUpdate,nextTspan;
+			for(var i=yPosFrom,l=tspans.length;i<l-1;i++){
+				tspanToUpdate = tspans[i];
+				nextTspan = tspans[i+1];
+				charToAddToCurrentLine = nextTspan[0]; 
+
+				tspanToUpdate.textContent = tspanToUpdate.textContent + charToAddToCurrentLine;
+				nextTspan.textContent = nextTspan.textContent.substring(1);
+			}
+
+			//delete last tspan if it is empty
+			var lastTspan = tspans[tspans.length-1];
+			if(!lastTspan.textContent.length){
+				//delete tspan
+				tspans.pop()
+				textNode.removeChild(lastTspan);
+			}
+		}
+		
+		return toReturn;
+
+		/*
 		var tspan = tspans[0];
 		var toReturn = tspan.textContent.substring(from,to)
 		tspan.textContent = tspan.textContent.substring(0,from) + tspan.textContent.substring(to) 
 		return toReturn
+		*/
 	}
 
 	this.getTextContent = function(){
@@ -421,7 +587,7 @@ function DisplayManager(textExtent,displayWidth){
 	this.textExtent = textExtent;
 	this.displayWidth = displayWidth;
 
-	this.displayCharWidth = displayWidth/textExtent.width;	//derived attribute
+	this.displayCharWidth = Math.floor(displayWidth/textExtent.width);	//derived attribute
 }
 
 
