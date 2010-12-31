@@ -362,38 +362,56 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 				//variable to keep track of changes in state
 		tspans;
 
-	if(initialText && initialText.length){
-		isEmpty = false;
-	}else{
-		isEmpty = true;
-		initialText = " ";
-	} 
+	//private functions
+	function init(){
 
-	//TODO: move this initialization logic into its own function. would be cleaner
-	//wordwrap the initial text
-	tspans = [];
-	do{
-		var tmpTspanTxt = initialText.substring(0,displayManager.displayCharWidth);
-		var currenttspan = document.createElementNS(svgNS,"tspan");
-		currenttspan.setAttributeNS(null,"x",0);
-		currenttspan.textContent = tmpTspanTxt;
+		if(initialText && initialText.length){
+			isEmpty = false;
+		}else{
+			isEmpty = true;
+			initialText = " ";
+		} 
 
-		tspans.push(currenttspan);
+		//TODO: move this initialization logic into its own function. would be cleaner
+		//wordwrap the initial text
+		tspans = [];
+		do{
+			var tmpTspanTxt = initialText.substring(0,displayManager.displayCharWidth);
 
-		initialText = initialText.slice(displayManager.displayCharWidth);
-	}while(initialText.length)
+			var currenttspan = createTspan(tmpTspanTxt);
 
-	var dyIndex = isFirstLine ? 1 : 0;
-	tspans.slice(dyIndex).forEach(function(tspan){tspan.setAttributeNS(null,"dy",displayManager.textExtent.height)});
+			tspans.push(currenttspan);
 
-	var tspanToInsertBefore = lineToInsertBefore && lineToInsertBefore.getFirstTSpan(); 
+			initialText = initialText.slice(displayManager.displayCharWidth);
+		}while(initialText.length)
 
-	tspans.reverse().reduce(function(tmpTspanToInsertBefore,currenttspan){
-		textNode.insertBefore(currenttspan,tmpTspanToInsertBefore);
-		return currenttspan;
-	},tspanToInsertBefore); 
+		var dyIndex = isFirstLine ? 1 : 0;
+		tspans.slice(dyIndex).forEach(function(tspan){tspan.setAttributeNS(null,"dy",displayManager.textExtent.height)});
 
-	tspans.reverse();	//reverse changes the array, so we need to reverse him back to the right order
+		var tspanToInsertBefore = lineToInsertBefore && lineToInsertBefore.getFirstTSpan(); 
+
+		tspans.reverse().reduce(function(tmpTspanToInsertBefore,currenttspan){
+			textNode.insertBefore(currenttspan,tmpTspanToInsertBefore);
+			return currenttspan;
+		},tspanToInsertBefore); 
+
+		tspans.reverse();	//reverse changes the array, so we need to reverse him back to the right order
+	}
+
+	function createTspan(textContent,dy){
+			var tspan = document.createElementNS(svgNS,"tspan");
+			tspan.setAttributeNS(null,"x",0);
+			tspan.textContent = textContent;
+
+			if(dy){
+				tspan.setAttributeNS(null,"dy",dy);
+			}
+
+			return tspan;
+	}
+
+	//call init
+	init();
 
 	//public methods
 
@@ -432,9 +450,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 
 		if(currenttspan === undefined){
 			//create new tspan if we're starting a new line
-			var newtspan = document.createElementNS(svgNS,"tspan");
-			newtspan.setAttributeNS(null,"dy",displayManager.textExtent.height);
-			newtspan.setAttributeNS(null,"x",0);
+			var newtspan = createTspan("",displayManager.textExtent.height);
 
 			textNode.appendChild(newtspan);
 			tspans.push(newtspan); 
@@ -454,9 +470,8 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 
 			//check whether last line is full. if so, add a new tspan element to the end
 			if(tspans[tspans.length-1].textContent.length+1 > displayManager.displayCharWidth){
-				var newtspan = document.createElementNS(svgNS,"tspan");
-				newtspan.setAttributeNS(null,"dy",displayManager.textExtent.height);
-				newtspan.setAttributeNS(null,"x",0);
+
+				var newtspan = createTspan("",displayManager.textExtent.height);
 
 				var tspanToInsertBefore = tspans[tspans.length-1].nextSibling;
 
@@ -513,10 +528,9 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 
 			//if we have deleted all tspans, create new tspan, update isEmpty
 			if(tspans.length === 1){
-				var currenttspan = document.createElementNS(svgNS,"tspan");
-				currenttspan.setAttributeNS(null,"x",0);
-				currenttspan.textContent = " ";
-				
+
+				var currenttspan = createTspan(" ");
+
 				textNode.insertBefore(currenttspan,lastTspan);
 
 				tspans.push(currenttspan);
