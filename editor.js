@@ -158,8 +158,17 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	};
 
 	this.writeBackspace = function(){
-		this.moveLeft();
-		lineManager.getLine(this.rowNum).writeBackspace(this.colNum)
+		var line = lineManager.getLine(this.rowNum);
+		if(line.getTotalNumberOfChars()){
+			this.moveLeft();
+			line.writeBackspace(this.colNum);
+		}else{
+			//we cannot delete the first line
+			if(this.rowNum > 0){
+				lineManager.deleteLine(this.rowNum);
+				this.moveUp();
+			}
+		}
 	};
 
 	this.moveLeft=function(){
@@ -311,7 +320,9 @@ function LineManager(textNode,displayManager){
 		return lines[pos];
 	}
 
-	this.deleteLine = function(pos){
+	this.deleteLine = function(posOrLine){
+		var pos = typeof posOrLine == "number" ? posOrLine : lines.indexOf(posOrLine); 
+
 		lines[pos].removeFromDOM();
 		lines.splice(pos,1);
 	}
@@ -345,11 +356,22 @@ function LineManager(textNode,displayManager){
 
 function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager){
 
-	initialText = initialText || "";
+	//private vars
+	var isEmpty,		//because we are relying on the tspan dy attribute for positioning, "empty" tspans will need to have a single whitespace. 
+				//so we can't rely on simply using the length of the textContent to encode emptyness of a line, and need to use a separate
+				//variable to keep track of changes in state
+		tspans;
+
+	if(initialText && initialText.length){
+		isEmpty = false;
+	}else{
+		isEmpty = true;
+		initialText = " ";
+	} 
 
 	//TODO: move this initialization logic into its own function. would be cleaner
 	//wordwrap the initial text
-	var tspans = [];
+	tspans = [];
 	do{
 		var tmpTspanTxt = initialText.substring(0,displayManager.displayCharWidth);
 		var currenttspan = document.createElementNS(svgNS,"tspan");
@@ -420,8 +442,11 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			currenttspan = newtspan;
 		}
 
-		var tv = currenttspan.textContent;
+		var tv = isEmpty ? "" : currenttspan.textContent;
 		currenttspan.textContent = tv.substring(0,xPos) + c + tv.substring(xPos,tv.length);
+
+		//update isEmpty
+		isEmpty = false;
 
 		if(currenttspan.textContent.length > displayManager.displayCharWidth){
 			//apply wordwrap if needed... actually letterwrap, as is currently done in vim
@@ -475,7 +500,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 		for(var i=yPos,l=tspans.length;i<l-1;i++){
 			tspanToUpdate = tspans[i];
 			nextTspan = tspans[i+1];
-			charToAddToCurrentLine = nextTspan[0]; 
+			charToAddToCurrentLine = nextTspan.textContent[0] || ""; 
 
 			tspanToUpdate.textContent = tspanToUpdate.textContent + charToAddToCurrentLine;
 			nextTspan.textContent = nextTspan.textContent.substring(1);
@@ -484,25 +509,45 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 		//delete last tspan if it is empty
 		var lastTspan = tspans[tspans.length-1];
 		if(!lastTspan.textContent.length){
+
+
+			//if we have deleted all tspans, create new tspan, update isEmpty
+			if(tspans.length === 1){
+				var currenttspan = document.createElementNS(svgNS,"tspan");
+				currenttspan.setAttributeNS(null,"x",0);
+				currenttspan.textContent = " ";
+				
+				textNode.insertBefore(currenttspan,lastTspan);
+
+				tspans.push(currenttspan);
+
+				isEmpty = true;
+			}
+
 			//delete tspan
-			tspans.pop()
+			tspans.splice(tspans.indexOf(lastTspan),1)
 			textNode.removeChild(lastTspan);
 		}
+
+	
 	}
 
 	this.getTotalNumberOfChars = function(){
-		return tspans.map(function(ts){return ts.textContent.length}).reduce(sum,0)
+		return isEmpty ? 0 : tspans.map(function(ts){return ts.textContent.length}).reduce(sum,0);
 	}
 
 	this.deleteRange = function(from,to){
 		//up to, but not including "from" (like Array.slice or String.substring)
 		//but does include "to"
 
-		var yPosFrom = Math.floor(from / displayManager.displayCharWidth);
+		var totalNumChars = this.getTotalNumberOfChars();
+
+		//FIXME: off by one error?
+		var yPosFrom = totalNumChars == from ? tspans.length-1 : Math.floor(from / displayManager.displayCharWidth);
 		var xPosFrom = from - (yPosFrom * displayManager.displayCharWidth);
 		var currenttspanFrom = tspans[yPosFrom];
 
-		var yPosTo = Math.floor((to-1) / displayManager.displayCharWidth);
+		var yPosTo = totalNumChars == to ? tspans.length-1 : Math.floor(to / displayManager.displayCharWidth);
 		var xPosTo = to - (yPosTo * displayManager.displayCharWidth);
 		var currenttspanTo = tspans[yPosTo];
 
@@ -563,9 +608,15 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			var lastTspan = tspans[tspans.length-1];
 			if(!lastTspan.textContent.length){
 				//delete tspan
-				tspans.pop()
+				tspans.splice(tspans.indexOf(lastTspan),1)
 				textNode.removeChild(lastTspan);
 			}
+		}
+
+		//TODO: update isEmpty
+		if(tspans[0].textContent.length === 0){
+			tspans[0].textContent = " ";
+			isEmpty = true;
 		}
 		
 		return toReturn;
@@ -579,7 +630,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 	}
 
 	this.getTextContent = function(){
-		return tspans.map(function(ts){return ts.textContent}).reduce(sum,"")
+		return isEmpty ? "" : tspans.map(function(ts){return ts.textContent}).reduce(sum,"")
 	}
 }
 
