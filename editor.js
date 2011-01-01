@@ -440,6 +440,19 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 		insertTspan(newtspan,tspanToInsertBefore);
 	}
 
+	function wrapSingleChar(yPos){
+		//apply wordwrap to all following rows by taking the first character of the next line and adding it to the end of the current line
+		var charToAddToCurrentLine,tspanToUpdate,nextTspan;
+		for(var i=yPos,l=tspans.length;i<l-1;i++){
+			tspanToUpdate = tspans[i];
+			nextTspan = tspans[i+1];
+			charToAddToCurrentLine = nextTspan.textContent[0] || ""; 
+
+			tspanToUpdate.textContent = tspanToUpdate.textContent + charToAddToCurrentLine;
+			nextTspan.textContent = nextTspan.textContent.substring(1);
+		}
+	}
+
 	//call init
 	init();
 
@@ -540,16 +553,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 		var tv = currenttspan.textContent;
 		currenttspan.textContent = tv.substring(0,xPos) + tv.substring(xPos+1,tv.length);
 
-		//apply wordwrap to all following rows by taking the first character of the next line and adding it to the end of the current line
-		var charToAddToCurrentLine,tspanToUpdate,nextTspan;
-		for(var i=yPos,l=tspans.length;i<l-1;i++){
-			tspanToUpdate = tspans[i];
-			nextTspan = tspans[i+1];
-			charToAddToCurrentLine = nextTspan.textContent[0] || ""; 
-
-			tspanToUpdate.textContent = tspanToUpdate.textContent + charToAddToCurrentLine;
-			nextTspan.textContent = nextTspan.textContent.substring(1);
-		}
+		wrapSingleChar(yPos);
 
 		var tspanToInsertBefore = this.getLastTSpan().nextSibling;
 
@@ -620,20 +624,9 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 
 		//then perform wordwrap... but we can't assume only one character has been deleted. 
 		//have to do it for as many characters as have been deleted, or until until it is in a legal configuration
-		
-		//TODO:this code is just copy-pasted from the above. move this out into a function
-		//apply wordwrap to all following rows by taking the first character of the next line and adding it to the end of the current line
-
 		while(!tspans.slice(0,-1).every(function(tspan){return tspan.textContent.length === displayManager.displayCharWidth})){
-			var charToAddToCurrentLine,tspanToUpdate,nextTspan;
-			for(var i=yPosFrom,l=tspans.length;i<l-1;i++){
-				tspanToUpdate = tspans[i];
-				nextTspan = tspans[i+1];
-				charToAddToCurrentLine = nextTspan[0]; 
-
-				tspanToUpdate.textContent = tspanToUpdate.textContent + charToAddToCurrentLine;
-				nextTspan.textContent = nextTspan.textContent.substring(1);
-			}
+			
+			wrapSingleChar(yPosFrom);
 
 			//delete last tspan if it is empty
 			deleteLastTspanIfEmpty();
@@ -646,13 +639,6 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 		}
 		
 		return toReturn;
-
-		/*
-		var tspan = tspans[0];
-		var toReturn = tspan.textContent.substring(from,to)
-		tspan.textContent = tspan.textContent.substring(0,from) + tspan.textContent.substring(to) 
-		return toReturn
-		*/
 	}
 
 	this.getTextContent = function(){
