@@ -159,15 +159,16 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 
 	this.writeBackspace = function(){
 		var line = lineManager.getLine(this.rowNum);
-		if(line.getTotalNumberOfChars()){
+		if(this.colNum > 0){
 			this.moveLeft();
 			line.writeBackspace(this.colNum);
 		}else{
 			//we cannot delete the first line
 			if(this.rowNum > 0){
-				lineManager.deleteLine(this.rowNum);
+				var deletedChars = lineManager.deleteLine(this.rowNum);
 				this.moveUp();
 				this.moveToEndOfLine();
+				lineManager.getLine(this.rowNum).writeStringAt(deletedChars,this.colNum);
 			}
 		}
 	};
@@ -325,8 +326,12 @@ function LineManager(textNode,displayManager){
 	this.deleteLine = function(posOrLine){
 		var pos = typeof posOrLine == "number" ? posOrLine : lines.indexOf(posOrLine); 
 
-		lines[pos].removeFromDOM();
+		var line = lines[pos];
+		var toReturn = line.getTextContent();
+		line.removeFromDOM();
 		lines.splice(pos,1);
+
+		return toReturn;	//return character data
 	}
 
 	this.createLine = function(pos, initialText){
@@ -542,6 +547,13 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			}
 
 		}	
+	}
+
+	this.writeStringAt = function(str,pos){
+		//TODO: this might be inefficient, especially for long lines. 
+		for(var i=0,l=str.length;i<l;i++){
+			this.writeCharAt(str[i],pos++);
+		}
 	}
 
 	this.writeBackspace = function(pos){
