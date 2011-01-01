@@ -167,6 +167,7 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 			if(this.rowNum > 0){
 				lineManager.deleteLine(this.rowNum);
 				this.moveUp();
+				this.moveToEndOfLine();
 			}
 		}
 	};
@@ -305,9 +306,10 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 		
 	}
 
-	this.moveToEndOfLine = function(){
-		this.moveCursorTo(lineManager.getLine(this.rowNum).getTotalNumberOfChars()-1);
+	this.moveToEndOfLine=function(){
+		this.moveCursorTo(lineManager.getLine(this.rowNum).getTotalNumberOfChars()); 
 	}
+
 
 	this.makeCursorThin();
 }
@@ -362,6 +364,8 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 				//variable to keep track of changes in state
 		tspans;
 
+	var self = this;
+
 	//private functions
 	function init(){
 
@@ -410,6 +414,32 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			return tspan;
 	}
 
+	function deleteTspan(tspan){
+		tspans.splice(tspans.indexOf(tspan),1);
+		textNode.removeChild(tspan);
+	}
+
+	function deleteTspanIfEmpty(tspan){
+		if(!tspan.textContent.length){
+			deleteTspan(tspan);
+		}
+	}
+
+	function deleteLastTspanIfEmpty(){
+		deleteTspanIfEmpty(self.getLastTSpan());
+	}
+
+	function insertTspan(newtspan,tspanToInsertBefore){
+		textNode.insertBefore(newtspan,tspanToInsertBefore);
+		tspans.push(newtspan); //FIXME: instead of push, I think we need to use splice
+	}
+
+	function appendTspan(newtspan){
+		var tspanToInsertBefore = self.getLastTSpan().nextSibling;
+
+		insertTspan(newtspan,tspanToInsertBefore);
+	}
+
 	//call init
 	init();
 
@@ -423,6 +453,10 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 
 	this.getFirstTSpan = function(){
 		return tspans[0]; 
+	}
+
+	this.getLastTSpan = function(){
+		return tspans[tspans.length-1]; 
 	}
 
 	this.getCoords = function(colNum){
@@ -452,8 +486,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			//create new tspan if we're starting a new line
 			var newtspan = createTspan("",displayManager.textExtent.height);
 
-			textNode.appendChild(newtspan);
-			tspans.push(newtspan); 
+			appendTspan(newtspan);
 
 			currenttspan = newtspan;
 		}
@@ -469,14 +502,11 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			//insert the character, then take the last character, and move him to the front of the next line. continue this for all other lines
 
 			//check whether last line is full. if so, add a new tspan element to the end
-			if(tspans[tspans.length-1].textContent.length+1 > displayManager.displayCharWidth){
+			if(this.getLastTSpan().textContent.length+1 > displayManager.displayCharWidth){
 
 				var newtspan = createTspan("",displayManager.textExtent.height);
 
-				var tspanToInsertBefore = tspans[tspans.length-1].nextSibling;
-
-				textNode.insertBefore(newtspan,tspanToInsertBefore);
-				tspans.push(newtspan); //FIXME: instead of push, I think we need to use splice
+				appendTspan(newtspan);
 			}
 
 			var charToAddToNextLine,tspanToUpdate;
@@ -493,7 +523,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 				tspanToUpdate.textContent = tc.slice(0,tc.length-1);
 			}
 
-			tspanToUpdate = tspans[tspans.length-1];
+			tspanToUpdate = this.getLastTSpan();
 			if(charToAddToNextLine){
 				tspanToUpdate.textContent = charToAddToNextLine + tspanToUpdate.textContent;
 			}
@@ -521,28 +551,19 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			nextTspan.textContent = nextTspan.textContent.substring(1);
 		}
 
-		//delete last tspan if it is empty
-		var lastTspan = tspans[tspans.length-1];
-		if(!lastTspan.textContent.length){
+		var tspanToInsertBefore = this.getLastTSpan().nextSibling;
 
+		deleteLastTspanIfEmpty();
 
-			//if we have deleted all tspans, create new tspan, update isEmpty
-			if(tspans.length === 1){
+		//if we have deleted all tspans, create new tspan, update isEmpty
+		if(!tspans.length){
 
-				var currenttspan = createTspan(" ");
+			var currenttspan = createTspan(" ");
 
-				textNode.insertBefore(currenttspan,lastTspan);
+			insertTspan(currenttspan,tspanToInsertBefore);
 
-				tspans.push(currenttspan);
-
-				isEmpty = true;
-			}
-
-			//delete tspan
-			tspans.splice(tspans.indexOf(lastTspan),1)
-			textNode.removeChild(lastTspan);
+			isEmpty = true;
 		}
-
 	
 	}
 
@@ -592,12 +613,8 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			//alter text on currenttspanTo by slicing :xPosTo
 			currenttspanTo.textContent = currenttspanTo.textContent.substring(xPosTo);
 
-			//delete currenttspanTo if it is empty
-			if(!currenttspanTo.textContent.length){
-				//delete tspan
-				tspans.splice(tspans.indexOf(currenttspanTo),1);
-				textNode.removeChild(currenttspanTo);
-			}
+			deleteTspanIfEmpty(currenttspanTo);
+
 		}
 
 
@@ -619,12 +636,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			}
 
 			//delete last tspan if it is empty
-			var lastTspan = tspans[tspans.length-1];
-			if(!lastTspan.textContent.length){
-				//delete tspan
-				tspans.splice(tspans.indexOf(lastTspan),1)
-				textNode.removeChild(lastTspan);
-			}
+			deleteLastTspanIfEmpty();
 		}
 
 		//TODO: update isEmpty
