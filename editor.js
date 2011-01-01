@@ -251,12 +251,12 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 
 	this.moveToStartOfNextWord = function(){
 		var currentLine = lineManager.getLine(this.rowNum);
-		var tc = currentLine.getTextContent()  
-		var re = /\b\w/g;
+		var tc = currentLine.getTextContent(); 
+		var re = new RegExp("\\b\\w","g"); // /\b\w/g;
 
 		var match;
 
-		while ((match = re.exec(tc)) && match.index < this.colNum);
+		while ((match = re.exec(tc)) && (match.index <= this.colNum));
 
 		if (match){
 			this.moveCursorTo(match.index);
@@ -269,11 +269,11 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	this.moveToEndOfNextWord = function(){
 		var currentLine = lineManager.getLine(this.rowNum);
 		var tc = currentLine.getTextContent()  
-		var re = /\w\b/g;
+		var re = new RegExp("\\w\\b","g"); // /\w\b/g;
 
 		var match;
 
-		while ((match = re.exec(tc)) && match.index < this.colNum);
+		while ((match = re.exec(tc)) && (match.index <= this.colNum));
 
 		if (match){
 			this.moveCursorTo(match.index);
@@ -286,7 +286,7 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	this.moveToStartOfPreviousWord = function(){
 		var currentLine = lineManager.getLine(this.rowNum);
 		var tc = currentLine.getTextContent()  
-		var re = /\b\w/g;
+		var re = new RegExp("\\b\\w","g"); // /\b\w/g;
 
 		var matches = [];
 		var match;
@@ -297,7 +297,7 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 
 		var self = this;
 
-		var matchBeforeCursor = matches.filter(function(m){return m.index < self.x}).pop()
+		var matchBeforeCursor = matches.filter(function(m){return m.index < self.colNum}).pop()
 
 		if (matchBeforeCursor){
 			this.moveCursorTo(matchBeforeCursor.index);
