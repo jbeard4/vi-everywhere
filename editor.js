@@ -86,13 +86,20 @@ function SVGEditor(cursor,modeText,scInstance,rootNode){
 			//console.log(e);
 			e.preventDefault();
 
-			if(eventMap[e.keyCode] || charCodeEventMap[e.charCode] ){
-				scInstance[eventMap[e.keyCode] || charCodeEventMap[e.charCode]](e)
-			}else if(e.charCode){
-				scInstance.GEN(String.fromCharCode(e.charCode),e)
-			}else{
-				console.log("fail",e)
+			var scEvent = eventMap[e.keyCode] || charCodeEventMap[e.charCode] || String.fromCharCode(e.charCode);
+
+			if(!scEvent){
+				console.error("Could not turn keyboard event into statechart event");
 			}
+
+			if(e.ctrlKey){
+				scEvent = "ctrl_" + scEvent;
+			}
+
+			//we use GEN as opposed to method calls because we use * event in the statechart, 
+			//which means it can accept events which are not explicitly used
+			//such events do not have a method defined, and there's no way that I am aware of to define a "catchall" method in JavaScript 
+			scInstance.GEN(scEvent,e)
 		},true)
 
 		//send init event
