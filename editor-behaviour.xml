@@ -88,9 +88,13 @@
 
 		<onexit>
 			<script>
-				controller.stopSelection(); 
+				controller.clearSelection(); 
 			</script>
 		</onexit>
+
+		<transition event="esc" target="normal_mode"/>
+
+		<transition event="ctrl_g" target="select_mode" />
 
 		<vi:macro name="printable_keys_used_to_move_cursor">
 			<vi:param name="updateSelection" value="true"/>
@@ -134,9 +138,6 @@
 			<transition event="V" target="visual_line"/>
 		</state>
 
-		<transition event="esc" target="normal_mode"/>
-
-		<transition event="ctrl_g" target="select_mode" />
 	</state>
 
 

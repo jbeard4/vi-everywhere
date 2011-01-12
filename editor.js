@@ -169,7 +169,7 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		selectionManager.clearSelection();
 	}
 
-	this.setSelectinoMode = function(mode){
+	this.setSelectionMode = function(mode){
 		selectionManager.setMode(mode);
 	}
 
@@ -395,15 +395,15 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		var numChars = line.getTotalNumberOfChars();
 		var numLines = Math.ceil(numChars / displayManager.displayCharWidth); 
 
-		var bigRectXYCoords = line.getCoords(0);
+		var bigRectXYCoords = lineManager.getCoords(0,rowNum);
 		var bigRectWidth = displayManager.displayCharWidth * displayManager.textExtent.width;
-		var bigRectHeight = numLines * displayManager.textExtent.height;
+		var bigRectHeight = (numLines-1) * displayManager.textExtent.height;
 
-		var smallRectXYCoords = {x:0,y:numLines * displayManager.textExtent.height}; 
-		var smallRectWidth = displayManager.displayCharWidth * (numChars - (displayManager.displayCharWidth * (numLines-1)) )
+		var smallRectXYCoords = {x:0,y: bigRectXYCoords.y + bigRectHeight}; 
+		var smallRectWidth = displayManager.textExtent.width * (numChars - (displayManager.displayCharWidth * (numLines-1)) )
 		var smallRectHeight = displayManager.textExtent.height;
 
-		return [createRectNode(bigRectXYCoords.x, bigRectXYCoords.y, biegRectWidth, bigRectHeight),
+		return [createRectNode(bigRectXYCoords.x, bigRectXYCoords.y, bigRectWidth, bigRectHeight),
 				createRectNode(smallRectXYCoords.x,smallRectXYCoords.y,smallRectWidth,smallRectHeight)];
 	}
 
@@ -421,9 +421,20 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		//create rects for all of the lines we have selected
 		var toReturn = [];
 
-		for(var i = startRow; i<endRow+1; i++){
-			var rect = createRectNodesForLine(i);
-			toReturn.push(rect); 
+		var tmpEndRow, tmpStartRow;
+
+		//if need be, swap startRow and endRow
+		if(endRow < startRow){
+			tmpEndRow = startRow;
+			tmpStartRow = endRow;
+		}else{
+			tmpEndRow = endRow;
+			tmpStartRow = startRow;
+		}
+
+		for(var i = tmpStartRow; i<tmpEndRow+1; i++){
+			var rects = createRectNodesForLine(i);
+			toReturn = toReturn.concat(rects); 
 		}
 
 		return toReturn;
@@ -462,8 +473,6 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		endCol = startCol = col;
 		endRow = startRow = row;
 		selectionMode = mode;
-
-		render();
 	}
 
 	this.setEndPos = function(col,row){
@@ -653,8 +662,8 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 	this.getCoords = function(colNum){
 		var yPos = Math.floor(colNum / displayManager.displayCharWidth);
 		var xPos = colNum - (yPos * displayManager.displayCharWidth);
-		console.log("ypos :", yPos )
-		console.log("xpos :", xPos )
+		//console.log("ypos :", yPos )
+		//console.log("xpos :", xPos )
 
 		var y = yPos * displayManager.textExtent.height;
 		var x = xPos  * displayManager.textExtent.width;
