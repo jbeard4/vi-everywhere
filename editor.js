@@ -2,7 +2,19 @@ function sum(a,b){
 	return a + b;
 }
 
-function SVGEditor(cursor,modeText,scInstance,rootNode){
+SELECTION_MODE = {
+	CHARACTER:0,
+	LINE:1,
+	BLOCK:2
+}
+
+function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
+
+	this.SELECTION_MODE = SELECTION_MODE;	//expose enum on controller so that it can be used byt he statechart
+
+	function doUpdateSelection(){
+		selectionManager.setEndPos(cursor.colNum,cursor.rowNum);
+	}
 
 	this.makeCursorFat = function(){
 		cursor.makeCursorFat();
@@ -13,17 +25,25 @@ function SVGEditor(cursor,modeText,scInstance,rootNode){
 	this.updateModeText = function(s){
 		modeText.textContent = s; 
 	};
-	this.moveLeft = function(){
+	this.moveLeft = function(updateSelection){
 		cursor.moveLeft()
+
+		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveRight = function(includeRightmostChar){
+	this.moveRight = function(includeRightmostChar,updateSelection){
 		cursor.moveRight(includeRightmostChar)
+
+		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveUp = function(){
+	this.moveUp = function(updateSelection){
 		cursor.moveUp()
+
+		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveDown = function(){
+	this.moveDown = function(updateSelection){
 		cursor.moveDown()
+
+		if(updateSelection){doUpdateSelection()};
 	};
 	this.writeChar = function(c){
 		cursor.writeChar(c);
@@ -34,26 +54,38 @@ function SVGEditor(cursor,modeText,scInstance,rootNode){
 	this.writeBackspace = function(){
 		cursor.writeBackspace();
 	};
-	this.moveToStartOfNextWord = function(){
+	this.moveToStartOfNextWord = function(updateSelection){
 		cursor.moveToStartOfNextWord();
+
+		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveToEndOfNextWord = function(){
+	this.moveToEndOfNextWord = function(updateSelection){
 		cursor.moveToEndOfNextWord();
+
+		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveToStartOfPreviousWord = function(){
+	this.moveToStartOfPreviousWord = function(updateSelection){
 		cursor.moveToStartOfPreviousWord();
+
+		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveToStartOfLine = function(){
+	this.moveToStartOfLine = function(updateSelection){
 		cursor.moveCursorTo(0);
+
+		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveToEndOfLine = function(){
+	this.moveToEndOfLine = function(updateSelection){
 		cursor.moveToEndOfLine();
+
+		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveToLastLineOfDocument = function(){
+	this.moveToLastLineOfDocument = function(updateSelection){
 		//TODO
+		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveToFirstLineOfDocument = function(){
+	this.moveToFirstLineOfDocument = function(updateSelection){
 		//TODO
+		if(updateSelection){doUpdateSelection()};
 	};
 
 	this.install = function(sc){
@@ -127,6 +159,20 @@ function SVGEditor(cursor,modeText,scInstance,rootNode){
 		},true)
 		*/
 	}
+
+	this.startSelection = function(mode){
+		//send this down to whowever is responsible for managing the selection
+		selectionManager.startSelection(cursor.colNum,cursor.rowNum,mode);
+	}
+
+	this.clearSelection = function(){
+		selectionManager.clearSelection();
+	}
+
+	this.setSelectinoMode = function(mode){
+		selectionManager.setMode(mode);
+	}
+
 }
 
 function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNode){
@@ -188,7 +234,6 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	}
 
 	this.moveRight=function(includeRightmostChar){
-		//FIXME: off-by-one error?
 		var numChars = lineManager.getLine(this.rowNum).getTotalNumberOfChars();
 		var condition = includeRightmostChar ? 
 			this.colNum < numChars : 
@@ -320,6 +365,127 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 
 
 	this.makeCursorThin();
+}
+
+function SelectionManager(groupNode,displayManager,lineManager){
+	var self = this;
+
+	var startCol,startRow,endCol,endRow,selectionMode;
+
+	function clear(){
+		//remove all rects
+		while(groupNode.childNodes.length){
+			groupNode.removeChild(groupNode.childNodes[0]);
+		}
+
+	}
+
+	function createRectNode(x,y,width,height){
+		var rect = document.createElementNS(svgNS,"rect");
+		rect.setAttributeNS(null,"x",x);
+		rect.setAttributeNS(null,"y",y);
+		rect.setAttributeNS(null,"width",width);
+		rect.setAttributeNS(null,"height",height);
+		return rect;
+	}
+
+	function createRectNodesForLine(rowNum){
+		//a line should consist of a big rect and a small rect. 
+		var line = lineManager.getLine(rowNum);
+		var numChars = line.getTotalNumberOfChars();
+		var numLines = Math.ceil(numChars / displayManager.displayCharWidth); 
+
+		var bigRectXYCoords = line.getCoords(0);
+		var bigRectWidth = displayManager.displayCharWidth * displayManager.textExtent.width;
+		var bigRectHeight = numLines * displayManager.textExtent.height;
+
+		var smallRectXYCoords = {x:0,y:numLines * displayManager.textExtent.height}; 
+		var smallRectWidth = displayManager.displayCharWidth * (numChars - (displayManager.displayCharWidth * (numLines-1)) )
+		var smallRectHeight = displayManager.textExtent.height;
+
+		return [createRectNode(bigRectXYCoords.x, bigRectXYCoords.y, biegRectWidth, bigRectHeight),
+				createRectNode(smallRectXYCoords.x,smallRectXYCoords.y,smallRectWidth,smallRectHeight)];
+	}
+
+	function computeCharModeRects(){
+		//TODO
+		//figure out first line
+		//figure out last line
+		//figure out middle lines
+
+
+		//realization: we are going to need to knwo the text content for a particular line in order to select the entire line. regardless of the cursor position. So, we need access to the lines so that we can get line length. does this mean he gets access to linemanager as well? yes...
+	}
+
+	function computeLineModeRects(){
+		//create rects for all of the lines we have selected
+		var toReturn = [];
+
+		for(var i = startRow; i<endRow+1; i++){
+			var rect = createRectNodesForLine(i);
+			toReturn.push(rect); 
+		}
+
+		return toReturn;
+	}
+
+	function computeBlockModeRects(){
+		//TODO
+	}
+
+	function render(){
+		//this is a simple, stupid, inefficient, naive, "big hammer" approach, where we rerender the entire highlighted region each time something changes
+		//of course, we could be much more lcever and only change/add/remove the affected rects
+
+		var rects;
+		switch(selectionMode){
+			case SELECTION_MODE.CHARACTER:
+				rects = computeCharModeRects();
+				break; 
+			case SELECTION_MODE.LINE:
+				rects = computeLineModeRects();
+				break; 
+			case SELECTION_MODE.BLOCK:
+				rects = computeBlockModeRects();
+				break; 
+		}
+
+		//TODO stop rendering scene
+		clear();
+
+		rects.forEach(function(rect){groupNode.appendChild(rect)});
+		
+		//TODO start rendering scene again
+	}
+
+	this.startSelection = function(col,row,mode){
+		endCol = startCol = col;
+		endRow = startRow = row;
+		selectionMode = mode;
+
+		render();
+	}
+
+	this.setEndPos = function(col,row){
+		//update private variables
+		endCol = col;
+		endRow = row;
+
+		render();
+	}
+
+	this.setMode = function(mode){
+		//update private variables
+		selectionMode = mode;
+
+		render();
+	}
+
+	this.clearSelection = function(){
+		//all we do is clear text nodes, as Statechart guarantees we will call startSelection before calling any other method again
+		clear();
+	}
+
 }
 
 function LineManager(textNode,displayManager){
@@ -676,7 +842,7 @@ function DisplayManager(textExtent,displayWidth){
 SVGEditorFactory = {
 
 	//responsible for bootstrapping the system
-	createNewSVGEditorInstance : function(rootNode,textNode,cursorNode,modeTextNode,locationTextNode,textExtent,displayWidth){
+	createNewSVGEditorInstance : function(rootNode,textNode,cursorNode,modeTextNode,locationTextNode,selectionGroupNode,textExtent,displayWidth){
 
 		var displayManager = new DisplayManager(textExtent,displayWidth);
 
@@ -684,11 +850,13 @@ SVGEditorFactory = {
 
 		lineManager.createLine(0); //create the initial line without text content 
 
+		var selectionManager = new SelectionManager(selectionGroupNode,displayManager,lineManager);
+
 		var cursor = new Cursor(0,0,lineManager,displayManager,cursorNode);
 
 		var scInstance = new viBehaviourStatechartExecutionContext();
 
-		var editor = new SVGEditor(cursor,modeTextNode,scInstance,rootNode);
+		var editor = new SVGEditor(cursor,modeTextNode,scInstance,rootNode,selectionManager);
 
 		return editor;
 	}

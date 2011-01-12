@@ -1,4 +1,10 @@
-<scxml xmlns="http://www.w3.org/2005/07/scxml" profile="ecmascript" version="1.0" name="viBehaviour" initial="initial_default">
+<scxml 
+	xmlns="http://www.w3.org/2005/07/scxml" 
+	xmlns:vi="urn:vi"
+	profile="ecmascript" 
+	version="1.0" 
+	name="viBehaviour" 
+	initial="initial_default">
 
 	<datamodel>
 		<data id="controller"/>
@@ -10,220 +16,167 @@
 		</transition>
 	</state>
 
-	<state id="nonprintable_movement_keys_used_to_move_cursor" initial="printable_movement_keys_used_to_move_cursor">
+	<state id="select_mode">
+		<onentry>
+			<script>
+				controller.updateModeText("-- SELECT --")
+			</script>
+		</onentry>
 
-		<!-- non-printable movement keys -->
-		<transition event="left">
+		<vi:macro name="nonprintable_keys_used_to_move_cursor">
+			<vi:param name="updateSelection" value="true"/>
+		</vi:macro>
+
+		<transition event="ctrl_g" target="visual_mode" />
+	</state>
+
+	<state id="normal_mode">
+
+		<onentry>
+			<script>
+				controller.makeCursorFat();
+				controller.updateModeText("-- NORMAL --")
+			</script>
+		</onentry>
+
+		<vi:macro name="printable_keys_used_to_move_cursor">
+			<vi:param name="updateSelection" value="false"/>
+		</vi:macro>
+
+		<vi:macro name="nonprintable_keys_used_to_move_cursor">
+			<vi:param name="updateSelection" value="true"/>
+		</vi:macro>
+			
+		<transition event="v" target="visual_character"/>
+		<transition event="V" target="visual_line"/>
+		<transition event="ctrl_v" target="visual_block"/>
+
+		<!--
+		<transition event="G" target="normal_mode">
+			<script>	
+				controller.moveToLastLineOfDocument()
+			</script>
+		</transition>
+
+		<transition event="g" target="after_g"/>
+
+		<state id="after_g">
+			<script>
+				controller.moveToFirstLineOfDocument()
+			</script>
+		</state>
+		-->
+
+		<transition event="i" target="insert_mode"/>
+
+		<transition event="a" target="insert_mode">
+			<script>
+				controller.moveRight(true);
+			</script>
+		</transition>
+
+	</state>
+
+	<state id="visual_mode" initial="visual_character">
+		<!-- these will be the same in both visual and select -->
+		<onentry>
+			<script>
+				controller.makeCursorFat();
+				controller.startSelection(); 
+			</script>
+		</onentry>
+
+		<onexit>
+			<script>
+				controller.stopSelection(); 
+			</script>
+		</onexit>
+
+		<vi:macro name="printable_keys_used_to_move_cursor">
+			<vi:param name="updateSelection" value="true"/>
+		</vi:macro>
+
+		<vi:macro name="nonprintable_keys_used_to_move_cursor">
+			<vi:param name="updateSelection" value="true"/>
+		</vi:macro>
+
+		<!-- TODO: figure out what kind of API we want for selection stuff -->
+		<state id="visual_line">
+			<onentry>
+				<script>
+					controller.updateModeText("-- VISUAL LINE --")
+					controller.setSelectionMode(controller.SELECTION_MODE.LINE);
+				</script>
+			</onentry>
+			<transition event="ctrl_v" target="visual_block"/>
+			<transition event="v" target="visual_character"/>
+		</state>
+
+		<state id="visual_block">
+			<onentry>
+				<script>
+					controller.updateModeText("-- VISUAL BLOCK --")
+					controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
+				</script>
+			</onentry>
+			<transition event="v" target="visual_character"/>
+			<transition event="V" target="visual_line"/>
+		</state>
+
+		<state id="visual_character">
+			<onentry>
+				<script>
+					controller.updateModeText("-- VISUAL --")
+					controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
+				</script>
+			</onentry>
+			<transition event="ctrl_v" target="visual_block"/>
+			<transition event="V" target="visual_line"/>
+		</state>
+
+		<transition event="esc" target="normal_mode"/>
+
+		<transition event="ctrl_g" target="select_mode" />
+	</state>
+
+
+	<state id="insert_mode">
+		<onentry>
+			<script>
+				controller.makeCursorThin()
+				controller.updateModeText("-- INSERT --")
+			</script>
+		</onentry>
+
+		<vi:macro name="nonprintable_keys_used_to_move_cursor">
+			<vi:param name="updateSelection" value="true"/>
+		</vi:macro>
+
+		<transition event="esc" target="normal_mode">
 			<script>
 				controller.moveLeft()
 			</script>
 		</transition>
-		<transition event="right">
+
+		<transition event="enter">
 			<script>
-				controller.moveRight(false)
-			</script>
-		</transition>
-		<transition event="up">
-			<script>
-				controller.moveUp()
-			</script>
-		</transition>
-		<transition event="down">
-			<script>
-				controller.moveDown()
+				controller.writeNewLine()
 			</script>
 		</transition>
 
-		<state id="select_mode">
-			<onentry>
-				<script>
-					controller.updateModeText("-- SELECT --")
-				</script>
-			</onentry>
-			<transition event="ctrl_g" target="visual_mode" />
-		</state>
-
-		<state id="printable_movement_keys_used_to_move_cursor" initial="normal_mode">
-			<onentry>
-				<script>
-					controller.makeCursorFat()
-				</script>
-			</onentry>
-
-			<transition event="bling">
-				<script>
-					controller.moveToEndOfLine()
-				</script>
-			</transition>
-
-			<transition event="backspace">
-				<script>
-					controller.moveLeft()
-				</script>
-			</transition>
-
-			<transition event="enter">
-				<script>
-					controller.moveDown()
-				</script>
-			</transition>
-
-			<transition event="colon" target="command_mode"/>
-
-			<transition event="w">
-				<script>
-					controller.moveToStartOfNextWord()
-				</script>
-			</transition>
-			<transition event="e">
-				<script>
-					controller.moveToEndOfNextWord()
-				</script>
-			</transition>
-			<transition event="b">
-				<script>
-					controller.moveToStartOfPreviousWord()
-				</script>
-			</transition>
-			<transition event="zero">
-				<script>
-					controller.moveToStartOfLine()
-				</script>
-			</transition>
-
-			<transition event="h">
-				<script>
-					controller.moveLeft()
-				</script>
-			</transition>
-
-			<transition event="l">
-				<script>
-					controller.moveRight(false)
-				</script>
-			</transition>
-			<transition event="k">
-				<script>
-					controller.moveUp()
-				</script>
-			</transition>
-			<transition event="j">
-				<script>
-					controller.moveDown()
-				</script>
-			</transition>
-
-			<state id="normal_mode">
-				<onentry>
-					<script>
-						controller.updateModeText("-- NORMAL --")
-					</script>
-				</onentry>
-					
-				<transition event="v" target="visual_character"/>
-				<transition event="V" target="visual_line"/>
-				<transition event="ctrl_v" target="visual_block"/>
-
-				<!--
-				<transition event="G" target="normal_mode">
-					<script>	
-						controller.moveToLastLineOfDocument()
-					</script>
-				</transition>
-
-				<transition event="g" target="after_g"/>
-
-				<state id="after_g">
-					<script>
-						controller.moveToFirstLineOfDocument()
-					</script>
-				</state>
-				-->
-
-				<transition event="i" target="insert_mode"/>
-
-				<transition event="a" target="insert_mode">
-					<script>
-						controller.moveRight(true);
-					</script>
-				</transition>
-
-			</state>
-
-			<state id="visual_mode" initial="visual_character">
-				<!-- TODO: figure out what kind of API we want for selection stuff -->
-				<state id="visual_line">
-					<onentry>
-						<script>
-							controller.updateModeText("-- VISUAL LINE --")
-						</script>
-					</onentry>
-					<transition event="ctrl_v" target="visual_block"/>
-					<transition event="v" target="visual_character"/>
-				</state>
-
-				<state id="visual_block">
-					<onentry>
-						<script>
-							controller.updateModeText("-- VISUAL BLOCK --")
-						</script>
-					</onentry>
-					<transition event="v" target="visual_character"/>
-					<transition event="V" target="visual_line"/>
-				</state>
-
-				<state id="visual_character">
-					<onentry>
-						<script>
-							controller.updateModeText("-- VISUAL --")
-						</script>
-					</onentry>
-					<transition event="ctrl_v" target="visual_block"/>
-					<transition event="V" target="visual_line"/>
-				</state>
-
-				<transition event="esc" target="normal_mode"/>
-
-				<transition event="ctrl_g" target="select_mode" />
-			</state>
-
-		</state>
-
-		<state id="insert_mode">
-			<onentry>
-				<script>
-					controller.makeCursorThin()
-					controller.updateModeText("-- INSERT --")
-				</script>
-			</onentry>
-
-			<transition event="esc" target="normal_mode">
-				<script>
-					controller.moveLeft()
-				</script>
-			</transition>
-
-			<transition event="enter">
-				<script>
-					controller.writeNewLine()
-				</script>
-			</transition>
-
-			<transition event="backspace">
-				<script>
-					controller.writeBackspace()
-				</script>
-			</transition>
+		<transition event="backspace">
+			<script>
+				controller.writeBackspace()
+			</script>
+		</transition>
 
 
-			<!-- everything else -->
-			<transition event="*">
-				<script>
-					controller.writeChar(_event.data.charCode)
-				</script>
-			</transition>
-		</state>
-
+		<!-- everything else -->
+		<transition event="*">
+			<script>
+				controller.writeChar(_event.data.charCode)
+			</script>
+		</transition>
 	</state>
 
 

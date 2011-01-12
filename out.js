@@ -15,45 +15,43 @@ function viBehaviourStatechartExecutionContext() {
     //variable declarations relating to data model
     var controller;
     //send timeout id variables
-    var $default_Regexp_id2400602 = /^($default)/,
-        init_Regexp_id2400611 = /^(init)/,
-        left_Regexp_id2400616 = /^(left)/,
-        right_Regexp_id2400622 = /^(right)/,
-        up_Regexp_id2400628 = /^(up)/,
-        down_Regexp_id2400633 = /^(down)/,
-        ctrl_g_Regexp_id2400639 = /^(ctrl_g)/,
-        bling_Regexp_id2400645 = /^(bling)/,
-        backspace_Regexp_id2400650 = /^(backspace)/,
-        enter_Regexp_id2400656 = /^(enter)/,
-        colon_Regexp_id2400662 = /^(colon)/,
-        w_Regexp_id2400667 = /^(w)/,
-        e_Regexp_id2400673 = /^(e)/,
-        b_Regexp_id2400678 = /^(b)/,
-        zero_Regexp_id2400684 = /^(zero)/,
-        h_Regexp_id2400690 = /^(h)/,
-        l_Regexp_id2400695 = /^(l)/,
-        k_Regexp_id2400701 = /^(k)/,
-        j_Regexp_id2400706 = /^(j)/,
-        v_Regexp_id2400712 = /^(v)/,
-        V_Regexp_id2400718 = /^(V)/,
-        ctrl_v_Regexp_id2400723 = /^(ctrl_v)/,
-        i_Regexp_id2400729 = /^(i)/,
-        a_Regexp_id2400735 = /^(a)/,
-        esc_Regexp_id2400740 = /^(esc)/,
-        star_Regexp_id2400746 = /.*/;
+    var $default_Regexp_id2472699 = /^($default)/,
+        init_Regexp_id2468902 = /^(init)/,
+        left_Regexp_id2472828 = /^(left)/,
+        right_Regexp_id2472834 = /^(right)/,
+        up_Regexp_id2472839 = /^(up)/,
+        down_Regexp_id2472844 = /^(down)/,
+        ctrl_g_Regexp_id2472850 = /^(ctrl_g)/,
+        bling_Regexp_id2472855 = /^(bling)/,
+        backspace_Regexp_id2472860 = /^(backspace)/,
+        enter_Regexp_id2472866 = /^(enter)/,
+        colon_Regexp_id2472871 = /^(colon)/,
+        w_Regexp_id2472876 = /^(w)/,
+        e_Regexp_id2472882 = /^(e)/,
+        b_Regexp_id2472887 = /^(b)/,
+        zero_Regexp_id2472892 = /^(zero)/,
+        h_Regexp_id2472898 = /^(h)/,
+        l_Regexp_id2472903 = /^(l)/,
+        k_Regexp_id2472908 = /^(k)/,
+        j_Regexp_id2472914 = /^(j)/,
+        v_Regexp_id2472919 = /^(v)/,
+        V_Regexp_id2472924 = /^(V)/,
+        ctrl_v_Regexp_id2472930 = /^(ctrl_v)/,
+        i_Regexp_id2472935 = /^(i)/,
+        a_Regexp_id2472940 = /^(a)/,
+        esc_Regexp_id2472946 = /^(esc)/,
+        star_Regexp_id2472951 = /.*/;
     //abstract state
     var AbstractState = new
     function() {
         //triggers are methods
         this.$default = function() {};
         this.init = function() {};
+        this.left = function() {};
+        this.right = function() {};
+        this.up = function() {};
+        this.down = function() {};
         this.ctrl_g = function() {};
-        this.v = function() {};
-        this.V = function() {};
-        this.ctrl_v = function() {};
-        this.i = function() {};
-        this.a = function() {};
-        this.esc = function() {};
         this.bling = function() {};
         this.backspace = function() {};
         this.enter = function() {};
@@ -66,16 +64,18 @@ function viBehaviourStatechartExecutionContext() {
         this.l = function() {};
         this.k = function() {};
         this.j = function() {};
-        this.left = function() {};
-        this.right = function() {};
-        this.up = function() {};
-        this.down = function() {};
+        this.v = function() {};
+        this.V = function() {};
+        this.ctrl_v = function() {};
+        this.i = function() {};
+        this.a = function() {};
+        this.esc = function() {};
         this.$default = function() {};
         this.$dispatchPrefixEvent = function() {};
     }
     //states
-    var scxml_id2395003 = (function() {
-        function scxml_id2395003Constructor() {
+    var scxml_id2465527 = (function() {
+        function scxml_id2465527Constructor() {
             this.parent = AbstractState;
             this.initial = null;
             this.depth = 0;
@@ -84,36 +84,36 @@ function viBehaviourStatechartExecutionContext() {
             this.isBasic =
             false;
             this.toString = function() {
-                return "scxml_id2395003"
+                return "scxml_id2465527"
             }
             this.enterAction = function() {
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
-                    listener.onEntry("scxml_id2395003");
+                    listener.onEntry("scxml_id2465527");
                 }
             }
             this.exitAction = function() {
-                for (var id2394758_iterator = 0, id2394758_hoist = listeners.length;
-                id2394758_iterator < id2394758_hoist;
-                id2394758_iterator++) {
-                    var listener = listeners[id2394758_iterator];
+                for (var id2466224_iterator = 0, id2466224_hoist = listeners.length;
+                id2466224_iterator < id2466224_hoist;
+                id2466224_iterator++) {
+                    var listener = listeners[id2466224_iterator];
                     //from
-                    listener.onExit("scxml_id2395003");
+                    listener.onExit("scxml_id2465527");
                 }
             }
             this.$dispatchPrefixEvent = function(e) {
                 return AbstractState.$dispatchPrefixEvent(e);
             }
         }
-        scxml_id2395003Constructor.prototype = AbstractState;
-        return new scxml_id2395003Constructor();
+        scxml_id2465527Constructor.prototype = AbstractState;
+        return new scxml_id2465527Constructor();
     })();
     var _initial = (function() {
         function _initialConstructor() {
-            this.parent = scxml_id2395003;
+            this.parent = scxml_id2465527;
             this.initial = null;
             this.depth = 1;
             this.historyState = null;
@@ -121,25 +121,25 @@ function viBehaviourStatechartExecutionContext() {
             this.isBasic =
             true;
             this.ancestors = [
-            scxml_id2395003];
+            scxml_id2465527];
             this.parent.initial = this; //init parent's pointer to initial state
             this.toString = function() {
                 return "_initial"
             }
             this.enterAction = function() {
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
                     listener.onEntry("_initial");
                 }
             }
             this.exitAction = function() {
-                for (var id2395798_iterator = 0, id2395798_hoist = listeners.length;
-                id2395798_iterator < id2395798_hoist;
-                id2395798_iterator++) {
-                    var listener = listeners[id2395798_iterator];
+                for (var id2466589_iterator = 0, id2466589_hoist = listeners.length;
+                id2466589_iterator < id2466589_hoist;
+                id2466589_iterator++) {
+                    var listener = listeners[id2466589_iterator];
                     //from
                     listener.onExit("_initial");
                 }
@@ -161,10 +161,10 @@ function viBehaviourStatechartExecutionContext() {
                         //exit states
                         _initial.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                             listener.onTransition("", "initial_default", "_initial_$default_1");
                         }
@@ -175,18 +175,18 @@ function viBehaviourStatechartExecutionContext() {
                         initial_default];
                     }
                 }
-                return scxml_id2395003['$default']();
+                return scxml_id2465527['$default']();
             }
             this.$dispatchPrefixEvent = function(e) {
-                return scxml_id2395003.$dispatchPrefixEvent(e);
+                return scxml_id2465527.$dispatchPrefixEvent(e);
             }
         }
-        _initialConstructor.prototype = scxml_id2395003;
+        _initialConstructor.prototype = scxml_id2465527;
         return new _initialConstructor();
     })();
     var initial_default = (function() {
         function initial_defaultConstructor() {
-            this.parent = scxml_id2395003;
+            this.parent = scxml_id2465527;
             this.initial = null;
             this.depth = 1;
             this.historyState = null;
@@ -194,24 +194,24 @@ function viBehaviourStatechartExecutionContext() {
             this.isBasic =
             true;
             this.ancestors = [
-            scxml_id2395003];
+            scxml_id2465527];
             this.toString = function() {
                 return "initial_default"
             }
             this.enterAction = function() {
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
                     listener.onEntry("initial_default");
                 }
             }
             this.exitAction = function() {
-                for (var id2396825_iterator = 0, id2396825_hoist = listeners.length;
-                id2396825_iterator < id2396825_hoist;
-                id2396825_iterator++) {
-                    var listener = listeners[id2396825_iterator];
+                for (var id2466542_iterator = 0, id2466542_hoist = listeners.length;
+                id2466542_iterator < id2466542_hoist;
+                id2466542_iterator++) {
+                    var listener = listeners[id2466542_iterator];
                     //from
                     listener.onExit("initial_default");
                 }
@@ -233,26 +233,24 @@ function viBehaviourStatechartExecutionContext() {
                         initial_default.exitAction();
                         //transition action
                         controller = _event.data;
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                             listener.onTransition("", "normal_mode", "initial_default_init_2");
                         }
                         //enter states
-                        nonprintable_movement_keys_used_to_move_cursor.enterAction();
-                        printable_movement_keys_used_to_move_cursor.enterAction();
                         normal_mode.enterAction();
                         //update configuration
                         currentConfiguration = [
                         normal_mode];
                     }
                 }
-                return scxml_id2395003['init']();
+                return scxml_id2465527['init']();
             }
             this.$dispatchPrefixEvent = function(e) {
-                if (e.match(init_Regexp_id2400611)) {
+                if (e.match(init_Regexp_id2468902)) {
                     return {
                         preemptedBasicStates: {
                             initial_default: true,
@@ -269,16 +267,14 @@ function viBehaviourStatechartExecutionContext() {
                             initial_default.exitAction();
                             //transition action
                             controller = _event.data;
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                                 listener.onTransition("initial_default", "normal_mode", "initial_default_init_2");
                             }
                             //enter states
-                            nonprintable_movement_keys_used_to_move_cursor.enterAction();
-                            printable_movement_keys_used_to_move_cursor.enterAction();
                             normal_mode.enterAction();
                             //update configuration
                             currentConfiguration = [
@@ -286,40 +282,43 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                return scxml_id2395003.$dispatchPrefixEvent(e);
+                return scxml_id2465527.$dispatchPrefixEvent(e);
             }
         }
-        initial_defaultConstructor.prototype = scxml_id2395003;
+        initial_defaultConstructor.prototype = scxml_id2465527;
         return new initial_defaultConstructor();
     })();
-    var nonprintable_movement_keys_used_to_move_cursor = (function() {
-        function nonprintable_movement_keys_used_to_move_cursorConstructor() {
-            this.parent = scxml_id2395003;
+    var select_mode = (function() {
+        function select_modeConstructor() {
+            this.parent = scxml_id2465527;
             this.initial = null;
             this.depth = 1;
             this.historyState = null;
             //these variables facilitate fast In predicate
             this.isBasic =
-            false;
+            true;
+            this.ancestors = [
+            scxml_id2465527];
             this.toString = function() {
-                return "nonprintable_movement_keys_used_to_move_cursor"
+                return "select_mode"
             }
             this.enterAction = function() {
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                controller.updateModeText("-- SELECT --")
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
-                    listener.onEntry("nonprintable_movement_keys_used_to_move_cursor");
+                    listener.onEntry("select_mode");
                 }
             }
             this.exitAction = function() {
-                for (var id2395197_iterator = 0, id2395197_hoist = listeners.length;
-                id2395197_iterator < id2395197_hoist;
-                id2395197_iterator++) {
-                    var listener = listeners[id2395197_iterator];
+                for (var id2466410_iterator = 0, id2466410_hoist = listeners.length;
+                id2466410_iterator < id2466410_hoist;
+                id2466410_iterator++) {
+                    var listener = listeners[id2466410_iterator];
                     //from
-                    listener.onExit("nonprintable_movement_keys_used_to_move_cursor");
+                    listener.onExit("select_mode");
                 }
             }
             this.left = function() {
@@ -327,260 +326,89 @@ function viBehaviourStatechartExecutionContext() {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveLeft()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveLeft(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return scxml_id2395003['left']();
+                return scxml_id2465527['left']();
             }
             this.right = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveRight(false)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveRight(false, true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return scxml_id2395003['right']();
+                return scxml_id2465527['right']();
             }
             this.up = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveUp()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveUp(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return scxml_id2395003['up']();
+                return scxml_id2465527['up']();
             }
             this.down = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveDown()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveDown(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return scxml_id2395003['down']();
-            }
-            this.$dispatchPrefixEvent = function(e) {
-                if (e.match(left_Regexp_id2400616)) {
-                    return {
-                        preemptedBasicStates: {},
-                        action: function() {
-                            //transition action
-                            controller.moveLeft()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
-                                //transition id
-                            }
-                        }
-                    }
-                }
-                if (e.match(right_Regexp_id2400622)) {
-                    return {
-                        preemptedBasicStates: {},
-                        action: function() {
-                            //transition action
-                            controller.moveRight(false)
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
-                                //transition id
-                            }
-                        }
-                    }
-                }
-                if (e.match(up_Regexp_id2400628)) {
-                    return {
-                        preemptedBasicStates: {},
-                        action: function() {
-                            //transition action
-                            controller.moveUp()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
-                                //transition id
-                            }
-                        }
-                    }
-                }
-                if (e.match(down_Regexp_id2400633)) {
-                    return {
-                        preemptedBasicStates: {},
-                        action: function() {
-                            //transition action
-                            controller.moveDown()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
-                                //transition id
-                            }
-                        }
-                    }
-                }
-                return scxml_id2395003.$dispatchPrefixEvent(e);
-            }
-        }
-        nonprintable_movement_keys_used_to_move_cursorConstructor.prototype = scxml_id2395003;
-        return new nonprintable_movement_keys_used_to_move_cursorConstructor();
-    })();
-    var nonprintable_movement_keys_used_to_move_cursor_initial = (function() {
-        function nonprintable_movement_keys_used_to_move_cursor_initialConstructor() {
-            this.parent = nonprintable_movement_keys_used_to_move_cursor;
-            this.initial = null;
-            this.depth = 2;
-            this.historyState = null;
-            //these variables facilitate fast In predicate
-            this.isBasic =
-            true;
-            this.ancestors = [
-            scxml_id2395003, nonprintable_movement_keys_used_to_move_cursor];
-            this.parent.initial = this; //init parent's pointer to initial state
-            this.toString = function() {
-                return "nonprintable_movement_keys_used_to_move_cursor_initial"
-            }
-            this.enterAction = function() {
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
-                    //to
-                    listener.onEntry("nonprintable_movement_keys_used_to_move_cursor_initial");
-                }
-            }
-            this.exitAction = function() {
-                for (var id2395206_iterator = 0, id2395206_hoist = listeners.length;
-                id2395206_iterator < id2395206_hoist;
-                id2395206_iterator++) {
-                    var listener = listeners[id2395206_iterator];
-                    //from
-                    listener.onExit("nonprintable_movement_keys_used_to_move_cursor_initial");
-                }
-            }
-            this.$default = function() {
-                return {
-                    preemptedBasicStates: {
-                        select_mode: true,
-                        normal_mode: true,
-                        visual_line: true,
-                        visual_block: true,
-                        visual_character: true,
-                        insert_mode: true
-                    },
-                    action: function() {
-                        hasTakenDefaultTransition = true;
-                        //exit states
-                        nonprintable_movement_keys_used_to_move_cursor_initial.exitAction();
-                        //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                            listener.onTransition("", "printable_movement_keys_used_to_move_cursor_initial", "nonprintable_movement_keys_used_to_move_cursor_initial_$default_3");
-                        }
-                        //enter states
-                        printable_movement_keys_used_to_move_cursor.enterAction();
-                        printable_movement_keys_used_to_move_cursor_initial.enterAction();
-                        //update configuration
-                        currentConfiguration = [
-                        printable_movement_keys_used_to_move_cursor_initial];
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['$default']();
-            }
-            this.$dispatchPrefixEvent = function(e) {
-                return nonprintable_movement_keys_used_to_move_cursor.$dispatchPrefixEvent(e);
-            }
-        }
-        nonprintable_movement_keys_used_to_move_cursor_initialConstructor.prototype = nonprintable_movement_keys_used_to_move_cursor;
-        return new nonprintable_movement_keys_used_to_move_cursor_initialConstructor();
-    })();
-    var select_mode = (function() {
-        function select_modeConstructor() {
-            this.parent = nonprintable_movement_keys_used_to_move_cursor;
-            this.initial = null;
-            this.depth = 2;
-            this.historyState = null;
-            //these variables facilitate fast In predicate
-            this.isBasic =
-            true;
-            this.ancestors = [
-            scxml_id2395003, nonprintable_movement_keys_used_to_move_cursor];
-            this.toString = function() {
-                return "select_mode"
-            }
-            this.enterAction = function() {
-                controller.updateModeText("-- SELECT --")
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
-                    //to
-                    listener.onEntry("select_mode");
-                }
-            }
-            this.exitAction = function() {
-                for (var id2397078_iterator = 0, id2397078_hoist = listeners.length;
-                id2397078_iterator < id2397078_hoist;
-                id2397078_iterator++) {
-                    var listener = listeners[id2397078_iterator];
-                    //from
-                    listener.onExit("select_mode");
-                }
+                return scxml_id2465527['down']();
             }
             this.ctrl_g = function() {
                 return {
                     preemptedBasicStates: {
+                        initial_default: true,
                         select_mode: true,
                         normal_mode: true,
                         visual_line: true,
                         visual_block: true,
                         visual_character: true,
-                        insert_mode: true
+                        insert_mode: true,
+                        command_mode: true
                     },
                     action: function() {
                         //exit states
                         select_mode.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "visual_mode_initial", "select_mode_ctrl_g_4");
+                            listener.onTransition("", "visual_mode_initial", "select_mode_ctrl_g_3");
                         }
                         //enter states
-                        printable_movement_keys_used_to_move_cursor.enterAction();
                         visual_mode.enterAction();
                         visual_mode_initial.enterAction();
                         //update configuration
@@ -588,32 +416,93 @@ function viBehaviourStatechartExecutionContext() {
                         visual_mode_initial];
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['ctrl_g']();
+                return scxml_id2465527['ctrl_g']();
             }
             this.$dispatchPrefixEvent = function(e) {
-                if (e.match(ctrl_g_Regexp_id2400639)) {
+                if (e.match(left_Regexp_id2472828)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveLeft(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(right_Regexp_id2472834)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveRight(false, true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(up_Regexp_id2472839)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveUp(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(down_Regexp_id2472844)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveDown(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(ctrl_g_Regexp_id2472850)) {
                     return {
                         preemptedBasicStates: {
+                            initial_default: true,
                             select_mode: true,
                             normal_mode: true,
                             visual_line: true,
                             visual_block: true,
                             visual_character: true,
-                            insert_mode: true
+                            insert_mode: true,
+                            command_mode: true
                         },
                         action: function() {
                             //exit states
                             select_mode.exitAction();
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("select_mode", "visual_mode_initial", "select_mode_ctrl_g_4");
+                                listener.onTransition("select_mode", "visual_mode_initial", "select_mode_ctrl_g_3");
                             }
                             //enter states
-                            printable_movement_keys_used_to_move_cursor.enterAction();
                             visual_mode.enterAction();
                             visual_mode_initial.enterAction();
                             //update configuration
@@ -622,90 +511,1101 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor.$dispatchPrefixEvent(e);
+                return scxml_id2465527.$dispatchPrefixEvent(e);
             }
         }
-        select_modeConstructor.prototype = nonprintable_movement_keys_used_to_move_cursor;
+        select_modeConstructor.prototype = scxml_id2465527;
         return new select_modeConstructor();
     })();
-    var printable_movement_keys_used_to_move_cursor = (function() {
-        function printable_movement_keys_used_to_move_cursorConstructor() {
-            this.parent = nonprintable_movement_keys_used_to_move_cursor;
+    var normal_mode = (function() {
+        function normal_modeConstructor() {
+            this.parent = scxml_id2465527;
             this.initial = null;
-            this.depth = 2;
+            this.depth = 1;
             this.historyState = null;
             //these variables facilitate fast In predicate
             this.isBasic =
-            false;
+            true;
+            this.ancestors = [
+            scxml_id2465527];
             this.toString = function() {
-                return "printable_movement_keys_used_to_move_cursor"
+                return "normal_mode"
             }
             this.enterAction = function() {
-                controller.makeCursorFat()
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                controller.makeCursorFat();
+                controller.updateModeText("-- NORMAL --")
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
-                    listener.onEntry("printable_movement_keys_used_to_move_cursor");
+                    listener.onEntry("normal_mode");
                 }
             }
             this.exitAction = function() {
-                for (var id2396219_iterator = 0, id2396219_hoist = listeners.length;
-                id2396219_iterator < id2396219_hoist;
-                id2396219_iterator++) {
-                    var listener = listeners[id2396219_iterator];
+                for (var id2467373_iterator = 0, id2467373_hoist = listeners.length;
+                id2467373_iterator < id2467373_hoist;
+                id2467373_iterator++) {
+                    var listener = listeners[id2467373_iterator];
                     //from
-                    listener.onExit("printable_movement_keys_used_to_move_cursor");
+                    listener.onExit("normal_mode");
                 }
+            }
+            this.left = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveLeft(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['left']();
+            }
+            this.right = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveRight(false, true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['right']();
+            }
+            this.up = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveUp(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['up']();
+            }
+            this.down = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveDown(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['down']();
             }
             this.bling = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveToEndOfLine()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveToEndOfLine(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['bling']();
+                return scxml_id2465527['bling']();
             }
             this.backspace = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveLeft()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveLeft(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['backspace']();
+                return scxml_id2465527['backspace']();
             }
             this.enter = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveDown()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveDown(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['enter']();
+                return scxml_id2465527['enter']();
+            }
+            this.colon = function() {
+                return {
+                    preemptedBasicStates: {
+                        initial_default: true,
+                        select_mode: true,
+                        normal_mode: true,
+                        visual_line: true,
+                        visual_block: true,
+                        visual_character: true,
+                        insert_mode: true,
+                        command_mode: true
+                    },
+                    action: function() {
+                        //exit states
+                        normal_mode.exitAction();
+                        //transition action
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                            listener.onTransition("", "command_mode", "normal_mode_colon_4");
+                        }
+                        //enter states
+                        command_mode.enterAction();
+                        //update configuration
+                        currentConfiguration = [
+                        command_mode];
+                    }
+                }
+                return scxml_id2465527['colon']();
+            }
+            this.w = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveToStartOfNextWord(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['w']();
+            }
+            this.e = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveToEndOfNextWord(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['e']();
+            }
+            this.b = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveToStartOfPreviousWord(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['b']();
+            }
+            this.zero = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveToStartOfLine(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['zero']();
+            }
+            this.h = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveLeft(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['h']();
+            }
+            this.l = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveRight(false, false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['l']();
+            }
+            this.k = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveUp(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['k']();
+            }
+            this.j = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveDown(false)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['j']();
+            }
+            this.v = function() {
+                return {
+                    preemptedBasicStates: {
+                        initial_default: true,
+                        select_mode: true,
+                        normal_mode: true,
+                        visual_line: true,
+                        visual_block: true,
+                        visual_character: true,
+                        insert_mode: true,
+                        command_mode: true
+                    },
+                    action: function() {
+                        //exit states
+                        normal_mode.exitAction();
+                        //transition action
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                            listener.onTransition("", "visual_character", "normal_mode_v_5");
+                        }
+                        //enter states
+                        visual_mode.enterAction();
+                        visual_character.enterAction();
+                        //update configuration
+                        currentConfiguration = [
+                        visual_character];
+                    }
+                }
+                return scxml_id2465527['v']();
+            }
+            this.V = function() {
+                return {
+                    preemptedBasicStates: {
+                        initial_default: true,
+                        select_mode: true,
+                        normal_mode: true,
+                        visual_line: true,
+                        visual_block: true,
+                        visual_character: true,
+                        insert_mode: true,
+                        command_mode: true
+                    },
+                    action: function() {
+                        //exit states
+                        normal_mode.exitAction();
+                        //transition action
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                            listener.onTransition("", "visual_line", "normal_mode_V_6");
+                        }
+                        //enter states
+                        visual_mode.enterAction();
+                        visual_line.enterAction();
+                        //update configuration
+                        currentConfiguration = [
+                        visual_line];
+                    }
+                }
+                return scxml_id2465527['V']();
+            }
+            this.ctrl_v = function() {
+                return {
+                    preemptedBasicStates: {
+                        initial_default: true,
+                        select_mode: true,
+                        normal_mode: true,
+                        visual_line: true,
+                        visual_block: true,
+                        visual_character: true,
+                        insert_mode: true,
+                        command_mode: true
+                    },
+                    action: function() {
+                        //exit states
+                        normal_mode.exitAction();
+                        //transition action
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                            listener.onTransition("", "visual_block", "normal_mode_ctrl_v_7");
+                        }
+                        //enter states
+                        visual_mode.enterAction();
+                        visual_block.enterAction();
+                        //update configuration
+                        currentConfiguration = [
+                        visual_block];
+                    }
+                }
+                return scxml_id2465527['ctrl_v']();
+            }
+            this.i = function() {
+                return {
+                    preemptedBasicStates: {
+                        initial_default: true,
+                        select_mode: true,
+                        normal_mode: true,
+                        visual_line: true,
+                        visual_block: true,
+                        visual_character: true,
+                        insert_mode: true,
+                        command_mode: true
+                    },
+                    action: function() {
+                        //exit states
+                        normal_mode.exitAction();
+                        //transition action
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                            listener.onTransition("", "insert_mode", "normal_mode_i_8");
+                        }
+                        //enter states
+                        insert_mode.enterAction();
+                        //update configuration
+                        currentConfiguration = [
+                        insert_mode];
+                    }
+                }
+                return scxml_id2465527['i']();
+            }
+            this.a = function() {
+                return {
+                    preemptedBasicStates: {
+                        initial_default: true,
+                        select_mode: true,
+                        normal_mode: true,
+                        visual_line: true,
+                        visual_block: true,
+                        visual_character: true,
+                        insert_mode: true,
+                        command_mode: true
+                    },
+                    action: function() {
+                        //exit states
+                        normal_mode.exitAction();
+                        //transition action
+                        controller.moveRight(true);
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                            listener.onTransition("", "insert_mode", "normal_mode_a_9");
+                        }
+                        //enter states
+                        insert_mode.enterAction();
+                        //update configuration
+                        currentConfiguration = [
+                        insert_mode];
+                    }
+                }
+                return scxml_id2465527['a']();
+            }
+            this.$dispatchPrefixEvent = function(e) {
+                if (e.match(bling_Regexp_id2472855)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveToEndOfLine(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(backspace_Regexp_id2472860)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveLeft(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(enter_Regexp_id2472866)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveDown(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(colon_Regexp_id2472871)) {
+                    return {
+                        preemptedBasicStates: {
+                            initial_default: true,
+                            select_mode: true,
+                            normal_mode: true,
+                            visual_line: true,
+                            visual_block: true,
+                            visual_character: true,
+                            insert_mode: true,
+                            command_mode: true
+                        },
+                        action: function() {
+                            //exit states
+                            normal_mode.exitAction();
+                            //transition action
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                                listener.onTransition("normal_mode", "command_mode", "normal_mode_colon_4");
+                            }
+                            //enter states
+                            command_mode.enterAction();
+                            //update configuration
+                            currentConfiguration = [
+                            command_mode];
+                        }
+                    }
+                }
+                if (e.match(w_Regexp_id2472876)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveToStartOfNextWord(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(e_Regexp_id2472882)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveToEndOfNextWord(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(b_Regexp_id2472887)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveToStartOfPreviousWord(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(zero_Regexp_id2472892)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveToStartOfLine(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(h_Regexp_id2472898)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveLeft(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(l_Regexp_id2472903)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveRight(false, false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(k_Regexp_id2472908)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveUp(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(j_Regexp_id2472914)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveDown(false)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(left_Regexp_id2472828)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveLeft(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(right_Regexp_id2472834)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveRight(false, true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(up_Regexp_id2472839)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveUp(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(down_Regexp_id2472844)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveDown(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(v_Regexp_id2472919)) {
+                    return {
+                        preemptedBasicStates: {
+                            initial_default: true,
+                            select_mode: true,
+                            normal_mode: true,
+                            visual_line: true,
+                            visual_block: true,
+                            visual_character: true,
+                            insert_mode: true,
+                            command_mode: true
+                        },
+                        action: function() {
+                            //exit states
+                            normal_mode.exitAction();
+                            //transition action
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                                listener.onTransition("normal_mode", "visual_character", "normal_mode_v_5");
+                            }
+                            //enter states
+                            visual_mode.enterAction();
+                            visual_character.enterAction();
+                            //update configuration
+                            currentConfiguration = [
+                            visual_character];
+                        }
+                    }
+                }
+                if (e.match(V_Regexp_id2472924)) {
+                    return {
+                        preemptedBasicStates: {
+                            initial_default: true,
+                            select_mode: true,
+                            normal_mode: true,
+                            visual_line: true,
+                            visual_block: true,
+                            visual_character: true,
+                            insert_mode: true,
+                            command_mode: true
+                        },
+                        action: function() {
+                            //exit states
+                            normal_mode.exitAction();
+                            //transition action
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                                listener.onTransition("normal_mode", "visual_line", "normal_mode_V_6");
+                            }
+                            //enter states
+                            visual_mode.enterAction();
+                            visual_line.enterAction();
+                            //update configuration
+                            currentConfiguration = [
+                            visual_line];
+                        }
+                    }
+                }
+                if (e.match(ctrl_v_Regexp_id2472930)) {
+                    return {
+                        preemptedBasicStates: {
+                            initial_default: true,
+                            select_mode: true,
+                            normal_mode: true,
+                            visual_line: true,
+                            visual_block: true,
+                            visual_character: true,
+                            insert_mode: true,
+                            command_mode: true
+                        },
+                        action: function() {
+                            //exit states
+                            normal_mode.exitAction();
+                            //transition action
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                                listener.onTransition("normal_mode", "visual_block", "normal_mode_ctrl_v_7");
+                            }
+                            //enter states
+                            visual_mode.enterAction();
+                            visual_block.enterAction();
+                            //update configuration
+                            currentConfiguration = [
+                            visual_block];
+                        }
+                    }
+                }
+                if (e.match(i_Regexp_id2472935)) {
+                    return {
+                        preemptedBasicStates: {
+                            initial_default: true,
+                            select_mode: true,
+                            normal_mode: true,
+                            visual_line: true,
+                            visual_block: true,
+                            visual_character: true,
+                            insert_mode: true,
+                            command_mode: true
+                        },
+                        action: function() {
+                            //exit states
+                            normal_mode.exitAction();
+                            //transition action
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                                listener.onTransition("normal_mode", "insert_mode", "normal_mode_i_8");
+                            }
+                            //enter states
+                            insert_mode.enterAction();
+                            //update configuration
+                            currentConfiguration = [
+                            insert_mode];
+                        }
+                    }
+                }
+                if (e.match(a_Regexp_id2472940)) {
+                    return {
+                        preemptedBasicStates: {
+                            initial_default: true,
+                            select_mode: true,
+                            normal_mode: true,
+                            visual_line: true,
+                            visual_block: true,
+                            visual_character: true,
+                            insert_mode: true,
+                            command_mode: true
+                        },
+                        action: function() {
+                            //exit states
+                            normal_mode.exitAction();
+                            //transition action
+                            controller.moveRight(true);
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                                listener.onTransition("normal_mode", "insert_mode", "normal_mode_a_9");
+                            }
+                            //enter states
+                            insert_mode.enterAction();
+                            //update configuration
+                            currentConfiguration = [
+                            insert_mode];
+                        }
+                    }
+                }
+                return scxml_id2465527.$dispatchPrefixEvent(e);
+            }
+        }
+        normal_modeConstructor.prototype = scxml_id2465527;
+        return new normal_modeConstructor();
+    })();
+    var visual_mode = (function() {
+        function visual_modeConstructor() {
+            this.parent = scxml_id2465527;
+            this.initial = null;
+            this.depth = 1;
+            this.historyState = null;
+            //these variables facilitate fast In predicate
+            this.isBasic =
+            false;
+            this.toString = function() {
+                return "visual_mode"
+            }
+            this.enterAction = function() {
+                controller.makeCursorFat();
+                controller.startSelection();
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
+                    //to
+                    listener.onEntry("visual_mode");
+                }
+            }
+            this.exitAction = function() {
+                controller.stopSelection();
+                for (var id2469155_iterator = 0, id2469155_hoist = listeners.length;
+                id2469155_iterator < id2469155_hoist;
+                id2469155_iterator++) {
+                    var listener = listeners[id2469155_iterator];
+                    //from
+                    listener.onExit("visual_mode");
+                }
+            }
+            this.left = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveLeft(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['left']();
+            }
+            this.right = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveRight(false, true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['right']();
+            }
+            this.up = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveUp(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['up']();
+            }
+            this.down = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveDown(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['down']();
+            }
+            this.ctrl_g = function() {
+                return {
+                    preemptedBasicStates: {
+                        initial_default: true,
+                        select_mode: true,
+                        normal_mode: true,
+                        visual_line: true,
+                        visual_block: true,
+                        visual_character: true,
+                        insert_mode: true,
+                        command_mode: true
+                    },
+                    action: function() {
+                        //exit states
+                        var statesExited = [];
+                        var lca = scxml_id2465527;
+                        var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+                        for (var id2466941_iterator = 0, id2466941_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2466941_iterator];
+                            if (state.ancestors.indexOf(lca) !== -1) {
+                                do {
+                                    statesExited.push(state);
+                                } while ((state = state.parent) && state != lca && statesExited.indexOf(state) == -1)
+                            }
+                        }
+                        //sort by depth
+                        statesExited.sort(sortByDepthDeepToShallow);
+                        //execute actions for each of these states
+                        for (var id2466941_iterator = 0, id2466941_hoist = statesExited.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var state = statesExited[id2466941_iterator];
+                            state.exitAction();
+                        }
+                        //transition action
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                            listener.onTransition("", "select_mode", "visual_mode_ctrl_g_19");
+                        }
+                        //enter states
+                        select_mode.enterAction();
+                        //update configuration
+                        currentConfiguration = [
+                        select_mode];
+                    }
+                }
+                return scxml_id2465527['ctrl_g']();
+            }
+            this.bling = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveToEndOfLine(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['bling']();
+            }
+            this.backspace = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveLeft(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['backspace']();
+            }
+            this.enter = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveDown(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['enter']();
             }
             this.colon = function() {
                 return {
@@ -722,12 +1622,12 @@ function viBehaviourStatechartExecutionContext() {
                     action: function() {
                         //exit states
                         var statesExited = [];
-                        var lca = scxml_id2395003;
+                        var lca = scxml_id2465527;
                         var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
-                        for (var id2398564_iterator = 0, id2398564_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2466941_iterator];
                             if (state.ancestors.indexOf(lca) !== -1) {
                                 do {
                                     statesExited.push(state);
@@ -737,19 +1637,19 @@ function viBehaviourStatechartExecutionContext() {
                         //sort by depth
                         statesExited.sort(sortByDepthDeepToShallow);
                         //execute actions for each of these states
-                        for (var id2398564_iterator = 0, id2398564_hoist = statesExited.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var state = statesExited[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = statesExited.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var state = statesExited[id2466941_iterator];
                             state.exitAction();
                         }
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "command_mode", "printable_movement_keys_used_to_move_cursor_colon_6");
+                            listener.onTransition("", "command_mode", "visual_mode_colon_11");
                         }
                         //enter states
                         command_mode.enterAction();
@@ -758,183 +1658,236 @@ function viBehaviourStatechartExecutionContext() {
                         command_mode];
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['colon']();
+                return scxml_id2465527['colon']();
             }
             this.w = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveToStartOfNextWord()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveToStartOfNextWord(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['w']();
+                return scxml_id2465527['w']();
             }
             this.e = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveToEndOfNextWord()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveToEndOfNextWord(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['e']();
+                return scxml_id2465527['e']();
             }
             this.b = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveToStartOfPreviousWord()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveToStartOfPreviousWord(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['b']();
+                return scxml_id2465527['b']();
             }
             this.zero = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveToStartOfLine()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveToStartOfLine(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['zero']();
+                return scxml_id2465527['zero']();
             }
             this.h = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveLeft()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveLeft(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['h']();
+                return scxml_id2465527['h']();
             }
             this.l = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveRight(false)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveRight(false, true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['l']();
+                return scxml_id2465527['l']();
             }
             this.k = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveUp()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveUp(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['k']();
+                return scxml_id2465527['k']();
             }
             this.j = function() {
                 return {
                     preemptedBasicStates: {},
                     action: function() {
                         //transition action
-                        controller.moveDown()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        controller.moveDown(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['j']();
+                return scxml_id2465527['j']();
+            }
+            this.esc = function() {
+                return {
+                    preemptedBasicStates: {
+                        initial_default: true,
+                        select_mode: true,
+                        normal_mode: true,
+                        visual_line: true,
+                        visual_block: true,
+                        visual_character: true,
+                        insert_mode: true,
+                        command_mode: true
+                    },
+                    action: function() {
+                        //exit states
+                        var statesExited = [];
+                        var lca = scxml_id2465527;
+                        var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+                        for (var id2466941_iterator = 0, id2466941_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2466941_iterator];
+                            if (state.ancestors.indexOf(lca) !== -1) {
+                                do {
+                                    statesExited.push(state);
+                                } while ((state = state.parent) && state != lca && statesExited.indexOf(state) == -1)
+                            }
+                        }
+                        //sort by depth
+                        statesExited.sort(sortByDepthDeepToShallow);
+                        //execute actions for each of these states
+                        for (var id2466941_iterator = 0, id2466941_hoist = statesExited.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var state = statesExited[id2466941_iterator];
+                            state.exitAction();
+                        }
+                        //transition action
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                            listener.onTransition("", "normal_mode", "visual_mode_esc_18");
+                        }
+                        //enter states
+                        normal_mode.enterAction();
+                        //update configuration
+                        currentConfiguration = [
+                        normal_mode];
+                    }
+                }
+                return scxml_id2465527['esc']();
             }
             this.$dispatchPrefixEvent = function(e) {
-                if (e.match(bling_Regexp_id2400645)) {
+                if (e.match(bling_Regexp_id2472855)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveToEndOfLine()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveToEndOfLine(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(backspace_Regexp_id2400650)) {
+                if (e.match(backspace_Regexp_id2472860)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveLeft()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveLeft(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(enter_Regexp_id2400656)) {
+                if (e.match(enter_Regexp_id2472866)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveDown()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveDown(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(colon_Regexp_id2400662)) {
+                if (e.match(colon_Regexp_id2472871)) {
                     return {
                         preemptedBasicStates: {
                             initial_default: true,
@@ -949,12 +1902,12 @@ function viBehaviourStatechartExecutionContext() {
                         action: function() {
                             //exit states
                             var statesExited = [];
-                            var lca = scxml_id2395003;
+                            var lca = scxml_id2465527;
                             var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
-                            for (var id2398564_iterator = 0, id2398564_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2466941_iterator];
                                 if (state.ancestors.indexOf(lca) !== -1) {
                                     do {
                                         statesExited.push(state);
@@ -964,19 +1917,19 @@ function viBehaviourStatechartExecutionContext() {
                             //sort by depth
                             statesExited.sort(sortByDepthDeepToShallow);
                             //execute actions for each of these states
-                            for (var id2398564_iterator = 0, id2398564_hoist = statesExited.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var state = statesExited[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = statesExited.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var state = statesExited[id2466941_iterator];
                                 state.exitAction();
                             }
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("printable_movement_keys_used_to_move_cursor", "command_mode", "printable_movement_keys_used_to_move_cursor_colon_6");
+                                listener.onTransition("visual_mode", "command_mode", "visual_mode_colon_11");
                             }
                             //enter states
                             command_mode.enterAction();
@@ -986,684 +1939,207 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                if (e.match(w_Regexp_id2400667)) {
+                if (e.match(w_Regexp_id2472876)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveToStartOfNextWord()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveToStartOfNextWord(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(e_Regexp_id2400673)) {
+                if (e.match(e_Regexp_id2472882)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveToEndOfNextWord()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveToEndOfNextWord(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(b_Regexp_id2400678)) {
+                if (e.match(b_Regexp_id2472887)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveToStartOfPreviousWord()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveToStartOfPreviousWord(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(zero_Regexp_id2400684)) {
+                if (e.match(zero_Regexp_id2472892)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveToStartOfLine()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveToStartOfLine(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(h_Regexp_id2400690)) {
+                if (e.match(h_Regexp_id2472898)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveLeft()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveLeft(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(l_Regexp_id2400695)) {
+                if (e.match(l_Regexp_id2472903)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveRight(false)
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveRight(false, true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(k_Regexp_id2400701)) {
+                if (e.match(k_Regexp_id2472908)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveUp()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveUp(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(j_Regexp_id2400706)) {
+                if (e.match(j_Regexp_id2472914)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
-                            controller.moveDown()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            controller.moveDown(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor.$dispatchPrefixEvent(e);
-            }
-        }
-        printable_movement_keys_used_to_move_cursorConstructor.prototype = nonprintable_movement_keys_used_to_move_cursor;
-        return new printable_movement_keys_used_to_move_cursorConstructor();
-    })();
-    var printable_movement_keys_used_to_move_cursor_initial = (function() {
-        function printable_movement_keys_used_to_move_cursor_initialConstructor() {
-            this.parent = printable_movement_keys_used_to_move_cursor;
-            this.initial = null;
-            this.depth = 3;
-            this.historyState = null;
-            //these variables facilitate fast In predicate
-            this.isBasic =
-            true;
-            this.ancestors = [
-            scxml_id2395003, nonprintable_movement_keys_used_to_move_cursor, printable_movement_keys_used_to_move_cursor];
-            this.parent.initial = this; //init parent's pointer to initial state
-            this.toString = function() {
-                return "printable_movement_keys_used_to_move_cursor_initial"
-            }
-            this.enterAction = function() {
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
-                    //to
-                    listener.onEntry("printable_movement_keys_used_to_move_cursor_initial");
-                }
-            }
-            this.exitAction = function() {
-                for (var id2396228_iterator = 0, id2396228_hoist = listeners.length;
-                id2396228_iterator < id2396228_hoist;
-                id2396228_iterator++) {
-                    var listener = listeners[id2396228_iterator];
-                    //from
-                    listener.onExit("printable_movement_keys_used_to_move_cursor_initial");
-                }
-            }
-            this.$default = function() {
-                return {
-                    preemptedBasicStates: {
-                        normal_mode: true,
-                        visual_line: true,
-                        visual_block: true,
-                        visual_character: true
-                    },
-                    action: function() {
-                        hasTakenDefaultTransition = true;
-                        //exit states
-                        printable_movement_keys_used_to_move_cursor_initial.exitAction();
-                        //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                            listener.onTransition("", "normal_mode", "printable_movement_keys_used_to_move_cursor_initial_$default_5");
+                if (e.match(left_Regexp_id2472828)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveLeft(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
                         }
-                        //enter states
-                        normal_mode.enterAction();
-                        //update configuration
-                        currentConfiguration = [
-                        normal_mode];
                     }
                 }
-                return printable_movement_keys_used_to_move_cursor['$default']();
-            }
-            this.$dispatchPrefixEvent = function(e) {
-                return printable_movement_keys_used_to_move_cursor.$dispatchPrefixEvent(e);
-            }
-        }
-        printable_movement_keys_used_to_move_cursor_initialConstructor.prototype = printable_movement_keys_used_to_move_cursor;
-        return new printable_movement_keys_used_to_move_cursor_initialConstructor();
-    })();
-    var normal_mode = (function() {
-        function normal_modeConstructor() {
-            this.parent = printable_movement_keys_used_to_move_cursor;
-            this.initial = null;
-            this.depth = 3;
-            this.historyState = null;
-            //these variables facilitate fast In predicate
-            this.isBasic =
-            true;
-            this.ancestors = [
-            scxml_id2395003, nonprintable_movement_keys_used_to_move_cursor, printable_movement_keys_used_to_move_cursor];
-            this.toString = function() {
-                return "normal_mode"
-            }
-            this.enterAction = function() {
-                controller.updateModeText("-- NORMAL --")
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
-                    //to
-                    listener.onEntry("normal_mode");
-                }
-            }
-            this.exitAction = function() {
-                for (var id2395608_iterator = 0, id2395608_hoist = listeners.length;
-                id2395608_iterator < id2395608_hoist;
-                id2395608_iterator++) {
-                    var listener = listeners[id2395608_iterator];
-                    //from
-                    listener.onExit("normal_mode");
-                }
-            }
-            this.v = function() {
-                return {
-                    preemptedBasicStates: {
-                        normal_mode: true,
-                        visual_line: true,
-                        visual_block: true,
-                        visual_character: true
-                    },
-                    action: function() {
-                        //exit states
-                        normal_mode.exitAction();
-                        //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                            listener.onTransition("", "visual_character", "normal_mode_v_7");
+                if (e.match(right_Regexp_id2472834)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveRight(false, true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
                         }
-                        //enter states
-                        visual_mode.enterAction();
-                        visual_character.enterAction();
-                        //update configuration
-                        currentConfiguration = [
-                        visual_character];
                     }
                 }
-                return printable_movement_keys_used_to_move_cursor['v']();
-            }
-            this.V = function() {
-                return {
-                    preemptedBasicStates: {
-                        normal_mode: true,
-                        visual_line: true,
-                        visual_block: true,
-                        visual_character: true
-                    },
-                    action: function() {
-                        //exit states
-                        normal_mode.exitAction();
-                        //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                            listener.onTransition("", "visual_line", "normal_mode_V_8");
+                if (e.match(up_Regexp_id2472839)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveUp(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
                         }
-                        //enter states
-                        visual_mode.enterAction();
-                        visual_line.enterAction();
-                        //update configuration
-                        currentConfiguration = [
-                        visual_line];
                     }
                 }
-                return printable_movement_keys_used_to_move_cursor['V']();
-            }
-            this.ctrl_v = function() {
-                return {
-                    preemptedBasicStates: {
-                        normal_mode: true,
-                        visual_line: true,
-                        visual_block: true,
-                        visual_character: true
-                    },
-                    action: function() {
-                        //exit states
-                        normal_mode.exitAction();
-                        //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                            listener.onTransition("", "visual_block", "normal_mode_ctrl_v_9");
+                if (e.match(down_Regexp_id2472844)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveDown(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
                         }
-                        //enter states
-                        visual_mode.enterAction();
-                        visual_block.enterAction();
-                        //update configuration
-                        currentConfiguration = [
-                        visual_block];
                     }
                 }
-                return printable_movement_keys_used_to_move_cursor['ctrl_v']();
-            }
-            this.i = function() {
-                return {
-                    preemptedBasicStates: {
-                        select_mode: true,
-                        normal_mode: true,
-                        visual_line: true,
-                        visual_block: true,
-                        visual_character: true,
-                        insert_mode: true
-                    },
-                    action: function() {
-                        //exit states
-                        normal_mode.exitAction();
-                        printable_movement_keys_used_to_move_cursor.exitAction();
-                        //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                            listener.onTransition("", "insert_mode", "normal_mode_i_10");
-                        }
-                        //enter states
-                        insert_mode.enterAction();
-                        //update configuration
-                        currentConfiguration = [
-                        insert_mode];
-                    }
-                }
-                return printable_movement_keys_used_to_move_cursor['i']();
-            }
-            this.a = function() {
-                return {
-                    preemptedBasicStates: {
-                        select_mode: true,
-                        normal_mode: true,
-                        visual_line: true,
-                        visual_block: true,
-                        visual_character: true,
-                        insert_mode: true
-                    },
-                    action: function() {
-                        //exit states
-                        normal_mode.exitAction();
-                        printable_movement_keys_used_to_move_cursor.exitAction();
-                        //transition action
-                        controller.moveRight(true);
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                            listener.onTransition("", "insert_mode", "normal_mode_a_11");
-                        }
-                        //enter states
-                        insert_mode.enterAction();
-                        //update configuration
-                        currentConfiguration = [
-                        insert_mode];
-                    }
-                }
-                return printable_movement_keys_used_to_move_cursor['a']();
-            }
-            this.$dispatchPrefixEvent = function(e) {
-                if (e.match(v_Regexp_id2400712)) {
+                if (e.match(esc_Regexp_id2472946)) {
                     return {
                         preemptedBasicStates: {
-                            normal_mode: true,
-                            visual_line: true,
-                            visual_block: true,
-                            visual_character: true
-                        },
-                        action: function() {
-                            //exit states
-                            normal_mode.exitAction();
-                            //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
-                                //transition id
-                                listener.onTransition("normal_mode", "visual_character", "normal_mode_v_7");
-                            }
-                            //enter states
-                            visual_mode.enterAction();
-                            visual_character.enterAction();
-                            //update configuration
-                            currentConfiguration = [
-                            visual_character];
-                        }
-                    }
-                }
-                if (e.match(V_Regexp_id2400718)) {
-                    return {
-                        preemptedBasicStates: {
-                            normal_mode: true,
-                            visual_line: true,
-                            visual_block: true,
-                            visual_character: true
-                        },
-                        action: function() {
-                            //exit states
-                            normal_mode.exitAction();
-                            //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
-                                //transition id
-                                listener.onTransition("normal_mode", "visual_line", "normal_mode_V_8");
-                            }
-                            //enter states
-                            visual_mode.enterAction();
-                            visual_line.enterAction();
-                            //update configuration
-                            currentConfiguration = [
-                            visual_line];
-                        }
-                    }
-                }
-                if (e.match(ctrl_v_Regexp_id2400723)) {
-                    return {
-                        preemptedBasicStates: {
-                            normal_mode: true,
-                            visual_line: true,
-                            visual_block: true,
-                            visual_character: true
-                        },
-                        action: function() {
-                            //exit states
-                            normal_mode.exitAction();
-                            //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
-                                //transition id
-                                listener.onTransition("normal_mode", "visual_block", "normal_mode_ctrl_v_9");
-                            }
-                            //enter states
-                            visual_mode.enterAction();
-                            visual_block.enterAction();
-                            //update configuration
-                            currentConfiguration = [
-                            visual_block];
-                        }
-                    }
-                }
-                if (e.match(i_Regexp_id2400729)) {
-                    return {
-                        preemptedBasicStates: {
+                            initial_default: true,
                             select_mode: true,
                             normal_mode: true,
                             visual_line: true,
                             visual_block: true,
                             visual_character: true,
-                            insert_mode: true
-                        },
-                        action: function() {
-                            //exit states
-                            normal_mode.exitAction();
-                            printable_movement_keys_used_to_move_cursor.exitAction();
-                            //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
-                                //transition id
-                                listener.onTransition("normal_mode", "insert_mode", "normal_mode_i_10");
-                            }
-                            //enter states
-                            insert_mode.enterAction();
-                            //update configuration
-                            currentConfiguration = [
-                            insert_mode];
-                        }
-                    }
-                }
-                if (e.match(a_Regexp_id2400735)) {
-                    return {
-                        preemptedBasicStates: {
-                            select_mode: true,
-                            normal_mode: true,
-                            visual_line: true,
-                            visual_block: true,
-                            visual_character: true,
-                            insert_mode: true
-                        },
-                        action: function() {
-                            //exit states
-                            normal_mode.exitAction();
-                            printable_movement_keys_used_to_move_cursor.exitAction();
-                            //transition action
-                            controller.moveRight(true);
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
-                                //transition id
-                                listener.onTransition("normal_mode", "insert_mode", "normal_mode_a_11");
-                            }
-                            //enter states
-                            insert_mode.enterAction();
-                            //update configuration
-                            currentConfiguration = [
-                            insert_mode];
-                        }
-                    }
-                }
-                return printable_movement_keys_used_to_move_cursor.$dispatchPrefixEvent(e);
-            }
-        }
-        normal_modeConstructor.prototype = printable_movement_keys_used_to_move_cursor;
-        return new normal_modeConstructor();
-    })();
-    var visual_mode = (function() {
-        function visual_modeConstructor() {
-            this.parent = printable_movement_keys_used_to_move_cursor;
-            this.initial = null;
-            this.depth = 3;
-            this.historyState = null;
-            //these variables facilitate fast In predicate
-            this.isBasic =
-            false;
-            this.toString = function() {
-                return "visual_mode"
-            }
-            this.enterAction = function() {
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
-                    //to
-                    listener.onEntry("visual_mode");
-                }
-            }
-            this.exitAction = function() {
-                for (var id2396909_iterator = 0, id2396909_hoist = listeners.length;
-                id2396909_iterator < id2396909_hoist;
-                id2396909_iterator++) {
-                    var listener = listeners[id2396909_iterator];
-                    //from
-                    listener.onExit("visual_mode");
-                }
-            }
-            this.ctrl_g = function() {
-                return {
-                    preemptedBasicStates: {
-                        select_mode: true,
-                        normal_mode: true,
-                        visual_line: true,
-                        visual_block: true,
-                        visual_character: true,
-                        insert_mode: true
-                    },
-                    action: function() {
-                        //exit states
-                        var statesExited = [];
-                        var lca = nonprintable_movement_keys_used_to_move_cursor;
-                        var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
-                        for (var id2398564_iterator = 0, id2398564_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2398564_iterator];
-                            if (state.ancestors.indexOf(lca) !== -1) {
-                                do {
-                                    statesExited.push(state);
-                                } while ((state = state.parent) && state != lca && statesExited.indexOf(state) == -1)
-                            }
-                        }
-                        //sort by depth
-                        statesExited.sort(sortByDepthDeepToShallow);
-                        //execute actions for each of these states
-                        for (var id2398564_iterator = 0, id2398564_hoist = statesExited.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var state = statesExited[id2398564_iterator];
-                            state.exitAction();
-                        }
-                        //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                            listener.onTransition("", "select_mode", "visual_mode_ctrl_g_20");
-                        }
-                        //enter states
-                        select_mode.enterAction();
-                        //update configuration
-                        currentConfiguration = [
-                        select_mode];
-                    }
-                }
-                return printable_movement_keys_used_to_move_cursor['ctrl_g']();
-            }
-            this.esc = function() {
-                return {
-                    preemptedBasicStates: {
-                        normal_mode: true,
-                        visual_line: true,
-                        visual_block: true,
-                        visual_character: true
-                    },
-                    action: function() {
-                        //exit states
-                        var statesExited = [];
-                        var lca = printable_movement_keys_used_to_move_cursor;
-                        var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
-                        for (var id2398564_iterator = 0, id2398564_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2398564_iterator];
-                            if (state.ancestors.indexOf(lca) !== -1) {
-                                do {
-                                    statesExited.push(state);
-                                } while ((state = state.parent) && state != lca && statesExited.indexOf(state) == -1)
-                            }
-                        }
-                        //sort by depth
-                        statesExited.sort(sortByDepthDeepToShallow);
-                        //execute actions for each of these states
-                        for (var id2398564_iterator = 0, id2398564_hoist = statesExited.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var state = statesExited[id2398564_iterator];
-                            state.exitAction();
-                        }
-                        //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                            listener.onTransition("", "normal_mode", "visual_mode_esc_19");
-                        }
-                        //enter states
-                        normal_mode.enterAction();
-                        //update configuration
-                        currentConfiguration = [
-                        normal_mode];
-                    }
-                }
-                return printable_movement_keys_used_to_move_cursor['esc']();
-            }
-            this.$dispatchPrefixEvent = function(e) {
-                if (e.match(esc_Regexp_id2400740)) {
-                    return {
-                        preemptedBasicStates: {
-                            normal_mode: true,
-                            visual_line: true,
-                            visual_block: true,
-                            visual_character: true
+                            insert_mode: true,
+                            command_mode: true
                         },
                         action: function() {
                             //exit states
                             var statesExited = [];
-                            var lca = printable_movement_keys_used_to_move_cursor;
+                            var lca = scxml_id2465527;
                             var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
-                            for (var id2398564_iterator = 0, id2398564_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2466941_iterator];
                                 if (state.ancestors.indexOf(lca) !== -1) {
                                     do {
                                         statesExited.push(state);
@@ -1673,19 +2149,19 @@ function viBehaviourStatechartExecutionContext() {
                             //sort by depth
                             statesExited.sort(sortByDepthDeepToShallow);
                             //execute actions for each of these states
-                            for (var id2398564_iterator = 0, id2398564_hoist = statesExited.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var state = statesExited[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = statesExited.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var state = statesExited[id2466941_iterator];
                                 state.exitAction();
                             }
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("visual_mode", "normal_mode", "visual_mode_esc_19");
+                                listener.onTransition("visual_mode", "normal_mode", "visual_mode_esc_18");
                             }
                             //enter states
                             normal_mode.enterAction();
@@ -1695,25 +2171,27 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                if (e.match(ctrl_g_Regexp_id2400639)) {
+                if (e.match(ctrl_g_Regexp_id2472850)) {
                     return {
                         preemptedBasicStates: {
+                            initial_default: true,
                             select_mode: true,
                             normal_mode: true,
                             visual_line: true,
                             visual_block: true,
                             visual_character: true,
-                            insert_mode: true
+                            insert_mode: true,
+                            command_mode: true
                         },
                         action: function() {
                             //exit states
                             var statesExited = [];
-                            var lca = nonprintable_movement_keys_used_to_move_cursor;
+                            var lca = scxml_id2465527;
                             var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
-                            for (var id2398564_iterator = 0, id2398564_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2466941_iterator];
                                 if (state.ancestors.indexOf(lca) !== -1) {
                                     do {
                                         statesExited.push(state);
@@ -1723,19 +2201,19 @@ function viBehaviourStatechartExecutionContext() {
                             //sort by depth
                             statesExited.sort(sortByDepthDeepToShallow);
                             //execute actions for each of these states
-                            for (var id2398564_iterator = 0, id2398564_hoist = statesExited.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var state = statesExited[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = statesExited.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var state = statesExited[id2466941_iterator];
                                 state.exitAction();
                             }
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("visual_mode", "select_mode", "visual_mode_ctrl_g_20");
+                                listener.onTransition("visual_mode", "select_mode", "visual_mode_ctrl_g_19");
                             }
                             //enter states
                             select_mode.enterAction();
@@ -1745,41 +2223,41 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                return printable_movement_keys_used_to_move_cursor.$dispatchPrefixEvent(e);
+                return scxml_id2465527.$dispatchPrefixEvent(e);
             }
         }
-        visual_modeConstructor.prototype = printable_movement_keys_used_to_move_cursor;
+        visual_modeConstructor.prototype = scxml_id2465527;
         return new visual_modeConstructor();
     })();
     var visual_mode_initial = (function() {
         function visual_mode_initialConstructor() {
             this.parent = visual_mode;
             this.initial = null;
-            this.depth = 4;
+            this.depth = 2;
             this.historyState = null;
             //these variables facilitate fast In predicate
             this.isBasic =
             true;
             this.ancestors = [
-            scxml_id2395003, nonprintable_movement_keys_used_to_move_cursor, printable_movement_keys_used_to_move_cursor, visual_mode];
+            scxml_id2465527, visual_mode];
             this.parent.initial = this; //init parent's pointer to initial state
             this.toString = function() {
                 return "visual_mode_initial"
             }
             this.enterAction = function() {
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
                     listener.onEntry("visual_mode_initial");
                 }
             }
             this.exitAction = function() {
-                for (var id2396916_iterator = 0, id2396916_hoist = listeners.length;
-                id2396916_iterator < id2396916_hoist;
-                id2396916_iterator++) {
-                    var listener = listeners[id2396916_iterator];
+                for (var id2467625_iterator = 0, id2467625_hoist = listeners.length;
+                id2467625_iterator < id2467625_hoist;
+                id2467625_iterator++) {
+                    var listener = listeners[id2467625_iterator];
                     //from
                     listener.onExit("visual_mode_initial");
                 }
@@ -1796,12 +2274,12 @@ function viBehaviourStatechartExecutionContext() {
                         //exit states
                         visual_mode_initial.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "visual_character", "visual_mode_initial_$default_12");
+                            listener.onTransition("", "visual_character", "visual_mode_initial_$default_10");
                         }
                         //enter states
                         visual_character.enterAction();
@@ -1823,31 +2301,32 @@ function viBehaviourStatechartExecutionContext() {
         function visual_lineConstructor() {
             this.parent = visual_mode;
             this.initial = null;
-            this.depth = 4;
+            this.depth = 2;
             this.historyState = null;
             //these variables facilitate fast In predicate
             this.isBasic =
             true;
             this.ancestors = [
-            scxml_id2395003, nonprintable_movement_keys_used_to_move_cursor, printable_movement_keys_used_to_move_cursor, visual_mode];
+            scxml_id2465527, visual_mode];
             this.toString = function() {
                 return "visual_line"
             }
             this.enterAction = function() {
                 controller.updateModeText("-- VISUAL LINE --")
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                controller.setSelectionMode(controller.SELECTION_MODE.LINE);
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
                     listener.onEntry("visual_line");
                 }
             }
             this.exitAction = function() {
-                for (var id2397004_iterator = 0, id2397004_hoist = listeners.length;
-                id2397004_iterator < id2397004_hoist;
-                id2397004_iterator++) {
-                    var listener = listeners[id2397004_iterator];
+                for (var id2471101_iterator = 0, id2471101_hoist = listeners.length;
+                id2471101_iterator < id2471101_hoist;
+                id2471101_iterator++) {
+                    var listener = listeners[id2471101_iterator];
                     //from
                     listener.onExit("visual_line");
                 }
@@ -1863,12 +2342,12 @@ function viBehaviourStatechartExecutionContext() {
                         //exit states
                         visual_line.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "visual_character", "visual_line_v_14");
+                            listener.onTransition("", "visual_character", "visual_line_v_13");
                         }
                         //enter states
                         visual_character.enterAction();
@@ -1890,12 +2369,12 @@ function viBehaviourStatechartExecutionContext() {
                         //exit states
                         visual_line.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "visual_block", "visual_line_ctrl_v_13");
+                            listener.onTransition("", "visual_block", "visual_line_ctrl_v_12");
                         }
                         //enter states
                         visual_block.enterAction();
@@ -1907,7 +2386,7 @@ function viBehaviourStatechartExecutionContext() {
                 return visual_mode['ctrl_v']();
             }
             this.$dispatchPrefixEvent = function(e) {
-                if (e.match(ctrl_v_Regexp_id2400723)) {
+                if (e.match(ctrl_v_Regexp_id2472930)) {
                     return {
                         preemptedBasicStates: {
                             visual_line: true,
@@ -1918,12 +2397,12 @@ function viBehaviourStatechartExecutionContext() {
                             //exit states
                             visual_line.exitAction();
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("visual_line", "visual_block", "visual_line_ctrl_v_13");
+                                listener.onTransition("visual_line", "visual_block", "visual_line_ctrl_v_12");
                             }
                             //enter states
                             visual_block.enterAction();
@@ -1933,7 +2412,7 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                if (e.match(v_Regexp_id2400712)) {
+                if (e.match(v_Regexp_id2472919)) {
                     return {
                         preemptedBasicStates: {
                             visual_line: true,
@@ -1944,12 +2423,12 @@ function viBehaviourStatechartExecutionContext() {
                             //exit states
                             visual_line.exitAction();
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("visual_line", "visual_character", "visual_line_v_14");
+                                listener.onTransition("visual_line", "visual_character", "visual_line_v_13");
                             }
                             //enter states
                             visual_character.enterAction();
@@ -1969,31 +2448,32 @@ function viBehaviourStatechartExecutionContext() {
         function visual_blockConstructor() {
             this.parent = visual_mode;
             this.initial = null;
-            this.depth = 4;
+            this.depth = 2;
             this.historyState = null;
             //these variables facilitate fast In predicate
             this.isBasic =
             true;
             this.ancestors = [
-            scxml_id2395003, nonprintable_movement_keys_used_to_move_cursor, printable_movement_keys_used_to_move_cursor, visual_mode];
+            scxml_id2465527, visual_mode];
             this.toString = function() {
                 return "visual_block"
             }
             this.enterAction = function() {
                 controller.updateModeText("-- VISUAL BLOCK --")
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
                     listener.onEntry("visual_block");
                 }
             }
             this.exitAction = function() {
-                for (var id2399118_iterator = 0, id2399118_hoist = listeners.length;
-                id2399118_iterator < id2399118_hoist;
-                id2399118_iterator++) {
-                    var listener = listeners[id2399118_iterator];
+                for (var id2471281_iterator = 0, id2471281_hoist = listeners.length;
+                id2471281_iterator < id2471281_hoist;
+                id2471281_iterator++) {
+                    var listener = listeners[id2471281_iterator];
                     //from
                     listener.onExit("visual_block");
                 }
@@ -2009,12 +2489,12 @@ function viBehaviourStatechartExecutionContext() {
                         //exit states
                         visual_block.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "visual_character", "visual_block_v_15");
+                            listener.onTransition("", "visual_character", "visual_block_v_14");
                         }
                         //enter states
                         visual_character.enterAction();
@@ -2036,12 +2516,12 @@ function viBehaviourStatechartExecutionContext() {
                         //exit states
                         visual_block.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "visual_line", "visual_block_V_16");
+                            listener.onTransition("", "visual_line", "visual_block_V_15");
                         }
                         //enter states
                         visual_line.enterAction();
@@ -2053,7 +2533,7 @@ function viBehaviourStatechartExecutionContext() {
                 return visual_mode['V']();
             }
             this.$dispatchPrefixEvent = function(e) {
-                if (e.match(v_Regexp_id2400712)) {
+                if (e.match(v_Regexp_id2472919)) {
                     return {
                         preemptedBasicStates: {
                             visual_line: true,
@@ -2064,12 +2544,12 @@ function viBehaviourStatechartExecutionContext() {
                             //exit states
                             visual_block.exitAction();
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("visual_block", "visual_character", "visual_block_v_15");
+                                listener.onTransition("visual_block", "visual_character", "visual_block_v_14");
                             }
                             //enter states
                             visual_character.enterAction();
@@ -2079,7 +2559,7 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                if (e.match(V_Regexp_id2400718)) {
+                if (e.match(V_Regexp_id2472924)) {
                     return {
                         preemptedBasicStates: {
                             visual_line: true,
@@ -2090,12 +2570,12 @@ function viBehaviourStatechartExecutionContext() {
                             //exit states
                             visual_block.exitAction();
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("visual_block", "visual_line", "visual_block_V_16");
+                                listener.onTransition("visual_block", "visual_line", "visual_block_V_15");
                             }
                             //enter states
                             visual_line.enterAction();
@@ -2115,31 +2595,32 @@ function viBehaviourStatechartExecutionContext() {
         function visual_characterConstructor() {
             this.parent = visual_mode;
             this.initial = null;
-            this.depth = 4;
+            this.depth = 2;
             this.historyState = null;
             //these variables facilitate fast In predicate
             this.isBasic =
             true;
             this.ancestors = [
-            scxml_id2395003, nonprintable_movement_keys_used_to_move_cursor, printable_movement_keys_used_to_move_cursor, visual_mode];
+            scxml_id2465527, visual_mode];
             this.toString = function() {
                 return "visual_character"
             }
             this.enterAction = function() {
                 controller.updateModeText("-- VISUAL --")
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
                     listener.onEntry("visual_character");
                 }
             }
             this.exitAction = function() {
-                for (var id2399291_iterator = 0, id2399291_hoist = listeners.length;
-                id2399291_iterator < id2399291_hoist;
-                id2399291_iterator++) {
-                    var listener = listeners[id2399291_iterator];
+                for (var id2471456_iterator = 0, id2471456_hoist = listeners.length;
+                id2471456_iterator < id2471456_hoist;
+                id2471456_iterator++) {
+                    var listener = listeners[id2471456_iterator];
                     //from
                     listener.onExit("visual_character");
                 }
@@ -2155,12 +2636,12 @@ function viBehaviourStatechartExecutionContext() {
                         //exit states
                         visual_character.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "visual_line", "visual_character_V_18");
+                            listener.onTransition("", "visual_line", "visual_character_V_17");
                         }
                         //enter states
                         visual_line.enterAction();
@@ -2182,12 +2663,12 @@ function viBehaviourStatechartExecutionContext() {
                         //exit states
                         visual_character.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "visual_block", "visual_character_ctrl_v_17");
+                            listener.onTransition("", "visual_block", "visual_character_ctrl_v_16");
                         }
                         //enter states
                         visual_block.enterAction();
@@ -2199,7 +2680,7 @@ function viBehaviourStatechartExecutionContext() {
                 return visual_mode['ctrl_v']();
             }
             this.$dispatchPrefixEvent = function(e) {
-                if (e.match(ctrl_v_Regexp_id2400723)) {
+                if (e.match(ctrl_v_Regexp_id2472930)) {
                     return {
                         preemptedBasicStates: {
                             visual_line: true,
@@ -2210,12 +2691,12 @@ function viBehaviourStatechartExecutionContext() {
                             //exit states
                             visual_character.exitAction();
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("visual_character", "visual_block", "visual_character_ctrl_v_17");
+                                listener.onTransition("visual_character", "visual_block", "visual_character_ctrl_v_16");
                             }
                             //enter states
                             visual_block.enterAction();
@@ -2225,7 +2706,7 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                if (e.match(V_Regexp_id2400718)) {
+                if (e.match(V_Regexp_id2472924)) {
                     return {
                         preemptedBasicStates: {
                             visual_line: true,
@@ -2236,12 +2717,12 @@ function viBehaviourStatechartExecutionContext() {
                             //exit states
                             visual_character.exitAction();
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("visual_character", "visual_line", "visual_character_V_18");
+                                listener.onTransition("visual_character", "visual_line", "visual_character_V_17");
                             }
                             //enter states
                             visual_line.enterAction();
@@ -2259,34 +2740,34 @@ function viBehaviourStatechartExecutionContext() {
     })();
     var insert_mode = (function() {
         function insert_modeConstructor() {
-            this.parent = nonprintable_movement_keys_used_to_move_cursor;
+            this.parent = scxml_id2465527;
             this.initial = null;
-            this.depth = 2;
+            this.depth = 1;
             this.historyState = null;
             //these variables facilitate fast In predicate
             this.isBasic =
             true;
             this.ancestors = [
-            scxml_id2395003, nonprintable_movement_keys_used_to_move_cursor];
+            scxml_id2465527];
             this.toString = function() {
                 return "insert_mode"
             }
             this.enterAction = function() {
                 controller.makeCursorThin()
                 controller.updateModeText("-- INSERT --")
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
                     listener.onEntry("insert_mode");
                 }
             }
             this.exitAction = function() {
-                for (var id2396223_iterator = 0, id2396223_hoist = listeners.length;
-                id2396223_iterator < id2396223_hoist;
-                id2396223_iterator++) {
-                    var listener = listeners[id2396223_iterator];
+                for (var id2467617_iterator = 0, id2467617_hoist = listeners.length;
+                id2467617_iterator < id2467617_hoist;
+                id2467617_iterator++) {
+                    var listener = listeners[id2467617_iterator];
                     //from
                     listener.onExit("insert_mode");
                 }
@@ -2297,15 +2778,131 @@ function viBehaviourStatechartExecutionContext() {
                     action: function() {
                         //transition action
                         controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['init']();
+                return scxml_id2465527['init']();
+            }
+            this.left = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveLeft(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['left']();
+            }
+            this.right = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveRight(false, true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['right']();
+            }
+            this.up = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveUp(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['up']();
+            }
+            this.down = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.moveDown(true)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['down']();
             }
             this.ctrl_g = function() {
                 return {
@@ -2313,15 +2910,233 @@ function viBehaviourStatechartExecutionContext() {
                     action: function() {
                         //transition action
                         controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['ctrl_g']();
+                return scxml_id2465527['ctrl_g']();
+            }
+            this.bling = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['bling']();
+            }
+            this.backspace = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeBackspace()
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['backspace']();
+            }
+            this.enter = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeNewLine()
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['enter']();
+            }
+            this.colon = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['colon']();
+            }
+            this.w = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['w']();
+            }
+            this.e = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['e']();
+            }
+            this.b = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['b']();
+            }
+            this.zero = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['zero']();
+            }
+            this.h = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['h']();
+            }
+            this.l = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['l']();
+            }
+            this.k = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['k']();
+            }
+            this.j = function() {
+                return {
+                    preemptedBasicStates: {},
+                    action: function() {
+                        //transition action
+                        controller.writeChar(_event.data.charCode)
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
+                            //transition id
+                        }
+                    }
+                }
+                return scxml_id2465527['j']();
             }
             this.v = function() {
                 return {
@@ -2329,15 +3144,15 @@ function viBehaviourStatechartExecutionContext() {
                     action: function() {
                         //transition action
                         controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['v']();
+                return scxml_id2465527['v']();
             }
             this.V = function() {
                 return {
@@ -2345,15 +3160,15 @@ function viBehaviourStatechartExecutionContext() {
                     action: function() {
                         //transition action
                         controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['V']();
+                return scxml_id2465527['V']();
             }
             this.ctrl_v = function() {
                 return {
@@ -2361,15 +3176,15 @@ function viBehaviourStatechartExecutionContext() {
                     action: function() {
                         //transition action
                         controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['ctrl_v']();
+                return scxml_id2465527['ctrl_v']();
             }
             this.i = function() {
                 return {
@@ -2377,15 +3192,15 @@ function viBehaviourStatechartExecutionContext() {
                     action: function() {
                         //transition action
                         controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['i']();
+                return scxml_id2465527['i']();
             }
             this.a = function() {
                 return {
@@ -2393,40 +3208,41 @@ function viBehaviourStatechartExecutionContext() {
                     action: function() {
                         //transition action
                         controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['a']();
+                return scxml_id2465527['a']();
             }
             this.esc = function() {
                 return {
                     preemptedBasicStates: {
+                        initial_default: true,
                         select_mode: true,
                         normal_mode: true,
                         visual_line: true,
                         visual_block: true,
                         visual_character: true,
-                        insert_mode: true
+                        insert_mode: true,
+                        command_mode: true
                     },
                     action: function() {
                         //exit states
                         insert_mode.exitAction();
                         //transition action
                         controller.moveLeft()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "normal_mode", "insert_mode_esc_21");
+                            listener.onTransition("", "normal_mode", "insert_mode_esc_20");
                         }
                         //enter states
-                        printable_movement_keys_used_to_move_cursor.enterAction();
                         normal_mode.enterAction();
                         //update configuration
                         currentConfiguration = [
@@ -2438,323 +3254,102 @@ function viBehaviourStatechartExecutionContext() {
                     action: function() {
                         //transition action
                         controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor['esc']();
-            }
-            this.bling = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['bling']();
-            }
-            this.backspace = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeBackspace()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['backspace']();
-            }
-            this.enter = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeNewLine()
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['enter']();
-            }
-            this.colon = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['colon']();
-            }
-            this.w = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['w']();
-            }
-            this.e = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['e']();
-            }
-            this.b = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['b']();
-            }
-            this.zero = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['zero']();
-            }
-            this.h = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['h']();
-            }
-            this.l = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['l']();
-            }
-            this.k = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['k']();
-            }
-            this.j = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['j']();
-            }
-            this.left = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['left']();
-            }
-            this.right = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['right']();
-            }
-            this.up = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['up']();
-            }
-            this.down = function() {
-                return {
-                    preemptedBasicStates: {},
-                    action: function() {
-                        //transition action
-                        controller.writeChar(_event.data.charCode)
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
-                            //transition id
-                        }
-                    }
-                }
-                return nonprintable_movement_keys_used_to_move_cursor['down']();
+                return scxml_id2465527['esc']();
             }
             this.$dispatchPrefixEvent = function(e) {
-                if (e.match(esc_Regexp_id2400740)) {
+                if (e.match(left_Regexp_id2472828)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveLeft(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(right_Regexp_id2472834)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveRight(false, true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(up_Regexp_id2472839)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveUp(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(down_Regexp_id2472844)) {
+                    return {
+                        preemptedBasicStates: {},
+                        action: function() {
+                            //transition action
+                            controller.moveDown(true)
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
+                                //transition id
+                            }
+                        }
+                    }
+                }
+                if (e.match(esc_Regexp_id2472946)) {
                     return {
                         preemptedBasicStates: {
+                            initial_default: true,
                             select_mode: true,
                             normal_mode: true,
                             visual_line: true,
                             visual_block: true,
                             visual_character: true,
-                            insert_mode: true
+                            insert_mode: true,
+                            command_mode: true
                         },
                         action: function() {
                             //exit states
                             insert_mode.exitAction();
                             //transition action
                             controller.moveLeft()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("insert_mode", "normal_mode", "insert_mode_esc_21");
+                                listener.onTransition("insert_mode", "normal_mode", "insert_mode_esc_20");
                             }
                             //enter states
-                            printable_movement_keys_used_to_move_cursor.enterAction();
                             normal_mode.enterAction();
                             //update configuration
                             currentConfiguration = [
@@ -2762,60 +3357,60 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                if (e.match(enter_Regexp_id2400656)) {
+                if (e.match(enter_Regexp_id2472866)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
                             controller.writeNewLine()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(backspace_Regexp_id2400650)) {
+                if (e.match(backspace_Regexp_id2472860)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
                             controller.writeBackspace()
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                if (e.match(star_Regexp_id2400746)) {
+                if (e.match(star_Regexp_id2472951)) {
                     return {
                         preemptedBasicStates: {},
                         action: function() {
                             //transition action
                             controller.writeChar(_event.data.charCode)
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
                             }
                         }
                     }
                 }
-                return nonprintable_movement_keys_used_to_move_cursor.$dispatchPrefixEvent(e);
+                return scxml_id2465527.$dispatchPrefixEvent(e);
             }
         }
-        insert_modeConstructor.prototype = nonprintable_movement_keys_used_to_move_cursor;
+        insert_modeConstructor.prototype = scxml_id2465527;
         return new insert_modeConstructor();
     })();
     var command_mode = (function() {
         function command_modeConstructor() {
-            this.parent = scxml_id2395003;
+            this.parent = scxml_id2465527;
             this.initial = null;
             this.depth = 1;
             this.historyState = null;
@@ -2823,25 +3418,25 @@ function viBehaviourStatechartExecutionContext() {
             this.isBasic =
             true;
             this.ancestors = [
-            scxml_id2395003];
+            scxml_id2465527];
             this.toString = function() {
                 return "command_mode"
             }
             this.enterAction = function() {
                 controller.updateModeText("-- COMMAND --")
-                for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                id2398564_iterator < id2398564_hoist;
-                id2398564_iterator++) {
-                    var listener = listeners[id2398564_iterator];
+                for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                id2466941_iterator < id2466941_hoist;
+                id2466941_iterator++) {
+                    var listener = listeners[id2466941_iterator];
                     //to
                     listener.onEntry("command_mode");
                 }
             }
             this.exitAction = function() {
-                for (var id2395200_iterator = 0, id2395200_hoist = listeners.length;
-                id2395200_iterator < id2395200_hoist;
-                id2395200_iterator++) {
-                    var listener = listeners[id2395200_iterator];
+                for (var id2472312_iterator = 0, id2472312_hoist = listeners.length;
+                id2472312_iterator < id2472312_hoist;
+                id2472312_iterator++) {
+                    var listener = listeners[id2472312_iterator];
                     //from
                     listener.onExit("command_mode");
                 }
@@ -2862,26 +3457,24 @@ function viBehaviourStatechartExecutionContext() {
                         //exit states
                         command_mode.exitAction();
                         //transition action
-                        for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                        id2398564_iterator < id2398564_hoist;
-                        id2398564_iterator++) {
-                            var listener = listeners[id2398564_iterator];
+                        for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                        id2466941_iterator < id2466941_hoist;
+                        id2466941_iterator++) {
+                            var listener = listeners[id2466941_iterator];
                             //transition id
-                            listener.onTransition("", "normal_mode", "command_mode_esc_22");
+                            listener.onTransition("", "normal_mode", "command_mode_esc_21");
                         }
                         //enter states
-                        nonprintable_movement_keys_used_to_move_cursor.enterAction();
-                        printable_movement_keys_used_to_move_cursor.enterAction();
                         normal_mode.enterAction();
                         //update configuration
                         currentConfiguration = [
                         normal_mode];
                     }
                 }
-                return scxml_id2395003['esc']();
+                return scxml_id2465527['esc']();
             }
             this.$dispatchPrefixEvent = function(e) {
-                if (e.match(esc_Regexp_id2400740)) {
+                if (e.match(esc_Regexp_id2472946)) {
                     return {
                         preemptedBasicStates: {
                             initial_default: true,
@@ -2897,16 +3490,14 @@ function viBehaviourStatechartExecutionContext() {
                             //exit states
                             command_mode.exitAction();
                             //transition action
-                            for (var id2398564_iterator = 0, id2398564_hoist = listeners.length;
-                            id2398564_iterator < id2398564_hoist;
-                            id2398564_iterator++) {
-                                var listener = listeners[id2398564_iterator];
+                            for (var id2466941_iterator = 0, id2466941_hoist = listeners.length;
+                            id2466941_iterator < id2466941_hoist;
+                            id2466941_iterator++) {
+                                var listener = listeners[id2466941_iterator];
                                 //transition id
-                                listener.onTransition("command_mode", "normal_mode", "command_mode_esc_22");
+                                listener.onTransition("command_mode", "normal_mode", "command_mode_esc_21");
                             }
                             //enter states
-                            nonprintable_movement_keys_used_to_move_cursor.enterAction();
-                            printable_movement_keys_used_to_move_cursor.enterAction();
                             normal_mode.enterAction();
                             //update configuration
                             currentConfiguration = [
@@ -2914,19 +3505,17 @@ function viBehaviourStatechartExecutionContext() {
                         }
                     }
                 }
-                return scxml_id2395003.$dispatchPrefixEvent(e);
+                return scxml_id2465527.$dispatchPrefixEvent(e);
             }
         }
-        command_modeConstructor.prototype = scxml_id2395003;
+        command_modeConstructor.prototype = scxml_id2465527;
         return new command_modeConstructor();
     })();
     //states enum for glass-box unit testing
     this._states = {
         _initial: _initial,
         initial_default: initial_default,
-        nonprintable_movement_keys_used_to_move_cursor_initial: nonprintable_movement_keys_used_to_move_cursor_initial,
         select_mode: select_mode,
-        printable_movement_keys_used_to_move_cursor_initial: printable_movement_keys_used_to_move_cursor_initial,
         normal_mode: normal_mode,
         visual_mode_initial: visual_mode_initial,
         visual_line: visual_line,
@@ -3234,10 +3823,10 @@ function viBehaviourStatechartExecutionContext() {
         }
         if (isEnumeratedEvent) {
             //e does not contain a dot, so dispatch as an enumerated event
-            for (var id2398564_iterator = 0, id2398564_hoist = currentConfiguration.length;
-            id2398564_iterator < id2398564_hoist;
-            id2398564_iterator++) {
-                var state = currentConfiguration[id2398564_iterator];
+            for (var id2466941_iterator = 0, id2466941_hoist = currentConfiguration.length;
+            id2466941_iterator < id2466941_hoist;
+            id2466941_iterator++) {
+                var state = currentConfiguration[id2466941_iterator];
                 //check to make sure he is not preempted
                 if (!(state in preemptedBasicStates)) {
                     //lookup the transition
@@ -3250,10 +3839,10 @@ function viBehaviourStatechartExecutionContext() {
             }
         } else {
             //e contains a dot, so dispatch as a prefix event
-            for (var id2398564_iterator = 0, id2398564_hoist = currentConfiguration.length;
-            id2398564_iterator < id2398564_hoist;
-            id2398564_iterator++) {
-                var state = currentConfiguration[id2398564_iterator];
+            for (var id2466941_iterator = 0, id2466941_hoist = currentConfiguration.length;
+            id2466941_iterator < id2466941_hoist;
+            id2466941_iterator++) {
+                var state = currentConfiguration[id2466941_iterator];
                 //check to make sure he is not preempted
                 if (!(state in preemptedBasicStates)) {
                     //lookup the transition
@@ -3266,10 +3855,10 @@ function viBehaviourStatechartExecutionContext() {
             }
         }
         //invoke selected transitions
-        for (var id2398564_iterator = 0, id2398564_hoist = enabledTransitions.length;
-        id2398564_iterator < id2398564_hoist;
-        id2398564_iterator++) {
-            var t = enabledTransitions[id2398564_iterator];
+        for (var id2466941_iterator = 0, id2466941_hoist = enabledTransitions.length;
+        id2466941_iterator < id2466941_hoist;
+        id2466941_iterator++) {
+            var t = enabledTransitions[id2466941_iterator];
             t();
         }
     }
@@ -3309,10 +3898,10 @@ function viBehaviourStatechartExecutionContext() {
             toReturn = currentConfiguration.indexOf(state) != -1;
         } else {
             var toReturn = false;
-            for (var id2398564_iterator = 0, id2398564_hoist = currentConfiguration.length;
-            id2398564_iterator < id2398564_hoist;
-            id2398564_iterator++) {
-                var s = currentConfiguration[id2398564_iterator];
+            for (var id2466941_iterator = 0, id2466941_hoist = currentConfiguration.length;
+            id2466941_iterator < id2466941_hoist;
+            id2466941_iterator++) {
+                var s = currentConfiguration[id2466941_iterator];
                 if (s.ancestors.indexOf(state) != -1) {
                     toReturn = true;
                     break;
