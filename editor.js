@@ -407,30 +407,93 @@ function SelectionManager(groupNode,displayManager,lineManager){
 				createRectNode(smallRectXYCoords.x,smallRectXYCoords.y,smallRectWidth,smallRectHeight)];
 	}
 
-	function computeCharModeRects(){
-		//TODO
-		//figure out first line
-		//figure out last line
-		//figure out middle lines
+	function createRectNodesForRange(colFrom,colTo,rowNum){
+		//same idea: select first part, last part, etc...
+		var toReturn;
 
+		var line = lineManager.getLine(rowNum);
+		var numChars = line.getTotalNumberOfChars();
+		var numLines = Math.ceil(numChars / displayManager.displayCharWidth); 
 
-		//realization: we are going to need to knwo the text content for a particular line in order to select the entire line. regardless of the cursor position. So, we need access to the lines so that we can get line length. does this mean he gets access to linemanager as well? yes...
+		var yPosFrom = Math.floor(colFrom / displayManager.displayCharWidth);
+		var xPosFrom = colFrom - (yPosFrom * displayManager.displayCharWidth);
+
+		var yPosTo = Math.floor(colTo / displayManager.displayCharWidth);
+		var xPosTo = colTo - (yPosTo * displayManager.displayCharWidth);
+
+		if(yPosFrom == yPosTo){
+			//create one rect
+			var rectXYCoords = lineManager.getCoords(colFrom,rowNum);
+			var rectWidth = (xPosTo - xPosFrom) * displayManager.textExtent.width;
+			var rectHeight = displayManager.textExtent.height;
+
+			toReturn = [createRectNode(rectXYCoords.x, rectXYCoords.y, rectWidth, rectHeight)];
+		}else{
+			var firstRectXYCoords,firstRectWidth,firstRectHeight,
+				lastRectXYCoords,lastRectWidth,lastRectHeight,
+				middleRectXYCoords,middleRectWidth,middleRectHeight;
+
+			firstRectXYCoords = lineManager.getCoords(colFrom,rowNum);
+			firstRectWidth = (displayManager.displayCharWidth - xPosFrom) * displayManager.textExtent.width;
+			firstRectHeight = displayManager.textExtent.height;
+
+			middleRectXYCoords = {x:0,y:firstRectXYCoords.y + firstRectHeight};
+			middleRectWidth = displayManager.displayCharWidth * displayManager.textExtent.width;
+			middleRectHeight = (yPosTo - yPosFrom - 1) * displayManager.textExtent.height;
+
+			lastRectXYCoords = {x:0,y:firstRectXYCoords.y + firstRectHeight + middleRectHeight};
+			lastRectWidth = xPosTo * displayManager.textExtent.width;
+			lastRectHeight = displayManager.textExtent.height;
+
+			toReturn = [createRectNode(firstRectXYCoords.x, firstRectXYCoords.y, firstRectWidth, firstRectHeight),
+					createRectNode(middleRectXYCoords.x, middleRectXYCoords.y, middleRectWidth, middleRectHeight),
+					createRectNode(lastRectXYCoords.x, lastRectXYCoords.y, lastRectWidth, lastRectHeight)];
+		}
+
+		return toReturn;
 	}
 
-	function computeLineModeRects(){
+	function createRectNodesForRangeUntilEndOfLine(colFrom,rowNum){
+		var line = lineManager.getLine(rowNum);
+		var numChars = line.getTotalNumberOfChars();
+	
+		//FIXME: off-by-one error?
+		return createRectNodesForRange(colFrom,numChars,rowNum);
+	}
+
+	function computeCharModeRects(tmpStartCol,tmpStartRow,tmpEndCol,tmpEndRow){
+		//create rects for all of the lines we have selected
+		var toReturn = [],
+			rects;
+
+		if(tmpStartRow == tmpEndRow){
+			//select range of the one selected line
+			rects = createRectNodesForRange(tmpStartCol,tmpEndCol,tmpStartRow);
+			toReturn = toReturn.concat(rects);
+		}else{
+			//select last part of first line
+			rects = createRectNodesForRangeUntilEndOfLine(tmpStartCol,tmpStartRow);
+			toReturn = toReturn.concat(rects);
+
+			//select full line for middle lines
+			for(var i = tmpStartRow+1; i<tmpEndRow; i++){
+				rects = createRectNodesForLine(i);
+				toReturn = toReturn.concat(rects); 
+			}
+
+			//select first part of last line
+			rects = createRectNodesForRange(0,tmpEndCol,tmpEndRow);
+			toReturn = toReturn.concat(rects);
+		}
+
+
+		return toReturn;
+
+	}
+
+	function computeLineModeRects(tmpStartRow,tmpEndRow){
 		//create rects for all of the lines we have selected
 		var toReturn = [];
-
-		var tmpEndRow, tmpStartRow;
-
-		//if need be, swap startRow and endRow
-		if(endRow < startRow){
-			tmpEndRow = startRow;
-			tmpStartRow = endRow;
-		}else{
-			tmpEndRow = endRow;
-			tmpStartRow = startRow;
-		}
 
 		for(var i = tmpStartRow; i<tmpEndRow+1; i++){
 			var rects = createRectNodesForLine(i);
@@ -440,7 +503,7 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		return toReturn;
 	}
 
-	function computeBlockModeRects(){
+	function computeBlockModeRects(tmpStartRow,tmpEndRow){
 		//TODO
 	}
 
@@ -448,16 +511,31 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		//this is a simple, stupid, inefficient, naive, "big hammer" approach, where we rerender the entire highlighted region each time something changes
 		//of course, we could be much more lcever and only change/add/remove the affected rects
 
+		var tmpEndRow, tmpStartRow,tmpStartCol,tmpEndCol;
+
+		//if need be, swap startRow and endRow
+		if(endRow < startRow || (endCol < startCol && endRow == startRow)){
+			tmpEndRow = startRow;
+			tmpStartRow = endRow;
+			tmpStartCol = endCol;
+			tmpEndCol = startCol;
+		}else{
+			tmpEndRow = endRow;
+			tmpStartRow = startRow;
+			tmpStartCol = startCol;
+			tmpEndCol = endCol;
+		}
+
 		var rects;
 		switch(selectionMode){
 			case SELECTION_MODE.CHARACTER:
-				rects = computeCharModeRects();
+				rects = computeCharModeRects(tmpStartCol,tmpStartRow,tmpEndCol,tmpEndRow);
 				break; 
 			case SELECTION_MODE.LINE:
-				rects = computeLineModeRects();
+				rects = computeLineModeRects(tmpStartRow,tmpEndRow);
 				break; 
 			case SELECTION_MODE.BLOCK:
-				rects = computeBlockModeRects();
+				rects = computeBlockModeRects(tmpStartCol,tmpStartRow,tmpEndCol,tmpEndRow);
 				break; 
 		}
 
