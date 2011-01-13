@@ -503,8 +503,18 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		return toReturn;
 	}
 
-	function computeBlockModeRects(tmpStartRow,tmpEndRow){
-		//TODO
+	function computeBlockModeRects(tmpStartCol,tmpStartRow,tmpEndCol,tmpEndRow){
+		//when on same line, this is exactly like character select
+		//for multiple lines, though... we simply use the range highlight mode for everything, instead of needing first and middle lines.
+		var toReturn = [],
+			rects;
+
+		for(var i = tmpStartRow; i<tmpEndRow+1; i++){
+			var rects = createRectNodesForRange(tmpStartCol,tmpEndCol,i);	//FIXME: do a bit of work to ensure that we don't highlight more than he has. constrained by end of line
+			toReturn = toReturn.concat(rects); 
+		}
+
+		return toReturn;
 	}
 
 	function render(){
@@ -514,16 +524,37 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		var tmpEndRow, tmpStartRow,tmpStartCol,tmpEndCol;
 
 		//if need be, swap startRow and endRow
-		if(endRow < startRow || (endCol < startCol && endRow == startRow)){
-			tmpEndRow = startRow;
-			tmpStartRow = endRow;
-			tmpStartCol = endCol;
-			tmpEndCol = startCol;
-		}else{
-			tmpEndRow = endRow;
-			tmpStartRow = startRow;
-			tmpStartCol = startCol;
-			tmpEndCol = endCol;
+		//varies depending on mode
+		switch(selectionMode){
+			case SELECTION_MODE.CHARACTER:
+			case SELECTION_MODE.LINE:
+				if(endRow < startRow || (endCol < startCol && endRow == startRow)){
+					tmpEndRow = startRow;
+					tmpStartRow = endRow;
+					tmpStartCol = endCol;
+					tmpEndCol = startCol;
+					break; 
+				}else{
+					tmpEndRow = endRow;
+					tmpStartRow = startRow;
+					tmpStartCol = startCol;
+					tmpEndCol = endCol;
+				}
+			case SELECTION_MODE.BLOCK:
+				if(endCol < startCol){
+					tmpStartCol = endCol;
+					tmpEndCol = startCol;
+				}else{
+					tmpStartCol = startCol;
+					tmpEndCol = endCol;
+				}
+				if(endRow < startRow){
+					tmpEndRow = startRow;
+					tmpStartRow = endRow;
+				}else{
+					tmpEndRow = endRow;
+					tmpStartRow = startRow;
+				}
 		}
 
 		var rects;
