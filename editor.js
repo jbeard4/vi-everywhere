@@ -539,13 +539,13 @@ function SelectionManager(groupNode,displayManager,lineManager){
 					tmpStartRow = endRow;
 					tmpStartCol = endCol;
 					tmpEndCol = startCol;
-					break; 
 				}else{
 					tmpEndRow = endRow;
 					tmpStartRow = startRow;
 					tmpStartCol = startCol;
 					tmpEndCol = endCol;
 				}
+				break; 
 			case SELECTION_MODE.BLOCK:
 				if(endCol < startCol){
 					tmpStartCol = endCol;
@@ -562,6 +562,8 @@ function SelectionManager(groupNode,displayManager,lineManager){
 					tmpStartRow = startRow;
 				}
 		}
+
+		tmpEndCol++;	//increment tmpEndCol to satisfy vim behaviour
 
 		var rects;
 		switch(selectionMode){
