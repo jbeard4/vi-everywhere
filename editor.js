@@ -390,6 +390,7 @@ function SelectionManager(groupNode,displayManager,lineManager){
 	}
 
 	function createRectNodesForLine(rowNum){
+		//FIXME: createRectNodesForLine  is in fact a specification of createRectNodesForRange. I should refactor createRectNodesForLine to simply call createRectNodesForRange.
 		//a line should consist of a big rect and a small rect. 
 		var line = lineManager.getLine(rowNum);
 		var numChars = line.getTotalNumberOfChars();
@@ -414,6 +415,11 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		var line = lineManager.getLine(rowNum);
 		var numChars = line.getTotalNumberOfChars();
 		var numLines = Math.ceil(numChars / displayManager.displayCharWidth); 
+
+		//make it not possible to create a rect node that is longer than its line
+		if(colTo > numChars){
+			colTo = numChars; 
+		}
 
 		var yPosFrom = Math.floor(colFrom / displayManager.displayCharWidth);
 		var xPosFrom = colFrom - (yPosFrom * displayManager.displayCharWidth);
