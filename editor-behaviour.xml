@@ -16,20 +16,6 @@
 		</transition>
 	</state>
 
-	<state id="select_mode">
-		<onentry>
-			<script>
-				controller.updateModeText("-- SELECT --")
-			</script>
-		</onentry>
-
-		<vi:macro name="nonprintable_keys_used_to_move_cursor">
-			<vi:param name="updateSelection" value="true"/>
-		</vi:macro>
-
-		<transition event="ctrl_g" target="visual_mode" />
-	</state>
-
 	<state id="normal_mode">
 
 		<onentry>
@@ -77,8 +63,8 @@
 
 	</state>
 
-	<state id="visual_mode" initial="visual_character">
-		<!-- these will be the same in both visual and select -->
+	<state id="visual_or_select_mode">
+
 		<onentry>
 			<script>
 				controller.makeCursorFat();
@@ -92,52 +78,111 @@
 			</script>
 		</onexit>
 
-		<transition event="esc" target="normal_mode"/>
-
-		<transition event="ctrl_g" target="select_mode" />
-
-		<vi:macro name="printable_keys_used_to_move_cursor">
-			<vi:param name="updateSelection" value="true"/>
-		</vi:macro>
-
 		<vi:macro name="nonprintable_keys_used_to_move_cursor">
 			<vi:param name="updateSelection" value="true"/>
 		</vi:macro>
 
-		<!-- TODO: figure out what kind of API we want for selection stuff -->
-		<state id="visual_line">
-			<onentry>
+		<transition event="esc" target="normal_mode"/>
+
+		<state id="select_mode">
+
+			<transition event="*" target="normal_mode"
+				cond="_event.data.charCode !== 0">
 				<script>
-					controller.updateModeText("-- VISUAL LINE --")
-					controller.setSelectionMode(controller.SELECTION_MODE.LINE);
+					//TODO: delete text in selection, replace with event data
+					var c = String.fromCharCode(_event.data.charCode);
+					alert("replaced text with " + c);
 				</script>
-			</onentry>
-			<transition event="ctrl_v" target="visual_block"/>
-			<transition event="v" target="visual_character"/>
+			</transition>
+
+			<state id="select_line">
+				<onentry>
+					<script>
+						controller.updateModeText("-- SELECT LINE --")
+						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
+					</script>
+				</onentry>
+				<transition event="ctrl_v" target="select_block"/>
+				<transition event="v" target="select_character"/>
+
+				<transition event="ctrl_g" target="visual_line" />
+			</state>
+
+			<state id="select_block">
+				<onentry>
+					<script>
+						controller.updateModeText("-- SELECT BLOCK --")
+						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
+					</script>
+				</onentry>
+				<transition event="v" target="select_character"/>
+				<transition event="V" target="select_line"/>
+
+				<transition event="ctrl_g" target="visual_block" />
+			</state>
+
+			<state id="select_character">
+				<onentry>
+					<script>
+						controller.updateModeText("-- SELECT --")
+						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
+					</script>
+				</onentry>
+				<transition event="ctrl_v" target="select_block"/>
+				<transition event="V" target="select_line"/>
+
+				<transition event="ctrl_g" target="visual_character" />
+			</state>
 		</state>
 
-		<state id="visual_block">
-			<onentry>
-				<script>
-					controller.updateModeText("-- VISUAL BLOCK --")
-					controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
-				</script>
-			</onentry>
-			<transition event="v" target="visual_character"/>
-			<transition event="V" target="visual_line"/>
-		</state>
+		<state id="visual_mode" initial="visual_character">
+			<!-- these will be the same in both visual and select -->
 
-		<state id="visual_character">
-			<onentry>
-				<script>
-					controller.updateModeText("-- VISUAL --")
-					controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
-				</script>
-			</onentry>
-			<transition event="ctrl_v" target="visual_block"/>
-			<transition event="V" target="visual_line"/>
-		</state>
+			<vi:macro name="printable_keys_used_to_move_cursor">
+				<vi:param name="updateSelection" value="true"/>
+			</vi:macro>
 
+			<!-- TODO: figure out what kind of API we want for selection stuff -->
+			<state id="visual_line">
+				<onentry>
+					<script>
+						controller.updateModeText("-- VISUAL LINE --")
+						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
+					</script>
+				</onentry>
+				<transition event="ctrl_v" target="visual_block"/>
+				<transition event="v" target="visual_character"/>
+
+				<transition event="ctrl_g" target="select_line" />
+			</state>
+
+			<state id="visual_block">
+				<onentry>
+					<script>
+						controller.updateModeText("-- VISUAL BLOCK --")
+						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
+					</script>
+				</onentry>
+				<transition event="v" target="visual_character"/>
+				<transition event="V" target="visual_line"/>
+
+				<transition event="ctrl_g" target="select_block" />
+			</state>
+
+			<state id="visual_character">
+				<onentry>
+					<script>
+						controller.updateModeText("-- VISUAL --")
+						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
+					</script>
+				</onentry>
+				<transition event="ctrl_v" target="visual_block"/>
+				<transition event="V" target="visual_line"/>
+
+				<transition event="ctrl_g" target="select_character" />
+			</state>
+
+		</state>
 	</state>
 
 
