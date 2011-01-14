@@ -12,6 +12,9 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 
 	this.SELECTION_MODE = SELECTION_MODE;	//expose enum on controller so that it can be used byt he statechart
 
+	var register = {};	//each application instance has a register
+	var DEFAULT_REGISTER_NAME = "default"
+
 	function doUpdateSelection(){
 		selectionManager.setEndPos(cursor.colNum,cursor.rowNum);
 	}
@@ -173,6 +176,16 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		selectionManager.setMode(mode);
 	}
 
+
+	this.copySelectedTextIntoRegister = function(registerName){
+		registerName = registerName || DEFAULT_REGISTER_NAME;
+
+		var selectionText = selectionManager.getSelectionText();
+
+		register[registerName] = selectionText;
+		alert(selectionText);
+	}
+	
 }
 
 function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNode){
@@ -523,10 +536,7 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		return toReturn;
 	}
 
-	function render(){
-		//this is a simple, stupid, inefficient, naive, "big hammer" approach, where we rerender the entire highlighted region each time something changes
-		//of course, we could be much more lcever and only change/add/remove the affected rects
-
+	function getNormalizedSelectionRange(){
 		var tmpEndRow, tmpStartRow,tmpStartCol,tmpEndCol;
 
 		//if need be, swap startRow and endRow
@@ -565,16 +575,27 @@ function SelectionManager(groupNode,displayManager,lineManager){
 
 		tmpEndCol++;	//increment tmpEndCol to satisfy vim behaviour
 
+		return {
+			endRow:tmpEndRow, startRow:tmpStartRow,startCol:tmpStartCol,endCol:tmpEndCol
+		}
+	}
+
+	function render(){
+		//this is a simple, stupid, inefficient, naive, "big hammer" approach, where we rerender the entire highlighted region each time something changes
+		//of course, we could be much more lcever and only change/add/remove the affected rects
+
+		var sr = getNormalizedSelectionRange();
+
 		var rects;
 		switch(selectionMode){
 			case SELECTION_MODE.CHARACTER:
-				rects = computeCharModeRects(tmpStartCol,tmpStartRow,tmpEndCol,tmpEndRow);
+				rects = computeCharModeRects(sr.startCol,sr.startRow,sr.endCol,sr.endRow);
 				break; 
 			case SELECTION_MODE.LINE:
-				rects = computeLineModeRects(tmpStartRow,tmpEndRow);
+				rects = computeLineModeRects(sr.startRow,sr.endRow);
 				break; 
 			case SELECTION_MODE.BLOCK:
-				rects = computeBlockModeRects(tmpStartCol,tmpStartRow,tmpEndCol,tmpEndRow);
+				rects = computeBlockModeRects(sr.startCol,sr.startRow,sr.endCol,sr.endRow);
 				break; 
 		}
 
@@ -612,6 +633,127 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		clear();
 	}
 
+	function computeVirtualSelectionRange(sr){
+		var numRows = sr.endRow - sr.startRow + 1;
+		var toReturn = new Array(numRows);
+
+		if(selectionMode === SELECTION_MODE.LINE){
+			sr.startCol = 0;
+			sr.endCol = lineManager.getLine(sr.endRow).getTotalNumberOfChars();
+		}
+
+		if(sr.startRow === sr.endRow){
+			toReturn[0] = [ sr.startCol, sr.endCol ]
+		}else{
+			
+			if(selectionMode === SELECTION_MODE.BLOCK){
+				for(var i=sr.startRow,j=0; i < sr.endRow+1; i++,j++){
+					toReturn[j] = [sr.startCol,
+						Math.min(
+							sr.endCol,
+							lineManager.getLine(i).getTotalNumberOfChars()
+						) ];	
+				}
+			}else{
+				//first line
+				toReturn[0] = [sr.startCol, 
+								lineManager.getLine(sr.startRow).getTotalNumberOfChars() ];
+	
+				//middle lines
+				for(var i=sr.startRow+1,j=1; i < sr.endRow; i++,j++){
+					toReturn[j] = [0, lineManager.getLine(i).getTotalNumberOfChars() ];	
+				}
+
+				//last line
+				toReturn[numRows-1] = [0,sr.endCol];
+			}
+				
+		}
+
+		return toReturn;
+	}
+
+	this.getSelectionText = function(){
+		var toReturn = "";
+
+		var sr = getNormalizedSelectionRange();
+		var vsr = computeVirtualSelectionRange(sr);
+
+		for(var i=sr.startRow,j=0;i<sr.endRow+1; i++,j++){
+			toReturn += lineManager.getLine(i).getTextContent().slice(vsr[j][0],vsr[j][1]) + "\n";
+		}
+		toReturn = toReturn.slice(0,-1);
+
+		/*
+		var startLine = lineManager.getLine(sr.startRow);
+		var endLine = lineManager.getLine(sr.endRow);
+
+		if (startLine === endLine){
+			var txt = startLine.getTextContent();
+			//FIXME: off-by-one error? Possibly need to add logic to reverse selection row/col? Add 1 to tmpEndCol
+			toReturn = txt.slice(startCol,endCol);
+		}else{
+			
+			var startTxt = startLine.getTextContent();
+			startTxt = startTxt.slice(startRow);
+
+			var middleTxt = "";
+			for(var i=startRow+1;i<endRow; i++){
+				middleTxt += lineManager.getLine(i).getTextContent();
+			}
+			
+
+			var endTxt = endLine.getTextContent();
+			endTxt = endTxt.slice(0,endCol);
+
+			toReturn = startTxt + "\n";
+			if(middleTxt.length){
+				toReturn += middleTxt + "\n";
+			} 
+			toReturn += endTxt;
+		}
+		*/
+
+		return toReturn;
+	}
+
+	this.deleteSelectionText = function(){
+		var toReturn;
+
+		var startLine = lineManager.getLine(startRow);
+		var endLine = lineManager.getLine(endRow);
+
+		if (startLine === endLine){
+			var txt = startLine.deleteRange(startCol,endCol);
+			toReturn = txt;
+		}else{
+			
+			var startTxt = startLine.deleteRange(startCol,startLine.getTotalNumberOfChars());
+	
+			var middleTxt = deleteLines(startRow,endRow); 
+
+			var endTxt = endLine.deleteRange(0,endCol);
+
+			toReturn = startTxt + "\n";
+			if(middleTxt.length){
+				toReturn += middleTxt + "\n";
+			} 
+			toReturn += endTxt;
+		}
+
+		return toReturn;
+	}
+
+	this.replaceSelectionText = function(s){
+		var toReturn = lineManager.deleteText(startCol,startRow,endCol,endRow);
+
+		var startLine = lineManager.getLine(startRow);
+
+		startLine.writeStringAt(s,startLine.getTotalNumberOfChars);
+
+		return toReturn;
+	}
+
 }
 
 function LineManager(textNode,displayManager){
@@ -631,6 +773,14 @@ function LineManager(textNode,displayManager){
 		lines.splice(pos,1);
 
 		return toReturn;	//return character data
+	}
+
+	this.deleteLines = function(from,to){
+		var linesToDelete = lines.splice(from,to);
+		var toReturn = linesToDelete.reduce(sum,""); 
+		lines.forEach(function(line){line.removeFromDOM()});
+		lines.splice(from,to-from);
+		return toReturn;
 	}
 
 	this.createLine = function(pos, initialText){

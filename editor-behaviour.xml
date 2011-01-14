@@ -63,7 +63,7 @@
 
 	</state>
 
-	<state id="visual_or_select_mode">
+	<state id="visual_or_select_mode" initial="visual_mode">
 
 		<onentry>
 			<script>
@@ -84,7 +84,7 @@
 
 		<transition event="esc" target="normal_mode"/>
 
-		<state id="select_mode">
+		<state id="select_mode" initial="select_character">
 
 			<transition event="*" target="normal_mode"
 				cond="_event.data.charCode !== 0">
@@ -137,6 +137,13 @@
 
 		<state id="visual_mode" initial="visual_character">
 			<!-- these will be the same in both visual and select -->
+
+			<!-- FIXME: this should be yy -->
+			<transition event="y" target="normal_mode">
+				<script>
+					controller.copySelectedTextIntoRegister();  
+				</script>
+			</transition>
 
 			<vi:macro name="printable_keys_used_to_move_cursor">
 				<vi:param name="updateSelection" value="true"/>

@@ -22,57 +22,59 @@
 				//send timeout id variables
 				
 
-		var $default_Regexp_id2663422 = /^($default)/
+		var $default_Regexp_id2429398 = /^($default)/
 				,
-				init_Regexp_id2663430 = /^(init)/
+				init_Regexp_id2429407 = /^(init)/
 				,
-				bling_Regexp_id2663436 = /^(bling)/
+				bling_Regexp_id2429412 = /^(bling)/
 				,
-				backspace_Regexp_id2663441 = /^(backspace)/
+				backspace_Regexp_id2429418 = /^(backspace)/
 				,
-				enter_Regexp_id2663447 = /^(enter)/
+				enter_Regexp_id2429424 = /^(enter)/
 				,
-				colon_Regexp_id2663453 = /^(colon)/
+				colon_Regexp_id2429429 = /^(colon)/
 				,
-				w_Regexp_id2663459 = /^(w)/
+				w_Regexp_id2429435 = /^(w)/
 				,
-				e_Regexp_id2663464 = /^(e)/
+				e_Regexp_id2429440 = /^(e)/
 				,
-				b_Regexp_id2663470 = /^(b)/
+				b_Regexp_id2429446 = /^(b)/
 				,
-				zero_Regexp_id2663475 = /^(zero)/
+				zero_Regexp_id2429452 = /^(zero)/
 				,
-				h_Regexp_id2663481 = /^(h)/
+				h_Regexp_id2429457 = /^(h)/
 				,
-				l_Regexp_id2663487 = /^(l)/
+				l_Regexp_id2429463 = /^(l)/
 				,
-				k_Regexp_id2663492 = /^(k)/
+				k_Regexp_id2429468 = /^(k)/
 				,
-				j_Regexp_id2663498 = /^(j)/
+				j_Regexp_id2429474 = /^(j)/
 				,
-				left_Regexp_id2663503 = /^(left)/
+				left_Regexp_id2429480 = /^(left)/
 				,
-				right_Regexp_id2663509 = /^(right)/
+				right_Regexp_id2429486 = /^(right)/
 				,
-				up_Regexp_id2663515 = /^(up)/
+				up_Regexp_id2429491 = /^(up)/
 				,
-				down_Regexp_id2663520 = /^(down)/
+				down_Regexp_id2429497 = /^(down)/
 				,
-				v_Regexp_id2663526 = /^(v)/
+				v_Regexp_id2429502 = /^(v)/
 				,
-				V_Regexp_id2663531 = /^(V)/
+				V_Regexp_id2429508 = /^(V)/
 				,
-				ctrl_v_Regexp_id2663537 = /^(ctrl_v)/
+				ctrl_v_Regexp_id2429514 = /^(ctrl_v)/
 				,
-				i_Regexp_id2663543 = /^(i)/
+				i_Regexp_id2429519 = /^(i)/
 				,
-				a_Regexp_id2663548 = /^(a)/
+				a_Regexp_id2429525 = /^(a)/
 				,
-				esc_Regexp_id2663554 = /^(esc)/
+				esc_Regexp_id2429530 = /^(esc)/
 				,
-				star_Regexp_id2663560 = /.*/
+				star_Regexp_id2429536 = /.*/
 				,
-				ctrl_g_Regexp_id2663565 = /^(ctrl_g)/
+				ctrl_g_Regexp_id2429542 = /^(ctrl_g)/
+				,
+				y_Regexp_id2429547 = /^(y)/
 				;
 				
 
@@ -131,6 +133,8 @@
 			
 				this.ctrl_g = function(){};
 			
+				this.y = function(){};
+			
 				this.esc = function(){};
 			
 
@@ -143,9 +147,9 @@
 				//states
 				
 
-		var scxml_id2653836 = (function(){
+		var scxml_id2419154 = (function(){
 
-			function scxml_id2653836Constructor(){
+			function scxml_id2419154Constructor(){
 				this.parent = AbstractState;
 
 				this.initial = null;
@@ -161,21 +165,21 @@
 					
 				
 				this.toString = function(){
-					return "scxml_id2653836"
+					return "scxml_id2419154"
 				}
 
 				this.enterAction = function(){
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
-								listener.onEntry("scxml_id2653836");
+								listener.onEntry("scxml_id2419154");
 							
 		}
 	
@@ -185,15 +189,15 @@
 				this.exitAction = function(){
 					
 
-		for(var id2653845_iterator=0, 
-			id2653845_hoist=listeners.length;
-				id2653845_iterator < id2653845_hoist;
-				id2653845_iterator++){
-			var listener = listeners[id2653845_iterator];
+		for(var id2420179_iterator=0, 
+			id2420179_hoist=listeners.length;
+				id2420179_iterator < id2420179_hoist;
+				id2420179_iterator++){
+			var listener = listeners[id2420179_iterator];
 
 			
 								//from
-								listener.onExit("scxml_id2653836");
+								listener.onExit("scxml_id2419154");
 							
 		}
 	
@@ -211,8 +215,8 @@
 				
 
 			}
-			scxml_id2653836Constructor.prototype = AbstractState;
-			return new scxml_id2653836Constructor();
+			scxml_id2419154Constructor.prototype = AbstractState;
+			return new scxml_id2419154Constructor();
 		})();
 
 	
@@ -220,7 +224,7 @@
 		var _initial = (function(){
 
 			function _initialConstructor(){
-				this.parent = scxml_id2653836;
+				this.parent = scxml_id2419154;
 
 				this.initial = null;
 
@@ -234,7 +238,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 					];
 				
 					this.parent.initial = this; //init parent's pointer to initial state
@@ -247,11 +251,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -265,11 +269,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2655790_iterator=0, 
-			id2655790_hoist=listeners.length;
-				id2655790_iterator < id2655790_hoist;
-				id2655790_iterator++){
-			var listener = listeners[id2655790_iterator];
+		for(var id2420602_iterator=0, 
+			id2420602_hoist=listeners.length;
+				id2420602_iterator < id2420602_hoist;
+				id2420602_iterator++){
+			var listener = listeners[id2420602_iterator];
 
 			
 								//from
@@ -314,11 +318,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -347,20 +351,20 @@
 
 		
 
-			return scxml_id2653836['$default']();
+			return scxml_id2419154['$default']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 				
 
-			return scxml_id2653836.$dispatchPrefixEvent(e);
+			return scxml_id2419154.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			_initialConstructor.prototype = scxml_id2653836;
+			_initialConstructor.prototype = scxml_id2419154;
 			return new _initialConstructor();
 		})();
 
@@ -369,7 +373,7 @@
 		var initial_default = (function(){
 
 			function initial_defaultConstructor(){
-				this.parent = scxml_id2653836;
+				this.parent = scxml_id2419154;
 
 				this.initial = null;
 
@@ -383,7 +387,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 					];
 				
 				
@@ -394,11 +398,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -412,11 +416,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2655814_iterator=0, 
-			id2655814_hoist=listeners.length;
-				id2655814_iterator < id2655814_hoist;
-				id2655814_iterator++){
-			var listener = listeners[id2655814_iterator];
+		for(var id2419960_iterator=0, 
+			id2419960_hoist=listeners.length;
+				id2419960_iterator < id2419960_hoist;
+				id2419960_iterator++){
+			var listener = listeners[id2419960_iterator];
 
 			
 								//from
@@ -460,11 +464,11 @@
 				controller = _event.data;
 	
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -493,13 +497,13 @@
 
 		
 
-			return scxml_id2653836['init']();
+			return scxml_id2419154['init']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(init_Regexp_id2663430)
+				if(e.match(init_Regexp_id2429407)
 					){
 					
 		return {
@@ -530,11 +534,11 @@
 				controller = _event.data;
 	
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -565,14 +569,14 @@
 				}
 				
 
-			return scxml_id2653836.$dispatchPrefixEvent(e);
+			return scxml_id2419154.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			initial_defaultConstructor.prototype = scxml_id2653836;
+			initial_defaultConstructor.prototype = scxml_id2419154;
 			return new initial_defaultConstructor();
 		})();
 
@@ -581,7 +585,7 @@
 		var normal_mode = (function(){
 
 			function normal_modeConstructor(){
-				this.parent = scxml_id2653836;
+				this.parent = scxml_id2419154;
 
 				this.initial = null;
 
@@ -595,7 +599,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 					];
 				
 				
@@ -609,11 +613,11 @@
 				controller.updateModeText("-- NORMAL --")
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -627,11 +631,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2655636_iterator=0, 
-			id2655636_hoist=listeners.length;
-				id2655636_iterator < id2655636_hoist;
-				id2655636_iterator++){
-			var listener = listeners[id2655636_iterator];
+		for(var id2422650_iterator=0, 
+			id2422650_hoist=listeners.length;
+				id2422650_iterator < id2422650_hoist;
+				id2422650_iterator++){
+			var listener = listeners[id2422650_iterator];
 
 			
 								//from
@@ -662,11 +666,11 @@
 				controller.moveToEndOfLine(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -679,7 +683,7 @@
 
 		
 
-			return scxml_id2653836['bling']();
+			return scxml_id2419154['bling']();
 		}
 	
 
@@ -701,11 +705,11 @@
 				controller.moveLeft(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -718,7 +722,7 @@
 
 		
 
-			return scxml_id2653836['backspace']();
+			return scxml_id2419154['backspace']();
 		}
 	
 
@@ -740,11 +744,11 @@
 				controller.moveDown(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -757,7 +761,7 @@
 
 		
 
-			return scxml_id2653836['enter']();
+			return scxml_id2419154['enter']();
 		}
 	
 
@@ -791,11 +795,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -824,7 +828,7 @@
 
 		
 
-			return scxml_id2653836['colon']();
+			return scxml_id2419154['colon']();
 		}
 	
 
@@ -846,11 +850,11 @@
 				controller.moveToStartOfNextWord(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -863,7 +867,7 @@
 
 		
 
-			return scxml_id2653836['w']();
+			return scxml_id2419154['w']();
 		}
 	
 
@@ -885,11 +889,11 @@
 				controller.moveToEndOfNextWord(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -902,7 +906,7 @@
 
 		
 
-			return scxml_id2653836['e']();
+			return scxml_id2419154['e']();
 		}
 	
 
@@ -924,11 +928,11 @@
 				controller.moveToStartOfPreviousWord(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -941,7 +945,7 @@
 
 		
 
-			return scxml_id2653836['b']();
+			return scxml_id2419154['b']();
 		}
 	
 
@@ -963,11 +967,11 @@
 				controller.moveToStartOfLine(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -980,7 +984,7 @@
 
 		
 
-			return scxml_id2653836['zero']();
+			return scxml_id2419154['zero']();
 		}
 	
 
@@ -1002,11 +1006,11 @@
 				controller.moveLeft(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1019,7 +1023,7 @@
 
 		
 
-			return scxml_id2653836['h']();
+			return scxml_id2419154['h']();
 		}
 	
 
@@ -1041,11 +1045,11 @@
 				controller.moveRight(false,false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1058,7 +1062,7 @@
 
 		
 
-			return scxml_id2653836['l']();
+			return scxml_id2419154['l']();
 		}
 	
 
@@ -1080,11 +1084,11 @@
 				controller.moveUp(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1097,7 +1101,7 @@
 
 		
 
-			return scxml_id2653836['k']();
+			return scxml_id2419154['k']();
 		}
 	
 
@@ -1119,11 +1123,11 @@
 				controller.moveDown(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1136,7 +1140,7 @@
 
 		
 
-			return scxml_id2653836['j']();
+			return scxml_id2419154['j']();
 		}
 	
 
@@ -1158,11 +1162,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1175,7 +1179,7 @@
 
 		
 
-			return scxml_id2653836['left']();
+			return scxml_id2419154['left']();
 		}
 	
 
@@ -1197,11 +1201,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1214,7 +1218,7 @@
 
 		
 
-			return scxml_id2653836['right']();
+			return scxml_id2419154['right']();
 		}
 	
 
@@ -1236,11 +1240,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1253,7 +1257,7 @@
 
 		
 
-			return scxml_id2653836['up']();
+			return scxml_id2419154['up']();
 		}
 	
 
@@ -1275,11 +1279,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1292,7 +1296,7 @@
 
 		
 
-			return scxml_id2653836['down']();
+			return scxml_id2419154['down']();
 		}
 	
 
@@ -1326,11 +1330,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1361,7 +1365,7 @@
 
 		
 
-			return scxml_id2653836['v']();
+			return scxml_id2419154['v']();
 		}
 	
 
@@ -1395,11 +1399,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1430,7 +1434,7 @@
 
 		
 
-			return scxml_id2653836['V']();
+			return scxml_id2419154['V']();
 		}
 	
 
@@ -1464,11 +1468,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1499,7 +1503,7 @@
 
 		
 
-			return scxml_id2653836['ctrl_v']();
+			return scxml_id2419154['ctrl_v']();
 		}
 	
 
@@ -1533,11 +1537,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1566,7 +1570,7 @@
 
 		
 
-			return scxml_id2653836['i']();
+			return scxml_id2419154['i']();
 		}
 	
 
@@ -1602,11 +1606,11 @@
 				controller.moveRight(true);
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1635,13 +1639,13 @@
 
 		
 
-			return scxml_id2653836['a']();
+			return scxml_id2419154['a']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(bling_Regexp_id2663436)
+				if(e.match(bling_Regexp_id2429412)
 					){
 					
 		return {
@@ -1659,11 +1663,11 @@
 				controller.moveToEndOfLine(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1678,7 +1682,7 @@
 				}
 			
 				
-				if(e.match(backspace_Regexp_id2663441)
+				if(e.match(backspace_Regexp_id2429418)
 					){
 					
 		return {
@@ -1696,11 +1700,11 @@
 				controller.moveLeft(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1715,7 +1719,7 @@
 				}
 			
 				
-				if(e.match(enter_Regexp_id2663447)
+				if(e.match(enter_Regexp_id2429424)
 					){
 					
 		return {
@@ -1733,11 +1737,11 @@
 				controller.moveDown(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1752,7 +1756,7 @@
 				}
 			
 				
-				if(e.match(colon_Regexp_id2663453)
+				if(e.match(colon_Regexp_id2429429)
 					){
 					
 		return {
@@ -1782,11 +1786,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1817,7 +1821,7 @@
 				}
 			
 				
-				if(e.match(w_Regexp_id2663459)
+				if(e.match(w_Regexp_id2429435)
 					){
 					
 		return {
@@ -1835,11 +1839,11 @@
 				controller.moveToStartOfNextWord(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1854,7 +1858,7 @@
 				}
 			
 				
-				if(e.match(e_Regexp_id2663464)
+				if(e.match(e_Regexp_id2429440)
 					){
 					
 		return {
@@ -1872,11 +1876,11 @@
 				controller.moveToEndOfNextWord(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1891,7 +1895,7 @@
 				}
 			
 				
-				if(e.match(b_Regexp_id2663470)
+				if(e.match(b_Regexp_id2429446)
 					){
 					
 		return {
@@ -1909,11 +1913,11 @@
 				controller.moveToStartOfPreviousWord(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1928,7 +1932,7 @@
 				}
 			
 				
-				if(e.match(zero_Regexp_id2663475)
+				if(e.match(zero_Regexp_id2429452)
 					){
 					
 		return {
@@ -1946,11 +1950,11 @@
 				controller.moveToStartOfLine(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -1965,7 +1969,7 @@
 				}
 			
 				
-				if(e.match(h_Regexp_id2663481)
+				if(e.match(h_Regexp_id2429457)
 					){
 					
 		return {
@@ -1983,11 +1987,11 @@
 				controller.moveLeft(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2002,7 +2006,7 @@
 				}
 			
 				
-				if(e.match(l_Regexp_id2663487)
+				if(e.match(l_Regexp_id2429463)
 					){
 					
 		return {
@@ -2020,11 +2024,11 @@
 				controller.moveRight(false,false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2039,7 +2043,7 @@
 				}
 			
 				
-				if(e.match(k_Regexp_id2663492)
+				if(e.match(k_Regexp_id2429468)
 					){
 					
 		return {
@@ -2057,11 +2061,11 @@
 				controller.moveUp(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2076,7 +2080,7 @@
 				}
 			
 				
-				if(e.match(j_Regexp_id2663498)
+				if(e.match(j_Regexp_id2429474)
 					){
 					
 		return {
@@ -2094,11 +2098,11 @@
 				controller.moveDown(false)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2113,7 +2117,7 @@
 				}
 			
 				
-				if(e.match(left_Regexp_id2663503)
+				if(e.match(left_Regexp_id2429480)
 					){
 					
 		return {
@@ -2131,11 +2135,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2150,7 +2154,7 @@
 				}
 			
 				
-				if(e.match(right_Regexp_id2663509)
+				if(e.match(right_Regexp_id2429486)
 					){
 					
 		return {
@@ -2168,11 +2172,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2187,7 +2191,7 @@
 				}
 			
 				
-				if(e.match(up_Regexp_id2663515)
+				if(e.match(up_Regexp_id2429491)
 					){
 					
 		return {
@@ -2205,11 +2209,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2224,7 +2228,7 @@
 				}
 			
 				
-				if(e.match(down_Regexp_id2663520)
+				if(e.match(down_Regexp_id2429497)
 					){
 					
 		return {
@@ -2242,11 +2246,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2261,7 +2265,7 @@
 				}
 			
 				
-				if(e.match(v_Regexp_id2663526)
+				if(e.match(v_Regexp_id2429502)
 					){
 					
 		return {
@@ -2291,11 +2295,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2328,7 +2332,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2663531)
+				if(e.match(V_Regexp_id2429508)
 					){
 					
 		return {
@@ -2358,11 +2362,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2395,7 +2399,7 @@
 				}
 			
 				
-				if(e.match(ctrl_v_Regexp_id2663537)
+				if(e.match(ctrl_v_Regexp_id2429514)
 					){
 					
 		return {
@@ -2425,11 +2429,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2462,7 +2466,7 @@
 				}
 			
 				
-				if(e.match(i_Regexp_id2663543)
+				if(e.match(i_Regexp_id2429519)
 					){
 					
 		return {
@@ -2492,11 +2496,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2527,7 +2531,7 @@
 				}
 			
 				
-				if(e.match(a_Regexp_id2663548)
+				if(e.match(a_Regexp_id2429525)
 					){
 					
 		return {
@@ -2559,11 +2563,11 @@
 				controller.moveRight(true);
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2594,14 +2598,14 @@
 				}
 				
 
-			return scxml_id2653836.$dispatchPrefixEvent(e);
+			return scxml_id2419154.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			normal_modeConstructor.prototype = scxml_id2653836;
+			normal_modeConstructor.prototype = scxml_id2419154;
 			return new normal_modeConstructor();
 		})();
 
@@ -2610,7 +2614,7 @@
 		var visual_or_select_mode = (function(){
 
 			function visual_or_select_modeConstructor(){
-				this.parent = scxml_id2653836;
+				this.parent = scxml_id2419154;
 
 				this.initial = null;
 
@@ -2634,11 +2638,11 @@
 				controller.startSelection(); 
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -2654,11 +2658,11 @@
 				controller.clearSelection(); 
 			
 
-		for(var id2657868_iterator=0, 
-			id2657868_hoist=listeners.length;
-				id2657868_iterator < id2657868_hoist;
-				id2657868_iterator++){
-			var listener = listeners[id2657868_iterator];
+		for(var id2422578_iterator=0, 
+			id2422578_hoist=listeners.length;
+				id2422578_iterator < id2422578_hoist;
+				id2422578_iterator++){
+			var listener = listeners[id2422578_iterator];
 
 			
 								//from
@@ -2689,11 +2693,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2706,7 +2710,7 @@
 
 		
 
-			return scxml_id2653836['left']();
+			return scxml_id2419154['left']();
 		}
 	
 
@@ -2728,11 +2732,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2745,7 +2749,7 @@
 
 		
 
-			return scxml_id2653836['right']();
+			return scxml_id2419154['right']();
 		}
 	
 
@@ -2767,11 +2771,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2784,7 +2788,7 @@
 
 		
 
-			return scxml_id2653836['up']();
+			return scxml_id2419154['up']();
 		}
 	
 
@@ -2806,11 +2810,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2823,7 +2827,7 @@
 
 		
 
-			return scxml_id2653836['down']();
+			return scxml_id2419154['down']();
 		}
 	
 
@@ -2854,15 +2858,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -2889,11 +2893,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -2905,11 +2909,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2917,7 +2921,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"visual_or_select_mode_esc_9" );
+									"visual_or_select_mode_esc_10" );
 							
 		}
 	
@@ -2938,13 +2942,13 @@
 
 		
 
-			return scxml_id2653836['esc']();
+			return scxml_id2419154['esc']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(left_Regexp_id2663503)
+				if(e.match(left_Regexp_id2429480)
 					){
 					
 		return {
@@ -2962,11 +2966,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -2981,7 +2985,7 @@
 				}
 			
 				
-				if(e.match(right_Regexp_id2663509)
+				if(e.match(right_Regexp_id2429486)
 					){
 					
 		return {
@@ -2999,11 +3003,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3018,7 +3022,7 @@
 				}
 			
 				
-				if(e.match(up_Regexp_id2663515)
+				if(e.match(up_Regexp_id2429491)
 					){
 					
 		return {
@@ -3036,11 +3040,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3055,7 +3059,7 @@
 				}
 			
 				
-				if(e.match(down_Regexp_id2663520)
+				if(e.match(down_Regexp_id2429497)
 					){
 					
 		return {
@@ -3073,11 +3077,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3092,7 +3096,7 @@
 				}
 			
 				
-				if(e.match(esc_Regexp_id2663554)
+				if(e.match(esc_Regexp_id2429530)
 					){
 					
 		return {
@@ -3119,15 +3123,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3154,11 +3158,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -3170,11 +3174,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3182,7 +3186,7 @@
 								listener.onTransition(
 									"visual_or_select_mode",
 									"normal_mode",
-									"visual_or_select_mode_esc_9" );
+									"visual_or_select_mode_esc_10" );
 							
 		}
 	
@@ -3205,15 +3209,163 @@
 				}
 				
 
-			return scxml_id2653836.$dispatchPrefixEvent(e);
+			return scxml_id2419154.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			visual_or_select_modeConstructor.prototype = scxml_id2653836;
+			visual_or_select_modeConstructor.prototype = scxml_id2419154;
 			return new visual_or_select_modeConstructor();
+		})();
+
+	
+
+		var visual_or_select_mode_initial = (function(){
+
+			function visual_or_select_mode_initialConstructor(){
+				this.parent = visual_or_select_mode;
+
+				this.initial = null;
+
+				this.depth = 2;
+
+				this.historyState = null;
+
+				//these variables facilitate fast In predicate
+				this.isBasic = 
+				
+						true;
+					
+					this.ancestors = [
+						scxml_id2419154
+								,
+							visual_or_select_mode
+					];
+				
+					this.parent.initial = this; //init parent's pointer to initial state
+				
+				
+				this.toString = function(){
+					return "visual_or_select_mode_initial"
+				}
+
+				this.enterAction = function(){
+					
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+								//to
+								listener.onEntry("visual_or_select_mode_initial");
+							
+		}
+	
+	
+				}
+
+				this.exitAction = function(){
+					
+
+		for(var id2421143_iterator=0, 
+			id2421143_hoist=listeners.length;
+				id2421143_iterator < id2421143_hoist;
+				id2421143_iterator++){
+			var listener = listeners[id2421143_iterator];
+
+			
+								//from
+								listener.onExit("visual_or_select_mode_initial");
+							
+		}
+	
+	
+				}
+
+				
+
+		this.$default = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               
+               }
+       ,
+			action : function(){
+				
+					hasTakenDefaultTransition = true;
+				
+
+					//exit states
+					visual_or_select_mode_initial.exitAction();
+							
+
+				//transition action
+				
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"visual_mode_initial",
+									"visual_or_select_mode_initial_$default_9" );
+							
+		}
+	
+	
+					//enter states
+					visual_mode.enterAction();
+					visual_mode_initial.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			visual_mode_initial
+		]; 
+	
+			}
+		}
+
+		
+
+			return visual_or_select_mode['$default']();
+		}
+	
+		this.$dispatchPrefixEvent = function(e){
+				
+
+			return visual_or_select_mode.$dispatchPrefixEvent(e);
+		}
+		
+	
+				
+
+			}
+			visual_or_select_mode_initialConstructor.prototype = visual_or_select_mode;
+			return new visual_or_select_mode_initialConstructor();
 		})();
 
 	
@@ -3242,11 +3394,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -3260,11 +3412,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2656140_iterator=0, 
-			id2656140_hoist=listeners.length;
-				id2656140_iterator < id2656140_hoist;
-				id2656140_iterator++){
-			var listener = listeners[id2656140_iterator];
+		for(var id2421463_iterator=0, 
+			id2421463_hoist=listeners.length;
+				id2421463_iterator < id2421463_hoist;
+				id2421463_iterator++){
+			var listener = listeners[id2421463_iterator];
 
 			
 								//from
@@ -3306,15 +3458,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3341,11 +3493,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -3361,11 +3513,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3373,7 +3525,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -3429,15 +3581,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3464,11 +3616,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -3484,11 +3636,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3496,7 +3648,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -3552,15 +3704,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3587,11 +3739,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -3607,11 +3759,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3619,7 +3771,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -3675,15 +3827,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3710,11 +3862,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -3730,11 +3882,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3742,7 +3894,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -3798,15 +3950,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3833,11 +3985,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -3853,11 +4005,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3865,7 +4017,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -3921,15 +4073,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3956,11 +4108,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -3976,11 +4128,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -3988,7 +4140,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -4044,15 +4196,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4079,11 +4231,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -4099,11 +4251,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -4111,7 +4263,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -4167,15 +4319,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4202,11 +4354,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -4222,11 +4374,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -4234,7 +4386,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -4290,15 +4442,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4325,11 +4477,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -4345,11 +4497,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -4357,7 +4509,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -4413,15 +4565,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4448,11 +4600,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -4468,11 +4620,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -4480,7 +4632,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -4536,15 +4688,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4571,11 +4723,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -4591,11 +4743,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -4603,7 +4755,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -4659,15 +4811,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4694,11 +4846,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -4714,11 +4866,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -4726,7 +4878,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -4782,15 +4934,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4817,11 +4969,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -4837,11 +4989,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -4849,7 +5001,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -4905,15 +5057,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4940,11 +5092,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -4960,11 +5112,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -4972,7 +5124,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -5028,15 +5180,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5063,11 +5215,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -5083,11 +5235,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -5095,7 +5247,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -5151,15 +5303,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5186,11 +5338,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -5206,11 +5358,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -5218,7 +5370,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -5274,15 +5426,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5309,11 +5461,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -5329,11 +5481,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -5341,7 +5493,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -5397,15 +5549,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5432,11 +5584,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -5452,11 +5604,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -5464,7 +5616,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -5520,15 +5672,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5555,11 +5707,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -5575,11 +5727,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -5587,7 +5739,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -5643,15 +5795,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5678,11 +5830,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -5698,11 +5850,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -5710,7 +5862,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -5766,15 +5918,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5801,11 +5953,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -5821,11 +5973,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -5833,7 +5985,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -5889,15 +6041,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5924,11 +6076,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -5944,11 +6096,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -5956,7 +6108,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -6012,15 +6164,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6047,11 +6199,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -6067,11 +6219,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6079,7 +6231,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -6103,6 +6255,129 @@
 				
 
 			return visual_or_select_mode['ctrl_g']();
+		}
+	
+
+		this.y = function(){
+
+			
+				if(_event.data.charCode !== 0){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       initial_default : true
+                               ,normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = scxml_id2419154;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+					//TODO: delete text in selection, replace with event data
+					var c = String.fromCharCode(_event.data.charCode);
+					alert("replaced text with " + c);
+				
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"normal_mode",
+									"select_mode_*_12" );
+							
+		}
+	
+	
+					//enter states
+					normal_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			normal_mode
+		]; 
+	
+			}
+		}
+
+	
+				}
+				
+
+			return visual_or_select_mode['y']();
 		}
 	
 
@@ -6135,15 +6410,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6170,11 +6445,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -6190,11 +6465,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6202,7 +6477,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -6231,7 +6506,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(star_Regexp_id2663560)
+				if(e.match(star_Regexp_id2429536)
 					
 						&& _event.data.charCode !== 0){
 					
@@ -6261,15 +6536,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6296,11 +6571,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -6316,11 +6591,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6328,7 +6603,7 @@
 								listener.onTransition(
 									"select_mode",
 									"normal_mode",
-									"select_mode_*_10" );
+									"select_mode_*_12" );
 							
 		}
 	
@@ -6366,6 +6641,152 @@
 
 	
 
+		var select_mode_initial = (function(){
+
+			function select_mode_initialConstructor(){
+				this.parent = select_mode;
+
+				this.initial = null;
+
+				this.depth = 3;
+
+				this.historyState = null;
+
+				//these variables facilitate fast In predicate
+				this.isBasic = 
+				
+						true;
+					
+					this.ancestors = [
+						scxml_id2419154
+								,
+							visual_or_select_mode
+								,
+							select_mode
+					];
+				
+					this.parent.initial = this; //init parent's pointer to initial state
+				
+				
+				this.toString = function(){
+					return "select_mode_initial"
+				}
+
+				this.enterAction = function(){
+					
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+								//to
+								listener.onEntry("select_mode_initial");
+							
+		}
+	
+	
+				}
+
+				this.exitAction = function(){
+					
+
+		for(var id2421471_iterator=0, 
+			id2421471_hoist=listeners.length;
+				id2421471_iterator < id2421471_hoist;
+				id2421471_iterator++){
+			var listener = listeners[id2421471_iterator];
+
+			
+								//from
+								listener.onExit("select_mode_initial");
+							
+		}
+	
+	
+				}
+
+				
+
+		this.$default = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               
+               }
+       ,
+			action : function(){
+				
+					hasTakenDefaultTransition = true;
+				
+
+					//exit states
+					select_mode_initial.exitAction();
+							
+
+				//transition action
+				
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"select_character",
+									"select_mode_initial_$default_11" );
+							
+		}
+	
+	
+					//enter states
+					select_character.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			select_character
+		]; 
+	
+			}
+		}
+
+		
+
+			return select_mode['$default']();
+		}
+	
+		this.$dispatchPrefixEvent = function(e){
+				
+
+			return select_mode.$dispatchPrefixEvent(e);
+		}
+		
+	
+				
+
+			}
+			select_mode_initialConstructor.prototype = select_mode;
+			return new select_mode_initialConstructor();
+		})();
+
+	
+
 		var select_line = (function(){
 
 			function select_lineConstructor(){
@@ -6383,7 +6804,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 								,
 							visual_or_select_mode
 								,
@@ -6401,11 +6822,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -6419,11 +6840,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2656220_iterator=0, 
-			id2656220_hoist=listeners.length;
-				id2656220_iterator < id2656220_hoist;
-				id2656220_iterator++){
-			var listener = listeners[id2656220_iterator];
+		for(var id2421630_iterator=0, 
+			id2421630_hoist=listeners.length;
+				id2421630_iterator < id2421630_hoist;
+				id2421630_iterator++){
+			var listener = listeners[id2421630_iterator];
 
 			
 								//from
@@ -6459,11 +6880,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6471,7 +6892,7 @@
 								listener.onTransition(
 									"",
 									"select_character",
-									"select_line_v_12" );
+									"select_line_v_14" );
 							
 		}
 	
@@ -6519,11 +6940,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6531,7 +6952,7 @@
 								listener.onTransition(
 									"",
 									"select_block",
-									"select_line_ctrl_v_11" );
+									"select_line_ctrl_v_13" );
 							
 		}
 	
@@ -6583,11 +7004,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6595,7 +7016,7 @@
 								listener.onTransition(
 									"",
 									"visual_line",
-									"select_line_ctrl_g_13" );
+									"select_line_ctrl_g_15" );
 							
 		}
 	
@@ -6623,7 +7044,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_Regexp_id2663537)
+				if(e.match(ctrl_v_Regexp_id2429514)
 					){
 					
 		return {
@@ -6646,11 +7067,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6658,7 +7079,7 @@
 								listener.onTransition(
 									"select_line",
 									"select_block",
-									"select_line_ctrl_v_11" );
+									"select_line_ctrl_v_13" );
 							
 		}
 	
@@ -6681,7 +7102,7 @@
 				}
 			
 				
-				if(e.match(v_Regexp_id2663526)
+				if(e.match(v_Regexp_id2429502)
 					){
 					
 		return {
@@ -6704,11 +7125,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6716,7 +7137,7 @@
 								listener.onTransition(
 									"select_line",
 									"select_character",
-									"select_line_v_12" );
+									"select_line_v_14" );
 							
 		}
 	
@@ -6739,7 +7160,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2663565)
+				if(e.match(ctrl_g_Regexp_id2429542)
 					){
 					
 		return {
@@ -6766,11 +7187,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6778,7 +7199,7 @@
 								listener.onTransition(
 									"select_line",
 									"visual_line",
-									"select_line_ctrl_g_13" );
+									"select_line_ctrl_g_15" );
 							
 		}
 	
@@ -6832,7 +7253,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 								,
 							visual_or_select_mode
 								,
@@ -6850,11 +7271,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -6868,11 +7289,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2658187_iterator=0, 
-			id2658187_hoist=listeners.length;
-				id2658187_iterator < id2658187_hoist;
-				id2658187_iterator++){
-			var listener = listeners[id2658187_iterator];
+		for(var id2423833_iterator=0, 
+			id2423833_hoist=listeners.length;
+				id2423833_iterator < id2423833_hoist;
+				id2423833_iterator++){
+			var listener = listeners[id2423833_iterator];
 
 			
 								//from
@@ -6908,11 +7329,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6920,7 +7341,7 @@
 								listener.onTransition(
 									"",
 									"select_character",
-									"select_block_v_14" );
+									"select_block_v_16" );
 							
 		}
 	
@@ -6968,11 +7389,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -6980,7 +7401,7 @@
 								listener.onTransition(
 									"",
 									"select_line",
-									"select_block_V_15" );
+									"select_block_V_17" );
 							
 		}
 	
@@ -7032,11 +7453,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7044,7 +7465,7 @@
 								listener.onTransition(
 									"",
 									"visual_block",
-									"select_block_ctrl_g_16" );
+									"select_block_ctrl_g_18" );
 							
 		}
 	
@@ -7072,7 +7493,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(v_Regexp_id2663526)
+				if(e.match(v_Regexp_id2429502)
 					){
 					
 		return {
@@ -7095,11 +7516,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7107,7 +7528,7 @@
 								listener.onTransition(
 									"select_block",
 									"select_character",
-									"select_block_v_14" );
+									"select_block_v_16" );
 							
 		}
 	
@@ -7130,7 +7551,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2663531)
+				if(e.match(V_Regexp_id2429508)
 					){
 					
 		return {
@@ -7153,11 +7574,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7165,7 +7586,7 @@
 								listener.onTransition(
 									"select_block",
 									"select_line",
-									"select_block_V_15" );
+									"select_block_V_17" );
 							
 		}
 	
@@ -7188,7 +7609,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2663565)
+				if(e.match(ctrl_g_Regexp_id2429542)
 					){
 					
 		return {
@@ -7215,11 +7636,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7227,7 +7648,7 @@
 								listener.onTransition(
 									"select_block",
 									"visual_block",
-									"select_block_ctrl_g_16" );
+									"select_block_ctrl_g_18" );
 							
 		}
 	
@@ -7281,7 +7702,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 								,
 							visual_or_select_mode
 								,
@@ -7299,11 +7720,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -7317,11 +7738,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2658464_iterator=0, 
-			id2658464_hoist=listeners.length;
-				id2658464_iterator < id2658464_hoist;
-				id2658464_iterator++){
-			var listener = listeners[id2658464_iterator];
+		for(var id2424109_iterator=0, 
+			id2424109_hoist=listeners.length;
+				id2424109_iterator < id2424109_hoist;
+				id2424109_iterator++){
+			var listener = listeners[id2424109_iterator];
 
 			
 								//from
@@ -7357,11 +7778,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7369,7 +7790,7 @@
 								listener.onTransition(
 									"",
 									"select_line",
-									"select_character_V_18" );
+									"select_character_V_20" );
 							
 		}
 	
@@ -7417,11 +7838,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7429,7 +7850,7 @@
 								listener.onTransition(
 									"",
 									"select_block",
-									"select_character_ctrl_v_17" );
+									"select_character_ctrl_v_19" );
 							
 		}
 	
@@ -7481,11 +7902,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7493,7 +7914,7 @@
 								listener.onTransition(
 									"",
 									"visual_character",
-									"select_character_ctrl_g_19" );
+									"select_character_ctrl_g_21" );
 							
 		}
 	
@@ -7521,7 +7942,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_Regexp_id2663537)
+				if(e.match(ctrl_v_Regexp_id2429514)
 					){
 					
 		return {
@@ -7544,11 +7965,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7556,7 +7977,7 @@
 								listener.onTransition(
 									"select_character",
 									"select_block",
-									"select_character_ctrl_v_17" );
+									"select_character_ctrl_v_19" );
 							
 		}
 	
@@ -7579,7 +8000,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2663531)
+				if(e.match(V_Regexp_id2429508)
 					){
 					
 		return {
@@ -7602,11 +8023,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7614,7 +8035,7 @@
 								listener.onTransition(
 									"select_character",
 									"select_line",
-									"select_character_V_18" );
+									"select_character_V_20" );
 							
 		}
 	
@@ -7637,7 +8058,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2663565)
+				if(e.match(ctrl_g_Regexp_id2429542)
 					){
 					
 		return {
@@ -7664,11 +8085,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7676,7 +8097,7 @@
 								listener.onTransition(
 									"select_character",
 									"visual_character",
-									"select_character_ctrl_g_19" );
+									"select_character_ctrl_g_21" );
 							
 		}
 	
@@ -7737,11 +8158,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -7755,11 +8176,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2661177_iterator=0, 
-			id2661177_hoist=listeners.length;
-				id2661177_iterator < id2661177_hoist;
-				id2661177_iterator++){
-			var listener = listeners[id2661177_iterator];
+		for(var id2427019_iterator=0, 
+			id2427019_hoist=listeners.length;
+				id2427019_iterator < id2427019_hoist;
+				id2427019_iterator++){
+			var listener = listeners[id2427019_iterator];
 
 			
 								//from
@@ -7790,11 +8211,11 @@
 				controller.moveToEndOfLine(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7829,11 +8250,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7868,11 +8289,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7916,15 +8337,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -7951,11 +8372,11 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -7967,11 +8388,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -7979,7 +8400,7 @@
 								listener.onTransition(
 									"",
 									"command_mode",
-									"visual_mode_colon_21" );
+									"visual_mode_colon_24" );
 							
 		}
 	
@@ -8022,11 +8443,11 @@
 				controller.moveToStartOfNextWord(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8061,11 +8482,11 @@
 				controller.moveToEndOfNextWord(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8100,11 +8521,11 @@
 				controller.moveToStartOfPreviousWord(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8139,11 +8560,11 @@
 				controller.moveToStartOfLine(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8178,11 +8599,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8217,11 +8638,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8256,11 +8677,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8295,11 +8716,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8315,123 +8736,10 @@
 			return visual_or_select_mode['j']();
 		}
 	
-		this.$dispatchPrefixEvent = function(e){
-			
-				
-				if(e.match(bling_Regexp_id2663436)
-					){
-					
-		return {
-			preemptedBasicStates : 
-               
-               {
-                       
-               }
-       ,
-			action : function(){
-				
 
-				//transition action
-				
-				controller.moveToEndOfLine(true)
-			
-
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		this.y = function(){
 
 			
-							//transition id
-							
-		}
-	
-	
-			}
-		}
-
-	
-				}
-			
-				
-				if(e.match(backspace_Regexp_id2663441)
-					){
-					
-		return {
-			preemptedBasicStates : 
-               
-               {
-                       
-               }
-       ,
-			action : function(){
-				
-
-				//transition action
-				
-				controller.moveLeft(true)
-			
-
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
-
-			
-							//transition id
-							
-		}
-	
-	
-			}
-		}
-
-	
-				}
-			
-				
-				if(e.match(enter_Regexp_id2663447)
-					){
-					
-		return {
-			preemptedBasicStates : 
-               
-               {
-                       
-               }
-       ,
-			action : function(){
-				
-
-				//transition action
-				
-				controller.moveDown(true)
-			
-
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
-
-			
-							//transition id
-							
-		}
-	
-	
-			}
-		}
-
-	
-				}
-			
-				
-				if(e.match(colon_Regexp_id2663453)
-					){
-					
 		return {
 			preemptedBasicStates : 
                
@@ -8456,15 +8764,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2653836;
+		var lca = scxml_id2419154;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8491,11 +8799,356 @@
 
 		
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=statesExited.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = statesExited[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+					controller.copySelectedTextIntoRegister();  
+				
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"normal_mode",
+									"visual_mode_y_23" );
+							
+		}
+	
+	
+					//enter states
+					normal_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			normal_mode
+		]; 
+	
+			}
+		}
+
+		
+
+			return visual_or_select_mode['y']();
+		}
+	
+		this.$dispatchPrefixEvent = function(e){
+			
+				
+				if(e.match(y_Regexp_id2429547)
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       initial_default : true
+                               ,normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = scxml_id2419154;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+					controller.copySelectedTextIntoRegister();  
+				
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"visual_mode",
+									"normal_mode",
+									"visual_mode_y_23" );
+							
+		}
+	
+	
+					//enter states
+					normal_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			normal_mode
+		]; 
+	
+			}
+		}
+
+	
+				}
+			
+				
+				if(e.match(bling_Regexp_id2429412)
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+				controller.moveToEndOfLine(true)
+			
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+	
+				}
+			
+				
+				if(e.match(backspace_Regexp_id2429418)
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+				controller.moveLeft(true)
+			
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+	
+				}
+			
+				
+				if(e.match(enter_Regexp_id2429424)
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+				controller.moveDown(true)
+			
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+	
+				}
+			
+				
+				if(e.match(colon_Regexp_id2429429)
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       initial_default : true
+                               ,normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = scxml_id2419154;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2426860_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=statesExited.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = statesExited[id2426860_iterator];
 
 			
 				state.exitAction();
@@ -8507,11 +9160,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8519,7 +9172,7 @@
 								listener.onTransition(
 									"visual_mode",
 									"command_mode",
-									"visual_mode_colon_21" );
+									"visual_mode_colon_24" );
 							
 		}
 	
@@ -8542,7 +9195,7 @@
 				}
 			
 				
-				if(e.match(w_Regexp_id2663459)
+				if(e.match(w_Regexp_id2429435)
 					){
 					
 		return {
@@ -8560,11 +9213,11 @@
 				controller.moveToStartOfNextWord(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8579,7 +9232,7 @@
 				}
 			
 				
-				if(e.match(e_Regexp_id2663464)
+				if(e.match(e_Regexp_id2429440)
 					){
 					
 		return {
@@ -8597,11 +9250,11 @@
 				controller.moveToEndOfNextWord(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8616,7 +9269,7 @@
 				}
 			
 				
-				if(e.match(b_Regexp_id2663470)
+				if(e.match(b_Regexp_id2429446)
 					){
 					
 		return {
@@ -8634,11 +9287,11 @@
 				controller.moveToStartOfPreviousWord(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8653,7 +9306,7 @@
 				}
 			
 				
-				if(e.match(zero_Regexp_id2663475)
+				if(e.match(zero_Regexp_id2429452)
 					){
 					
 		return {
@@ -8671,11 +9324,11 @@
 				controller.moveToStartOfLine(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8690,7 +9343,7 @@
 				}
 			
 				
-				if(e.match(h_Regexp_id2663481)
+				if(e.match(h_Regexp_id2429457)
 					){
 					
 		return {
@@ -8708,11 +9361,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8727,7 +9380,7 @@
 				}
 			
 				
-				if(e.match(l_Regexp_id2663487)
+				if(e.match(l_Regexp_id2429463)
 					){
 					
 		return {
@@ -8745,11 +9398,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8764,7 +9417,7 @@
 				}
 			
 				
-				if(e.match(k_Regexp_id2663492)
+				if(e.match(k_Regexp_id2429468)
 					){
 					
 		return {
@@ -8782,11 +9435,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8801,7 +9454,7 @@
 				}
 			
 				
-				if(e.match(j_Regexp_id2663498)
+				if(e.match(j_Regexp_id2429474)
 					){
 					
 		return {
@@ -8819,11 +9472,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8868,7 +9521,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 								,
 							visual_or_select_mode
 								,
@@ -8885,11 +9538,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -8903,11 +9556,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2662770_iterator=0, 
-			id2662770_hoist=listeners.length;
-				id2662770_iterator < id2662770_hoist;
-				id2662770_iterator++){
-			var listener = listeners[id2662770_iterator];
+		for(var id2428679_iterator=0, 
+			id2428679_hoist=listeners.length;
+				id2428679_iterator < id2428679_hoist;
+				id2428679_iterator++){
+			var listener = listeners[id2428679_iterator];
 
 			
 								//from
@@ -8945,11 +9598,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -8957,7 +9610,7 @@
 								listener.onTransition(
 									"",
 									"visual_character",
-									"visual_mode_initial_$default_20" );
+									"visual_mode_initial_$default_22" );
 							
 		}
 	
@@ -9014,7 +9667,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 								,
 							visual_or_select_mode
 								,
@@ -9032,11 +9685,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -9050,11 +9703,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2663031_iterator=0, 
-			id2663031_hoist=listeners.length;
-				id2663031_iterator < id2663031_hoist;
-				id2663031_iterator++){
-			var listener = listeners[id2663031_iterator];
+		for(var id2429011_iterator=0, 
+			id2429011_hoist=listeners.length;
+				id2429011_iterator < id2429011_hoist;
+				id2429011_iterator++){
+			var listener = listeners[id2429011_iterator];
 
 			
 								//from
@@ -9090,11 +9743,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9102,7 +9755,7 @@
 								listener.onTransition(
 									"",
 									"visual_character",
-									"visual_line_v_23" );
+									"visual_line_v_26" );
 							
 		}
 	
@@ -9150,11 +9803,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9162,7 +9815,7 @@
 								listener.onTransition(
 									"",
 									"visual_block",
-									"visual_line_ctrl_v_22" );
+									"visual_line_ctrl_v_25" );
 							
 		}
 	
@@ -9214,11 +9867,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9226,7 +9879,7 @@
 								listener.onTransition(
 									"",
 									"select_line",
-									"visual_line_ctrl_g_24" );
+									"visual_line_ctrl_g_27" );
 							
 		}
 	
@@ -9254,7 +9907,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_Regexp_id2663537)
+				if(e.match(ctrl_v_Regexp_id2429514)
 					){
 					
 		return {
@@ -9277,11 +9930,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9289,7 +9942,7 @@
 								listener.onTransition(
 									"visual_line",
 									"visual_block",
-									"visual_line_ctrl_v_22" );
+									"visual_line_ctrl_v_25" );
 							
 		}
 	
@@ -9312,7 +9965,7 @@
 				}
 			
 				
-				if(e.match(v_Regexp_id2663526)
+				if(e.match(v_Regexp_id2429502)
 					){
 					
 		return {
@@ -9335,11 +9988,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9347,7 +10000,7 @@
 								listener.onTransition(
 									"visual_line",
 									"visual_character",
-									"visual_line_v_23" );
+									"visual_line_v_26" );
 							
 		}
 	
@@ -9370,7 +10023,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2663565)
+				if(e.match(ctrl_g_Regexp_id2429542)
 					){
 					
 		return {
@@ -9397,11 +10050,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9409,7 +10062,7 @@
 								listener.onTransition(
 									"visual_line",
 									"select_line",
-									"visual_line_ctrl_g_24" );
+									"visual_line_ctrl_g_27" );
 							
 		}
 	
@@ -9463,7 +10116,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 								,
 							visual_or_select_mode
 								,
@@ -9481,11 +10134,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -9499,11 +10152,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2663308_iterator=0, 
-			id2663308_hoist=listeners.length;
-				id2663308_iterator < id2663308_hoist;
-				id2663308_iterator++){
-			var listener = listeners[id2663308_iterator];
+		for(var id2429289_iterator=0, 
+			id2429289_hoist=listeners.length;
+				id2429289_iterator < id2429289_hoist;
+				id2429289_iterator++){
+			var listener = listeners[id2429289_iterator];
 
 			
 								//from
@@ -9539,11 +10192,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9551,7 +10204,7 @@
 								listener.onTransition(
 									"",
 									"visual_character",
-									"visual_block_v_25" );
+									"visual_block_v_28" );
 							
 		}
 	
@@ -9599,11 +10252,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9611,7 +10264,7 @@
 								listener.onTransition(
 									"",
 									"visual_line",
-									"visual_block_V_26" );
+									"visual_block_V_29" );
 							
 		}
 	
@@ -9663,11 +10316,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9675,7 +10328,7 @@
 								listener.onTransition(
 									"",
 									"select_block",
-									"visual_block_ctrl_g_27" );
+									"visual_block_ctrl_g_30" );
 							
 		}
 	
@@ -9703,7 +10356,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(v_Regexp_id2663526)
+				if(e.match(v_Regexp_id2429502)
 					){
 					
 		return {
@@ -9726,11 +10379,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9738,7 +10391,7 @@
 								listener.onTransition(
 									"visual_block",
 									"visual_character",
-									"visual_block_v_25" );
+									"visual_block_v_28" );
 							
 		}
 	
@@ -9761,7 +10414,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2663531)
+				if(e.match(V_Regexp_id2429508)
 					){
 					
 		return {
@@ -9784,11 +10437,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9796,7 +10449,7 @@
 								listener.onTransition(
 									"visual_block",
 									"visual_line",
-									"visual_block_V_26" );
+									"visual_block_V_29" );
 							
 		}
 	
@@ -9819,7 +10472,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2663565)
+				if(e.match(ctrl_g_Regexp_id2429542)
 					){
 					
 		return {
@@ -9846,11 +10499,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -9858,7 +10511,7 @@
 								listener.onTransition(
 									"visual_block",
 									"select_block",
-									"visual_block_ctrl_g_27" );
+									"visual_block_ctrl_g_30" );
 							
 		}
 	
@@ -9912,7 +10565,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 								,
 							visual_or_select_mode
 								,
@@ -9930,11 +10583,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 					
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -9948,11 +10601,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2664013_iterator=0, 
-			id2664013_hoist=listeners.length;
-				id2664013_iterator < id2664013_hoist;
-				id2664013_iterator++){
-			var listener = listeners[id2664013_iterator];
+		for(var id2430000_iterator=0, 
+			id2430000_hoist=listeners.length;
+				id2430000_iterator < id2430000_hoist;
+				id2430000_iterator++){
+			var listener = listeners[id2430000_iterator];
 
 			
 								//from
@@ -9988,11 +10641,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10000,7 +10653,7 @@
 								listener.onTransition(
 									"",
 									"visual_line",
-									"visual_character_V_29" );
+									"visual_character_V_32" );
 							
 		}
 	
@@ -10048,11 +10701,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10060,7 +10713,7 @@
 								listener.onTransition(
 									"",
 									"visual_block",
-									"visual_character_ctrl_v_28" );
+									"visual_character_ctrl_v_31" );
 							
 		}
 	
@@ -10112,11 +10765,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10124,7 +10777,7 @@
 								listener.onTransition(
 									"",
 									"select_character",
-									"visual_character_ctrl_g_30" );
+									"visual_character_ctrl_g_33" );
 							
 		}
 	
@@ -10152,7 +10805,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_Regexp_id2663537)
+				if(e.match(ctrl_v_Regexp_id2429514)
 					){
 					
 		return {
@@ -10175,11 +10828,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10187,7 +10840,7 @@
 								listener.onTransition(
 									"visual_character",
 									"visual_block",
-									"visual_character_ctrl_v_28" );
+									"visual_character_ctrl_v_31" );
 							
 		}
 	
@@ -10210,7 +10863,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2663531)
+				if(e.match(V_Regexp_id2429508)
 					){
 					
 		return {
@@ -10233,11 +10886,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10245,7 +10898,7 @@
 								listener.onTransition(
 									"visual_character",
 									"visual_line",
-									"visual_character_V_29" );
+									"visual_character_V_32" );
 							
 		}
 	
@@ -10268,7 +10921,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2663565)
+				if(e.match(ctrl_g_Regexp_id2429542)
 					){
 					
 		return {
@@ -10295,11 +10948,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10307,7 +10960,7 @@
 								listener.onTransition(
 									"visual_character",
 									"select_character",
-									"visual_character_ctrl_g_30" );
+									"visual_character_ctrl_g_33" );
 							
 		}
 	
@@ -10347,7 +11000,7 @@
 		var insert_mode = (function(){
 
 			function insert_modeConstructor(){
-				this.parent = scxml_id2653836;
+				this.parent = scxml_id2419154;
 
 				this.initial = null;
 
@@ -10361,7 +11014,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 					];
 				
 				
@@ -10375,11 +11028,11 @@
 				controller.updateModeText("-- INSERT --")
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -10393,11 +11046,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2664555_iterator=0, 
-			id2664555_hoist=listeners.length;
-				id2664555_iterator < id2664555_hoist;
-				id2664555_iterator++){
-			var listener = listeners[id2664555_iterator];
+		for(var id2430604_iterator=0, 
+			id2430604_hoist=listeners.length;
+				id2430604_iterator < id2430604_hoist;
+				id2430604_iterator++){
+			var listener = listeners[id2430604_iterator];
 
 			
 								//from
@@ -10428,11 +11081,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10445,7 +11098,7 @@
 
 		
 
-			return scxml_id2653836['init']();
+			return scxml_id2419154['init']();
 		}
 	
 
@@ -10467,11 +11120,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10484,7 +11137,7 @@
 
 		
 
-			return scxml_id2653836['bling']();
+			return scxml_id2419154['bling']();
 		}
 	
 
@@ -10506,11 +11159,11 @@
 				controller.writeBackspace()
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10537,11 +11190,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10554,7 +11207,7 @@
 
 		
 
-			return scxml_id2653836['backspace']();
+			return scxml_id2419154['backspace']();
 		}
 	
 
@@ -10576,11 +11229,11 @@
 				controller.writeNewLine()
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10607,11 +11260,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10624,7 +11277,7 @@
 
 		
 
-			return scxml_id2653836['enter']();
+			return scxml_id2419154['enter']();
 		}
 	
 
@@ -10646,11 +11299,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10663,7 +11316,7 @@
 
 		
 
-			return scxml_id2653836['colon']();
+			return scxml_id2419154['colon']();
 		}
 	
 
@@ -10685,11 +11338,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10702,7 +11355,7 @@
 
 		
 
-			return scxml_id2653836['w']();
+			return scxml_id2419154['w']();
 		}
 	
 
@@ -10724,11 +11377,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10741,7 +11394,7 @@
 
 		
 
-			return scxml_id2653836['e']();
+			return scxml_id2419154['e']();
 		}
 	
 
@@ -10763,11 +11416,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10780,7 +11433,7 @@
 
 		
 
-			return scxml_id2653836['b']();
+			return scxml_id2419154['b']();
 		}
 	
 
@@ -10802,11 +11455,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10819,7 +11472,7 @@
 
 		
 
-			return scxml_id2653836['zero']();
+			return scxml_id2419154['zero']();
 		}
 	
 
@@ -10841,11 +11494,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10858,7 +11511,7 @@
 
 		
 
-			return scxml_id2653836['h']();
+			return scxml_id2419154['h']();
 		}
 	
 
@@ -10880,11 +11533,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10897,7 +11550,7 @@
 
 		
 
-			return scxml_id2653836['l']();
+			return scxml_id2419154['l']();
 		}
 	
 
@@ -10919,11 +11572,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10936,7 +11589,7 @@
 
 		
 
-			return scxml_id2653836['k']();
+			return scxml_id2419154['k']();
 		}
 	
 
@@ -10958,11 +11611,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -10975,7 +11628,7 @@
 
 		
 
-			return scxml_id2653836['j']();
+			return scxml_id2419154['j']();
 		}
 	
 
@@ -10997,11 +11650,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11028,11 +11681,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11045,7 +11698,7 @@
 
 		
 
-			return scxml_id2653836['left']();
+			return scxml_id2419154['left']();
 		}
 	
 
@@ -11067,11 +11720,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11098,11 +11751,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11115,7 +11768,7 @@
 
 		
 
-			return scxml_id2653836['right']();
+			return scxml_id2419154['right']();
 		}
 	
 
@@ -11137,11 +11790,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11168,11 +11821,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11185,7 +11838,7 @@
 
 		
 
-			return scxml_id2653836['up']();
+			return scxml_id2419154['up']();
 		}
 	
 
@@ -11207,11 +11860,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11238,11 +11891,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11255,7 +11908,7 @@
 
 		
 
-			return scxml_id2653836['down']();
+			return scxml_id2419154['down']();
 		}
 	
 
@@ -11277,11 +11930,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11294,7 +11947,7 @@
 
 		
 
-			return scxml_id2653836['v']();
+			return scxml_id2419154['v']();
 		}
 	
 
@@ -11316,11 +11969,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11333,7 +11986,7 @@
 
 		
 
-			return scxml_id2653836['V']();
+			return scxml_id2419154['V']();
 		}
 	
 
@@ -11355,11 +12008,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11372,7 +12025,7 @@
 
 		
 
-			return scxml_id2653836['ctrl_v']();
+			return scxml_id2419154['ctrl_v']();
 		}
 	
 
@@ -11394,11 +12047,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11411,7 +12064,7 @@
 
 		
 
-			return scxml_id2653836['i']();
+			return scxml_id2419154['i']();
 		}
 	
 
@@ -11433,11 +12086,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11450,7 +12103,7 @@
 
 		
 
-			return scxml_id2653836['a']();
+			return scxml_id2419154['a']();
 		}
 	
 
@@ -11472,11 +12125,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11489,7 +12142,46 @@
 
 		
 
-			return scxml_id2653836['ctrl_g']();
+			return scxml_id2419154['ctrl_g']();
+		}
+	
+
+		this.y = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+				controller.writeChar(_event.data.charCode)
+			
+
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return scxml_id2419154['y']();
 		}
 	
 
@@ -11525,11 +12217,11 @@
 				controller.moveLeft()
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11537,7 +12229,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"insert_mode_esc_31" );
+									"insert_mode_esc_34" );
 							
 		}
 	
@@ -11572,11 +12264,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11589,13 +12281,13 @@
 
 		
 
-			return scxml_id2653836['esc']();
+			return scxml_id2419154['esc']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(left_Regexp_id2663503)
+				if(e.match(left_Regexp_id2429480)
 					){
 					
 		return {
@@ -11613,11 +12305,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11632,7 +12324,7 @@
 				}
 			
 				
-				if(e.match(right_Regexp_id2663509)
+				if(e.match(right_Regexp_id2429486)
 					){
 					
 		return {
@@ -11650,11 +12342,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11669,7 +12361,7 @@
 				}
 			
 				
-				if(e.match(up_Regexp_id2663515)
+				if(e.match(up_Regexp_id2429491)
 					){
 					
 		return {
@@ -11687,11 +12379,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11706,7 +12398,7 @@
 				}
 			
 				
-				if(e.match(down_Regexp_id2663520)
+				if(e.match(down_Regexp_id2429497)
 					){
 					
 		return {
@@ -11724,11 +12416,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11743,7 +12435,7 @@
 				}
 			
 				
-				if(e.match(esc_Regexp_id2663554)
+				if(e.match(esc_Regexp_id2429530)
 					){
 					
 		return {
@@ -11775,11 +12467,11 @@
 				controller.moveLeft()
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11787,7 +12479,7 @@
 								listener.onTransition(
 									"insert_mode",
 									"normal_mode",
-									"insert_mode_esc_31" );
+									"insert_mode_esc_34" );
 							
 		}
 	
@@ -11810,7 +12502,7 @@
 				}
 			
 				
-				if(e.match(enter_Regexp_id2663447)
+				if(e.match(enter_Regexp_id2429424)
 					){
 					
 		return {
@@ -11828,11 +12520,11 @@
 				controller.writeNewLine()
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11847,7 +12539,7 @@
 				}
 			
 				
-				if(e.match(backspace_Regexp_id2663441)
+				if(e.match(backspace_Regexp_id2429418)
 					){
 					
 		return {
@@ -11865,11 +12557,11 @@
 				controller.writeBackspace()
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11884,7 +12576,7 @@
 				}
 			
 				
-				if(e.match(star_Regexp_id2663560)
+				if(e.match(star_Regexp_id2429536)
 					){
 					
 		return {
@@ -11902,11 +12594,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -11921,14 +12613,14 @@
 				}
 				
 
-			return scxml_id2653836.$dispatchPrefixEvent(e);
+			return scxml_id2419154.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			insert_modeConstructor.prototype = scxml_id2653836;
+			insert_modeConstructor.prototype = scxml_id2419154;
 			return new insert_modeConstructor();
 		})();
 
@@ -11937,7 +12629,7 @@
 		var command_mode = (function(){
 
 			function command_modeConstructor(){
-				this.parent = scxml_id2653836;
+				this.parent = scxml_id2419154;
 
 				this.initial = null;
 
@@ -11951,7 +12643,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2653836
+						scxml_id2419154
 					];
 				
 				
@@ -11964,11 +12656,11 @@
 				controller.updateModeText("-- COMMAND --")
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 								//to
@@ -11982,11 +12674,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2664839_iterator=0, 
-			id2664839_hoist=listeners.length;
-				id2664839_iterator < id2664839_hoist;
-				id2664839_iterator++){
-			var listener = listeners[id2664839_iterator];
+		for(var id2430888_iterator=0, 
+			id2430888_hoist=listeners.length;
+				id2430888_iterator < id2430888_hoist;
+				id2430888_iterator++){
+			var listener = listeners[id2430888_iterator];
 
 			
 								//from
@@ -12029,11 +12721,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -12041,7 +12733,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"command_mode_esc_32" );
+									"command_mode_esc_35" );
 							
 		}
 	
@@ -12062,13 +12754,13 @@
 
 		
 
-			return scxml_id2653836['esc']();
+			return scxml_id2419154['esc']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(esc_Regexp_id2663554)
+				if(e.match(esc_Regexp_id2429530)
 					){
 					
 		return {
@@ -12098,11 +12790,11 @@
 				//transition action
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=listeners.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var listener = listeners[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=listeners.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var listener = listeners[id2426860_iterator];
 
 			
 							//transition id
@@ -12110,7 +12802,7 @@
 								listener.onTransition(
 									"command_mode",
 									"normal_mode",
-									"command_mode_esc_32" );
+									"command_mode_esc_35" );
 							
 		}
 	
@@ -12133,14 +12825,14 @@
 				}
 				
 
-			return scxml_id2653836.$dispatchPrefixEvent(e);
+			return scxml_id2419154.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			command_modeConstructor.prototype = scxml_id2653836;
+			command_modeConstructor.prototype = scxml_id2419154;
 			return new command_modeConstructor();
 		})();
 
@@ -12151,7 +12843,7 @@
 				
 
 		this._states = {
-			_initial : _initial,initial_default : initial_default,normal_mode : normal_mode,select_line : select_line,select_block : select_block,select_character : select_character,visual_mode_initial : visual_mode_initial,visual_line : visual_line,visual_block : visual_block,visual_character : visual_character,insert_mode : insert_mode,command_mode : command_mode
+			_initial : _initial,initial_default : initial_default,normal_mode : normal_mode,visual_or_select_mode_initial : visual_or_select_mode_initial,select_mode_initial : select_mode_initial,select_line : select_line,select_block : select_block,select_character : select_character,visual_mode_initial : visual_mode_initial,visual_line : visual_line,visual_block : visual_block,visual_character : visual_character,insert_mode : insert_mode,command_mode : command_mode
 		}
 
 	
@@ -12559,6 +13251,22 @@
 		}
 	
 
+		this["y"] = function(data){
+			if(isInStableState && !destroyed){
+				runToCompletion(
+				//TODO: conditionally wrap in quotes for enumerated pattern
+					
+
+		"y"
+	
+				,data,
+				true)
+			}else{
+				return undefined;
+			}
+		}
+	
+
 				//initialization script
 				
 
@@ -12653,11 +13361,11 @@
 				//e does not contain a dot, so dispatch as an enumerated event
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=currentConfiguration.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = currentConfiguration[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=currentConfiguration.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = currentConfiguration[id2426860_iterator];
 
 			
 						//check to make sure he is not preempted
@@ -12677,11 +13385,11 @@
 				//e contains a dot, so dispatch as a prefix event
 				
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=currentConfiguration.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var state = currentConfiguration[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=currentConfiguration.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var state = currentConfiguration[id2426860_iterator];
 
 			
 						//check to make sure he is not preempted
@@ -12703,11 +13411,11 @@
 			//invoke selected transitions
 			
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=enabledTransitions.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var t = enabledTransitions[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=enabledTransitions.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var t = enabledTransitions[id2426860_iterator];
 
 			 t(); 
 		}
@@ -12764,11 +13472,11 @@
 
 		var toReturn = false;
 
-		for(var id2654948_iterator=0, 
-			id2654948_hoist=currentConfiguration.length;
-				id2654948_iterator < id2654948_hoist;
-				id2654948_iterator++){
-			var s = currentConfiguration[id2654948_iterator];
+		for(var id2426860_iterator=0, 
+			id2426860_hoist=currentConfiguration.length;
+				id2426860_iterator < id2426860_hoist;
+				id2426860_iterator++){
+			var s = currentConfiguration[id2426860_iterator];
 
 			if(s.ancestors
 							.indexOf(state)
