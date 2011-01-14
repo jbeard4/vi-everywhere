@@ -32,10 +32,23 @@
 		<vi:macro name="nonprintable_keys_used_to_move_cursor">
 			<vi:param name="updateSelection" value="true"/>
 		</vi:macro>
+
+		<transition event="P_keypress">
+			<script>
+				controller.putTextFromRegisterBeforeCursor();
+			</script>
+		</transition>
+
+		<transition event="p_keypress">
+			<script>
+				controller.putTextFromRegisterAfterCursor();
+			</script>
+		</transition>
 			
 		<transition event="v_keypress" target="visual_character"/>
 		<transition event="V_keypress" target="visual_line"/>
 		<transition event="ctrl_v_keypress" target="visual_block"/>
+
 
 		<!--
 		<transition event="G" target="normal_mode">

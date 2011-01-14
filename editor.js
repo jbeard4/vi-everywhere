@@ -224,6 +224,24 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		register[registerName] = selectionText;
 		//alert(selectionText);
 	}
+
+	this.putTextFromRegisterBeforeCursor = function(registerName){
+
+		registerName = registerName || DEFAULT_REGISTER_NAME;
+		
+		var registerValue = register[registerName]
+
+		cursor.writeString(registerValue,false);
+	}
+
+	this.putTextFromRegisterAfterCursor = function(registerName){
+
+		registerName = registerName || DEFAULT_REGISTER_NAME;
+		
+		var registerValue = register[registerName]
+
+		cursor.writeString(registerValue,true);
+	}
 }
 
 function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNode){
@@ -244,10 +262,24 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 			cursorNode.y.baseVal.value=point.y;
 	}
 
-	this.writeChar = function(c){
-		lineManager.getLine(this.rowNum).writeCharAt(String.fromCharCode(c),this.colNum)
+	this.writeChar = function(c,afterCursor){
+		c = (typeof c === "number" ? String.fromCharCode(c) : c);	//try to convert from charcode first
+		var cursorOffset = afterCursor ? 1 : 0;
+		lineManager.getLine(this.rowNum).writeCharAt(c,this.colNum+cursorOffset)
 		this.moveRight(true);
 	};
+
+	this.writeString = function(s,afterCursor){
+		//FIXME: we could make this more efficient
+		for(var i=0,l=s.length;i<l;i++){
+			var c = s[i];
+			if(c==="\n"){
+				this.writeNewLine();	//FIXME: figure out newline wrt afterCursor
+			}else{
+				this.writeChar(c,afterCursor);
+			}
+		}
+	}
 
 	this.writeNewLine = function(){
 		//delete everything on current line from cursor position to the end
