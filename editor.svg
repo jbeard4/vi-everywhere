@@ -45,6 +45,8 @@
 			//TODO: figure out how to make this dynamic with width="100%"
 			var width = document.documentElement.width.baseVal.value;
 
+			txt.setAttributeNS(null,"y",-textExtent.height);
+
 			var editor = SVGEditorFactory.createNewSVGEditorInstance(root,txt,cursorNode,modeText,locationText,selectionParent,textExtent,width);
 			editor.install(); 
 		}

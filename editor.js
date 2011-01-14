@@ -195,7 +195,11 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 
 		var selectionText = selectionManager.deleteSelectionText();
 
-		cursor.moveCursorTo(sr.startCol,sr.startRow);
+		if(scInstance.$in(scInstance._states.visual_line) || scInstance.$in(scInstance._states.select_line)){
+			cursor.moveCursorTo(0,sr.startRow);
+		}else{
+			cursor.moveCursorTo(sr.startCol,sr.startRow);
+		}
 
 		register[registerName] = selectionText;
 		alert(selectionText);
@@ -726,7 +730,7 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		}
 		toReturn = toReturn.slice(0,-1);
 
-		if(!selectionMode === SELECTION_MODE.BLOCK){ 
+		if(selectionMode === SELECTION_MODE.CHARACTER){ 
 			if(startRow!==endRow){ 
 				var lastLine = lineManager.getLine(sr.endRow);
 				var lastLineTxt = lastLine.getTextContent();
@@ -738,6 +742,8 @@ function SelectionManager(groupNode,displayManager,lineManager){
 				//delete last line and insert on first line
 				firstLine.writeStringAt(lastLineTxt,sr.startCol); 
 			}
+		}else if(selectionMode === SELECTION_MODE.LINE){
+			lineManager.deleteLines(sr.startRow,sr.endRow+1);
 		}
 
 		return toReturn;
@@ -844,8 +850,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			initialText = initialText.slice(displayManager.displayCharWidth);
 		}while(initialText.length)
 
-		var dyIndex = isFirstLine ? 1 : 0;
-		tspans.slice(dyIndex).forEach(function(tspan){tspan.setAttributeNS(null,"dy",displayManager.textExtent.height)});
+		tspans.forEach(function(tspan){tspan.setAttributeNS(null,"dy",displayManager.textExtent.height)});
 
 		var tspanToInsertBefore = lineToInsertBefore && lineToInsertBefore.getFirstTSpan(); 
 
