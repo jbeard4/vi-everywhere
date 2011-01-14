@@ -145,6 +145,18 @@
 				</script>
 			</transition>
 
+			<transition event="x" target="normal_mode">
+				<script>
+					controller.deleteSelectedTextIntoRegister();  
+				</script>
+			</transition>
+
+			<transition event="d" target="normal_mode">
+				<script>
+					controller.deleteSelectedTextIntoRegister();  
+				</script>
+			</transition>
+
 			<vi:macro name="printable_keys_used_to_move_cursor">
 				<vi:param name="updateSelection" value="true"/>
 			</vi:macro>

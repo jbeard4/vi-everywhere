@@ -186,6 +186,19 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		alert(selectionText);
 	}
 	
+	this.deleteSelectedTextIntoRegister = function(registerName){
+		registerName = registerName || DEFAULT_REGISTER_NAME;
+
+		var startCol = selectionManager.getStartCol(),
+			startRow = selectionManager.getStartRow(); 
+
+		var selectionText = selectionManager.deleteSelectionText();
+
+		cursor.moveCursorTo(startCol,startRow);
+
+		register[registerName] = selectionText;
+		alert(selectionText);
+	}
 }
 
 function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNode){
@@ -299,9 +312,9 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	}
 
 	this.moveCursorTo = function(pos,lineNumber){
-		lineNumber = lineNumber || this.rowNum;	//default to this.rowNum
+		lineNumber = lineNumber === undefined ? this.rowNum  : lineNumber;	//default to this.rowNum
 
-		var nextLine = lineManager.getLine(this.rowNum);
+		var nextLine = lineManager.getLine(lineNumber);
 
 		//TODO: make sure we are not moving him somewhere illegal
 		if(nextLine){ 
@@ -684,74 +697,56 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		}
 		toReturn = toReturn.slice(0,-1);
 
-		/*
-		var startLine = lineManager.getLine(sr.startRow);
-		var endLine = lineManager.getLine(sr.endRow);
-
-		if (startLine === endLine){
-			var txt = startLine.getTextContent();
-			//FIXME: off-by-one error? Possibly need to add logic to reverse selection row/col? Add 1 to tmpEndCol
-			toReturn = txt.slice(startCol,endCol);
-		}else{
-			
-			var startTxt = startLine.getTextContent();
-			startTxt = startTxt.slice(startRow);
-
-			var middleTxt = "";
-			for(var i=startRow+1;i<endRow; i++){
-				middleTxt += lineManager.getLine(i).getTextContent();
-			}
-			
-
-			var endTxt = endLine.getTextContent();
-			endTxt = endTxt.slice(0,endCol);
-
-			toReturn = startTxt + "\n";
-			if(middleTxt.length){
-				toReturn += middleTxt + "\n";
-			} 
-			toReturn += endTxt;
-		}
-		*/
-
 		return toReturn;
 	}
 
 	this.deleteSelectionText = function(){
-		var toReturn;
+		var toReturn = "";
 
-		var startLine = lineManager.getLine(startRow);
-		var endLine = lineManager.getLine(endRow);
+		var sr = getNormalizedSelectionRange();
+		var vsr = computeVirtualSelectionRange(sr);
 
-		if (startLine === endLine){
-			var txt = startLine.deleteRange(startCol,endCol);
-			toReturn = txt;
-		}else{
-			
-			var startTxt = startLine.deleteRange(startCol,startLine.getTotalNumberOfChars());
-	
-			var middleTxt = deleteLines(startRow,endRow); 
-
-			var endTxt = endLine.deleteRange(0,endCol);
-
-			toReturn = startTxt + "\n";
-			if(middleTxt.length){
-				toReturn += middleTxt + "\n";
-			} 
-			toReturn += endTxt;
+		for(var i=sr.startRow,j=0;i<sr.endRow+1; i++,j++){
+			toReturn += lineManager.getLine(i).deleteRange(vsr[j][0],vsr[j][1]) + "\n";
 		}
+		toReturn = toReturn.slice(0,-1);
+
+		//delete middle lines
+		if(startRow!==endRow) lineManager.deleteLines(sr.startRow+1,sr.endRow);
 
 		return toReturn;
 	}
 
 	this.replaceSelectionText = function(s){
-		var toReturn = lineManager.deleteText(startCol,startRow,endCol,endRow);
+		var toReturn = this.deleteSelectionText();
 
-		var startLine = lineManager.getLine(startRow);
+		var sr = getNormalizedSelectionRange();
 
-		startLine.writeStringAt(s,startLine.getTotalNumberOfChars);
+		var startLine = lineManager.getLine(sr.startRow);
+
+		startLine.writeStringAt(s,startLine.getTotalNumberOfChars());
 
 		return toReturn;
+	}
+
+	this.getStartCol = function(){
+		return startCol;
+	}
+
+	this.getStartRow = function(){
+	 	return startRow;
+	}
+
+	this.getEndCol = function(){
+		return endCol;
+	}
+	
+	this.getEndRow = function(){
+		return endRow;
+	}
+
+	this.getSelectionMode = function(){
+		return selectionMode;
 	}
 
 }
@@ -776,9 +771,9 @@ function LineManager(textNode,displayManager){
 	}
 
 	this.deleteLines = function(from,to){
-		var linesToDelete = lines.splice(from,to);
-		var toReturn = linesToDelete.reduce(sum,""); 
-		lines.forEach(function(line){line.removeFromDOM()});
+		var linesToDelete = lines.slice(from,to);
+		var toReturn = linesToDelete.map(function(line){return line.getTextContent() + "\n"}).reduce(sum,"").slice(0,-1); 
+		linesToDelete.forEach(function(line){line.removeFromDOM()});
 		lines.splice(from,to-from);
 		return toReturn;
 	}
