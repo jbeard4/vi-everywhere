@@ -22,61 +22,65 @@
 				//send timeout id variables
 				
 
-		var $default_Regexp_id2778250 = /^($default)/
+		var $default_Regexp_id2678564 = /^($default)/
 				,
-				init_Regexp_id2778258 = /^(init)/
+				init_Regexp_id2678572 = /^(init)/
 				,
-				bling_Regexp_id2778264 = /^(bling)/
+				bling_keypress_Regexp_id2678578 = /^(bling_keypress)/
 				,
-				backspace_Regexp_id2778270 = /^(backspace)/
+				backspace_keypress_Regexp_id2678584 = /^(backspace_keypress)/
 				,
-				enter_Regexp_id2778275 = /^(enter)/
+				enter_keypress_Regexp_id2678590 = /^(enter_keypress)/
 				,
-				colon_Regexp_id2778281 = /^(colon)/
+				colon_keypress_Regexp_id2678595 = /^(colon_keypress)/
 				,
-				w_Regexp_id2778286 = /^(w)/
+				w_keypress_Regexp_id2678601 = /^(w_keypress)/
 				,
-				e_Regexp_id2778292 = /^(e)/
+				e_keypress_Regexp_id2678606 = /^(e_keypress)/
 				,
-				b_Regexp_id2778298 = /^(b)/
+				b_keypress_Regexp_id2678612 = /^(b_keypress)/
 				,
-				zero_Regexp_id2778303 = /^(zero)/
+				zero_keypress_Regexp_id2678618 = /^(zero_keypress)/
 				,
-				h_Regexp_id2778309 = /^(h)/
+				h_keypress_Regexp_id2678623 = /^(h_keypress)/
 				,
-				l_Regexp_id2778315 = /^(l)/
+				l_keypress_Regexp_id2678629 = /^(l_keypress)/
 				,
-				k_Regexp_id2778320 = /^(k)/
+				k_keypress_Regexp_id2678635 = /^(k_keypress)/
 				,
-				j_Regexp_id2778326 = /^(j)/
+				j_keypress_Regexp_id2678640 = /^(j_keypress)/
 				,
-				left_Regexp_id2778331 = /^(left)/
+				left_keypress_Regexp_id2678646 = /^(left_keypress)/
 				,
-				right_Regexp_id2778337 = /^(right)/
+				right_keypress_Regexp_id2678652 = /^(right_keypress)/
 				,
-				up_Regexp_id2778343 = /^(up)/
+				up_keypress_Regexp_id2678657 = /^(up_keypress)/
 				,
-				down_Regexp_id2778348 = /^(down)/
+				down_keypress_Regexp_id2678663 = /^(down_keypress)/
 				,
-				v_Regexp_id2778354 = /^(v)/
+				v_keypress_Regexp_id2678669 = /^(v_keypress)/
 				,
-				V_Regexp_id2778359 = /^(V)/
+				V_keypress_Regexp_id2678674 = /^(V_keypress)/
 				,
-				ctrl_v_Regexp_id2778365 = /^(ctrl_v)/
+				ctrl_v_keypress_Regexp_id2678680 = /^(ctrl_v_keypress)/
 				,
-				i_Regexp_id2778371 = /^(i)/
+				i_keypress_Regexp_id2678686 = /^(i_keypress)/
 				,
-				a_Regexp_id2778376 = /^(a)/
+				a_keypress_Regexp_id2678691 = /^(a_keypress)/
 				,
-				esc_Regexp_id2778382 = /^(esc)/
+				esc_keypress_Regexp_id2678697 = /^(esc_keypress)/
 				,
-				star_Regexp_id2778387 = /.*/
+				star_Regexp_id2678702 = /.*/
 				,
-				ctrl_g_Regexp_id2778393 = /^(ctrl_g)/
+				ctrl_g_keypress_Regexp_id2678708 = /^(ctrl_g_keypress)/
 				,
-				y_Regexp_id2778399 = /^(y)/
+				y_keypress_Regexp_id2678714 = /^(y_keypress)/
 				,
-				x_Regexp_id2778404 = /^(x)/
+				x_keypress_Regexp_id2678719 = /^(x_keypress)/
+				,
+				d_keypress_Regexp_id2678725 = /^(d_keypress)/
+				,
+				c_keypress_Regexp_id2678731 = /^(c_keypress)/
 				;
 				
 
@@ -91,55 +95,59 @@
 			
 				this.init = function(){};
 			
-				this.bling = function(){};
+				this.bling_keypress = function(){};
 			
-				this.backspace = function(){};
+				this.backspace_keypress = function(){};
 			
-				this.enter = function(){};
+				this.enter_keypress = function(){};
 			
-				this.colon = function(){};
+				this.colon_keypress = function(){};
 			
-				this.w = function(){};
+				this.w_keypress = function(){};
 			
-				this.e = function(){};
+				this.e_keypress = function(){};
 			
-				this.b = function(){};
+				this.b_keypress = function(){};
 			
-				this.zero = function(){};
+				this.zero_keypress = function(){};
 			
-				this.h = function(){};
+				this.h_keypress = function(){};
 			
-				this.l = function(){};
+				this.l_keypress = function(){};
 			
-				this.k = function(){};
+				this.k_keypress = function(){};
 			
-				this.j = function(){};
+				this.j_keypress = function(){};
 			
-				this.left = function(){};
+				this.left_keypress = function(){};
 			
-				this.right = function(){};
+				this.right_keypress = function(){};
 			
-				this.up = function(){};
+				this.up_keypress = function(){};
 			
-				this.down = function(){};
+				this.down_keypress = function(){};
 			
-				this.v = function(){};
+				this.v_keypress = function(){};
 			
-				this.V = function(){};
+				this.V_keypress = function(){};
 			
-				this.ctrl_v = function(){};
+				this.ctrl_v_keypress = function(){};
 			
-				this.i = function(){};
+				this.i_keypress = function(){};
 			
-				this.a = function(){};
+				this.a_keypress = function(){};
 			
-				this.ctrl_g = function(){};
+				this.ctrl_g_keypress = function(){};
 			
-				this.y = function(){};
+				this.y_keypress = function(){};
 			
-				this.x = function(){};
+				this.x_keypress = function(){};
 			
-				this.esc = function(){};
+				this.d_keypress = function(){};
+			
+				this.c_keypress = function(){};
+			
+				this.esc_keypress = function(){};
 			
 
 			this.$default = function(){};
@@ -151,9 +159,9 @@
 				//states
 				
 
-		var scxml_id2769015 = (function(){
+		var scxml_id2668717 = (function(){
 
-			function scxml_id2769015Constructor(){
+			function scxml_id2668717Constructor(){
 				this.parent = AbstractState;
 
 				this.initial = null;
@@ -169,21 +177,21 @@
 					
 				
 				this.toString = function(){
-					return "scxml_id2769015"
+					return "scxml_id2668717"
 				}
 
 				this.enterAction = function(){
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
-								listener.onEntry("scxml_id2769015");
+								listener.onEntry("scxml_id2668717");
 							
 		}
 	
@@ -193,15 +201,15 @@
 				this.exitAction = function(){
 					
 
-		for(var id2770647_iterator=0, 
-			id2770647_hoist=listeners.length;
-				id2770647_iterator < id2770647_hoist;
-				id2770647_iterator++){
-			var listener = listeners[id2770647_iterator];
+		for(var id2668662_iterator=0, 
+			id2668662_hoist=listeners.length;
+				id2668662_iterator < id2668662_hoist;
+				id2668662_iterator++){
+			var listener = listeners[id2668662_iterator];
 
 			
 								//from
-								listener.onExit("scxml_id2769015");
+								listener.onExit("scxml_id2668717");
 							
 		}
 	
@@ -219,8 +227,8 @@
 				
 
 			}
-			scxml_id2769015Constructor.prototype = AbstractState;
-			return new scxml_id2769015Constructor();
+			scxml_id2668717Constructor.prototype = AbstractState;
+			return new scxml_id2668717Constructor();
 		})();
 
 	
@@ -228,7 +236,7 @@
 		var _initial = (function(){
 
 			function _initialConstructor(){
-				this.parent = scxml_id2769015;
+				this.parent = scxml_id2668717;
 
 				this.initial = null;
 
@@ -242,7 +250,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 					];
 				
 					this.parent.initial = this; //init parent's pointer to initial state
@@ -255,11 +263,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -273,11 +281,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2771228_iterator=0, 
-			id2771228_hoist=listeners.length;
-				id2771228_iterator < id2771228_hoist;
-				id2771228_iterator++){
-			var listener = listeners[id2771228_iterator];
+		for(var id2668308_iterator=0, 
+			id2668308_hoist=listeners.length;
+				id2668308_iterator < id2668308_hoist;
+				id2668308_iterator++){
+			var listener = listeners[id2668308_iterator];
 
 			
 								//from
@@ -322,11 +330,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -355,20 +363,20 @@
 
 		
 
-			return scxml_id2769015['$default']();
+			return scxml_id2668717['$default']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 				
 
-			return scxml_id2769015.$dispatchPrefixEvent(e);
+			return scxml_id2668717.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			_initialConstructor.prototype = scxml_id2769015;
+			_initialConstructor.prototype = scxml_id2668717;
 			return new _initialConstructor();
 		})();
 
@@ -377,7 +385,7 @@
 		var initial_default = (function(){
 
 			function initial_defaultConstructor(){
-				this.parent = scxml_id2769015;
+				this.parent = scxml_id2668717;
 
 				this.initial = null;
 
@@ -391,7 +399,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 					];
 				
 				
@@ -402,11 +410,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -420,11 +428,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2770371_iterator=0, 
-			id2770371_hoist=listeners.length;
-				id2770371_iterator < id2770371_hoist;
-				id2770371_iterator++){
-			var listener = listeners[id2770371_iterator];
+		for(var id2669466_iterator=0, 
+			id2669466_hoist=listeners.length;
+				id2669466_iterator < id2669466_hoist;
+				id2669466_iterator++){
+			var listener = listeners[id2669466_iterator];
 
 			
 								//from
@@ -468,11 +476,11 @@
 				controller = _event.data;
 	
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -501,13 +509,13 @@
 
 		
 
-			return scxml_id2769015['init']();
+			return scxml_id2668717['init']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(init_Regexp_id2778258)
+				if(e.match(init_Regexp_id2678572)
 					){
 					
 		return {
@@ -538,11 +546,11 @@
 				controller = _event.data;
 	
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -573,14 +581,14 @@
 				}
 				
 
-			return scxml_id2769015.$dispatchPrefixEvent(e);
+			return scxml_id2668717.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			initial_defaultConstructor.prototype = scxml_id2769015;
+			initial_defaultConstructor.prototype = scxml_id2668717;
 			return new initial_defaultConstructor();
 		})();
 
@@ -589,7 +597,7 @@
 		var normal_mode = (function(){
 
 			function normal_modeConstructor(){
-				this.parent = scxml_id2769015;
+				this.parent = scxml_id2668717;
 
 				this.initial = null;
 
@@ -603,7 +611,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 					];
 				
 				
@@ -617,11 +625,11 @@
 				controller.updateModeText("-- NORMAL --")
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -635,11 +643,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2767811_iterator=0, 
-			id2767811_hoist=listeners.length;
-				id2767811_iterator < id2767811_hoist;
-				id2767811_iterator++){
-			var listener = listeners[id2767811_iterator];
+		for(var id2669540_iterator=0, 
+			id2669540_hoist=listeners.length;
+				id2669540_iterator < id2669540_hoist;
+				id2669540_iterator++){
+			var listener = listeners[id2669540_iterator];
 
 			
 								//from
@@ -652,7 +660,7 @@
 
 				
 
-		this.bling = function(){
+		this.bling_keypress = function(){
 
 			
 		return {
@@ -670,11 +678,11 @@
 				controller.moveToEndOfLine(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -687,11 +695,11 @@
 
 		
 
-			return scxml_id2769015['bling']();
+			return scxml_id2668717['bling_keypress']();
 		}
 	
 
-		this.backspace = function(){
+		this.backspace_keypress = function(){
 
 			
 		return {
@@ -709,11 +717,11 @@
 				controller.moveLeft(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -726,11 +734,11 @@
 
 		
 
-			return scxml_id2769015['backspace']();
+			return scxml_id2668717['backspace_keypress']();
 		}
 	
 
-		this.enter = function(){
+		this.enter_keypress = function(){
 
 			
 		return {
@@ -748,11 +756,11 @@
 				controller.moveDown(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -765,11 +773,11 @@
 
 		
 
-			return scxml_id2769015['enter']();
+			return scxml_id2668717['enter_keypress']();
 		}
 	
 
-		this.colon = function(){
+		this.colon_keypress = function(){
 
 			
 		return {
@@ -799,11 +807,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -811,7 +819,7 @@
 								listener.onTransition(
 									"",
 									"command_mode",
-									"normal_mode_colon_3" );
+									"normal_mode_colon_keypress_3" );
 							
 		}
 	
@@ -832,11 +840,11 @@
 
 		
 
-			return scxml_id2769015['colon']();
+			return scxml_id2668717['colon_keypress']();
 		}
 	
 
-		this.w = function(){
+		this.w_keypress = function(){
 
 			
 		return {
@@ -854,11 +862,11 @@
 				controller.moveToStartOfNextWord(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -871,11 +879,11 @@
 
 		
 
-			return scxml_id2769015['w']();
+			return scxml_id2668717['w_keypress']();
 		}
 	
 
-		this.e = function(){
+		this.e_keypress = function(){
 
 			
 		return {
@@ -893,11 +901,11 @@
 				controller.moveToEndOfNextWord(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -910,11 +918,11 @@
 
 		
 
-			return scxml_id2769015['e']();
+			return scxml_id2668717['e_keypress']();
 		}
 	
 
-		this.b = function(){
+		this.b_keypress = function(){
 
 			
 		return {
@@ -932,11 +940,11 @@
 				controller.moveToStartOfPreviousWord(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -949,11 +957,11 @@
 
 		
 
-			return scxml_id2769015['b']();
+			return scxml_id2668717['b_keypress']();
 		}
 	
 
-		this.zero = function(){
+		this.zero_keypress = function(){
 
 			
 		return {
@@ -971,11 +979,11 @@
 				controller.moveToStartOfLine(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -988,11 +996,11 @@
 
 		
 
-			return scxml_id2769015['zero']();
+			return scxml_id2668717['zero_keypress']();
 		}
 	
 
-		this.h = function(){
+		this.h_keypress = function(){
 
 			
 		return {
@@ -1010,11 +1018,11 @@
 				controller.moveLeft(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1027,11 +1035,11 @@
 
 		
 
-			return scxml_id2769015['h']();
+			return scxml_id2668717['h_keypress']();
 		}
 	
 
-		this.l = function(){
+		this.l_keypress = function(){
 
 			
 		return {
@@ -1049,11 +1057,11 @@
 				controller.moveRight(false,false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1066,11 +1074,11 @@
 
 		
 
-			return scxml_id2769015['l']();
+			return scxml_id2668717['l_keypress']();
 		}
 	
 
-		this.k = function(){
+		this.k_keypress = function(){
 
 			
 		return {
@@ -1088,11 +1096,11 @@
 				controller.moveUp(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1105,11 +1113,11 @@
 
 		
 
-			return scxml_id2769015['k']();
+			return scxml_id2668717['k_keypress']();
 		}
 	
 
-		this.j = function(){
+		this.j_keypress = function(){
 
 			
 		return {
@@ -1127,11 +1135,11 @@
 				controller.moveDown(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1144,11 +1152,11 @@
 
 		
 
-			return scxml_id2769015['j']();
+			return scxml_id2668717['j_keypress']();
 		}
 	
 
-		this.left = function(){
+		this.left_keypress = function(){
 
 			
 		return {
@@ -1166,11 +1174,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1183,11 +1191,11 @@
 
 		
 
-			return scxml_id2769015['left']();
+			return scxml_id2668717['left_keypress']();
 		}
 	
 
-		this.right = function(){
+		this.right_keypress = function(){
 
 			
 		return {
@@ -1205,11 +1213,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1222,11 +1230,11 @@
 
 		
 
-			return scxml_id2769015['right']();
+			return scxml_id2668717['right_keypress']();
 		}
 	
 
-		this.up = function(){
+		this.up_keypress = function(){
 
 			
 		return {
@@ -1244,11 +1252,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1261,11 +1269,11 @@
 
 		
 
-			return scxml_id2769015['up']();
+			return scxml_id2668717['up_keypress']();
 		}
 	
 
-		this.down = function(){
+		this.down_keypress = function(){
 
 			
 		return {
@@ -1283,11 +1291,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1300,11 +1308,11 @@
 
 		
 
-			return scxml_id2769015['down']();
+			return scxml_id2668717['down_keypress']();
 		}
 	
 
-		this.v = function(){
+		this.v_keypress = function(){
 
 			
 		return {
@@ -1334,11 +1342,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1346,7 +1354,7 @@
 								listener.onTransition(
 									"",
 									"visual_character",
-									"normal_mode_v_4" );
+									"normal_mode_v_keypress_4" );
 							
 		}
 	
@@ -1369,11 +1377,11 @@
 
 		
 
-			return scxml_id2769015['v']();
+			return scxml_id2668717['v_keypress']();
 		}
 	
 
-		this.V = function(){
+		this.V_keypress = function(){
 
 			
 		return {
@@ -1403,11 +1411,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1415,7 +1423,7 @@
 								listener.onTransition(
 									"",
 									"visual_line",
-									"normal_mode_V_5" );
+									"normal_mode_V_keypress_5" );
 							
 		}
 	
@@ -1438,11 +1446,11 @@
 
 		
 
-			return scxml_id2769015['V']();
+			return scxml_id2668717['V_keypress']();
 		}
 	
 
-		this.ctrl_v = function(){
+		this.ctrl_v_keypress = function(){
 
 			
 		return {
@@ -1472,11 +1480,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1484,7 +1492,7 @@
 								listener.onTransition(
 									"",
 									"visual_block",
-									"normal_mode_ctrl_v_6" );
+									"normal_mode_ctrl_v_keypress_6" );
 							
 		}
 	
@@ -1507,11 +1515,11 @@
 
 		
 
-			return scxml_id2769015['ctrl_v']();
+			return scxml_id2668717['ctrl_v_keypress']();
 		}
 	
 
-		this.i = function(){
+		this.i_keypress = function(){
 
 			
 		return {
@@ -1541,11 +1549,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1553,7 +1561,7 @@
 								listener.onTransition(
 									"",
 									"insert_mode",
-									"normal_mode_i_7" );
+									"normal_mode_i_keypress_7" );
 							
 		}
 	
@@ -1574,11 +1582,11 @@
 
 		
 
-			return scxml_id2769015['i']();
+			return scxml_id2668717['i_keypress']();
 		}
 	
 
-		this.a = function(){
+		this.a_keypress = function(){
 
 			
 		return {
@@ -1610,11 +1618,11 @@
 				controller.moveRight(true);
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1622,7 +1630,7 @@
 								listener.onTransition(
 									"",
 									"insert_mode",
-									"normal_mode_a_8" );
+									"normal_mode_a_keypress_8" );
 							
 		}
 	
@@ -1643,13 +1651,13 @@
 
 		
 
-			return scxml_id2769015['a']();
+			return scxml_id2668717['a_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(bling_Regexp_id2778264)
+				if(e.match(bling_keypress_Regexp_id2678578)
 					){
 					
 		return {
@@ -1667,11 +1675,11 @@
 				controller.moveToEndOfLine(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1686,7 +1694,7 @@
 				}
 			
 				
-				if(e.match(backspace_Regexp_id2778270)
+				if(e.match(backspace_keypress_Regexp_id2678584)
 					){
 					
 		return {
@@ -1704,11 +1712,11 @@
 				controller.moveLeft(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1723,7 +1731,7 @@
 				}
 			
 				
-				if(e.match(enter_Regexp_id2778275)
+				if(e.match(enter_keypress_Regexp_id2678590)
 					){
 					
 		return {
@@ -1741,11 +1749,11 @@
 				controller.moveDown(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1760,7 +1768,7 @@
 				}
 			
 				
-				if(e.match(colon_Regexp_id2778281)
+				if(e.match(colon_keypress_Regexp_id2678595)
 					){
 					
 		return {
@@ -1790,11 +1798,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1802,7 +1810,7 @@
 								listener.onTransition(
 									"normal_mode",
 									"command_mode",
-									"normal_mode_colon_3" );
+									"normal_mode_colon_keypress_3" );
 							
 		}
 	
@@ -1825,7 +1833,7 @@
 				}
 			
 				
-				if(e.match(w_Regexp_id2778286)
+				if(e.match(w_keypress_Regexp_id2678601)
 					){
 					
 		return {
@@ -1843,11 +1851,11 @@
 				controller.moveToStartOfNextWord(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1862,7 +1870,7 @@
 				}
 			
 				
-				if(e.match(e_Regexp_id2778292)
+				if(e.match(e_keypress_Regexp_id2678606)
 					){
 					
 		return {
@@ -1880,11 +1888,11 @@
 				controller.moveToEndOfNextWord(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1899,7 +1907,7 @@
 				}
 			
 				
-				if(e.match(b_Regexp_id2778298)
+				if(e.match(b_keypress_Regexp_id2678612)
 					){
 					
 		return {
@@ -1917,11 +1925,11 @@
 				controller.moveToStartOfPreviousWord(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1936,7 +1944,7 @@
 				}
 			
 				
-				if(e.match(zero_Regexp_id2778303)
+				if(e.match(zero_keypress_Regexp_id2678618)
 					){
 					
 		return {
@@ -1954,11 +1962,11 @@
 				controller.moveToStartOfLine(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -1973,7 +1981,7 @@
 				}
 			
 				
-				if(e.match(h_Regexp_id2778309)
+				if(e.match(h_keypress_Regexp_id2678623)
 					){
 					
 		return {
@@ -1991,11 +1999,11 @@
 				controller.moveLeft(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2010,7 +2018,7 @@
 				}
 			
 				
-				if(e.match(l_Regexp_id2778315)
+				if(e.match(l_keypress_Regexp_id2678629)
 					){
 					
 		return {
@@ -2028,11 +2036,11 @@
 				controller.moveRight(false,false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2047,7 +2055,7 @@
 				}
 			
 				
-				if(e.match(k_Regexp_id2778320)
+				if(e.match(k_keypress_Regexp_id2678635)
 					){
 					
 		return {
@@ -2065,11 +2073,11 @@
 				controller.moveUp(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2084,7 +2092,7 @@
 				}
 			
 				
-				if(e.match(j_Regexp_id2778326)
+				if(e.match(j_keypress_Regexp_id2678640)
 					){
 					
 		return {
@@ -2102,11 +2110,11 @@
 				controller.moveDown(false)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2121,7 +2129,7 @@
 				}
 			
 				
-				if(e.match(left_Regexp_id2778331)
+				if(e.match(left_keypress_Regexp_id2678646)
 					){
 					
 		return {
@@ -2139,11 +2147,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2158,7 +2166,7 @@
 				}
 			
 				
-				if(e.match(right_Regexp_id2778337)
+				if(e.match(right_keypress_Regexp_id2678652)
 					){
 					
 		return {
@@ -2176,11 +2184,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2195,7 +2203,7 @@
 				}
 			
 				
-				if(e.match(up_Regexp_id2778343)
+				if(e.match(up_keypress_Regexp_id2678657)
 					){
 					
 		return {
@@ -2213,11 +2221,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2232,7 +2240,7 @@
 				}
 			
 				
-				if(e.match(down_Regexp_id2778348)
+				if(e.match(down_keypress_Regexp_id2678663)
 					){
 					
 		return {
@@ -2250,11 +2258,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2269,7 +2277,7 @@
 				}
 			
 				
-				if(e.match(v_Regexp_id2778354)
+				if(e.match(v_keypress_Regexp_id2678669)
 					){
 					
 		return {
@@ -2299,11 +2307,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2311,7 +2319,7 @@
 								listener.onTransition(
 									"normal_mode",
 									"visual_character",
-									"normal_mode_v_4" );
+									"normal_mode_v_keypress_4" );
 							
 		}
 	
@@ -2336,7 +2344,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2778359)
+				if(e.match(V_keypress_Regexp_id2678674)
 					){
 					
 		return {
@@ -2366,11 +2374,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2378,7 +2386,7 @@
 								listener.onTransition(
 									"normal_mode",
 									"visual_line",
-									"normal_mode_V_5" );
+									"normal_mode_V_keypress_5" );
 							
 		}
 	
@@ -2403,7 +2411,7 @@
 				}
 			
 				
-				if(e.match(ctrl_v_Regexp_id2778365)
+				if(e.match(ctrl_v_keypress_Regexp_id2678680)
 					){
 					
 		return {
@@ -2433,11 +2441,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2445,7 +2453,7 @@
 								listener.onTransition(
 									"normal_mode",
 									"visual_block",
-									"normal_mode_ctrl_v_6" );
+									"normal_mode_ctrl_v_keypress_6" );
 							
 		}
 	
@@ -2470,7 +2478,7 @@
 				}
 			
 				
-				if(e.match(i_Regexp_id2778371)
+				if(e.match(i_keypress_Regexp_id2678686)
 					){
 					
 		return {
@@ -2500,11 +2508,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2512,7 +2520,7 @@
 								listener.onTransition(
 									"normal_mode",
 									"insert_mode",
-									"normal_mode_i_7" );
+									"normal_mode_i_keypress_7" );
 							
 		}
 	
@@ -2535,7 +2543,7 @@
 				}
 			
 				
-				if(e.match(a_Regexp_id2778376)
+				if(e.match(a_keypress_Regexp_id2678691)
 					){
 					
 		return {
@@ -2567,11 +2575,11 @@
 				controller.moveRight(true);
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2579,7 +2587,7 @@
 								listener.onTransition(
 									"normal_mode",
 									"insert_mode",
-									"normal_mode_a_8" );
+									"normal_mode_a_keypress_8" );
 							
 		}
 	
@@ -2602,14 +2610,14 @@
 				}
 				
 
-			return scxml_id2769015.$dispatchPrefixEvent(e);
+			return scxml_id2668717.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			normal_modeConstructor.prototype = scxml_id2769015;
+			normal_modeConstructor.prototype = scxml_id2668717;
 			return new normal_modeConstructor();
 		})();
 
@@ -2618,7 +2626,7 @@
 		var visual_or_select_mode = (function(){
 
 			function visual_or_select_modeConstructor(){
-				this.parent = scxml_id2769015;
+				this.parent = scxml_id2668717;
 
 				this.initial = null;
 
@@ -2642,11 +2650,11 @@
 				controller.startSelection(); 
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -2662,11 +2670,11 @@
 				controller.clearSelection(); 
 			
 
-		for(var id2771807_iterator=0, 
-			id2771807_hoist=listeners.length;
-				id2771807_iterator < id2771807_hoist;
-				id2771807_iterator++){
-			var listener = listeners[id2771807_iterator];
+		for(var id2671768_iterator=0, 
+			id2671768_hoist=listeners.length;
+				id2671768_iterator < id2671768_hoist;
+				id2671768_iterator++){
+			var listener = listeners[id2671768_iterator];
 
 			
 								//from
@@ -2679,7 +2687,7 @@
 
 				
 
-		this.left = function(){
+		this.left_keypress = function(){
 
 			
 		return {
@@ -2697,11 +2705,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2714,11 +2722,11 @@
 
 		
 
-			return scxml_id2769015['left']();
+			return scxml_id2668717['left_keypress']();
 		}
 	
 
-		this.right = function(){
+		this.right_keypress = function(){
 
 			
 		return {
@@ -2736,11 +2744,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2753,11 +2761,11 @@
 
 		
 
-			return scxml_id2769015['right']();
+			return scxml_id2668717['right_keypress']();
 		}
 	
 
-		this.up = function(){
+		this.up_keypress = function(){
 
 			
 		return {
@@ -2775,11 +2783,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2792,11 +2800,11 @@
 
 		
 
-			return scxml_id2769015['up']();
+			return scxml_id2668717['up_keypress']();
 		}
 	
 
-		this.down = function(){
+		this.down_keypress = function(){
 
 			
 		return {
@@ -2814,11 +2822,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2831,11 +2839,11 @@
 
 		
 
-			return scxml_id2769015['down']();
+			return scxml_id2668717['down_keypress']();
 		}
 	
 
-		this.esc = function(){
+		this.esc_keypress = function(){
 
 			
 		return {
@@ -2862,15 +2870,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -2897,11 +2905,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -2913,11 +2921,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2925,7 +2933,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"visual_or_select_mode_esc_10" );
+									"visual_or_select_mode_esc_keypress_10" );
 							
 		}
 	
@@ -2946,13 +2954,13 @@
 
 		
 
-			return scxml_id2769015['esc']();
+			return scxml_id2668717['esc_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(left_Regexp_id2778331)
+				if(e.match(left_keypress_Regexp_id2678646)
 					){
 					
 		return {
@@ -2970,11 +2978,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -2989,7 +2997,7 @@
 				}
 			
 				
-				if(e.match(right_Regexp_id2778337)
+				if(e.match(right_keypress_Regexp_id2678652)
 					){
 					
 		return {
@@ -3007,11 +3015,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -3026,7 +3034,7 @@
 				}
 			
 				
-				if(e.match(up_Regexp_id2778343)
+				if(e.match(up_keypress_Regexp_id2678657)
 					){
 					
 		return {
@@ -3044,11 +3052,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -3063,7 +3071,7 @@
 				}
 			
 				
-				if(e.match(down_Regexp_id2778348)
+				if(e.match(down_keypress_Regexp_id2678663)
 					){
 					
 		return {
@@ -3081,11 +3089,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -3100,7 +3108,7 @@
 				}
 			
 				
-				if(e.match(esc_Regexp_id2778382)
+				if(e.match(esc_keypress_Regexp_id2678697)
 					){
 					
 		return {
@@ -3127,15 +3135,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3162,11 +3170,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -3178,11 +3186,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -3190,7 +3198,7 @@
 								listener.onTransition(
 									"visual_or_select_mode",
 									"normal_mode",
-									"visual_or_select_mode_esc_10" );
+									"visual_or_select_mode_esc_keypress_10" );
 							
 		}
 	
@@ -3213,14 +3221,14 @@
 				}
 				
 
-			return scxml_id2769015.$dispatchPrefixEvent(e);
+			return scxml_id2668717.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			visual_or_select_modeConstructor.prototype = scxml_id2769015;
+			visual_or_select_modeConstructor.prototype = scxml_id2668717;
 			return new visual_or_select_modeConstructor();
 		})();
 
@@ -3243,7 +3251,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 								,
 							visual_or_select_mode
 					];
@@ -3258,11 +3266,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -3276,11 +3284,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2769885_iterator=0, 
-			id2769885_hoist=listeners.length;
-				id2769885_iterator < id2769885_hoist;
-				id2769885_iterator++){
-			var listener = listeners[id2769885_iterator];
+		for(var id2671015_iterator=0, 
+			id2671015_hoist=listeners.length;
+				id2671015_iterator < id2671015_hoist;
+				id2671015_iterator++){
+			var listener = listeners[id2671015_iterator];
 
 			
 								//from
@@ -3321,11 +3329,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -3398,11 +3406,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -3416,11 +3424,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2770915_iterator=0, 
-			id2770915_hoist=listeners.length;
-				id2770915_iterator < id2770915_hoist;
-				id2770915_iterator++){
-			var listener = listeners[id2770915_iterator];
+		for(var id2669777_iterator=0, 
+			id2669777_hoist=listeners.length;
+				id2669777_iterator < id2669777_hoist;
+				id2669777_iterator++){
+			var listener = listeners[id2669777_iterator];
 
 			
 								//from
@@ -3462,15 +3470,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3497,11 +3505,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -3517,11 +3525,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -3556,7 +3564,7 @@
 		}
 	
 
-		this.bling = function(){
+		this.bling_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -3585,15 +3593,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3620,11 +3628,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -3640,11 +3648,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -3675,11 +3683,11 @@
 				}
 				
 
-			return visual_or_select_mode['bling']();
+			return visual_or_select_mode['bling_keypress']();
 		}
 	
 
-		this.backspace = function(){
+		this.backspace_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -3708,15 +3716,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3743,11 +3751,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -3763,11 +3771,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -3798,11 +3806,11 @@
 				}
 				
 
-			return visual_or_select_mode['backspace']();
+			return visual_or_select_mode['backspace_keypress']();
 		}
 	
 
-		this.enter = function(){
+		this.enter_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -3831,15 +3839,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3866,11 +3874,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -3886,11 +3894,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -3921,11 +3929,11 @@
 				}
 				
 
-			return visual_or_select_mode['enter']();
+			return visual_or_select_mode['enter_keypress']();
 		}
 	
 
-		this.colon = function(){
+		this.colon_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -3954,15 +3962,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3989,11 +3997,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -4009,11 +4017,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -4044,11 +4052,11 @@
 				}
 				
 
-			return visual_or_select_mode['colon']();
+			return visual_or_select_mode['colon_keypress']();
 		}
 	
 
-		this.w = function(){
+		this.w_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -4077,15 +4085,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4112,11 +4120,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -4132,11 +4140,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -4167,11 +4175,11 @@
 				}
 				
 
-			return visual_or_select_mode['w']();
+			return visual_or_select_mode['w_keypress']();
 		}
 	
 
-		this.e = function(){
+		this.e_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -4200,15 +4208,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4235,11 +4243,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -4255,11 +4263,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -4290,11 +4298,11 @@
 				}
 				
 
-			return visual_or_select_mode['e']();
+			return visual_or_select_mode['e_keypress']();
 		}
 	
 
-		this.b = function(){
+		this.b_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -4323,15 +4331,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4358,11 +4366,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -4378,11 +4386,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -4413,11 +4421,11 @@
 				}
 				
 
-			return visual_or_select_mode['b']();
+			return visual_or_select_mode['b_keypress']();
 		}
 	
 
-		this.zero = function(){
+		this.zero_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -4446,15 +4454,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4481,11 +4489,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -4501,11 +4509,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -4536,11 +4544,11 @@
 				}
 				
 
-			return visual_or_select_mode['zero']();
+			return visual_or_select_mode['zero_keypress']();
 		}
 	
 
-		this.h = function(){
+		this.h_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -4569,15 +4577,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4604,11 +4612,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -4624,11 +4632,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -4659,11 +4667,11 @@
 				}
 				
 
-			return visual_or_select_mode['h']();
+			return visual_or_select_mode['h_keypress']();
 		}
 	
 
-		this.l = function(){
+		this.l_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -4692,15 +4700,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4727,11 +4735,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -4747,11 +4755,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -4782,11 +4790,11 @@
 				}
 				
 
-			return visual_or_select_mode['l']();
+			return visual_or_select_mode['l_keypress']();
 		}
 	
 
-		this.k = function(){
+		this.k_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -4815,15 +4823,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4850,11 +4858,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -4870,11 +4878,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -4905,11 +4913,11 @@
 				}
 				
 
-			return visual_or_select_mode['k']();
+			return visual_or_select_mode['k_keypress']();
 		}
 	
 
-		this.j = function(){
+		this.j_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -4938,15 +4946,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4973,11 +4981,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -4993,11 +5001,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -5028,11 +5036,11 @@
 				}
 				
 
-			return visual_or_select_mode['j']();
+			return visual_or_select_mode['j_keypress']();
 		}
 	
 
-		this.left = function(){
+		this.left_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -5061,15 +5069,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5096,11 +5104,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -5116,11 +5124,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -5151,11 +5159,11 @@
 				}
 				
 
-			return visual_or_select_mode['left']();
+			return visual_or_select_mode['left_keypress']();
 		}
 	
 
-		this.right = function(){
+		this.right_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -5184,15 +5192,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5219,11 +5227,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -5239,11 +5247,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -5274,11 +5282,11 @@
 				}
 				
 
-			return visual_or_select_mode['right']();
+			return visual_or_select_mode['right_keypress']();
 		}
 	
 
-		this.up = function(){
+		this.up_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -5307,15 +5315,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5342,11 +5350,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -5362,11 +5370,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -5397,11 +5405,11 @@
 				}
 				
 
-			return visual_or_select_mode['up']();
+			return visual_or_select_mode['up_keypress']();
 		}
 	
 
-		this.down = function(){
+		this.down_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -5430,15 +5438,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5465,11 +5473,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -5485,11 +5493,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -5520,11 +5528,11 @@
 				}
 				
 
-			return visual_or_select_mode['down']();
+			return visual_or_select_mode['down_keypress']();
 		}
 	
 
-		this.v = function(){
+		this.v_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -5553,15 +5561,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5588,11 +5596,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -5608,11 +5616,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -5643,11 +5651,11 @@
 				}
 				
 
-			return visual_or_select_mode['v']();
+			return visual_or_select_mode['v_keypress']();
 		}
 	
 
-		this.V = function(){
+		this.V_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -5676,15 +5684,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5711,11 +5719,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -5731,11 +5739,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -5766,11 +5774,11 @@
 				}
 				
 
-			return visual_or_select_mode['V']();
+			return visual_or_select_mode['V_keypress']();
 		}
 	
 
-		this.ctrl_v = function(){
+		this.ctrl_v_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -5799,15 +5807,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5834,11 +5842,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -5854,11 +5862,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -5889,11 +5897,11 @@
 				}
 				
 
-			return visual_or_select_mode['ctrl_v']();
+			return visual_or_select_mode['ctrl_v_keypress']();
 		}
 	
 
-		this.i = function(){
+		this.i_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -5922,15 +5930,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5957,11 +5965,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -5977,11 +5985,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -6012,11 +6020,11 @@
 				}
 				
 
-			return visual_or_select_mode['i']();
+			return visual_or_select_mode['i_keypress']();
 		}
 	
 
-		this.a = function(){
+		this.a_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -6045,15 +6053,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6080,11 +6088,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -6100,11 +6108,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -6135,11 +6143,11 @@
 				}
 				
 
-			return visual_or_select_mode['a']();
+			return visual_or_select_mode['a_keypress']();
 		}
 	
 
-		this.ctrl_g = function(){
+		this.ctrl_g_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -6168,15 +6176,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6203,11 +6211,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -6223,11 +6231,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -6258,11 +6266,11 @@
 				}
 				
 
-			return visual_or_select_mode['ctrl_g']();
+			return visual_or_select_mode['ctrl_g_keypress']();
 		}
 	
 
-		this.y = function(){
+		this.y_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -6291,15 +6299,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6326,11 +6334,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -6346,11 +6354,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -6381,11 +6389,11 @@
 				}
 				
 
-			return visual_or_select_mode['y']();
+			return visual_or_select_mode['y_keypress']();
 		}
 	
 
-		this.x = function(){
+		this.x_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -6414,15 +6422,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6449,11 +6457,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -6469,11 +6477,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -6504,11 +6512,11 @@
 				}
 				
 
-			return visual_or_select_mode['x']();
+			return visual_or_select_mode['x_keypress']();
 		}
 	
 
-		this.esc = function(){
+		this.d_keypress = function(){
 
 			
 				if(_event.data.charCode !== 0){
@@ -6537,15 +6545,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6572,11 +6580,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -6592,11 +6600,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -6627,13 +6635,259 @@
 				}
 				
 
-			return visual_or_select_mode['esc']();
+			return visual_or_select_mode['d_keypress']();
+		}
+	
+
+		this.c_keypress = function(){
+
+			
+				if(_event.data.charCode !== 0){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       initial_default : true
+                               ,normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = scxml_id2668717;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+					//TODO: delete text in selection, replace with event data
+					var c = String.fromCharCode(_event.data.charCode);
+					alert("replaced text with " + c);
+				
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"normal_mode",
+									"select_mode_*_12" );
+							
+		}
+	
+	
+					//enter states
+					normal_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			normal_mode
+		]; 
+	
+			}
+		}
+
+	
+				}
+				
+
+			return visual_or_select_mode['c_keypress']();
+		}
+	
+
+		this.esc_keypress = function(){
+
+			
+				if(_event.data.charCode !== 0){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       initial_default : true
+                               ,normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = scxml_id2668717;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+					//TODO: delete text in selection, replace with event data
+					var c = String.fromCharCode(_event.data.charCode);
+					alert("replaced text with " + c);
+				
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"normal_mode",
+									"select_mode_*_12" );
+							
+		}
+	
+	
+					//enter states
+					normal_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			normal_mode
+		]; 
+	
+			}
+		}
+
+	
+				}
+				
+
+			return visual_or_select_mode['esc_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(star_Regexp_id2778387)
+				if(e.match(star_Regexp_id2678702)
 					
 						&& _event.data.charCode !== 0){
 					
@@ -6663,15 +6917,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6698,11 +6952,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -6718,11 +6972,11 @@
 					alert("replaced text with " + c);
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -6785,7 +7039,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 								,
 							visual_or_select_mode
 								,
@@ -6802,11 +7056,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -6820,11 +7074,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2770922_iterator=0, 
-			id2770922_hoist=listeners.length;
-				id2770922_iterator < id2770922_hoist;
-				id2770922_iterator++){
-			var listener = listeners[id2770922_iterator];
+		for(var id2669785_iterator=0, 
+			id2669785_hoist=listeners.length;
+				id2669785_iterator < id2669785_hoist;
+				id2669785_iterator++){
+			var listener = listeners[id2669785_iterator];
 
 			
 								//from
@@ -6862,11 +7116,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -6931,7 +7185,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 								,
 							visual_or_select_mode
 								,
@@ -6949,11 +7203,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -6967,11 +7221,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2771082_iterator=0, 
-			id2771082_hoist=listeners.length;
-				id2771082_iterator < id2771082_hoist;
-				id2771082_iterator++){
-			var listener = listeners[id2771082_iterator];
+		for(var id2669944_iterator=0, 
+			id2669944_hoist=listeners.length;
+				id2669944_iterator < id2669944_hoist;
+				id2669944_iterator++){
+			var listener = listeners[id2669944_iterator];
 
 			
 								//from
@@ -6984,7 +7238,7 @@
 
 				
 
-		this.v = function(){
+		this.v_keypress = function(){
 
 			
 		return {
@@ -7007,11 +7261,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7019,7 +7273,7 @@
 								listener.onTransition(
 									"",
 									"select_character",
-									"select_line_v_14" );
+									"select_line_v_keypress_14" );
 							
 		}
 	
@@ -7040,11 +7294,11 @@
 
 		
 
-			return select_mode['v']();
+			return select_mode['v_keypress']();
 		}
 	
 
-		this.ctrl_v = function(){
+		this.ctrl_v_keypress = function(){
 
 			
 		return {
@@ -7067,11 +7321,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7079,7 +7333,7 @@
 								listener.onTransition(
 									"",
 									"select_block",
-									"select_line_ctrl_v_13" );
+									"select_line_ctrl_v_keypress_13" );
 							
 		}
 	
@@ -7100,11 +7354,11 @@
 
 		
 
-			return select_mode['ctrl_v']();
+			return select_mode['ctrl_v_keypress']();
 		}
 	
 
-		this.ctrl_g = function(){
+		this.ctrl_g_keypress = function(){
 
 			
 		return {
@@ -7131,11 +7385,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7143,7 +7397,7 @@
 								listener.onTransition(
 									"",
 									"visual_line",
-									"select_line_ctrl_g_15" );
+									"select_line_ctrl_g_keypress_15" );
 							
 		}
 	
@@ -7165,13 +7419,13 @@
 
 		
 
-			return select_mode['ctrl_g']();
+			return select_mode['ctrl_g_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_Regexp_id2778365)
+				if(e.match(ctrl_v_keypress_Regexp_id2678680)
 					){
 					
 		return {
@@ -7194,11 +7448,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7206,7 +7460,7 @@
 								listener.onTransition(
 									"select_line",
 									"select_block",
-									"select_line_ctrl_v_13" );
+									"select_line_ctrl_v_keypress_13" );
 							
 		}
 	
@@ -7229,7 +7483,7 @@
 				}
 			
 				
-				if(e.match(v_Regexp_id2778354)
+				if(e.match(v_keypress_Regexp_id2678669)
 					){
 					
 		return {
@@ -7252,11 +7506,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7264,7 +7518,7 @@
 								listener.onTransition(
 									"select_line",
 									"select_character",
-									"select_line_v_14" );
+									"select_line_v_keypress_14" );
 							
 		}
 	
@@ -7287,7 +7541,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2778393)
+				if(e.match(ctrl_g_keypress_Regexp_id2678708)
 					){
 					
 		return {
@@ -7314,11 +7568,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7326,7 +7580,7 @@
 								listener.onTransition(
 									"select_line",
 									"visual_line",
-									"select_line_ctrl_g_15" );
+									"select_line_ctrl_g_keypress_15" );
 							
 		}
 	
@@ -7380,7 +7634,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 								,
 							visual_or_select_mode
 								,
@@ -7398,11 +7652,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -7416,11 +7670,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2772466_iterator=0, 
-			id2772466_hoist=listeners.length;
-				id2772466_iterator < id2772466_hoist;
-				id2772466_iterator++){
-			var listener = listeners[id2772466_iterator];
+		for(var id2672316_iterator=0, 
+			id2672316_hoist=listeners.length;
+				id2672316_iterator < id2672316_hoist;
+				id2672316_iterator++){
+			var listener = listeners[id2672316_iterator];
 
 			
 								//from
@@ -7433,7 +7687,7 @@
 
 				
 
-		this.v = function(){
+		this.v_keypress = function(){
 
 			
 		return {
@@ -7456,11 +7710,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7468,7 +7722,7 @@
 								listener.onTransition(
 									"",
 									"select_character",
-									"select_block_v_16" );
+									"select_block_v_keypress_16" );
 							
 		}
 	
@@ -7489,11 +7743,11 @@
 
 		
 
-			return select_mode['v']();
+			return select_mode['v_keypress']();
 		}
 	
 
-		this.V = function(){
+		this.V_keypress = function(){
 
 			
 		return {
@@ -7516,11 +7770,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7528,7 +7782,7 @@
 								listener.onTransition(
 									"",
 									"select_line",
-									"select_block_V_17" );
+									"select_block_V_keypress_17" );
 							
 		}
 	
@@ -7549,11 +7803,11 @@
 
 		
 
-			return select_mode['V']();
+			return select_mode['V_keypress']();
 		}
 	
 
-		this.ctrl_g = function(){
+		this.ctrl_g_keypress = function(){
 
 			
 		return {
@@ -7580,11 +7834,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7592,7 +7846,7 @@
 								listener.onTransition(
 									"",
 									"visual_block",
-									"select_block_ctrl_g_18" );
+									"select_block_ctrl_g_keypress_18" );
 							
 		}
 	
@@ -7614,13 +7868,13 @@
 
 		
 
-			return select_mode['ctrl_g']();
+			return select_mode['ctrl_g_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(v_Regexp_id2778354)
+				if(e.match(v_keypress_Regexp_id2678669)
 					){
 					
 		return {
@@ -7643,11 +7897,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7655,7 +7909,7 @@
 								listener.onTransition(
 									"select_block",
 									"select_character",
-									"select_block_v_16" );
+									"select_block_v_keypress_16" );
 							
 		}
 	
@@ -7678,7 +7932,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2778359)
+				if(e.match(V_keypress_Regexp_id2678674)
 					){
 					
 		return {
@@ -7701,11 +7955,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7713,7 +7967,7 @@
 								listener.onTransition(
 									"select_block",
 									"select_line",
-									"select_block_V_17" );
+									"select_block_V_keypress_17" );
 							
 		}
 	
@@ -7736,7 +7990,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2778393)
+				if(e.match(ctrl_g_keypress_Regexp_id2678708)
 					){
 					
 		return {
@@ -7763,11 +8017,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7775,7 +8029,7 @@
 								listener.onTransition(
 									"select_block",
 									"visual_block",
-									"select_block_ctrl_g_18" );
+									"select_block_ctrl_g_keypress_18" );
 							
 		}
 	
@@ -7829,7 +8083,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 								,
 							visual_or_select_mode
 								,
@@ -7847,11 +8101,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -7865,11 +8119,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2772743_iterator=0, 
-			id2772743_hoist=listeners.length;
-				id2772743_iterator < id2772743_hoist;
-				id2772743_iterator++){
-			var listener = listeners[id2772743_iterator];
+		for(var id2672595_iterator=0, 
+			id2672595_hoist=listeners.length;
+				id2672595_iterator < id2672595_hoist;
+				id2672595_iterator++){
+			var listener = listeners[id2672595_iterator];
 
 			
 								//from
@@ -7882,7 +8136,7 @@
 
 				
 
-		this.V = function(){
+		this.V_keypress = function(){
 
 			
 		return {
@@ -7905,11 +8159,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7917,7 +8171,7 @@
 								listener.onTransition(
 									"",
 									"select_line",
-									"select_character_V_20" );
+									"select_character_V_keypress_20" );
 							
 		}
 	
@@ -7938,11 +8192,11 @@
 
 		
 
-			return select_mode['V']();
+			return select_mode['V_keypress']();
 		}
 	
 
-		this.ctrl_v = function(){
+		this.ctrl_v_keypress = function(){
 
 			
 		return {
@@ -7965,11 +8219,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -7977,7 +8231,7 @@
 								listener.onTransition(
 									"",
 									"select_block",
-									"select_character_ctrl_v_19" );
+									"select_character_ctrl_v_keypress_19" );
 							
 		}
 	
@@ -7998,11 +8252,11 @@
 
 		
 
-			return select_mode['ctrl_v']();
+			return select_mode['ctrl_v_keypress']();
 		}
 	
 
-		this.ctrl_g = function(){
+		this.ctrl_g_keypress = function(){
 
 			
 		return {
@@ -8029,11 +8283,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8041,7 +8295,7 @@
 								listener.onTransition(
 									"",
 									"visual_character",
-									"select_character_ctrl_g_21" );
+									"select_character_ctrl_g_keypress_21" );
 							
 		}
 	
@@ -8063,13 +8317,13 @@
 
 		
 
-			return select_mode['ctrl_g']();
+			return select_mode['ctrl_g_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_Regexp_id2778365)
+				if(e.match(ctrl_v_keypress_Regexp_id2678680)
 					){
 					
 		return {
@@ -8092,11 +8346,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8104,7 +8358,7 @@
 								listener.onTransition(
 									"select_character",
 									"select_block",
-									"select_character_ctrl_v_19" );
+									"select_character_ctrl_v_keypress_19" );
 							
 		}
 	
@@ -8127,7 +8381,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2778359)
+				if(e.match(V_keypress_Regexp_id2678674)
 					){
 					
 		return {
@@ -8150,11 +8404,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8162,7 +8416,7 @@
 								listener.onTransition(
 									"select_character",
 									"select_line",
-									"select_character_V_20" );
+									"select_character_V_keypress_20" );
 							
 		}
 	
@@ -8185,7 +8439,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2778393)
+				if(e.match(ctrl_g_keypress_Regexp_id2678708)
 					){
 					
 		return {
@@ -8212,11 +8466,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8224,7 +8478,7 @@
 								listener.onTransition(
 									"select_character",
 									"visual_character",
-									"select_character_ctrl_g_21" );
+									"select_character_ctrl_g_keypress_21" );
 							
 		}
 	
@@ -8285,11 +8539,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -8303,11 +8557,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2773028_iterator=0, 
-			id2773028_hoist=listeners.length;
-				id2773028_iterator < id2773028_hoist;
-				id2773028_iterator++){
-			var listener = listeners[id2773028_iterator];
+		for(var id2672882_iterator=0, 
+			id2672882_hoist=listeners.length;
+				id2672882_iterator < id2672882_hoist;
+				id2672882_iterator++){
+			var listener = listeners[id2672882_iterator];
 
 			
 								//from
@@ -8320,7 +8574,7 @@
 
 				
 
-		this.bling = function(){
+		this.bling_keypress = function(){
 
 			
 		return {
@@ -8338,11 +8592,11 @@
 				controller.moveToEndOfLine(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8355,11 +8609,11 @@
 
 		
 
-			return visual_or_select_mode['bling']();
+			return visual_or_select_mode['bling_keypress']();
 		}
 	
 
-		this.backspace = function(){
+		this.backspace_keypress = function(){
 
 			
 		return {
@@ -8377,11 +8631,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8394,11 +8648,11 @@
 
 		
 
-			return visual_or_select_mode['backspace']();
+			return visual_or_select_mode['backspace_keypress']();
 		}
 	
 
-		this.enter = function(){
+		this.enter_keypress = function(){
 
 			
 		return {
@@ -8416,11 +8670,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8433,11 +8687,11 @@
 
 		
 
-			return visual_or_select_mode['enter']();
+			return visual_or_select_mode['enter_keypress']();
 		}
 	
 
-		this.colon = function(){
+		this.colon_keypress = function(){
 
 			
 		return {
@@ -8464,15 +8718,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8499,11 +8753,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -8515,11 +8769,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8527,7 +8781,7 @@
 								listener.onTransition(
 									"",
 									"command_mode",
-									"visual_mode_colon_25" );
+									"visual_mode_colon_keypress_27" );
 							
 		}
 	
@@ -8548,11 +8802,11 @@
 
 		
 
-			return visual_or_select_mode['colon']();
+			return visual_or_select_mode['colon_keypress']();
 		}
 	
 
-		this.w = function(){
+		this.w_keypress = function(){
 
 			
 		return {
@@ -8570,11 +8824,11 @@
 				controller.moveToStartOfNextWord(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8587,11 +8841,11 @@
 
 		
 
-			return visual_or_select_mode['w']();
+			return visual_or_select_mode['w_keypress']();
 		}
 	
 
-		this.e = function(){
+		this.e_keypress = function(){
 
 			
 		return {
@@ -8609,11 +8863,11 @@
 				controller.moveToEndOfNextWord(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8626,11 +8880,11 @@
 
 		
 
-			return visual_or_select_mode['e']();
+			return visual_or_select_mode['e_keypress']();
 		}
 	
 
-		this.b = function(){
+		this.b_keypress = function(){
 
 			
 		return {
@@ -8648,11 +8902,11 @@
 				controller.moveToStartOfPreviousWord(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8665,11 +8919,11 @@
 
 		
 
-			return visual_or_select_mode['b']();
+			return visual_or_select_mode['b_keypress']();
 		}
 	
 
-		this.zero = function(){
+		this.zero_keypress = function(){
 
 			
 		return {
@@ -8687,11 +8941,11 @@
 				controller.moveToStartOfLine(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8704,11 +8958,11 @@
 
 		
 
-			return visual_or_select_mode['zero']();
+			return visual_or_select_mode['zero_keypress']();
 		}
 	
 
-		this.h = function(){
+		this.h_keypress = function(){
 
 			
 		return {
@@ -8726,11 +8980,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8743,11 +8997,11 @@
 
 		
 
-			return visual_or_select_mode['h']();
+			return visual_or_select_mode['h_keypress']();
 		}
 	
 
-		this.l = function(){
+		this.l_keypress = function(){
 
 			
 		return {
@@ -8765,11 +9019,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8782,11 +9036,11 @@
 
 		
 
-			return visual_or_select_mode['l']();
+			return visual_or_select_mode['l_keypress']();
 		}
 	
 
-		this.k = function(){
+		this.k_keypress = function(){
 
 			
 		return {
@@ -8804,11 +9058,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8821,11 +9075,11 @@
 
 		
 
-			return visual_or_select_mode['k']();
+			return visual_or_select_mode['k_keypress']();
 		}
 	
 
-		this.j = function(){
+		this.j_keypress = function(){
 
 			
 		return {
@@ -8843,11 +9097,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8860,11 +9114,11 @@
 
 		
 
-			return visual_or_select_mode['j']();
+			return visual_or_select_mode['j_keypress']();
 		}
 	
 
-		this.y = function(){
+		this.y_keypress = function(){
 
 			
 		return {
@@ -8891,15 +9145,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8926,11 +9180,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -8944,11 +9198,11 @@
 					controller.copySelectedTextIntoRegister();  
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -8956,7 +9210,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"visual_mode_y_23" );
+									"visual_mode_y_keypress_23" );
 							
 		}
 	
@@ -8977,11 +9231,11 @@
 
 		
 
-			return visual_or_select_mode['y']();
+			return visual_or_select_mode['y_keypress']();
 		}
 	
 
-		this.x = function(){
+		this.x_keypress = function(){
 
 			
 		return {
@@ -9008,15 +9262,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -9043,11 +9297,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -9061,11 +9315,11 @@
 					controller.deleteSelectedTextIntoRegister();  
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9073,7 +9327,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"visual_mode_x_24" );
+									"visual_mode_x_keypress_24" );
 							
 		}
 	
@@ -9094,13 +9348,247 @@
 
 		
 
-			return visual_or_select_mode['x']();
+			return visual_or_select_mode['x_keypress']();
+		}
+	
+
+		this.d_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       initial_default : true
+                               ,normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = scxml_id2668717;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+					controller.deleteSelectedTextIntoRegister();  
+				
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"normal_mode",
+									"visual_mode_d_keypress_25" );
+							
+		}
+	
+	
+					//enter states
+					normal_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			normal_mode
+		]; 
+	
+			}
+		}
+
+		
+
+			return visual_or_select_mode['d_keypress']();
+		}
+	
+
+		this.c_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       initial_default : true
+                               ,normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = scxml_id2668717;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+					controller.deleteSelectedTextIntoRegister();  
+				
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"insert_mode",
+									"visual_mode_c_keypress_26" );
+							
+		}
+	
+	
+					//enter states
+					insert_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			insert_mode
+		]; 
+	
+			}
+		}
+
+		
+
+			return visual_or_select_mode['c_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(y_Regexp_id2778399)
+				if(e.match(y_keypress_Regexp_id2678714)
 					){
 					
 		return {
@@ -9127,15 +9615,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -9162,11 +9650,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -9180,11 +9668,11 @@
 					controller.copySelectedTextIntoRegister();  
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9192,7 +9680,7 @@
 								listener.onTransition(
 									"visual_mode",
 									"normal_mode",
-									"visual_mode_y_23" );
+									"visual_mode_y_keypress_23" );
 							
 		}
 	
@@ -9215,7 +9703,7 @@
 				}
 			
 				
-				if(e.match(x_Regexp_id2778404)
+				if(e.match(x_keypress_Regexp_id2678719)
 					){
 					
 		return {
@@ -9242,15 +9730,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -9277,11 +9765,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -9295,11 +9783,11 @@
 					controller.deleteSelectedTextIntoRegister();  
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9307,7 +9795,7 @@
 								listener.onTransition(
 									"visual_mode",
 									"normal_mode",
-									"visual_mode_x_24" );
+									"visual_mode_x_keypress_24" );
 							
 		}
 	
@@ -9330,7 +9818,237 @@
 				}
 			
 				
-				if(e.match(bling_Regexp_id2778264)
+				if(e.match(d_keypress_Regexp_id2678725)
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       initial_default : true
+                               ,normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = scxml_id2668717;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+					controller.deleteSelectedTextIntoRegister();  
+				
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"visual_mode",
+									"normal_mode",
+									"visual_mode_d_keypress_25" );
+							
+		}
+	
+	
+					//enter states
+					normal_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			normal_mode
+		]; 
+	
+			}
+		}
+
+	
+				}
+			
+				
+				if(e.match(c_keypress_Regexp_id2678731)
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       initial_default : true
+                               ,normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = scxml_id2668717;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+					controller.deleteSelectedTextIntoRegister();  
+				
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"visual_mode",
+									"insert_mode",
+									"visual_mode_c_keypress_26" );
+							
+		}
+	
+	
+					//enter states
+					insert_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration = [
+			insert_mode
+		]; 
+	
+			}
+		}
+
+	
+				}
+			
+				
+				if(e.match(bling_keypress_Regexp_id2678578)
 					){
 					
 		return {
@@ -9348,11 +10066,11 @@
 				controller.moveToEndOfLine(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9367,7 +10085,7 @@
 				}
 			
 				
-				if(e.match(backspace_Regexp_id2778270)
+				if(e.match(backspace_keypress_Regexp_id2678584)
 					){
 					
 		return {
@@ -9385,11 +10103,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9404,7 +10122,7 @@
 				}
 			
 				
-				if(e.match(enter_Regexp_id2778275)
+				if(e.match(enter_keypress_Regexp_id2678590)
 					){
 					
 		return {
@@ -9422,11 +10140,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9441,7 +10159,7 @@
 				}
 			
 				
-				if(e.match(colon_Regexp_id2778281)
+				if(e.match(colon_keypress_Regexp_id2678595)
 					){
 					
 		return {
@@ -9468,15 +10186,15 @@
 					 
 
 		var statesExited = [];
-		var lca = scxml_id2769015;
+		var lca = scxml_id2668717;
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2675798_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -9503,11 +10221,11 @@
 
 		
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=statesExited.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = statesExited[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=statesExited.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = statesExited[id2675798_iterator];
 
 			
 				state.exitAction();
@@ -9519,11 +10237,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9531,7 +10249,7 @@
 								listener.onTransition(
 									"visual_mode",
 									"command_mode",
-									"visual_mode_colon_25" );
+									"visual_mode_colon_keypress_27" );
 							
 		}
 	
@@ -9554,7 +10272,7 @@
 				}
 			
 				
-				if(e.match(w_Regexp_id2778286)
+				if(e.match(w_keypress_Regexp_id2678601)
 					){
 					
 		return {
@@ -9572,11 +10290,11 @@
 				controller.moveToStartOfNextWord(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9591,7 +10309,7 @@
 				}
 			
 				
-				if(e.match(e_Regexp_id2778292)
+				if(e.match(e_keypress_Regexp_id2678606)
 					){
 					
 		return {
@@ -9609,11 +10327,11 @@
 				controller.moveToEndOfNextWord(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9628,7 +10346,7 @@
 				}
 			
 				
-				if(e.match(b_Regexp_id2778298)
+				if(e.match(b_keypress_Regexp_id2678612)
 					){
 					
 		return {
@@ -9646,11 +10364,11 @@
 				controller.moveToStartOfPreviousWord(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9665,7 +10383,7 @@
 				}
 			
 				
-				if(e.match(zero_Regexp_id2778303)
+				if(e.match(zero_keypress_Regexp_id2678618)
 					){
 					
 		return {
@@ -9683,11 +10401,11 @@
 				controller.moveToStartOfLine(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9702,7 +10420,7 @@
 				}
 			
 				
-				if(e.match(h_Regexp_id2778309)
+				if(e.match(h_keypress_Regexp_id2678623)
 					){
 					
 		return {
@@ -9720,11 +10438,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9739,7 +10457,7 @@
 				}
 			
 				
-				if(e.match(l_Regexp_id2778315)
+				if(e.match(l_keypress_Regexp_id2678629)
 					){
 					
 		return {
@@ -9757,11 +10475,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9776,7 +10494,7 @@
 				}
 			
 				
-				if(e.match(k_Regexp_id2778320)
+				if(e.match(k_keypress_Regexp_id2678635)
 					){
 					
 		return {
@@ -9794,11 +10512,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9813,7 +10531,7 @@
 				}
 			
 				
-				if(e.match(j_Regexp_id2778326)
+				if(e.match(j_keypress_Regexp_id2678640)
 					){
 					
 		return {
@@ -9831,11 +10549,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -9880,7 +10598,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 								,
 							visual_or_select_mode
 								,
@@ -9897,11 +10615,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -9915,11 +10633,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2777468_iterator=0, 
-			id2777468_hoist=listeners.length;
-				id2777468_iterator < id2777468_hoist;
-				id2777468_iterator++){
-			var listener = listeners[id2777468_iterator];
+		for(var id2677651_iterator=0, 
+			id2677651_hoist=listeners.length;
+				id2677651_iterator < id2677651_hoist;
+				id2677651_iterator++){
+			var listener = listeners[id2677651_iterator];
 
 			
 								//from
@@ -9957,11 +10675,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10026,7 +10744,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 								,
 							visual_or_select_mode
 								,
@@ -10044,11 +10762,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -10062,11 +10780,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2777869_iterator=0, 
-			id2777869_hoist=listeners.length;
-				id2777869_iterator < id2777869_hoist;
-				id2777869_iterator++){
-			var listener = listeners[id2777869_iterator];
+		for(var id2678194_iterator=0, 
+			id2678194_hoist=listeners.length;
+				id2678194_iterator < id2678194_hoist;
+				id2678194_iterator++){
+			var listener = listeners[id2678194_iterator];
 
 			
 								//from
@@ -10079,7 +10797,7 @@
 
 				
 
-		this.v = function(){
+		this.v_keypress = function(){
 
 			
 		return {
@@ -10102,11 +10820,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10114,7 +10832,7 @@
 								listener.onTransition(
 									"",
 									"visual_character",
-									"visual_line_v_27" );
+									"visual_line_v_keypress_29" );
 							
 		}
 	
@@ -10135,11 +10853,11 @@
 
 		
 
-			return visual_mode['v']();
+			return visual_mode['v_keypress']();
 		}
 	
 
-		this.ctrl_v = function(){
+		this.ctrl_v_keypress = function(){
 
 			
 		return {
@@ -10162,11 +10880,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10174,7 +10892,7 @@
 								listener.onTransition(
 									"",
 									"visual_block",
-									"visual_line_ctrl_v_26" );
+									"visual_line_ctrl_v_keypress_28" );
 							
 		}
 	
@@ -10195,11 +10913,11 @@
 
 		
 
-			return visual_mode['ctrl_v']();
+			return visual_mode['ctrl_v_keypress']();
 		}
 	
 
-		this.ctrl_g = function(){
+		this.ctrl_g_keypress = function(){
 
 			
 		return {
@@ -10226,11 +10944,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10238,7 +10956,7 @@
 								listener.onTransition(
 									"",
 									"select_line",
-									"visual_line_ctrl_g_28" );
+									"visual_line_ctrl_g_keypress_30" );
 							
 		}
 	
@@ -10260,13 +10978,13 @@
 
 		
 
-			return visual_mode['ctrl_g']();
+			return visual_mode['ctrl_g_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_Regexp_id2778365)
+				if(e.match(ctrl_v_keypress_Regexp_id2678680)
 					){
 					
 		return {
@@ -10289,11 +11007,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10301,7 +11019,7 @@
 								listener.onTransition(
 									"visual_line",
 									"visual_block",
-									"visual_line_ctrl_v_26" );
+									"visual_line_ctrl_v_keypress_28" );
 							
 		}
 	
@@ -10324,7 +11042,7 @@
 				}
 			
 				
-				if(e.match(v_Regexp_id2778354)
+				if(e.match(v_keypress_Regexp_id2678669)
 					){
 					
 		return {
@@ -10347,11 +11065,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10359,7 +11077,7 @@
 								listener.onTransition(
 									"visual_line",
 									"visual_character",
-									"visual_line_v_27" );
+									"visual_line_v_keypress_29" );
 							
 		}
 	
@@ -10382,7 +11100,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2778393)
+				if(e.match(ctrl_g_keypress_Regexp_id2678708)
 					){
 					
 		return {
@@ -10409,11 +11127,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10421,7 +11139,7 @@
 								listener.onTransition(
 									"visual_line",
 									"select_line",
-									"visual_line_ctrl_g_28" );
+									"visual_line_ctrl_g_keypress_30" );
 							
 		}
 	
@@ -10475,7 +11193,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 								,
 							visual_or_select_mode
 								,
@@ -10493,11 +11211,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -10511,11 +11229,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2778147_iterator=0, 
-			id2778147_hoist=listeners.length;
-				id2778147_iterator < id2778147_hoist;
-				id2778147_iterator++){
-			var listener = listeners[id2778147_iterator];
+		for(var id2678474_iterator=0, 
+			id2678474_hoist=listeners.length;
+				id2678474_iterator < id2678474_hoist;
+				id2678474_iterator++){
+			var listener = listeners[id2678474_iterator];
 
 			
 								//from
@@ -10528,7 +11246,7 @@
 
 				
 
-		this.v = function(){
+		this.v_keypress = function(){
 
 			
 		return {
@@ -10551,11 +11269,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10563,7 +11281,7 @@
 								listener.onTransition(
 									"",
 									"visual_character",
-									"visual_block_v_29" );
+									"visual_block_v_keypress_31" );
 							
 		}
 	
@@ -10584,11 +11302,11 @@
 
 		
 
-			return visual_mode['v']();
+			return visual_mode['v_keypress']();
 		}
 	
 
-		this.V = function(){
+		this.V_keypress = function(){
 
 			
 		return {
@@ -10611,11 +11329,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10623,7 +11341,7 @@
 								listener.onTransition(
 									"",
 									"visual_line",
-									"visual_block_V_30" );
+									"visual_block_V_keypress_32" );
 							
 		}
 	
@@ -10644,11 +11362,11 @@
 
 		
 
-			return visual_mode['V']();
+			return visual_mode['V_keypress']();
 		}
 	
 
-		this.ctrl_g = function(){
+		this.ctrl_g_keypress = function(){
 
 			
 		return {
@@ -10675,11 +11393,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10687,7 +11405,7 @@
 								listener.onTransition(
 									"",
 									"select_block",
-									"visual_block_ctrl_g_31" );
+									"visual_block_ctrl_g_keypress_33" );
 							
 		}
 	
@@ -10709,13 +11427,13 @@
 
 		
 
-			return visual_mode['ctrl_g']();
+			return visual_mode['ctrl_g_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(v_Regexp_id2778354)
+				if(e.match(v_keypress_Regexp_id2678669)
 					){
 					
 		return {
@@ -10738,11 +11456,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10750,7 +11468,7 @@
 								listener.onTransition(
 									"visual_block",
 									"visual_character",
-									"visual_block_v_29" );
+									"visual_block_v_keypress_31" );
 							
 		}
 	
@@ -10773,7 +11491,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2778359)
+				if(e.match(V_keypress_Regexp_id2678674)
 					){
 					
 		return {
@@ -10796,11 +11514,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10808,7 +11526,7 @@
 								listener.onTransition(
 									"visual_block",
 									"visual_line",
-									"visual_block_V_30" );
+									"visual_block_V_keypress_32" );
 							
 		}
 	
@@ -10831,7 +11549,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2778393)
+				if(e.match(ctrl_g_keypress_Regexp_id2678708)
 					){
 					
 		return {
@@ -10858,11 +11576,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -10870,7 +11588,7 @@
 								listener.onTransition(
 									"visual_block",
 									"select_block",
-									"visual_block_ctrl_g_31" );
+									"visual_block_ctrl_g_keypress_33" );
 							
 		}
 	
@@ -10924,7 +11642,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 								,
 							visual_or_select_mode
 								,
@@ -10942,11 +11660,11 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 					
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -10960,11 +11678,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2778865_iterator=0, 
-			id2778865_hoist=listeners.length;
-				id2778865_iterator < id2778865_hoist;
-				id2778865_iterator++){
-			var listener = listeners[id2778865_iterator];
+		for(var id2679202_iterator=0, 
+			id2679202_hoist=listeners.length;
+				id2679202_iterator < id2679202_hoist;
+				id2679202_iterator++){
+			var listener = listeners[id2679202_iterator];
 
 			
 								//from
@@ -10977,7 +11695,7 @@
 
 				
 
-		this.V = function(){
+		this.V_keypress = function(){
 
 			
 		return {
@@ -11000,11 +11718,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11012,7 +11730,7 @@
 								listener.onTransition(
 									"",
 									"visual_line",
-									"visual_character_V_33" );
+									"visual_character_V_keypress_35" );
 							
 		}
 	
@@ -11033,11 +11751,11 @@
 
 		
 
-			return visual_mode['V']();
+			return visual_mode['V_keypress']();
 		}
 	
 
-		this.ctrl_v = function(){
+		this.ctrl_v_keypress = function(){
 
 			
 		return {
@@ -11060,11 +11778,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11072,7 +11790,7 @@
 								listener.onTransition(
 									"",
 									"visual_block",
-									"visual_character_ctrl_v_32" );
+									"visual_character_ctrl_v_keypress_34" );
 							
 		}
 	
@@ -11093,11 +11811,11 @@
 
 		
 
-			return visual_mode['ctrl_v']();
+			return visual_mode['ctrl_v_keypress']();
 		}
 	
 
-		this.ctrl_g = function(){
+		this.ctrl_g_keypress = function(){
 
 			
 		return {
@@ -11124,11 +11842,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11136,7 +11854,7 @@
 								listener.onTransition(
 									"",
 									"select_character",
-									"visual_character_ctrl_g_34" );
+									"visual_character_ctrl_g_keypress_36" );
 							
 		}
 	
@@ -11158,13 +11876,13 @@
 
 		
 
-			return visual_mode['ctrl_g']();
+			return visual_mode['ctrl_g_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_Regexp_id2778365)
+				if(e.match(ctrl_v_keypress_Regexp_id2678680)
 					){
 					
 		return {
@@ -11187,11 +11905,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11199,7 +11917,7 @@
 								listener.onTransition(
 									"visual_character",
 									"visual_block",
-									"visual_character_ctrl_v_32" );
+									"visual_character_ctrl_v_keypress_34" );
 							
 		}
 	
@@ -11222,7 +11940,7 @@
 				}
 			
 				
-				if(e.match(V_Regexp_id2778359)
+				if(e.match(V_keypress_Regexp_id2678674)
 					){
 					
 		return {
@@ -11245,11 +11963,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11257,7 +11975,7 @@
 								listener.onTransition(
 									"visual_character",
 									"visual_line",
-									"visual_character_V_33" );
+									"visual_character_V_keypress_35" );
 							
 		}
 	
@@ -11280,7 +11998,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_Regexp_id2778393)
+				if(e.match(ctrl_g_keypress_Regexp_id2678708)
 					){
 					
 		return {
@@ -11307,11 +12025,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11319,7 +12037,7 @@
 								listener.onTransition(
 									"visual_character",
 									"select_character",
-									"visual_character_ctrl_g_34" );
+									"visual_character_ctrl_g_keypress_36" );
 							
 		}
 	
@@ -11359,7 +12077,7 @@
 		var insert_mode = (function(){
 
 			function insert_modeConstructor(){
-				this.parent = scxml_id2769015;
+				this.parent = scxml_id2668717;
 
 				this.initial = null;
 
@@ -11373,7 +12091,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 					];
 				
 				
@@ -11387,11 +12105,11 @@
 				controller.updateModeText("-- INSERT --")
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -11405,11 +12123,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2779532_iterator=0, 
-			id2779532_hoist=listeners.length;
-				id2779532_iterator < id2779532_hoist;
-				id2779532_iterator++){
-			var listener = listeners[id2779532_iterator];
+		for(var id2679998_iterator=0, 
+			id2679998_hoist=listeners.length;
+				id2679998_iterator < id2679998_hoist;
+				id2679998_iterator++){
+			var listener = listeners[id2679998_iterator];
 
 			
 								//from
@@ -11440,11 +12158,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11457,11 +12175,11 @@
 
 		
 
-			return scxml_id2769015['init']();
+			return scxml_id2668717['init']();
 		}
 	
 
-		this.bling = function(){
+		this.bling_keypress = function(){
 
 			
 		return {
@@ -11479,11 +12197,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11496,11 +12214,11 @@
 
 		
 
-			return scxml_id2769015['bling']();
+			return scxml_id2668717['bling_keypress']();
 		}
 	
 
-		this.backspace = function(){
+		this.backspace_keypress = function(){
 
 			
 		return {
@@ -11518,11 +12236,11 @@
 				controller.writeBackspace()
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11549,11 +12267,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11566,11 +12284,11 @@
 
 		
 
-			return scxml_id2769015['backspace']();
+			return scxml_id2668717['backspace_keypress']();
 		}
 	
 
-		this.enter = function(){
+		this.enter_keypress = function(){
 
 			
 		return {
@@ -11588,11 +12306,11 @@
 				controller.writeNewLine()
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11619,11 +12337,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11636,11 +12354,11 @@
 
 		
 
-			return scxml_id2769015['enter']();
+			return scxml_id2668717['enter_keypress']();
 		}
 	
 
-		this.colon = function(){
+		this.colon_keypress = function(){
 
 			
 		return {
@@ -11658,11 +12376,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11675,11 +12393,11 @@
 
 		
 
-			return scxml_id2769015['colon']();
+			return scxml_id2668717['colon_keypress']();
 		}
 	
 
-		this.w = function(){
+		this.w_keypress = function(){
 
 			
 		return {
@@ -11697,11 +12415,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11714,11 +12432,11 @@
 
 		
 
-			return scxml_id2769015['w']();
+			return scxml_id2668717['w_keypress']();
 		}
 	
 
-		this.e = function(){
+		this.e_keypress = function(){
 
 			
 		return {
@@ -11736,11 +12454,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11753,11 +12471,11 @@
 
 		
 
-			return scxml_id2769015['e']();
+			return scxml_id2668717['e_keypress']();
 		}
 	
 
-		this.b = function(){
+		this.b_keypress = function(){
 
 			
 		return {
@@ -11775,11 +12493,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11792,11 +12510,11 @@
 
 		
 
-			return scxml_id2769015['b']();
+			return scxml_id2668717['b_keypress']();
 		}
 	
 
-		this.zero = function(){
+		this.zero_keypress = function(){
 
 			
 		return {
@@ -11814,11 +12532,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11831,11 +12549,11 @@
 
 		
 
-			return scxml_id2769015['zero']();
+			return scxml_id2668717['zero_keypress']();
 		}
 	
 
-		this.h = function(){
+		this.h_keypress = function(){
 
 			
 		return {
@@ -11853,11 +12571,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11870,11 +12588,11 @@
 
 		
 
-			return scxml_id2769015['h']();
+			return scxml_id2668717['h_keypress']();
 		}
 	
 
-		this.l = function(){
+		this.l_keypress = function(){
 
 			
 		return {
@@ -11892,11 +12610,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11909,11 +12627,11 @@
 
 		
 
-			return scxml_id2769015['l']();
+			return scxml_id2668717['l_keypress']();
 		}
 	
 
-		this.k = function(){
+		this.k_keypress = function(){
 
 			
 		return {
@@ -11931,11 +12649,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11948,11 +12666,11 @@
 
 		
 
-			return scxml_id2769015['k']();
+			return scxml_id2668717['k_keypress']();
 		}
 	
 
-		this.j = function(){
+		this.j_keypress = function(){
 
 			
 		return {
@@ -11970,11 +12688,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -11987,11 +12705,11 @@
 
 		
 
-			return scxml_id2769015['j']();
+			return scxml_id2668717['j_keypress']();
 		}
 	
 
-		this.left = function(){
+		this.left_keypress = function(){
 
 			
 		return {
@@ -12009,11 +12727,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12040,11 +12758,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12057,11 +12775,11 @@
 
 		
 
-			return scxml_id2769015['left']();
+			return scxml_id2668717['left_keypress']();
 		}
 	
 
-		this.right = function(){
+		this.right_keypress = function(){
 
 			
 		return {
@@ -12079,11 +12797,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12110,11 +12828,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12127,11 +12845,11 @@
 
 		
 
-			return scxml_id2769015['right']();
+			return scxml_id2668717['right_keypress']();
 		}
 	
 
-		this.up = function(){
+		this.up_keypress = function(){
 
 			
 		return {
@@ -12149,11 +12867,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12180,11 +12898,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12197,11 +12915,11 @@
 
 		
 
-			return scxml_id2769015['up']();
+			return scxml_id2668717['up_keypress']();
 		}
 	
 
-		this.down = function(){
+		this.down_keypress = function(){
 
 			
 		return {
@@ -12219,11 +12937,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12250,11 +12968,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12267,11 +12985,11 @@
 
 		
 
-			return scxml_id2769015['down']();
+			return scxml_id2668717['down_keypress']();
 		}
 	
 
-		this.v = function(){
+		this.v_keypress = function(){
 
 			
 		return {
@@ -12289,11 +13007,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12306,11 +13024,11 @@
 
 		
 
-			return scxml_id2769015['v']();
+			return scxml_id2668717['v_keypress']();
 		}
 	
 
-		this.V = function(){
+		this.V_keypress = function(){
 
 			
 		return {
@@ -12328,11 +13046,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12345,11 +13063,11 @@
 
 		
 
-			return scxml_id2769015['V']();
+			return scxml_id2668717['V_keypress']();
 		}
 	
 
-		this.ctrl_v = function(){
+		this.ctrl_v_keypress = function(){
 
 			
 		return {
@@ -12367,11 +13085,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12384,11 +13102,11 @@
 
 		
 
-			return scxml_id2769015['ctrl_v']();
+			return scxml_id2668717['ctrl_v_keypress']();
 		}
 	
 
-		this.i = function(){
+		this.i_keypress = function(){
 
 			
 		return {
@@ -12406,11 +13124,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12423,11 +13141,11 @@
 
 		
 
-			return scxml_id2769015['i']();
+			return scxml_id2668717['i_keypress']();
 		}
 	
 
-		this.a = function(){
+		this.a_keypress = function(){
 
 			
 		return {
@@ -12445,11 +13163,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12462,11 +13180,11 @@
 
 		
 
-			return scxml_id2769015['a']();
+			return scxml_id2668717['a_keypress']();
 		}
 	
 
-		this.ctrl_g = function(){
+		this.ctrl_g_keypress = function(){
 
 			
 		return {
@@ -12484,11 +13202,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12501,11 +13219,11 @@
 
 		
 
-			return scxml_id2769015['ctrl_g']();
+			return scxml_id2668717['ctrl_g_keypress']();
 		}
 	
 
-		this.y = function(){
+		this.y_keypress = function(){
 
 			
 		return {
@@ -12523,11 +13241,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12540,11 +13258,11 @@
 
 		
 
-			return scxml_id2769015['y']();
+			return scxml_id2668717['y_keypress']();
 		}
 	
 
-		this.x = function(){
+		this.x_keypress = function(){
 
 			
 		return {
@@ -12562,11 +13280,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12579,11 +13297,89 @@
 
 		
 
-			return scxml_id2769015['x']();
+			return scxml_id2668717['x_keypress']();
 		}
 	
 
-		this.esc = function(){
+		this.d_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+				controller.writeChar(_event.data.charCode)
+			
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return scxml_id2668717['d_keypress']();
+		}
+	
+
+		this.c_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+				controller.writeChar(_event.data.charCode)
+			
+
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return scxml_id2668717['c_keypress']();
+		}
+	
+
+		this.esc_keypress = function(){
 
 			
 		return {
@@ -12615,11 +13411,11 @@
 				controller.moveLeft()
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12627,7 +13423,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"insert_mode_esc_35" );
+									"insert_mode_esc_keypress_37" );
 							
 		}
 	
@@ -12662,11 +13458,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12679,13 +13475,13 @@
 
 		
 
-			return scxml_id2769015['esc']();
+			return scxml_id2668717['esc_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(left_Regexp_id2778331)
+				if(e.match(left_keypress_Regexp_id2678646)
 					){
 					
 		return {
@@ -12703,11 +13499,11 @@
 				controller.moveLeft(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12722,7 +13518,7 @@
 				}
 			
 				
-				if(e.match(right_Regexp_id2778337)
+				if(e.match(right_keypress_Regexp_id2678652)
 					){
 					
 		return {
@@ -12740,11 +13536,11 @@
 				controller.moveRight(false,true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12759,7 +13555,7 @@
 				}
 			
 				
-				if(e.match(up_Regexp_id2778343)
+				if(e.match(up_keypress_Regexp_id2678657)
 					){
 					
 		return {
@@ -12777,11 +13573,11 @@
 				controller.moveUp(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12796,7 +13592,7 @@
 				}
 			
 				
-				if(e.match(down_Regexp_id2778348)
+				if(e.match(down_keypress_Regexp_id2678663)
 					){
 					
 		return {
@@ -12814,11 +13610,11 @@
 				controller.moveDown(true)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12833,7 +13629,7 @@
 				}
 			
 				
-				if(e.match(esc_Regexp_id2778382)
+				if(e.match(esc_keypress_Regexp_id2678697)
 					){
 					
 		return {
@@ -12865,11 +13661,11 @@
 				controller.moveLeft()
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12877,7 +13673,7 @@
 								listener.onTransition(
 									"insert_mode",
 									"normal_mode",
-									"insert_mode_esc_35" );
+									"insert_mode_esc_keypress_37" );
 							
 		}
 	
@@ -12900,7 +13696,7 @@
 				}
 			
 				
-				if(e.match(enter_Regexp_id2778275)
+				if(e.match(enter_keypress_Regexp_id2678590)
 					){
 					
 		return {
@@ -12918,11 +13714,11 @@
 				controller.writeNewLine()
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12937,7 +13733,7 @@
 				}
 			
 				
-				if(e.match(backspace_Regexp_id2778270)
+				if(e.match(backspace_keypress_Regexp_id2678584)
 					){
 					
 		return {
@@ -12955,11 +13751,11 @@
 				controller.writeBackspace()
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -12974,7 +13770,7 @@
 				}
 			
 				
-				if(e.match(star_Regexp_id2778387)
+				if(e.match(star_Regexp_id2678702)
 					){
 					
 		return {
@@ -12992,11 +13788,11 @@
 				controller.writeChar(_event.data.charCode)
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -13011,14 +13807,14 @@
 				}
 				
 
-			return scxml_id2769015.$dispatchPrefixEvent(e);
+			return scxml_id2668717.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			insert_modeConstructor.prototype = scxml_id2769015;
+			insert_modeConstructor.prototype = scxml_id2668717;
 			return new insert_modeConstructor();
 		})();
 
@@ -13027,7 +13823,7 @@
 		var command_mode = (function(){
 
 			function command_modeConstructor(){
-				this.parent = scxml_id2769015;
+				this.parent = scxml_id2668717;
 
 				this.initial = null;
 
@@ -13041,7 +13837,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2769015
+						scxml_id2668717
 					];
 				
 				
@@ -13054,11 +13850,11 @@
 				controller.updateModeText("-- COMMAND --")
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 								//to
@@ -13072,11 +13868,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2779815_iterator=0, 
-			id2779815_hoist=listeners.length;
-				id2779815_iterator < id2779815_hoist;
-				id2779815_iterator++){
-			var listener = listeners[id2779815_iterator];
+		for(var id2680286_iterator=0, 
+			id2680286_hoist=listeners.length;
+				id2680286_iterator < id2680286_hoist;
+				id2680286_iterator++){
+			var listener = listeners[id2680286_iterator];
 
 			
 								//from
@@ -13089,7 +13885,7 @@
 
 				
 
-		this.esc = function(){
+		this.esc_keypress = function(){
 
 			
 		return {
@@ -13119,11 +13915,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -13131,7 +13927,7 @@
 								listener.onTransition(
 									"",
 									"normal_mode",
-									"command_mode_esc_36" );
+									"command_mode_esc_keypress_38" );
 							
 		}
 	
@@ -13152,13 +13948,13 @@
 
 		
 
-			return scxml_id2769015['esc']();
+			return scxml_id2668717['esc_keypress']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(esc_Regexp_id2778382)
+				if(e.match(esc_keypress_Regexp_id2678697)
 					){
 					
 		return {
@@ -13188,11 +13984,11 @@
 				//transition action
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=listeners.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var listener = listeners[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=listeners.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var listener = listeners[id2675798_iterator];
 
 			
 							//transition id
@@ -13200,7 +13996,7 @@
 								listener.onTransition(
 									"command_mode",
 									"normal_mode",
-									"command_mode_esc_36" );
+									"command_mode_esc_keypress_38" );
 							
 		}
 	
@@ -13223,14 +14019,14 @@
 				}
 				
 
-			return scxml_id2769015.$dispatchPrefixEvent(e);
+			return scxml_id2668717.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			command_modeConstructor.prototype = scxml_id2769015;
+			command_modeConstructor.prototype = scxml_id2668717;
 			return new command_modeConstructor();
 		})();
 
@@ -13281,13 +14077,13 @@
 		}
 	
 
-		this["bling"] = function(data){
+		this["bling_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"bling"
+		"bling_keypress"
 	
 				,data,
 				true)
@@ -13297,13 +14093,13 @@
 		}
 	
 
-		this["backspace"] = function(data){
+		this["backspace_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"backspace"
+		"backspace_keypress"
 	
 				,data,
 				true)
@@ -13313,13 +14109,13 @@
 		}
 	
 
-		this["enter"] = function(data){
+		this["enter_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"enter"
+		"enter_keypress"
 	
 				,data,
 				true)
@@ -13329,13 +14125,13 @@
 		}
 	
 
-		this["colon"] = function(data){
+		this["colon_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"colon"
+		"colon_keypress"
 	
 				,data,
 				true)
@@ -13345,13 +14141,13 @@
 		}
 	
 
-		this["w"] = function(data){
+		this["w_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"w"
+		"w_keypress"
 	
 				,data,
 				true)
@@ -13361,13 +14157,13 @@
 		}
 	
 
-		this["e"] = function(data){
+		this["e_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"e"
+		"e_keypress"
 	
 				,data,
 				true)
@@ -13377,13 +14173,13 @@
 		}
 	
 
-		this["b"] = function(data){
+		this["b_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"b"
+		"b_keypress"
 	
 				,data,
 				true)
@@ -13393,13 +14189,13 @@
 		}
 	
 
-		this["zero"] = function(data){
+		this["zero_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"zero"
+		"zero_keypress"
 	
 				,data,
 				true)
@@ -13409,13 +14205,13 @@
 		}
 	
 
-		this["h"] = function(data){
+		this["h_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"h"
+		"h_keypress"
 	
 				,data,
 				true)
@@ -13425,13 +14221,13 @@
 		}
 	
 
-		this["l"] = function(data){
+		this["l_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"l"
+		"l_keypress"
 	
 				,data,
 				true)
@@ -13441,13 +14237,13 @@
 		}
 	
 
-		this["k"] = function(data){
+		this["k_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"k"
+		"k_keypress"
 	
 				,data,
 				true)
@@ -13457,13 +14253,13 @@
 		}
 	
 
-		this["j"] = function(data){
+		this["j_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"j"
+		"j_keypress"
 	
 				,data,
 				true)
@@ -13473,13 +14269,13 @@
 		}
 	
 
-		this["left"] = function(data){
+		this["left_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"left"
+		"left_keypress"
 	
 				,data,
 				true)
@@ -13489,13 +14285,13 @@
 		}
 	
 
-		this["right"] = function(data){
+		this["right_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"right"
+		"right_keypress"
 	
 				,data,
 				true)
@@ -13505,13 +14301,13 @@
 		}
 	
 
-		this["up"] = function(data){
+		this["up_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"up"
+		"up_keypress"
 	
 				,data,
 				true)
@@ -13521,13 +14317,13 @@
 		}
 	
 
-		this["down"] = function(data){
+		this["down_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"down"
+		"down_keypress"
 	
 				,data,
 				true)
@@ -13537,13 +14333,13 @@
 		}
 	
 
-		this["v"] = function(data){
+		this["v_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"v"
+		"v_keypress"
 	
 				,data,
 				true)
@@ -13553,13 +14349,13 @@
 		}
 	
 
-		this["V"] = function(data){
+		this["V_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"V"
+		"V_keypress"
 	
 				,data,
 				true)
@@ -13569,13 +14365,13 @@
 		}
 	
 
-		this["ctrl_v"] = function(data){
+		this["ctrl_v_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"ctrl_v"
+		"ctrl_v_keypress"
 	
 				,data,
 				true)
@@ -13585,13 +14381,13 @@
 		}
 	
 
-		this["i"] = function(data){
+		this["i_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"i"
+		"i_keypress"
 	
 				,data,
 				true)
@@ -13601,13 +14397,13 @@
 		}
 	
 
-		this["a"] = function(data){
+		this["a_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"a"
+		"a_keypress"
 	
 				,data,
 				true)
@@ -13617,13 +14413,13 @@
 		}
 	
 
-		this["esc"] = function(data){
+		this["esc_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"esc"
+		"esc_keypress"
 	
 				,data,
 				true)
@@ -13633,13 +14429,13 @@
 		}
 	
 
-		this["ctrl_g"] = function(data){
+		this["ctrl_g_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"ctrl_g"
+		"ctrl_g_keypress"
 	
 				,data,
 				true)
@@ -13649,13 +14445,13 @@
 		}
 	
 
-		this["y"] = function(data){
+		this["y_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"y"
+		"y_keypress"
 	
 				,data,
 				true)
@@ -13665,13 +14461,45 @@
 		}
 	
 
-		this["x"] = function(data){
+		this["x_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
 				//TODO: conditionally wrap in quotes for enumerated pattern
 					
 
-		"x"
+		"x_keypress"
+	
+				,data,
+				true)
+			}else{
+				return undefined;
+			}
+		}
+	
+
+		this["d_keypress"] = function(data){
+			if(isInStableState && !destroyed){
+				runToCompletion(
+				//TODO: conditionally wrap in quotes for enumerated pattern
+					
+
+		"d_keypress"
+	
+				,data,
+				true)
+			}else{
+				return undefined;
+			}
+		}
+	
+
+		this["c_keypress"] = function(data){
+			if(isInStableState && !destroyed){
+				runToCompletion(
+				//TODO: conditionally wrap in quotes for enumerated pattern
+					
+
+		"c_keypress"
 	
 				,data,
 				true)
@@ -13775,11 +14603,11 @@
 				//e does not contain a dot, so dispatch as an enumerated event
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=currentConfiguration.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = currentConfiguration[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=currentConfiguration.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = currentConfiguration[id2675798_iterator];
 
 			
 						//check to make sure he is not preempted
@@ -13799,11 +14627,11 @@
 				//e contains a dot, so dispatch as a prefix event
 				
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=currentConfiguration.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var state = currentConfiguration[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=currentConfiguration.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var state = currentConfiguration[id2675798_iterator];
 
 			
 						//check to make sure he is not preempted
@@ -13825,11 +14653,11 @@
 			//invoke selected transitions
 			
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=enabledTransitions.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var t = enabledTransitions[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=enabledTransitions.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var t = enabledTransitions[id2675798_iterator];
 
 			 t(); 
 		}
@@ -13886,11 +14714,11 @@
 
 		var toReturn = false;
 
-		for(var id2768772_iterator=0, 
-			id2768772_hoist=currentConfiguration.length;
-				id2768772_iterator < id2768772_hoist;
-				id2768772_iterator++){
-			var s = currentConfiguration[id2768772_iterator];
+		for(var id2675798_iterator=0, 
+			id2675798_hoist=currentConfiguration.length;
+				id2675798_iterator < id2675798_hoist;
+				id2675798_iterator++){
+			var s = currentConfiguration[id2675798_iterator];
 
 			if(s.ancestors
 							.indexOf(state)

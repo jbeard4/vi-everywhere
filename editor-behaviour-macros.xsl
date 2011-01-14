@@ -32,64 +32,64 @@
 
 		<xsl:variable name="updateSelection" select="vi:param[@name='updateSelection']/@value"/>
 
-		<transition event="bling">
+		<transition event="bling_keypress">
 			<script>
 				controller.moveToEndOfLine(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
 
-		<transition event="backspace">
+		<transition event="backspace_keypress">
 			<script>
 				controller.moveLeft(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
 
-		<transition event="enter">
+		<transition event="enter_keypress">
 			<script>
 				controller.moveDown(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
 
-		<transition event="colon" target="command_mode"/>
+		<transition event="colon_keypress" target="command_mode"/>
 
-		<transition event="w">
+		<transition event="w_keypress">
 			<script>
 				controller.moveToStartOfNextWord(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
-		<transition event="e">
+		<transition event="e_keypress">
 			<script>
 				controller.moveToEndOfNextWord(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
-		<transition event="b">
+		<transition event="b_keypress">
 			<script>
 				controller.moveToStartOfPreviousWord(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
-		<transition event="zero">
+		<transition event="zero_keypress">
 			<script>
 				controller.moveToStartOfLine(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
 
-		<transition event="h">
+		<transition event="h_keypress">
 			<script>
 				controller.moveLeft(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
 
-		<transition event="l">
+		<transition event="l_keypress">
 			<script>
 				controller.moveRight(false,<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
-		<transition event="k">
+		<transition event="k_keypress">
 			<script>
 				controller.moveUp(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
-		<transition event="j">
+		<transition event="j_keypress">
 			<script>
 				controller.moveDown(<xsl:value-of select="$updateSelection"/>)
 			</script>
@@ -101,22 +101,22 @@
 		<xsl:variable name="updateSelection" select="vi:param[@name='updateSelection']/@value"/>
 
 		<!-- non-printable movement keys -->
-		<transition event="left">
+		<transition event="left_keypress">
 			<script>
 				controller.moveLeft(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
-		<transition event="right">
+		<transition event="right_keypress">
 			<script>
 				controller.moveRight(false,<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
-		<transition event="up">
+		<transition event="up_keypress">
 			<script>
 				controller.moveUp(<xsl:value-of select="$updateSelection"/>)
 			</script>
 		</transition>
-		<transition event="down">
+		<transition event="down_keypress">
 			<script>
 				controller.moveDown(<xsl:value-of select="$updateSelection"/>)
 			</script>

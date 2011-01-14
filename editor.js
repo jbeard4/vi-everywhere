@@ -131,6 +131,8 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 				scEvent = "ctrl_" + scEvent;
 			}
 
+			scEvent += "_keypress";
+
 			//we use GEN as opposed to method calls because we use * event in the statechart, 
 			//which means it can accept events which are not explicitly used
 			//such events do not have a method defined, and there's no way that I am aware of to define a "catchall" method in JavaScript 
@@ -189,12 +191,24 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 	this.deleteSelectedTextIntoRegister = function(registerName){
 		registerName = registerName || DEFAULT_REGISTER_NAME;
 
-		var startCol = selectionManager.getStartCol(),
-			startRow = selectionManager.getStartRow(); 
+		var sr =  selectionManager.getNormalizedSelectionRange();
 
 		var selectionText = selectionManager.deleteSelectionText();
 
-		cursor.moveCursorTo(startCol,startRow);
+		cursor.moveCursorTo(sr.startCol,sr.startRow);
+
+		register[registerName] = selectionText;
+		alert(selectionText);
+	}
+
+	this.replaceSelectedTextIntoRegister = function(registerName){
+		registerName = registerName || DEFAULT_REGISTER_NAME;
+
+		var sr =  selectionManager.getNormalizedSelectionRange();
+
+		var selectionText = selectionManager.deleteSelectionText();
+
+		cursor.moveCursorTo(sr.startCol,sr.startRow);
 
 		register[registerName] = selectionText;
 		alert(selectionText);
@@ -549,7 +563,34 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		return toReturn;
 	}
 
-	function getNormalizedSelectionRange(){
+	function render(){
+		//this is a simple, stupid, inefficient, naive, "big hammer" approach, where we rerender the entire highlighted region each time something changes
+		//of course, we could be much more lcever and only change/add/remove the affected rects
+
+		var sr = self.getNormalizedSelectionRange();
+
+		var rects;
+		switch(selectionMode){
+			case SELECTION_MODE.CHARACTER:
+				rects = computeCharModeRects(sr.startCol,sr.startRow,sr.endCol,sr.endRow);
+				break; 
+			case SELECTION_MODE.LINE:
+				rects = computeLineModeRects(sr.startRow,sr.endRow);
+				break; 
+			case SELECTION_MODE.BLOCK:
+				rects = computeBlockModeRects(sr.startCol,sr.startRow,sr.endCol,sr.endRow);
+				break; 
+		}
+
+		//TODO stop rendering scene
+		clear();
+
+		rects.forEach(function(rect){groupNode.appendChild(rect)});
+		
+		//TODO start rendering scene again
+	}
+
+	this.getNormalizedSelectionRange = function(){
 		var tmpEndRow, tmpStartRow,tmpStartCol,tmpEndCol;
 
 		//if need be, swap startRow and endRow
@@ -593,32 +634,6 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		}
 	}
 
-	function render(){
-		//this is a simple, stupid, inefficient, naive, "big hammer" approach, where we rerender the entire highlighted region each time something changes
-		//of course, we could be much more lcever and only change/add/remove the affected rects
-
-		var sr = getNormalizedSelectionRange();
-
-		var rects;
-		switch(selectionMode){
-			case SELECTION_MODE.CHARACTER:
-				rects = computeCharModeRects(sr.startCol,sr.startRow,sr.endCol,sr.endRow);
-				break; 
-			case SELECTION_MODE.LINE:
-				rects = computeLineModeRects(sr.startRow,sr.endRow);
-				break; 
-			case SELECTION_MODE.BLOCK:
-				rects = computeBlockModeRects(sr.startCol,sr.startRow,sr.endCol,sr.endRow);
-				break; 
-		}
-
-		//TODO stop rendering scene
-		clear();
-
-		rects.forEach(function(rect){groupNode.appendChild(rect)});
-		
-		//TODO start rendering scene again
-	}
 
 	this.startSelection = function(col,row,mode){
 		endCol = startCol = col;
@@ -689,7 +704,7 @@ function SelectionManager(groupNode,displayManager,lineManager){
 	this.getSelectionText = function(){
 		var toReturn = "";
 
-		var sr = getNormalizedSelectionRange();
+		var sr = this.getNormalizedSelectionRange();
 		var vsr = computeVirtualSelectionRange(sr);
 
 		for(var i=sr.startRow,j=0;i<sr.endRow+1; i++,j++){
@@ -703,7 +718,7 @@ function SelectionManager(groupNode,displayManager,lineManager){
 	this.deleteSelectionText = function(){
 		var toReturn = "";
 
-		var sr = getNormalizedSelectionRange();
+		var sr = this.getNormalizedSelectionRange();
 		var vsr = computeVirtualSelectionRange(sr);
 
 		for(var i=sr.startRow,j=0;i<sr.endRow+1; i++,j++){
@@ -720,33 +735,13 @@ function SelectionManager(groupNode,displayManager,lineManager){
 	this.replaceSelectionText = function(s){
 		var toReturn = this.deleteSelectionText();
 
-		var sr = getNormalizedSelectionRange();
+		var sr = this.getNormalizedSelectionRange();
 
 		var startLine = lineManager.getLine(sr.startRow);
 
 		startLine.writeStringAt(s,startLine.getTotalNumberOfChars());
 
 		return toReturn;
-	}
-
-	this.getStartCol = function(){
-		return startCol;
-	}
-
-	this.getStartRow = function(){
-	 	return startRow;
-	}
-
-	this.getEndCol = function(){
-		return endCol;
-	}
-	
-	this.getEndRow = function(){
-		return endRow;
-	}
-
-	this.getSelectionMode = function(){
-		return selectionMode;
 	}
 
 }

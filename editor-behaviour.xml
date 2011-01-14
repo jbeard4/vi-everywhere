@@ -33,9 +33,9 @@
 			<vi:param name="updateSelection" value="true"/>
 		</vi:macro>
 			
-		<transition event="v" target="visual_character"/>
-		<transition event="V" target="visual_line"/>
-		<transition event="ctrl_v" target="visual_block"/>
+		<transition event="v_keypress" target="visual_character"/>
+		<transition event="V_keypress" target="visual_line"/>
+		<transition event="ctrl_v_keypress" target="visual_block"/>
 
 		<!--
 		<transition event="G" target="normal_mode">
@@ -53,9 +53,9 @@
 		</state>
 		-->
 
-		<transition event="i" target="insert_mode"/>
+		<transition event="i_keypress" target="insert_mode"/>
 
-		<transition event="a" target="insert_mode">
+		<transition event="a_keypress" target="insert_mode">
 			<script>
 				controller.moveRight(true);
 			</script>
@@ -82,7 +82,7 @@
 			<vi:param name="updateSelection" value="true"/>
 		</vi:macro>
 
-		<transition event="esc" target="normal_mode"/>
+		<transition event="esc_keypress" target="normal_mode"/>
 
 		<state id="select_mode" initial="select_character">
 
@@ -102,10 +102,10 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 					</script>
 				</onentry>
-				<transition event="ctrl_v" target="select_block"/>
-				<transition event="v" target="select_character"/>
+				<transition event="ctrl_v_keypress" target="select_block"/>
+				<transition event="v_keypress" target="select_character"/>
 
-				<transition event="ctrl_g" target="visual_line" />
+				<transition event="ctrl_g_keypress" target="visual_line" />
 			</state>
 
 			<state id="select_block">
@@ -115,10 +115,10 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 					</script>
 				</onentry>
-				<transition event="v" target="select_character"/>
-				<transition event="V" target="select_line"/>
+				<transition event="v_keypress" target="select_character"/>
+				<transition event="V_keypress" target="select_line"/>
 
-				<transition event="ctrl_g" target="visual_block" />
+				<transition event="ctrl_g_keypress" target="visual_block" />
 			</state>
 
 			<state id="select_character">
@@ -128,10 +128,10 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 					</script>
 				</onentry>
-				<transition event="ctrl_v" target="select_block"/>
-				<transition event="V" target="select_line"/>
+				<transition event="ctrl_v_keypress" target="select_block"/>
+				<transition event="V_keypress" target="select_line"/>
 
-				<transition event="ctrl_g" target="visual_character" />
+				<transition event="ctrl_g_keypress" target="visual_character" />
 			</state>
 		</state>
 
@@ -139,19 +139,25 @@
 			<!-- these will be the same in both visual and select -->
 
 			<!-- FIXME: this should be yy -->
-			<transition event="y" target="normal_mode">
+			<transition event="y_keypress" target="normal_mode">
 				<script>
 					controller.copySelectedTextIntoRegister();  
 				</script>
 			</transition>
 
-			<transition event="x" target="normal_mode">
+			<transition event="x_keypress" target="normal_mode">
 				<script>
 					controller.deleteSelectedTextIntoRegister();  
 				</script>
 			</transition>
 
-			<transition event="d" target="normal_mode">
+			<transition event="d_keypress" target="normal_mode">
+				<script>
+					controller.deleteSelectedTextIntoRegister();  
+				</script>
+			</transition>
+
+			<transition event="c_keypress" target="insert_mode">
 				<script>
 					controller.deleteSelectedTextIntoRegister();  
 				</script>
@@ -161,6 +167,7 @@
 				<vi:param name="updateSelection" value="true"/>
 			</vi:macro>
 
+
 			<!-- TODO: figure out what kind of API we want for selection stuff -->
 			<state id="visual_line">
 				<onentry>
@@ -169,10 +176,10 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 					</script>
 				</onentry>
-				<transition event="ctrl_v" target="visual_block"/>
-				<transition event="v" target="visual_character"/>
+				<transition event="ctrl_v_keypress" target="visual_block"/>
+				<transition event="v_keypress" target="visual_character"/>
 
-				<transition event="ctrl_g" target="select_line" />
+				<transition event="ctrl_g_keypress" target="select_line" />
 			</state>
 
 			<state id="visual_block">
@@ -182,10 +189,10 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 					</script>
 				</onentry>
-				<transition event="v" target="visual_character"/>
-				<transition event="V" target="visual_line"/>
+				<transition event="v_keypress" target="visual_character"/>
+				<transition event="V_keypress" target="visual_line"/>
 
-				<transition event="ctrl_g" target="select_block" />
+				<transition event="ctrl_g_keypress" target="select_block" />
 			</state>
 
 			<state id="visual_character">
@@ -195,10 +202,10 @@
 						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 					</script>
 				</onentry>
-				<transition event="ctrl_v" target="visual_block"/>
-				<transition event="V" target="visual_line"/>
+				<transition event="ctrl_v_keypress" target="visual_block"/>
+				<transition event="V_keypress" target="visual_line"/>
 
-				<transition event="ctrl_g" target="select_character" />
+				<transition event="ctrl_g_keypress" target="select_character" />
 			</state>
 
 		</state>
@@ -217,19 +224,19 @@
 			<vi:param name="updateSelection" value="true"/>
 		</vi:macro>
 
-		<transition event="esc" target="normal_mode">
+		<transition event="esc_keypress" target="normal_mode">
 			<script>
 				controller.moveLeft()
 			</script>
 		</transition>
 
-		<transition event="enter">
+		<transition event="enter_keypress">
 			<script>
 				controller.writeNewLine()
 			</script>
 		</transition>
 
-		<transition event="backspace">
+		<transition event="backspace_keypress">
 			<script>
 				controller.writeBackspace()
 			</script>
@@ -255,7 +262,7 @@
 		<!-- printable characters: add to command buffer -->
 		<!-- newline: run command -->
 		
-		<transition event="esc" target="normal_mode"/>
+		<transition event="esc_keypress" target="normal_mode"/>
 	</state>
 
 	
