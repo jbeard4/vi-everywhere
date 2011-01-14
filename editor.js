@@ -185,7 +185,7 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		var selectionText = selectionManager.getSelectionText();
 
 		register[registerName] = selectionText;
-		alert(selectionText);
+		//alert(selectionText);
 	}
 	
 	this.deleteSelectedTextIntoRegister = function(registerName){
@@ -202,20 +202,27 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		}
 
 		register[registerName] = selectionText;
-		alert(selectionText);
+		//alert(selectionText);
 	}
 
-	this.replaceSelectedTextIntoRegister = function(registerName){
+	//FIXME: lot of duplicate code between this and previous function
+	this.replaceSelectedTextIntoRegister = function(charCode,registerName){
 		registerName = registerName || DEFAULT_REGISTER_NAME;
+
+		var c = String.fromCharCode(charCode);
 
 		var sr =  selectionManager.getNormalizedSelectionRange();
 
-		var selectionText = selectionManager.deleteSelectionText();
+		var selectionText = selectionManager.replaceSelectionText(c);
 
-		cursor.moveCursorTo(sr.startCol,sr.startRow);
+		if(scInstance.$in(scInstance._states.visual_line) || scInstance.$in(scInstance._states.select_line)){
+			cursor.moveCursorTo(1,sr.startRow);
+		}else{
+			cursor.moveCursorTo(sr.startCol+1,sr.startRow);
+		}
 
 		register[registerName] = selectionText;
-		alert(selectionText);
+		//alert(selectionText);
 	}
 }
 
@@ -756,7 +763,14 @@ function SelectionManager(groupNode,displayManager,lineManager){
 
 		var startLine = lineManager.getLine(sr.startRow);
 
-		startLine.writeStringAt(s,startLine.getTotalNumberOfChars());
+
+		if(selectionMode === SELECTION_MODE.CHARACTER){ 
+			startLine.writeStringAt(s,sr.startCol);
+		}else if(selectionMode === SELECTION_MODE.LINE){
+			startLine.writeStringAt(s,0);
+		}else{
+			//FIXME: currently not supported. nontrivial behaviour
+		}
 
 		return toReturn;
 	}
@@ -779,6 +793,10 @@ function LineManager(textNode,displayManager){
 		line.removeFromDOM();
 		lines.splice(pos,1);
 
+		if(!lines.length){
+			this.createLine(0,"")
+		}
+
 		return toReturn;	//return character data
 	}
 
@@ -787,6 +805,11 @@ function LineManager(textNode,displayManager){
 		var toReturn = linesToDelete.map(function(line){return line.getTextContent() + "\n"}).reduce(sum,"").slice(0,-1); 
 		linesToDelete.forEach(function(line){line.removeFromDOM()});
 		lines.splice(from,to-from);
+
+		if(!lines.length){
+			this.createLine(0,"")
+		}
+
 		return toReturn;
 	}
 
@@ -850,8 +873,6 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			initialText = initialText.slice(displayManager.displayCharWidth);
 		}while(initialText.length)
 
-		tspans.forEach(function(tspan){tspan.setAttributeNS(null,"dy",displayManager.textExtent.height)});
-
 		var tspanToInsertBefore = lineToInsertBefore && lineToInsertBefore.getFirstTSpan(); 
 
 		tspans.reverse().reduce(function(tmpTspanToInsertBefore,currenttspan){
@@ -862,14 +883,11 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 		tspans.reverse();	//reverse changes the array, so we need to reverse him back to the right order
 	}
 
-	function createTspan(textContent,dy){
+	function createTspan(textContent){
 			var tspan = document.createElementNS(svgNS,"tspan");
 			tspan.setAttributeNS(null,"x",0);
 			tspan.textContent = textContent;
-
-			if(dy){
-				tspan.setAttributeNS(null,"dy",dy);
-			}
+			tspan.setAttributeNS(null,"dy",displayManager.textExtent.height);
 
 			return tspan;
 	}
@@ -957,7 +975,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 
 		if(currenttspan === undefined){
 			//create new tspan if we're starting a new line
-			var newtspan = createTspan("",displayManager.textExtent.height);
+			var newtspan = createTspan("");
 
 			appendTspan(newtspan);
 
@@ -977,7 +995,7 @@ function Line(lineToInsertBefore,initialText,isFirstLine,textNode,displayManager
 			//check whether last line is full. if so, add a new tspan element to the end
 			if(this.getLastTSpan().textContent.length+1 > displayManager.displayCharWidth){
 
-				var newtspan = createTspan("",displayManager.textExtent.height);
+				var newtspan = createTspan("");
 
 				appendTspan(newtspan);
 			}

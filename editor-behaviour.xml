@@ -86,12 +86,10 @@
 
 		<state id="select_mode" initial="select_character">
 
-			<transition event="*" target="normal_mode"
+			<transition event="*" target="insert_mode"
 				cond="_event.data.charCode !== 0">
 				<script>
-					//TODO: delete text in selection, replace with event data
-					var c = String.fromCharCode(_event.data.charCode);
-					alert("replaced text with " + c);
+					controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 				</script>
 			</transition>
 
