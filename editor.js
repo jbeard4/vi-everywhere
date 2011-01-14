@@ -301,7 +301,7 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 				this.writeNewLine();
 				this.moveUp();
 			}
-		}else if(mode ===  SELECTION_MODE.CHARACTER){
+		}else if(mode ===  SELECTION_MODE.CHARACTER || mode ===  SELECTION_MODE.BLOCK){
 			colOffset = afterCursor ? 1 : 0;
 		}
 
@@ -310,20 +310,31 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 			var c = s[i];
 
 			if(mode === SELECTION_MODE.BLOCK){
-				/*
 				if(c==="\n"){
-					//on newline, insert into next row
-					rowOffset++;
-					if(!lineManager.getLine(startRow + rowOffset)){
+					//if we encounter a newline, go to the next line, if it exists
+					//if it doesn't exist, create it and write spaces up to the startCol
+					var line = lineManager.getLine(startRow + rowOffset);
+					if(!line){
+						this.moveToEndOfLine();
 						this.writeNewLine();
+						line = lineManager.getLine(this.rowNum+1); //re-get the line, now that we've made it
 					}else{
-						this.moveCursorTo(startCol);
+						this.moveDown();
+						this.moveCursorTo(0);
 					}
+
+					//if the line is long enough, go to the startCol on this line
+					//otherwise, append spaces to the end of the line until it is long enough
+					this.moveToEndOfLine();
+					while(this.colNum < startCol){
+						this.writeChar(" ");
+					}
+
+					//move the cursor to the approprate position
+					this.moveCursorTo(startCol);
 				}else{
-					this.writeChar(c,colOffset,rowOffset);
+					this.writeChar(c,colOffset);
 				}
-				*/
-				//TODO
 			}else{
 				if(c==="\n"){
 					this.writeNewLine();	//FIXME: figure out newline wrt afterCursor
@@ -337,6 +348,7 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 		if(mode === SELECTION_MODE.BLOCK){
 			this.moveCursorTo(startCol,startRow);
 		}
+		//TODO: line mode moves him to start of copied text...
 	
 	}
 
