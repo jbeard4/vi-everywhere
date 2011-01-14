@@ -15,6 +15,18 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 	var register = {};	//each application instance has a register
 	var DEFAULT_REGISTER_NAME = "default"
 
+	function currentConfigurationToSelectionMode(){
+		if(scInstance.$in(scInstance._states.visual_character) || scInstance.$in(scInstance._states.select_character)){
+			return SELECTION_MODE.CHARACTER;
+		}else if(scInstance.$in(scInstance._states.visual_line) || scInstance.$in(scInstance._states.select_line)){
+			return SELECTION_MODE.LINE;
+		}else if(scInstance.$in(scInstance._states.visual_block) || scInstance.$in(scInstance._states.select_block)){
+			return SELECTION_MODE.BLOCK;
+		}else{
+			//pass
+		}	
+	}
+
 	function doUpdateSelection(){
 		selectionManager.setEndPos(cursor.colNum,cursor.rowNum);
 	}
@@ -184,8 +196,9 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 
 		var selectionText = selectionManager.getSelectionText();
 
-		register[registerName] = selectionText;
-		//alert(selectionText);
+		var mode = currentConfigurationToSelectionMode();
+
+		register[registerName] = [selectionText,mode];
 	}
 	
 	this.deleteSelectedTextIntoRegister = function(registerName){
@@ -195,14 +208,15 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 
 		var selectionText = selectionManager.deleteSelectionText();
 
-		if(scInstance.$in(scInstance._states.visual_line) || scInstance.$in(scInstance._states.select_line)){
+		var mode = currentConfigurationToSelectionMode();
+
+		if(mode===SELECTION_MODE.LINE){
 			cursor.moveCursorTo(0,sr.startRow);
 		}else{
 			cursor.moveCursorTo(sr.startCol,sr.startRow);
 		}
 
-		register[registerName] = selectionText;
-		//alert(selectionText);
+		register[registerName] = [selectionText,mode];
 	}
 
 	//FIXME: lot of duplicate code between this and previous function
@@ -215,14 +229,15 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 
 		var selectionText = selectionManager.replaceSelectionText(c);
 
-		if(scInstance.$in(scInstance._states.visual_line) || scInstance.$in(scInstance._states.select_line)){
+		var mode = currentConfigurationToSelectionMode();
+
+		if(mode===SELECTION_MODE.LINE){
 			cursor.moveCursorTo(1,sr.startRow);
 		}else{
 			cursor.moveCursorTo(sr.startCol+1,sr.startRow);
 		}
 
-		register[registerName] = selectionText;
-		//alert(selectionText);
+		register[registerName] = [selectionText,mode];
 	}
 
 	this.putTextFromRegisterBeforeCursor = function(registerName){
@@ -231,7 +246,7 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		
 		var registerValue = register[registerName]
 
-		cursor.writeString(registerValue,false);
+		cursor.writeString(registerValue[0],false,registerValue[1]);
 	}
 
 	this.putTextFromRegisterAfterCursor = function(registerName){
@@ -240,7 +255,7 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		
 		var registerValue = register[registerName]
 
-		cursor.writeString(registerValue,true);
+		cursor.writeString(registerValue[0],true,registerValue[1]);
 	}
 }
 
@@ -262,23 +277,67 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 			cursorNode.y.baseVal.value=point.y;
 	}
 
-	this.writeChar = function(c,afterCursor){
+	this.writeChar = function(c,colOffset,rowOffset){
 		c = (typeof c === "number" ? String.fromCharCode(c) : c);	//try to convert from charcode first
-		var cursorOffset = afterCursor ? 1 : 0;
-		lineManager.getLine(this.rowNum).writeCharAt(c,this.colNum+cursorOffset)
+		colOffset = colOffset || 0;
+		rowOffset = rowOffset || 0;
+
+		lineManager.getLine(this.rowNum+rowOffset).writeCharAt(c,this.colNum+colOffset)
 		this.moveRight(true);
 	};
 
-	this.writeString = function(s,afterCursor){
+	this.writeString = function(s,afterCursor,mode){
+		var colOffset = 0, 
+			rowOffset = 0, 
+			startCol = this.colNum, 
+			startRow = this.rowNum;
+
+		if(mode === SELECTION_MODE.LINE){
+			if(afterCursor){
+				this.moveToEndOfLine(); 
+				this.writeNewLine();
+			}else{
+				this.moveCursorTo(0); 
+				this.writeNewLine();
+				this.moveUp();
+			}
+		}else if(mode ===  SELECTION_MODE.CHARACTER){
+			colOffset = afterCursor ? 1 : 0;
+		}
+
 		//FIXME: we could make this more efficient
 		for(var i=0,l=s.length;i<l;i++){
 			var c = s[i];
-			if(c==="\n"){
-				this.writeNewLine();	//FIXME: figure out newline wrt afterCursor
+
+			if(mode === SELECTION_MODE.BLOCK){
+				/*
+				if(c==="\n"){
+					//on newline, insert into next row
+					rowOffset++;
+					if(!lineManager.getLine(startRow + rowOffset)){
+						this.writeNewLine();
+					}else{
+						this.moveCursorTo(startCol);
+					}
+				}else{
+					this.writeChar(c,colOffset,rowOffset);
+				}
+				*/
+				//TODO
 			}else{
-				this.writeChar(c,afterCursor);
+				if(c==="\n"){
+					this.writeNewLine();	//FIXME: figure out newline wrt afterCursor
+				}else{
+					this.writeChar(c,colOffset);
+				}
 			}
 		}
+
+		//block mode moves him back to where he started
+		if(mode === SELECTION_MODE.BLOCK){
+			this.moveCursorTo(startCol,startRow);
+		}
+	
 	}
 
 	this.writeNewLine = function(){
