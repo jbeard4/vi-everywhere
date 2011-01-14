@@ -726,16 +726,18 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		}
 		toReturn = toReturn.slice(0,-1);
 
-		if(startRow!==endRow){ 
-			var lastLine = lineManager.getLine(sr.endRow);
-			var lastLineTxt = lastLine.getTextContent();
-			var firstLine = lineManager.getLine(sr.startRow);
+		if(!selectionMode === SELECTION_MODE.BLOCK){ 
+			if(startRow!==endRow){ 
+				var lastLine = lineManager.getLine(sr.endRow);
+				var lastLineTxt = lastLine.getTextContent();
+				var firstLine = lineManager.getLine(sr.startRow);
 
-			//delete middle and last lines
-			lineManager.deleteLines(sr.startRow+1,sr.endRow+1);
+				//delete middle and last lines
+				lineManager.deleteLines(sr.startRow+1,sr.endRow+1);
 
-			//delete last line and insert on first line
-			firstLine.writeStringAt(lastLineTxt,sr.startCol); 
+				//delete last line and insert on first line
+				firstLine.writeStringAt(lastLineTxt,sr.startCol); 
+			}
 		}
 
 		return toReturn;
