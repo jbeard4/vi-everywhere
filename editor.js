@@ -289,8 +289,8 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	this.writeString = function(s,afterCursor,mode){
 		var colOffset = 0, 
 			rowOffset = 0, 
-			startCol = this.colNum, 
-			startRow = this.rowNum;
+			startCol,
+			startRow;
 
 		if(mode === SELECTION_MODE.LINE){
 			if(afterCursor){
@@ -305,6 +305,10 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 			colOffset = afterCursor ? 1 : 0;
 		}
 
+		//capture these after possibly positioning them for line mode
+		startCol = this.colNum; 
+		startRow = this.rowNum;
+
 		//FIXME: we could make this more efficient
 		for(var i=0,l=s.length;i<l;i++){
 			var c = s[i];
@@ -313,7 +317,7 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 				if(c==="\n"){
 					//if we encounter a newline, go to the next line, if it exists
 					//if it doesn't exist, create it and write spaces up to the startCol
-					var line = lineManager.getLine(startRow + rowOffset);
+					var line = lineManager.getLine(this.rowNum+1);
 					if(!line){
 						this.moveToEndOfLine();
 						this.writeNewLine();
@@ -326,7 +330,7 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 					//if the line is long enough, go to the startCol on this line
 					//otherwise, append spaces to the end of the line until it is long enough
 					this.moveToEndOfLine();
-					while(this.colNum < startCol){
+					while(this.colNum < startCol+1){
 						this.writeChar(" ");
 					}
 
@@ -344,11 +348,10 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 			}
 		}
 
-		//block mode moves him back to where he started
-		if(mode === SELECTION_MODE.BLOCK){
+		//block mode and line mode moves him back to where he started
+		if(mode === SELECTION_MODE.BLOCK || mode === SELECTION_MODE.LINE){
 			this.moveCursorTo(startCol,startRow);
 		}
-		//TODO: line mode moves him to start of copied text...
 	
 	}
 
