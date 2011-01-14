@@ -726,8 +726,17 @@ function SelectionManager(groupNode,displayManager,lineManager){
 		}
 		toReturn = toReturn.slice(0,-1);
 
-		//delete middle lines
-		if(startRow!==endRow) lineManager.deleteLines(sr.startRow+1,sr.endRow);
+		if(startRow!==endRow){ 
+			var lastLine = lineManager.getLine(sr.endRow);
+			var lastLineTxt = lastLine.getTextContent();
+			var firstLine = lineManager.getLine(sr.startRow);
+
+			//delete middle and last lines
+			lineManager.deleteLines(sr.startRow+1,sr.endRow+1);
+
+			//delete last line and insert on first line
+			firstLine.writeStringAt(lastLineTxt,sr.startCol); 
+		}
 
 		return toReturn;
 	}
