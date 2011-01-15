@@ -12,7 +12,7 @@
 
 	<script><![CDATA[
 		function updateSelection(){
-			return In(visual_mode);
+			return In(visual_or_select_mode);
 		}
 	]]></script>
 
