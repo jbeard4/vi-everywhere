@@ -1,5 +1,6 @@
 <scxml 
 	xmlns="http://www.w3.org/2005/07/scxml" 
+	xmlns:c="http://commons.apache.org/scxml-js"
 	xmlns:vi="urn:vi"
 	profile="ecmascript" 
 	version="1.0" 
@@ -143,14 +144,8 @@
 				</state>
 
 				<state id="visual_mode" initial="visual_character">
-					<!-- these will be the same in both visual and select -->
 
-					<!-- FIXME: this should be yy -->
-					<transition event="y_keypress" target="normal_mode">
-						<script>
-							controller.copySelectedTextIntoRegister();  
-						</script>
-					</transition>
+					<transition event="yank_executed" target="normal_mode" />
 
 					<transition event="x_keypress" target="normal_mode">
 						<script>
@@ -351,7 +346,16 @@
 					</script>
 				</transition>
 
-				<transition event="g" target="after_g"/>
+				<transition event="g_keypress" target="after_g"/>
+
+				<transition event="y_keypress" cond="In(visual_mode)">
+					<script>
+						controller.copySelectedTextIntoRegister();  
+					</script>
+					<send event="yank_executed" c:contentexpr="{}"/>
+				</transition>
+
+				<transition event="y_keypress" target="after_y" cond="In(normal_mode)"/>
 
 				<state id="before_nonzero_digit">
 					<transition event="zero_keypress" cond="In(visual_mode) || In(normal_mode)">
@@ -380,18 +384,37 @@
 				
 			</state>
 
-			<state id="after_g">
-				<transition event="g" target="main_dispatching_events">
+			<state id="completing_two_part_command" initial="after_g">
+				<onexit>
 					<script>
-						var parsedRepeatInput = parseInt(repeatInput);
-						if(parsedRepeatInput){ 
-							controller.moveCursorToLine(parsedRepeatInput-1);
-						}else{
-							controller.moveToFirstLineOfDocument();
-						}
+						<assign location="repeatInput" expr="''"/>
 					</script>
-					<assign location="repeatInput" expr="''"/>
-				</transition>
+				</onexit>
+
+				<state id="after_g">
+					<transition event="g_keypress" target="main_dispatching_events">
+						<script>
+							var parsedRepeatInput = parseInt(repeatInput);
+							if(parsedRepeatInput){ 
+								controller.moveCursorToLine(parsedRepeatInput-1);
+							}else{
+								controller.moveToFirstLineOfDocument();
+							}
+						</script>
+					</transition>
+				</state>
+
+				<state id="after_y">
+					<transition event="y_keypress" target="main_dispatching_events">
+						<script>
+							controller.yankCurrentLineIntoRegister();
+						</script>
+					</transition>
+				</state>
+
+				<!-- anything else, go back to main without executing anything -->
+				<transition event="*" target="main_dispatching_events"/>
+				
 			</state>
 		</state>
 	</parallel>

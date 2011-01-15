@@ -203,6 +203,14 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 
 		register[registerName] = [selectionText,mode];
 	}
+
+	this.yankCurrentLineIntoRegister = function(registerName){
+		registerName = registerName || DEFAULT_REGISTER_NAME;
+
+		var lineTxt = cursor.getCurrentLineText()
+
+		register[registerName] = [lineTxt,SELECTION_MODE.LINE];
+	}
 	
 	this.deleteSelectedTextIntoRegister = function(registerName){
 		registerName = registerName || DEFAULT_REGISTER_NAME;
@@ -278,6 +286,10 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	function moveCursorTo(point){
 			cursorNode.x.baseVal.value=point.x;
 			cursorNode.y.baseVal.value=point.y;
+	}
+
+	this.getCurrentLineText = function(){
+		return lineManager.getLine(this.rowNum).getTextContent();
 	}
 
 	this.moveToLine = function(lineNum,colNum){
