@@ -358,6 +358,7 @@
 
 				<transition event="g_keypress" target="after_g"/>
 
+				<!-- FIXME: we can move this back over -->
 				<transition event="y_keypress" cond="In(visual_mode)">
 					<script>
 						controller.copySelectedTextIntoRegister(registerName); 
@@ -367,6 +368,8 @@
 				</transition>
 
 				<transition event="y_keypress" target="after_y" cond="In(normal_mode)"/>
+
+				<transition event="d_keypress" target="after_d" cond="In(normal_mode)"/>
 
 				<transition event="double_quote_keypress" target="after_double_quote" cond="In(normal_mode) || In(visual_mode)"/>
 
@@ -429,6 +432,15 @@
 					<transition event="y_keypress" target="main_dispatching_events">
 						<script>
 							controller.yankCurrentLineIntoRegister(registerName);
+							registerName = null;
+						</script>
+					</transition>
+				</state>
+
+				<state id="after_d">
+					<transition event="d_keypress" target="main_dispatching_events">
+						<script>
+							controller.deleteCurrentLineIntoRegister(registerName);
 							registerName = null;
 						</script>
 					</transition>

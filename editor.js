@@ -232,6 +232,14 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		register[registerName] = [selectionText,mode];
 	}
 
+	this.deleteCurrentLineIntoRegister = function(registerName){
+		registerName = registerName || DEFAULT_REGISTER_NAME;
+
+		var lineTxt = cursor.deleteCurrentLineText()
+
+		register[registerName] = [lineTxt,SELECTION_MODE.LINE];
+	}
+
 	//FIXME: lot of duplicate code between this and previous function
 	this.replaceSelectedTextIntoRegister = function(charCode,registerName){
 		registerName = registerName || DEFAULT_REGISTER_NAME;
@@ -292,6 +300,10 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 
 	this.getCurrentLineText = function(){
 		return lineManager.getLine(this.rowNum).getTextContent();
+	}
+
+	this.deleteCurrentLineText = function(){
+		return lineManager.deleteLine(this.rowNum);
 	}
 
 	this.moveToLine = function(lineNum,colNum){
