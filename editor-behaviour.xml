@@ -9,13 +9,30 @@
 
 	<datamodel>
 		<data id="controller"/>
-		<data id="repeatInput" expr="''"/>
+		<data id="repeatInput" expr="0"/>
 		<data id="registerName" />
 	</datamodel>
 
 	<script><![CDATA[
 		function updateSelection(){
 			return In(visual_or_select_mode);
+		}
+
+		function repeatCommand(fn,count){
+			for(var i=0;i<count;i++){
+				fn();
+			}
+		}
+
+		function curry (fn, scope) {
+			var scope = scope || window;
+			var args = [];
+			for (var i=2, len = arguments.length; i <len; ++i) {
+				args.push(arguments[i]);
+			};
+			return function() {
+				fn.apply(scope, args);
+			};
 		}
 	]]></script>
 
@@ -270,89 +287,103 @@
 		</state>
 		<state id="dispatching_events" initial="main_dispatching_events">
 			<state id="main_dispatching_events" initial="before_nonzero_digit">
-				<transition event="bling_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<onentry>
+					<assign location="repeatInput" expr="0"/>
+				</onentry>
+
+				<transition event="bling_keypress" target="main_dispatching_events"
+					cond="In(visual_mode) || In(normal_mode)">
 					<script>
 						controller.moveToEndOfLine(updateSelection());
 					</script>
 				</transition>
 
-				<transition event="backspace_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<transition event="backspace_keypress" target="main_dispatching_events"
+					 cond="In(visual_mode) || In(normal_mode)">
 					<script>
-						controller.moveLeft(updateSelection());
+						controller.moveLeft(updateSelection(),repeatInput);
 					</script>
 				</transition>
 
-				<transition event="enter_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<transition event="enter_keypress" target="main_dispatching_events"
+					 cond="In(visual_mode) || In(normal_mode)">
 					<script>
-						controller.moveDown(updateSelection());
+						controller.moveDown(updateSelection(),repeatInput);
 					</script>
 				</transition>
 
-				<transition event="w_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<transition event="w_keypress" target="main_dispatching_events"
+					 cond="In(visual_mode) || In(normal_mode)">
 					<script>
-						controller.moveToStartOfNextWord(updateSelection());
+						controller.moveToStartOfNextWord(updateSelection(),repeatInput);
 					</script>
 				</transition>
 
-				<transition event="e_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<transition event="e_keypress" target="main_dispatching_events"
+					 cond="In(visual_mode) || In(normal_mode)">
 					<script>
-						controller.moveToEndOfNextWord(updateSelection());
+						controller.moveToEndOfNextWord(updateSelection(),repeatInput);
 					</script>
 				</transition>
 
-				<transition event="b_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<transition event="b_keypress" target="main_dispatching_events"
+					 cond="In(visual_mode) || In(normal_mode)">
 					<script>
-						controller.moveToStartOfPreviousWord(updateSelection());
+						controller.moveToStartOfPreviousWord(updateSelection(),repeatInput);
 					</script>
 				</transition>
 
-				<transition event="h_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<transition event="h_keypress" target="main_dispatching_events"
+					 cond="In(visual_mode) || In(normal_mode)">
 					<script>
-						controller.moveLeft(updateSelection());
+						controller.moveLeft(updateSelection(),repeatInput);
 					</script>
 				</transition>
 
-				<transition event="l_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<transition event="l_keypress" target="main_dispatching_events"
+					 cond="In(visual_mode) || In(normal_mode)">
 					<script>
-						controller.moveRight(false,updateSelection());
+						controller.moveRight(false,updateSelection(),repeatInput);
 					</script>
 				</transition>
 
-				<transition event="k_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<transition event="k_keypress" target="main_dispatching_events"
+					 cond="In(visual_mode) || In(normal_mode)">
 					<script>
-						controller.moveUp(updateSelection());
+						controller.moveUp(updateSelection(),repeatInput);
 					</script>
 				</transition>
 
-				<transition event="j_keypress" cond="In(visual_mode) || In(normal_mode)">
+				<transition event="j_keypress" target="main_dispatching_events"
+					 cond="In(visual_mode) || In(normal_mode)">
 					<script>
-						controller.moveDown(updateSelection())
+						controller.moveDown(updateSelection(),repeatInput);
 					</script>
 				</transition>
 
 				<!-- non-printable movement keys -->
-				<transition event="left_keypress" 
+				<transition event="left_keypress" target="main_dispatching_events" 
 					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
 					<script>
-						controller.moveLeft(updateSelection());
+						controller.moveLeft(updateSelection(),repeatInput);
 					</script>
 				</transition>
-				<transition event="right_keypress"
+				<transition event="right_keypress" target="main_dispatching_events"	
 					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
 					<script>
-						controller.moveRight(false,updateSelection());
+						controller.moveRight(false,updateSelection(),repeatInput);
 					</script>
 				</transition>
-				<transition event="up_keypress"
+				<transition event="up_keypress" target="main_dispatching_events"	
 					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
 					<script>
-						controller.moveUp(updateSelection());
+						controller.moveUp(updateSelection(),repeatInput);
 					</script>
 				</transition>
-				<transition event="down_keypress"
+				<transition event="down_keypress" target="main_dispatching_events"
 					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
 					<script>
-						controller.moveDown(updateSelection());
+						controller.moveDown(updateSelection(),repeatInput);
 					</script>
 				</transition>
 
@@ -384,7 +415,7 @@
 						cond="/[1-9]/.exec(String.fromCharCode(_event.data.charCode)) &amp;&amp; 
 							(In(normal_mode) || In(visual_mode))">
 						<assign location="repeatInput" 
-							expr="repeatInput + String.fromCharCode(_event.data.charCode)"/>
+							expr="parseInt(repeatInput + String.fromCharCode(_event.data.charCode))"/>
 					</transition>
 
 				</state>
@@ -394,7 +425,7 @@
 						cond="/\d/.exec(String.fromCharCode(_event.data.charCode)) &amp;&amp; 
 							(In(normal_mode) || In(visual_mode))">
 						<assign location="repeatInput" 
-							expr="repeatInput + String.fromCharCode(_event.data.charCode)"/>
+							expr="parseInt(repeatInput + String.fromCharCode(_event.data.charCode))"/>
 					</transition>
 				</state>
 				
@@ -403,7 +434,7 @@
 			<state id="completing_two_part_command" initial="after_g">
 				<onexit>
 					<script>
-						<assign location="repeatInput" expr="''"/>
+						<assign location="repeatInput" expr="0"/>
 					</script>
 				</onexit>
 
@@ -418,7 +449,6 @@
 				<state id="after_g">
 					<transition event="g_keypress" target="main_dispatching_events">
 						<script>
-							var parsedRepeatInput = parseInt(repeatInput);
 							if(parsedRepeatInput){ 
 								controller.moveCursorToLine(parsedRepeatInput-1);
 							}else{

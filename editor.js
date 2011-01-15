@@ -2,6 +2,17 @@ function sum(a,b){
 	return a + b;
 }
 
+function curry (fn, scope) {
+	var scope = scope || window;
+	var args = [];
+	for (var i=2, len = arguments.length; i <len; ++i) {
+		args.push(arguments[i]);
+	};
+	return function() {
+		fn.apply(scope, args);
+	};
+}
+
 SELECTION_MODE = {
 	CHARACTER:0,
 	LINE:1,
@@ -32,6 +43,14 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		selectionManager.setEndPos(cursor.colNum,cursor.rowNum);
 	}
 
+	function repeatCommand(fn,count){
+		count = count || 1;
+
+		for(var i=0; i<count; i++){
+			fn();
+		}
+	}
+
 	this.makeCursorFat = function(){
 		cursor.makeCursorFat();
 	};
@@ -41,23 +60,23 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 	this.updateModeText = function(s){
 		modeText.textContent = s; 
 	};
-	this.moveLeft = function(updateSelection){
-		cursor.moveLeft()
+	this.moveLeft = function(updateSelection,repeatInput){
+		repeatCommand(curry(cursor.moveLeft,cursor),repeatInput)
 
 		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveRight = function(includeRightmostChar,updateSelection){
-		cursor.moveRight(includeRightmostChar)
+	this.moveRight = function(includeRightmostChar,updateSelection,repeatInput){
+		repeatCommand(curry(cursor.moveRight,cursor,includeRightmostChar),repeatInput)
 
 		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveUp = function(updateSelection){
-		cursor.moveUp()
+	this.moveUp = function(updateSelection,repeatInput){
+		repeatCommand(curry(cursor.moveUp,cursor),repeatInput)
 
 		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveDown = function(updateSelection){
-		cursor.moveDown()
+	this.moveDown = function(updateSelection,repeatInput){
+		repeatCommand(curry(cursor.moveDown,cursor),repeatInput)
 
 		if(updateSelection){doUpdateSelection()};
 	};
@@ -70,18 +89,18 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 	this.writeBackspace = function(){
 		cursor.writeBackspace();
 	};
-	this.moveToStartOfNextWord = function(updateSelection){
-		cursor.moveToStartOfNextWord();
+	this.moveToStartOfNextWord = function(updateSelection,repeatInput){
+		repeatCommand(curry(cursor.moveToStartOfNextWord,cursor),repeatInput)
 
 		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveToEndOfNextWord = function(updateSelection){
-		cursor.moveToEndOfNextWord();
+	this.moveToEndOfNextWord = function(updateSelection,repeatInput){
+		repeatCommand(curry(cursor.moveToEndOfNextWord,cursor),repeatInput)
 
 		if(updateSelection){doUpdateSelection()};
 	};
-	this.moveToStartOfPreviousWord = function(updateSelection){
-		cursor.moveToStartOfPreviousWord();
+	this.moveToStartOfPreviousWord = function(updateSelection,repeatInput){
+		repeatCommand(curry(cursor.moveToStartOfPreviousWord,cursor),repeatInput)
 
 		if(updateSelection){doUpdateSelection()};
 	};
