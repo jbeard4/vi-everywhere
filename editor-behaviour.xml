@@ -10,272 +10,360 @@
 		<data id="controller"/>
 	</datamodel>
 
+	<script><![CDATA[
+		function updateSelection(){
+			return In(visual_mode);
+		}
+	]]></script>
+
 	<state id="initial_default">
-		<transition event="init" target="normal_mode">
+		<transition event="init" target="main">
 			<assign location="controller" expr="_event.data"/>	
 		</transition>
 	</state>
 
-	<state id="normal_mode">
+	<parallel id="main">
 
-		<onentry>
-			<script>
-				controller.makeCursorFat();
-				controller.updateModeText("-- NORMAL --")
-			</script>
-		</onentry>
+		<state id="in_mode" initial="normal_mode">
 
-		<vi:macro name="printable_keys_used_to_move_cursor">
-			<vi:param name="updateSelection" value="false"/>
-		</vi:macro>
+			<state id="normal_mode">
 
-		<vi:macro name="nonprintable_keys_used_to_move_cursor">
-			<vi:param name="updateSelection" value="true"/>
-		</vi:macro>
-
-		<transition event="P_keypress">
-			<script>
-				controller.putTextFromRegisterBeforeCursor();
-			</script>
-		</transition>
-
-		<transition event="p_keypress">
-			<script>
-				controller.putTextFromRegisterAfterCursor();
-			</script>
-		</transition>
-			
-		<transition event="v_keypress" target="visual_character"/>
-		<transition event="V_keypress" target="visual_line"/>
-		<transition event="ctrl_v_keypress" target="visual_block"/>
-
-
-		<!--
-		<transition event="G" target="normal_mode">
-			<script>	
-				controller.moveToLastLineOfDocument()
-			</script>
-		</transition>
-
-		<transition event="g" target="after_g"/>
-
-		<state id="after_g">
-			<script>
-				controller.moveToFirstLineOfDocument()
-			</script>
-		</state>
-		-->
-
-		<transition event="i_keypress" target="insert_mode"/>
-
-		<transition event="a_keypress" target="insert_mode">
-			<script>
-				controller.moveRight(true);
-			</script>
-		</transition>
-
-	</state>
-
-	<state id="visual_or_select_mode" initial="visual_mode">
-
-		<onentry>
-			<script>
-				controller.makeCursorFat();
-				controller.startSelection(); 
-			</script>
-		</onentry>
-
-		<onexit>
-			<script>
-				controller.clearSelection(); 
-			</script>
-		</onexit>
-
-		<vi:macro name="nonprintable_keys_used_to_move_cursor">
-			<vi:param name="updateSelection" value="true"/>
-		</vi:macro>
-
-		<transition event="esc_keypress" target="normal_mode"/>
-
-		<state id="select_mode" initial="select_character">
-
-			<transition event="*" target="insert_mode"
-				cond="_event.data.charCode !== 0">
-				<script>
-					controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
-				</script>
-			</transition>
-
-			<state id="select_line">
 				<onentry>
 					<script>
-						controller.updateModeText("-- SELECT LINE --")
-						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
+						controller.makeCursorFat();
+						controller.updateModeText("-- NORMAL --")
 					</script>
 				</onentry>
-				<transition event="ctrl_v_keypress" target="select_block"/>
-				<transition event="v_keypress" target="select_character"/>
 
-				<transition event="ctrl_g_keypress" target="visual_line" />
-			</state>
+				<!--
+				TODO : remove
+				<vi:macro name="printable_keys_used_to_move_cursor">
+					<vi:param name="updateSelection" value="false"/>
+				</vi:macro>
+				-->
 
-			<state id="select_block">
-				<onentry>
+				<vi:macro name="nonprintable_keys_used_to_move_cursor">
+					<vi:param name="updateSelection" value="true"/>
+				</vi:macro>
+
+				<transition event="P_keypress">
 					<script>
-						controller.updateModeText("-- SELECT BLOCK --")
-						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
+						controller.putTextFromRegisterBeforeCursor();
 					</script>
-				</onentry>
-				<transition event="v_keypress" target="select_character"/>
-				<transition event="V_keypress" target="select_line"/>
+				</transition>
 
-				<transition event="ctrl_g_keypress" target="visual_block" />
-			</state>
-
-			<state id="select_character">
-				<onentry>
+				<transition event="p_keypress">
 					<script>
-						controller.updateModeText("-- SELECT --")
-						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
+						controller.putTextFromRegisterAfterCursor();
 					</script>
-				</onentry>
-				<transition event="ctrl_v_keypress" target="select_block"/>
-				<transition event="V_keypress" target="select_line"/>
+				</transition>
 
-				<transition event="ctrl_g_keypress" target="visual_character" />
-			</state>
-		</state>
-
-		<state id="visual_mode" initial="visual_character">
-			<!-- these will be the same in both visual and select -->
-
-			<!-- FIXME: this should be yy -->
-			<transition event="y_keypress" target="normal_mode">
-				<script>
-					controller.copySelectedTextIntoRegister();  
-				</script>
-			</transition>
-
-			<transition event="x_keypress" target="normal_mode">
-				<script>
-					controller.deleteSelectedTextIntoRegister();  
-				</script>
-			</transition>
-
-			<transition event="d_keypress" target="normal_mode">
-				<script>
-					controller.deleteSelectedTextIntoRegister();  
-				</script>
-			</transition>
-
-			<transition event="c_keypress" target="insert_mode">
-				<script>
-					controller.deleteSelectedTextIntoRegister();  
-				</script>
-			</transition>
-
-			<vi:macro name="printable_keys_used_to_move_cursor">
-				<vi:param name="updateSelection" value="true"/>
-			</vi:macro>
-
-
-			<!-- TODO: figure out what kind of API we want for selection stuff -->
-			<state id="visual_line">
-				<onentry>
-					<script>
-						controller.updateModeText("-- VISUAL LINE --")
-						controller.setSelectionMode(controller.SELECTION_MODE.LINE);
-					</script>
-				</onentry>
-				<transition event="ctrl_v_keypress" target="visual_block"/>
-				<transition event="v_keypress" target="visual_character"/>
-
-				<transition event="ctrl_g_keypress" target="select_line" />
-			</state>
-
-			<state id="visual_block">
-				<onentry>
-					<script>
-						controller.updateModeText("-- VISUAL BLOCK --")
-						controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
-					</script>
-				</onentry>
+				<transition event="colon_keypress" target="command_mode"/>
+					
 				<transition event="v_keypress" target="visual_character"/>
 				<transition event="V_keypress" target="visual_line"/>
+				<transition event="ctrl_v_keypress" target="visual_block"/>
 
-				<transition event="ctrl_g_keypress" target="select_block" />
+
+				<!--
+				<transition event="G" target="normal_mode">
+					<script>	
+						controller.moveToLastLineOfDocument()
+					</script>
+				</transition>
+
+				<transition event="g" target="after_g"/>
+
+				<state id="after_g">
+					<script>
+						controller.moveToFirstLineOfDocument()
+					</script>
+				</state>
+				-->
+
+				<transition event="i_keypress" target="insert_mode"/>
+
+				<transition event="a_keypress" target="insert_mode">
+					<script>
+						controller.moveRight(true);
+					</script>
+				</transition>
+
 			</state>
 
-			<state id="visual_character">
+			<state id="visual_or_select_mode" initial="visual_mode">
+
 				<onentry>
 					<script>
-						controller.updateModeText("-- VISUAL --")
-						controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
+						controller.makeCursorFat();
+						controller.startSelection(); 
 					</script>
 				</onentry>
-				<transition event="ctrl_v_keypress" target="visual_block"/>
-				<transition event="V_keypress" target="visual_line"/>
 
-				<transition event="ctrl_g_keypress" target="select_character" />
+				<onexit>
+					<script>
+						controller.clearSelection(); 
+					</script>
+				</onexit>
+
+				<vi:macro name="nonprintable_keys_used_to_move_cursor">
+					<vi:param name="updateSelection" value="true"/>
+				</vi:macro>
+
+				<transition event="esc_keypress" target="normal_mode"/>
+
+				<state id="select_mode" initial="select_character">
+
+					<transition event="*" target="insert_mode"
+						cond="_event.data.charCode !== 0">
+						<script>
+							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
+						</script>
+					</transition>
+
+					<state id="select_line">
+						<onentry>
+							<script>
+								controller.updateModeText("-- SELECT LINE --")
+								controller.setSelectionMode(controller.SELECTION_MODE.LINE);
+							</script>
+						</onentry>
+						<transition event="ctrl_v_keypress" target="select_block"/>
+						<transition event="v_keypress" target="select_character"/>
+
+						<transition event="ctrl_g_keypress" target="visual_line" />
+					</state>
+
+					<state id="select_block">
+						<onentry>
+							<script>
+								controller.updateModeText("-- SELECT BLOCK --")
+								controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
+							</script>
+						</onentry>
+						<transition event="v_keypress" target="select_character"/>
+						<transition event="V_keypress" target="select_line"/>
+
+						<transition event="ctrl_g_keypress" target="visual_block" />
+					</state>
+
+					<state id="select_character">
+						<onentry>
+							<script>
+								controller.updateModeText("-- SELECT --")
+								controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
+							</script>
+						</onentry>
+						<transition event="ctrl_v_keypress" target="select_block"/>
+						<transition event="V_keypress" target="select_line"/>
+
+						<transition event="ctrl_g_keypress" target="visual_character" />
+					</state>
+				</state>
+
+				<state id="visual_mode" initial="visual_character">
+					<!-- these will be the same in both visual and select -->
+
+					<!-- FIXME: this should be yy -->
+					<transition event="y_keypress" target="normal_mode">
+						<script>
+							controller.copySelectedTextIntoRegister();  
+						</script>
+					</transition>
+
+					<transition event="x_keypress" target="normal_mode">
+						<script>
+							controller.deleteSelectedTextIntoRegister();  
+						</script>
+					</transition>
+
+					<transition event="d_keypress" target="normal_mode">
+						<script>
+							controller.deleteSelectedTextIntoRegister();  
+						</script>
+					</transition>
+
+					<transition event="c_keypress" target="insert_mode">
+						<script>
+							controller.deleteSelectedTextIntoRegister();  
+						</script>
+					</transition>
+
+					<!--
+					TODO: remove
+					<vi:macro name="printable_keys_used_to_move_cursor">
+						<vi:param name="updateSelection" value="true"/>
+					</vi:macro>
+					-->
+
+
+					<!-- TODO: figure out what kind of API we want for selection stuff -->
+					<state id="visual_line">
+						<onentry>
+							<script>
+								controller.updateModeText("-- VISUAL LINE --")
+								controller.setSelectionMode(controller.SELECTION_MODE.LINE);
+							</script>
+						</onentry>
+						<transition event="ctrl_v_keypress" target="visual_block"/>
+						<transition event="v_keypress" target="visual_character"/>
+
+						<transition event="ctrl_g_keypress" target="select_line" />
+					</state>
+
+					<state id="visual_block">
+						<onentry>
+							<script>
+								controller.updateModeText("-- VISUAL BLOCK --")
+								controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
+							</script>
+						</onentry>
+						<transition event="v_keypress" target="visual_character"/>
+						<transition event="V_keypress" target="visual_line"/>
+
+						<transition event="ctrl_g_keypress" target="select_block" />
+					</state>
+
+					<state id="visual_character">
+						<onentry>
+							<script>
+								controller.updateModeText("-- VISUAL --")
+								controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
+							</script>
+						</onentry>
+						<transition event="ctrl_v_keypress" target="visual_block"/>
+						<transition event="V_keypress" target="visual_line"/>
+
+						<transition event="ctrl_g_keypress" target="select_character" />
+					</state>
+
+				</state>
 			</state>
 
+
+			<state id="insert_mode">
+				<onentry>
+					<script>
+						controller.makeCursorThin()
+						controller.updateModeText("-- INSERT --")
+					</script>
+				</onentry>
+
+				<vi:macro name="nonprintable_keys_used_to_move_cursor">
+					<vi:param name="updateSelection" value="true"/>
+				</vi:macro>
+
+				<transition event="esc_keypress" target="normal_mode">
+					<script>
+						controller.moveLeft()
+					</script>
+				</transition>
+
+				<transition event="enter_keypress">
+					<script>
+						controller.writeNewLine()
+					</script>
+				</transition>
+
+				<transition event="backspace_keypress">
+					<script>
+						controller.writeBackspace()
+					</script>
+				</transition>
+
+
+				<!-- everything else -->
+				<transition event="*">
+					<script>
+						controller.writeChar(_event.data.charCode)
+					</script>
+				</transition>
+			</state>
+
+
+			<state id="command_mode">
+				<onentry>
+					<script>
+						controller.updateModeText("-- COMMAND --")
+					</script>
+				</onentry>
+
+				<!-- printable characters: add to command buffer -->
+				<!-- newline: run command -->
+				
+				<transition event="esc_keypress" target="normal_mode"/>
+			</state>
 		</state>
-	</state>
+		<state id="dispatching_events" initial="main_dispatching_events">
+			<state id="main_dispatching_events">
+				
+				<transition event="bling_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveToEndOfLine(updateSelection());
+					</script>
+				</transition>
 
+				<transition event="backspace_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveLeft(updateSelection());
+					</script>
+				</transition>
 
-	<state id="insert_mode">
-		<onentry>
-			<script>
-				controller.makeCursorThin()
-				controller.updateModeText("-- INSERT --")
-			</script>
-		</onentry>
+				<transition event="enter_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveDown(updateSelection());
+					</script>
+				</transition>
 
-		<vi:macro name="nonprintable_keys_used_to_move_cursor">
-			<vi:param name="updateSelection" value="true"/>
-		</vi:macro>
+				<transition event="w_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveToStartOfNextWord(updateSelection());
+					</script>
+				</transition>
 
-		<transition event="esc_keypress" target="normal_mode">
-			<script>
-				controller.moveLeft()
-			</script>
-		</transition>
+				<transition event="e_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveToEndOfNextWord(updateSelection());
+					</script>
+				</transition>
 
-		<transition event="enter_keypress">
-			<script>
-				controller.writeNewLine()
-			</script>
-		</transition>
+				<transition event="b_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveToStartOfPreviousWord(updateSelection());
+					</script>
+				</transition>
 
-		<transition event="backspace_keypress">
-			<script>
-				controller.writeBackspace()
-			</script>
-		</transition>
+				<transition event="zero_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveToStartOfLine(updateSelection());
+					</script>
+				</transition>
 
+				<transition event="h_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveLeft(updateSelection());
+					</script>
+				</transition>
 
-		<!-- everything else -->
-		<transition event="*">
-			<script>
-				controller.writeChar(_event.data.charCode)
-			</script>
-		</transition>
-	</state>
+				<transition event="l_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveRight(false,updateSelection());
+					</script>
+				</transition>
 
+				<transition event="k_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveUp(updateSelection());
+					</script>
+				</transition>
 
-	<state id="command_mode">
-		<onentry>
-			<script>
-				controller.updateModeText("-- COMMAND --")
-			</script>
-		</onentry>
-
-		<!-- printable characters: add to command buffer -->
-		<!-- newline: run command -->
-		
-		<transition event="esc_keypress" target="normal_mode"/>
-	</state>
-
-	
+				<transition event="j_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<script>
+						controller.moveDown(updateSelection())
+					</script>
+				</transition>
+			</state>
+		</state>
+	</parallel>
 </scxml>
 
