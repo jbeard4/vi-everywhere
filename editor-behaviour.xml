@@ -10,6 +10,7 @@
 	<datamodel>
 		<data id="controller"/>
 		<data id="repeatInput" expr="''"/>
+		<data id="registerName" />
 	</datamodel>
 
 	<script><![CDATA[
@@ -39,13 +40,15 @@
 
 				<transition event="P_keypress">
 					<script>
-						controller.putTextFromRegisterBeforeCursor();
+						controller.putTextFromRegisterBeforeCursor(registerName);
+						registerName = null;
 					</script>
 				</transition>
 
 				<transition event="p_keypress">
 					<script>
-						controller.putTextFromRegisterAfterCursor();
+						controller.putTextFromRegisterAfterCursor(registerName);
+						registerName = null;
 					</script>
 				</transition>
 
@@ -67,9 +70,12 @@
 
 				-->
 
-				<transition event="i_keypress" target="insert_mode"/>
+				<!-- TODO: more checks like this -->
+				<transition event="i_keypress" target="insert_mode"
+					cond="!In(after_double_quote)"/>
 
-				<transition event="a_keypress" target="insert_mode">
+				<transition event="a_keypress" target="insert_mode"
+					cond="!In(after_double_quote)">
 					<script>
 						controller.moveRight(true);
 					</script>
@@ -99,7 +105,8 @@
 					<transition event="*" target="insert_mode"
 						cond="_event.data.charCode !== 0">
 						<script>
-							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
+							controller.replaceSelectedTextIntoRegister(_event.data.charCode,registerName);  
+							registerName = null;
 						</script>
 					</transition>
 
@@ -149,19 +156,22 @@
 
 					<transition event="x_keypress" target="normal_mode">
 						<script>
-							controller.deleteSelectedTextIntoRegister();  
+							controller.deleteSelectedTextIntoRegister(registerName);  
+							registerName = null;
 						</script>
 					</transition>
 
 					<transition event="d_keypress" target="normal_mode">
 						<script>
-							controller.deleteSelectedTextIntoRegister();  
+							controller.deleteSelectedTextIntoRegister(registerName);  
+							registerName = null;
 						</script>
 					</transition>
 
 					<transition event="c_keypress" target="insert_mode">
 						<script>
-							controller.deleteSelectedTextIntoRegister();  
+							controller.deleteSelectedTextIntoRegister(registerName);  
+							registerName = null;
 						</script>
 					</transition>
 
@@ -350,12 +360,15 @@
 
 				<transition event="y_keypress" cond="In(visual_mode)">
 					<script>
-						controller.copySelectedTextIntoRegister();  
+						controller.copySelectedTextIntoRegister(registerName); 
+						registerName = null;
 					</script>
 					<send event="yank_executed" c:contentexpr="{}"/>
 				</transition>
 
 				<transition event="y_keypress" target="after_y" cond="In(normal_mode)"/>
+
+				<transition event="double_quote_keypress" target="after_double_quote" cond="In(normal_mode) || In(visual_mode)"/>
 
 				<state id="before_nonzero_digit">
 					<transition event="zero_keypress" cond="In(visual_mode) || In(normal_mode)">
@@ -391,6 +404,14 @@
 					</script>
 				</onexit>
 
+				<state id="after_double_quote">
+					<transition event="*" target="main_dispatching_events"
+						cond="_event.data.charCode">
+						<assign location="registerName" expr="String.fromCharCode(_event.data.charCode)"/>
+					</transition>
+
+				</state>
+
 				<state id="after_g">
 					<transition event="g_keypress" target="main_dispatching_events">
 						<script>
@@ -407,7 +428,8 @@
 				<state id="after_y">
 					<transition event="y_keypress" target="main_dispatching_events">
 						<script>
-							controller.yankCurrentLineIntoRegister();
+							controller.yankCurrentLineIntoRegister(registerName);
+							registerName = null;
 						</script>
 					</transition>
 				</state>

@@ -14,6 +14,7 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 
 	var register = {};	//each application instance has a register
 	var DEFAULT_REGISTER_NAME = "default"
+	register[DEFAULT_REGISTER_NAME] = ["",SELECTION_MODE.LINE];
 
 	function currentConfigurationToSelectionMode(){
 		if(scInstance.$in(scInstance._states.visual_character) || scInstance.$in(scInstance._states.select_character)){
@@ -123,6 +124,7 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		}
 
 		var charCodeEventMap = {
+			34 : "double_quote",
 			36: "bling",
 			48 : "zero",
 			49 : "one",
