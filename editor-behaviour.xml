@@ -300,7 +300,7 @@
 				</onexit>
 
 				<!-- user-generated event triggered by cursor deleting last character -->
-				<transition event="last_char_deleted" target="normal_mode"/>
+				<transition event="first_command_line_char_deleted" target="normal_mode"/>
 
 				<transition event="command_executed" target="normal_mode"/>
 

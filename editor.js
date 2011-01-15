@@ -359,6 +359,10 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 
 	this.writeCmdBackspace = function(){
 		cmdCursor.writeBackspace();
+
+		if(cmdCursor.colNum === 0){
+			scInstance.GEN("first_command_line_char_deleted",{});		
+		}
 	};
 
 	this.clearCmdLine = function(){
