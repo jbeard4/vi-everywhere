@@ -8,6 +8,7 @@
 
 	<datamodel>
 		<data id="controller"/>
+		<data id="repeatInput" expr="''"/>
 	</datamodel>
 
 	<script><![CDATA[
@@ -63,11 +64,6 @@
 
 				<transition event="g" target="after_g"/>
 
-				<state id="after_g">
-					<script>
-						controller.moveToFirstLineOfDocument()
-					</script>
-				</state>
 				-->
 
 				<transition event="i_keypress" target="insert_mode"/>
@@ -268,8 +264,7 @@
 			</state>
 		</state>
 		<state id="dispatching_events" initial="main_dispatching_events">
-			<state id="main_dispatching_events">
-				
+			<state id="main_dispatching_events" initial="before_nonzero_digit">
 				<transition event="bling_keypress" cond="In(visual_mode) || In(normal_mode)">
 					<script>
 						controller.moveToEndOfLine(updateSelection());
@@ -303,12 +298,6 @@
 				<transition event="b_keypress" cond="In(visual_mode) || In(normal_mode)">
 					<script>
 						controller.moveToStartOfPreviousWord(updateSelection());
-					</script>
-				</transition>
-
-				<transition event="zero_keypress" cond="In(visual_mode) || In(normal_mode)">
-					<script>
-						controller.moveToStartOfLine(updateSelection());
 					</script>
 				</transition>
 
@@ -360,6 +349,48 @@
 					<script>
 						controller.moveDown(updateSelection());
 					</script>
+				</transition>
+
+				<transition event="g" target="after_g"/>
+
+				<state id="before_nonzero_digit">
+					<transition event="zero_keypress" cond="In(visual_mode) || In(normal_mode)">
+						<script>
+							controller.moveToStartOfLine(updateSelection());
+						</script>
+					</transition>
+
+					<transition event="*" target="after_nonzero_digit"
+						cond="/[1-9]/.exec(String.fromCharCode(_event.data.charCode)) &amp;&amp; 
+							(In(normal_mode) || In(visual_mode))">
+						<assign location="repeatInput" 
+							expr="repeatInput + String.fromCharCode(_event.data.charCode)"/>
+					</transition>
+
+				</state>
+
+				<state id="after_nonzero_digit">
+					<transition event="*" 
+						cond="/\d/.exec(String.fromCharCode(_event.data.charCode)) &amp;&amp; 
+							(In(normal_mode) || In(visual_mode))">
+						<assign location="repeatInput" 
+							expr="repeatInput + String.fromCharCode(_event.data.charCode)"/>
+					</transition>
+				</state>
+				
+			</state>
+
+			<state id="after_g">
+				<transition event="g" target="main_dispatching_events">
+					<script>
+						var parsedRepeatInput = parseInt(repeatInput);
+						if(parsedRepeatInput){ 
+							controller.moveCursorToLine(parsedRepeatInput-1);
+						}else{
+							controller.moveToFirstLineOfDocument();
+						}
+					</script>
+					<assign location="repeatInput" expr="''"/>
 				</transition>
 			</state>
 		</state>

@@ -17,74 +17,77 @@
 
 				//variable declarations relating to data model
 				
-		var controller;
+		var controller, repeatInput
+					= '';
 	
 				//send timeout id variables
 				
 
-		var $default_Regexp_id2803898 = /^($default)/
+		var $default_Regexp_id2762408 = /^($default)/
 				,
-				init_Regexp_id2803906 = /^(init)/
+				init_Regexp_id2762416 = /^(init)/
 				,
-				P_keypress_Regexp_id2803912 = /^(P_keypress)/
+				P_keypress_Regexp_id2762422 = /^(P_keypress)/
 				,
-				p_keypress_Regexp_id2803917 = /^(p_keypress)/
+				p_keypress_Regexp_id2762428 = /^(p_keypress)/
 				,
-				colon_keypress_Regexp_id2803923 = /^(colon_keypress)/
+				colon_keypress_Regexp_id2762433 = /^(colon_keypress)/
 				,
-				v_keypress_Regexp_id2803929 = /^(v_keypress)/
+				v_keypress_Regexp_id2762439 = /^(v_keypress)/
 				,
-				V_keypress_Regexp_id2803934 = /^(V_keypress)/
+				V_keypress_Regexp_id2762445 = /^(V_keypress)/
 				,
-				ctrl_v_keypress_Regexp_id2803940 = /^(ctrl_v_keypress)/
+				ctrl_v_keypress_Regexp_id2762450 = /^(ctrl_v_keypress)/
 				,
-				i_keypress_Regexp_id2803946 = /^(i_keypress)/
+				i_keypress_Regexp_id2762456 = /^(i_keypress)/
 				,
-				a_keypress_Regexp_id2803951 = /^(a_keypress)/
+				a_keypress_Regexp_id2762462 = /^(a_keypress)/
 				,
-				esc_keypress_Regexp_id2803957 = /^(esc_keypress)/
+				esc_keypress_Regexp_id2762467 = /^(esc_keypress)/
 				,
-				star_Regexp_id2803962 = /.*/
+				star_Regexp_id2762473 = /.*/
 				,
-				ctrl_g_keypress_Regexp_id2803968 = /^(ctrl_g_keypress)/
+				ctrl_g_keypress_Regexp_id2762479 = /^(ctrl_g_keypress)/
 				,
-				y_keypress_Regexp_id2803974 = /^(y_keypress)/
+				y_keypress_Regexp_id2762484 = /^(y_keypress)/
 				,
-				x_keypress_Regexp_id2803979 = /^(x_keypress)/
+				x_keypress_Regexp_id2762490 = /^(x_keypress)/
 				,
-				d_keypress_Regexp_id2803985 = /^(d_keypress)/
+				d_keypress_Regexp_id2762496 = /^(d_keypress)/
 				,
-				c_keypress_Regexp_id2803990 = /^(c_keypress)/
+				c_keypress_Regexp_id2762501 = /^(c_keypress)/
 				,
-				enter_keypress_Regexp_id2803996 = /^(enter_keypress)/
+				enter_keypress_Regexp_id2762507 = /^(enter_keypress)/
 				,
-				backspace_keypress_Regexp_id2804002 = /^(backspace_keypress)/
+				backspace_keypress_Regexp_id2762512 = /^(backspace_keypress)/
 				,
-				bling_keypress_Regexp_id2804008 = /^(bling_keypress)/
+				bling_keypress_Regexp_id2762518 = /^(bling_keypress)/
 				,
-				w_keypress_Regexp_id2804013 = /^(w_keypress)/
+				w_keypress_Regexp_id2762524 = /^(w_keypress)/
 				,
-				e_keypress_Regexp_id2804019 = /^(e_keypress)/
+				e_keypress_Regexp_id2762529 = /^(e_keypress)/
 				,
-				b_keypress_Regexp_id2804024 = /^(b_keypress)/
+				b_keypress_Regexp_id2762535 = /^(b_keypress)/
 				,
-				zero_keypress_Regexp_id2804030 = /^(zero_keypress)/
+				h_keypress_Regexp_id2762541 = /^(h_keypress)/
 				,
-				h_keypress_Regexp_id2804036 = /^(h_keypress)/
+				l_keypress_Regexp_id2762546 = /^(l_keypress)/
 				,
-				l_keypress_Regexp_id2804041 = /^(l_keypress)/
+				k_keypress_Regexp_id2762552 = /^(k_keypress)/
 				,
-				k_keypress_Regexp_id2804047 = /^(k_keypress)/
+				j_keypress_Regexp_id2762558 = /^(j_keypress)/
 				,
-				j_keypress_Regexp_id2804053 = /^(j_keypress)/
+				left_keypress_Regexp_id2762563 = /^(left_keypress)/
 				,
-				left_keypress_Regexp_id2804058 = /^(left_keypress)/
+				right_keypress_Regexp_id2762569 = /^(right_keypress)/
 				,
-				right_keypress_Regexp_id2804064 = /^(right_keypress)/
+				up_keypress_Regexp_id2762575 = /^(up_keypress)/
 				,
-				up_keypress_Regexp_id2804070 = /^(up_keypress)/
+				down_keypress_Regexp_id2762580 = /^(down_keypress)/
 				,
-				down_keypress_Regexp_id2804075 = /^(down_keypress)/
+				g_Regexp_id2762586 = /^(g)/
+				,
+				zero_keypress_Regexp_id2762591 = /^(zero_keypress)/
 				;
 				
 
@@ -131,6 +134,8 @@
 			
 				this.backspace_keypress = function(){};
 			
+				this.zero_keypress = function(){};
+			
 				this.bling_keypress = function(){};
 			
 				this.w_keypress = function(){};
@@ -138,8 +143,6 @@
 				this.e_keypress = function(){};
 			
 				this.b_keypress = function(){};
-			
-				this.zero_keypress = function(){};
 			
 				this.h_keypress = function(){};
 			
@@ -157,6 +160,8 @@
 			
 				this.down_keypress = function(){};
 			
+				this.g = function(){};
+			
 
 			this.$default = function(){};
 
@@ -167,9 +172,9 @@
 				//states
 				
 
-		var scxml_id2792596 = (function(){
+		var scxml_id2751382 = (function(){
 
-			function scxml_id2792596Constructor(){
+			function scxml_id2751382Constructor(){
 				this.parent = AbstractState;
 
 				this.initial = null;
@@ -185,21 +190,21 @@
 					
 				
 				this.toString = function(){
-					return "scxml_id2792596"
+					return "scxml_id2751382"
 				}
 
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
-								listener.onEntry("scxml_id2792596");
+								listener.onEntry("scxml_id2751382");
 							
 		}
 	
@@ -209,15 +214,15 @@
 				this.exitAction = function(){
 					
 
-		for(var id2793359_iterator=0, 
-			id2793359_hoist=listeners.length;
-				id2793359_iterator < id2793359_hoist;
-				id2793359_iterator++){
-			var listener = listeners[id2793359_iterator];
+		for(var id2751906_iterator=0, 
+			id2751906_hoist=listeners.length;
+				id2751906_iterator < id2751906_hoist;
+				id2751906_iterator++){
+			var listener = listeners[id2751906_iterator];
 
 			
 								//from
-								listener.onExit("scxml_id2792596");
+								listener.onExit("scxml_id2751382");
 							
 		}
 	
@@ -235,8 +240,8 @@
 				
 
 			}
-			scxml_id2792596Constructor.prototype = AbstractState;
-			return new scxml_id2792596Constructor();
+			scxml_id2751382Constructor.prototype = AbstractState;
+			return new scxml_id2751382Constructor();
 		})();
 
 	
@@ -244,7 +249,7 @@
 		var _initial = (function(){
 
 			function _initialConstructor(){
-				this.parent = scxml_id2792596;
+				this.parent = scxml_id2751382;
 
 				this.initial = null;
 
@@ -258,7 +263,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 					];
 				
 					this.parent.initial = this; //init parent's pointer to initial state
@@ -271,11 +276,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -289,11 +294,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2797511_iterator=0, 
-			id2797511_hoist=listeners.length;
-				id2797511_iterator < id2797511_hoist;
-				id2797511_iterator++){
-			var listener = listeners[id2797511_iterator];
+		for(var id2755363_iterator=0, 
+			id2755363_hoist=listeners.length;
+				id2755363_iterator < id2755363_hoist;
+				id2755363_iterator++){
+			var listener = listeners[id2755363_iterator];
 
 			
 								//from
@@ -323,7 +328,9 @@
                                ,visual_character : true
                                ,insert_mode : true
                                ,command_mode : true
-                               ,main_dispatching_events : true
+                               ,before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               ,after_g : true
                                
                }
        ,
@@ -339,11 +346,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -372,20 +379,20 @@
 
 		
 
-			return scxml_id2792596['$default']();
+			return scxml_id2751382['$default']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 				
 
-			return scxml_id2792596.$dispatchPrefixEvent(e);
+			return scxml_id2751382.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			_initialConstructor.prototype = scxml_id2792596;
+			_initialConstructor.prototype = scxml_id2751382;
 			return new _initialConstructor();
 		})();
 
@@ -394,7 +401,7 @@
 		var initial_default = (function(){
 
 			function initial_defaultConstructor(){
-				this.parent = scxml_id2792596;
+				this.parent = scxml_id2751382;
 
 				this.initial = null;
 
@@ -408,7 +415,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 					];
 				
 				
@@ -419,11 +426,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -437,11 +444,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2793460_iterator=0, 
-			id2793460_hoist=listeners.length;
-				id2793460_iterator < id2793460_hoist;
-				id2793460_iterator++){
-			var listener = listeners[id2793460_iterator];
+		for(var id2755143_iterator=0, 
+			id2755143_hoist=listeners.length;
+				id2755143_iterator < id2755143_hoist;
+				id2755143_iterator++){
+			var listener = listeners[id2755143_iterator];
 
 			
 								//from
@@ -471,7 +478,9 @@
                                ,visual_character : true
                                ,insert_mode : true
                                ,command_mode : true
-                               ,main_dispatching_events : true
+                               ,before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               ,after_g : true
                                
                }
        ,
@@ -486,11 +495,11 @@
 				controller = _event.data;
 	
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -520,13 +529,13 @@
 
 		
 
-			return scxml_id2792596['init']();
+			return scxml_id2751382['init']();
 		}
 	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(init_Regexp_id2803906)
+				if(e.match(init_Regexp_id2762416)
 					){
 					
 		return {
@@ -543,7 +552,9 @@
                                ,visual_character : true
                                ,insert_mode : true
                                ,command_mode : true
-                               ,main_dispatching_events : true
+                               ,before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               ,after_g : true
                                
                }
        ,
@@ -558,11 +569,11 @@
 				controller = _event.data;
 	
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -594,14 +605,14 @@
 				}
 				
 
-			return scxml_id2792596.$dispatchPrefixEvent(e);
+			return scxml_id2751382.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			initial_defaultConstructor.prototype = scxml_id2792596;
+			initial_defaultConstructor.prototype = scxml_id2751382;
 			return new initial_defaultConstructor();
 		})();
 
@@ -610,7 +621,7 @@
 		var main = (function(){
 
 			function mainConstructor(){
-				this.parent = scxml_id2792596;
+				this.parent = scxml_id2751382;
 
 				this.initial = null;
 
@@ -631,11 +642,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -649,11 +660,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2795606_iterator=0, 
-			id2795606_hoist=listeners.length;
-				id2795606_iterator < id2795606_hoist;
-				id2795606_iterator++){
-			var listener = listeners[id2795606_iterator];
+		for(var id2751808_iterator=0, 
+			id2751808_hoist=listeners.length;
+				id2751808_iterator < id2751808_hoist;
+				id2751808_iterator++){
+			var listener = listeners[id2751808_iterator];
 
 			
 								//from
@@ -668,14 +679,14 @@
 		this.$dispatchPrefixEvent = function(e){
 				
 
-			return scxml_id2792596.$dispatchPrefixEvent(e);
+			return scxml_id2751382.$dispatchPrefixEvent(e);
 		}
 		
 	
 				
 
 			}
-			mainConstructor.prototype = scxml_id2792596;
+			mainConstructor.prototype = scxml_id2751382;
 			return new mainConstructor();
 		})();
 
@@ -698,7 +709,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 					];
@@ -713,11 +724,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -731,11 +742,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2795609_iterator=0, 
-			id2795609_hoist=listeners.length;
-				id2795609_iterator < id2795609_hoist;
-				id2795609_iterator++){
-			var listener = listeners[id2795609_iterator];
+		for(var id2751811_iterator=0, 
+			id2751811_hoist=listeners.length;
+				id2751811_iterator < id2751811_hoist;
+				id2751811_iterator++){
+			var listener = listeners[id2751811_iterator];
 
 			
 								//from
@@ -764,7 +775,9 @@
                                ,visual_character : true
                                ,insert_mode : true
                                ,command_mode : true
-                               ,main_dispatching_events : true
+                               ,before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               ,after_g : true
                                
                }
        ,
@@ -780,11 +793,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -864,11 +877,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -882,11 +895,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2794370_iterator=0, 
-			id2794370_hoist=listeners.length;
-				id2794370_iterator < id2794370_hoist;
-				id2794370_iterator++){
-			var listener = listeners[id2794370_iterator];
+		for(var id2753781_iterator=0, 
+			id2753781_hoist=listeners.length;
+				id2753781_iterator < id2753781_hoist;
+				id2753781_iterator++){
+			var listener = listeners[id2753781_iterator];
 
 			
 								//from
@@ -931,7 +944,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -948,11 +961,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -966,11 +979,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2794376_iterator=0, 
-			id2794376_hoist=listeners.length;
-				id2794376_iterator < id2794376_hoist;
-				id2794376_iterator++){
-			var listener = listeners[id2794376_iterator];
+		for(var id2753787_iterator=0, 
+			id2753787_hoist=listeners.length;
+				id2753787_iterator < id2753787_hoist;
+				id2753787_iterator++){
+			var listener = listeners[id2753787_iterator];
 
 			
 								//from
@@ -1014,11 +1027,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1086,7 +1099,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -1104,11 +1117,11 @@
 						controller.updateModeText("-- NORMAL --")
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -1122,11 +1135,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2793228_iterator=0, 
-			id2793228_hoist=listeners.length;
-				id2793228_iterator < id2793228_hoist;
-				id2793228_iterator++){
-			var listener = listeners[id2793228_iterator];
+		for(var id2754028_iterator=0, 
+			id2754028_hoist=listeners.length;
+				id2754028_iterator < id2754028_hoist;
+				id2754028_iterator++){
+			var listener = listeners[id2754028_iterator];
 
 			
 								//from
@@ -1157,11 +1170,11 @@
 						controller.putTextFromRegisterBeforeCursor();
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1196,11 +1209,11 @@
 						controller.putTextFromRegisterAfterCursor();
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1246,11 +1259,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1315,11 +1328,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1386,11 +1399,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1457,11 +1470,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1528,11 +1541,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1599,11 +1612,11 @@
 						controller.moveRight(true);
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1641,7 +1654,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(P_keypress_Regexp_id2803912)
+				if(e.match(P_keypress_Regexp_id2762422)
 					){
 					
 		return {
@@ -1659,11 +1672,11 @@
 						controller.putTextFromRegisterBeforeCursor();
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1678,7 +1691,7 @@
 				}
 			
 				
-				if(e.match(p_keypress_Regexp_id2803917)
+				if(e.match(p_keypress_Regexp_id2762428)
 					){
 					
 		return {
@@ -1696,11 +1709,11 @@
 						controller.putTextFromRegisterAfterCursor();
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1715,7 +1728,7 @@
 				}
 			
 				
-				if(e.match(colon_keypress_Regexp_id2803923)
+				if(e.match(colon_keypress_Regexp_id2762433)
 					){
 					
 		return {
@@ -1744,11 +1757,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1782,7 +1795,7 @@
 				}
 			
 				
-				if(e.match(v_keypress_Regexp_id2803929)
+				if(e.match(v_keypress_Regexp_id2762439)
 					){
 					
 		return {
@@ -1811,11 +1824,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1851,7 +1864,7 @@
 				}
 			
 				
-				if(e.match(V_keypress_Regexp_id2803934)
+				if(e.match(V_keypress_Regexp_id2762445)
 					){
 					
 		return {
@@ -1880,11 +1893,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1920,7 +1933,7 @@
 				}
 			
 				
-				if(e.match(ctrl_v_keypress_Regexp_id2803940)
+				if(e.match(ctrl_v_keypress_Regexp_id2762450)
 					){
 					
 		return {
@@ -1949,11 +1962,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -1989,7 +2002,7 @@
 				}
 			
 				
-				if(e.match(i_keypress_Regexp_id2803946)
+				if(e.match(i_keypress_Regexp_id2762456)
 					){
 					
 		return {
@@ -2018,11 +2031,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -2056,7 +2069,7 @@
 				}
 			
 				
-				if(e.match(a_keypress_Regexp_id2803951)
+				if(e.match(a_keypress_Regexp_id2762462)
 					){
 					
 		return {
@@ -2087,11 +2100,11 @@
 						controller.moveRight(true);
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -2165,11 +2178,11 @@
 						controller.startSelection(); 
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -2185,11 +2198,11 @@
 						controller.clearSelection(); 
 					
 
-		for(var id2793233_iterator=0, 
-			id2793233_hoist=listeners.length;
-				id2793233_iterator < id2793233_hoist;
-				id2793233_iterator++){
-			var listener = listeners[id2793233_iterator];
+		for(var id2754034_iterator=0, 
+			id2754034_hoist=listeners.length;
+				id2754034_iterator < id2754034_hoist;
+				id2754034_iterator++){
+			var listener = listeners[id2754034_iterator];
 
 			
 								//from
@@ -2232,11 +2245,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -2263,11 +2276,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -2279,11 +2292,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -2321,7 +2334,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(esc_keypress_Regexp_id2803957)
+				if(e.match(esc_keypress_Regexp_id2762467)
 					){
 					
 		return {
@@ -2351,11 +2364,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -2382,11 +2395,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -2398,11 +2411,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -2466,7 +2479,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -2485,11 +2498,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -2503,11 +2516,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2797458_iterator=0, 
-			id2797458_hoist=listeners.length;
-				id2797458_iterator < id2797458_hoist;
-				id2797458_iterator++){
-			var listener = listeners[id2797458_iterator];
+		for(var id2755049_iterator=0, 
+			id2755049_hoist=listeners.length;
+				id2755049_iterator < id2755049_hoist;
+				id2755049_iterator++){
+			var listener = listeners[id2755049_iterator];
 
 			
 								//from
@@ -2548,11 +2561,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -2628,11 +2641,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -2646,11 +2659,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2794855_iterator=0, 
-			id2794855_hoist=listeners.length;
-				id2794855_iterator < id2794855_hoist;
-				id2794855_iterator++){
-			var listener = listeners[id2794855_iterator];
+		for(var id2752138_iterator=0, 
+			id2752138_hoist=listeners.length;
+				id2752138_iterator < id2752138_hoist;
+				id2752138_iterator++){
+			var listener = listeners[id2752138_iterator];
 
 			
 								//from
@@ -2693,11 +2706,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -2724,11 +2737,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -2742,11 +2755,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -2812,11 +2825,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -2843,11 +2856,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -2861,11 +2874,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -2931,11 +2944,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -2962,11 +2975,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -2980,11 +2993,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -3050,11 +3063,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3081,11 +3094,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -3099,11 +3112,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -3169,11 +3182,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3200,11 +3213,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -3218,11 +3231,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -3288,11 +3301,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3319,11 +3332,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -3337,11 +3350,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -3407,11 +3420,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3438,11 +3451,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -3456,11 +3469,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -3526,11 +3539,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3557,11 +3570,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -3575,11 +3588,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -3645,11 +3658,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3676,11 +3689,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -3694,11 +3707,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -3764,11 +3777,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3795,11 +3808,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -3813,11 +3826,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -3883,11 +3896,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -3914,11 +3927,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -3932,11 +3945,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -4002,11 +4015,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4033,11 +4046,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -4051,11 +4064,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -4121,11 +4134,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4152,11 +4165,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -4170,11 +4183,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -4240,11 +4253,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4271,11 +4284,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -4289,11 +4302,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -4359,11 +4372,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4390,11 +4403,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -4408,11 +4421,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -4478,11 +4491,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4509,11 +4522,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -4527,11 +4540,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -4597,11 +4610,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4628,11 +4641,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -4646,11 +4659,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -4686,6 +4699,125 @@
 		}
 	
 
+		this.zero_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = in_mode;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
+						
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"insert_mode",
+									"select_mode_*_15" );
+							
+		}
+	
+	
+					//enter states
+					insert_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(statesExited[0])
+			
+			,1,
+			insert_mode 
+		); 
+	
+			}
+		}
+
+		
+
+			return visual_or_select_mode['zero_keypress']();
+		}
+	
+
 		this.bling_keypress = function(){
 
 			
@@ -4716,11 +4848,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4747,11 +4879,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -4765,11 +4897,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -4835,11 +4967,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4866,11 +4998,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -4884,11 +5016,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -4954,11 +5086,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -4985,11 +5117,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -5003,11 +5135,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -5073,11 +5205,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5104,11 +5236,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -5122,11 +5254,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -5162,125 +5294,6 @@
 		}
 	
 
-		this.zero_keypress = function(){
-
-			
-		return {
-			preemptedBasicStates : 
-               
-               {
-                       normal_mode : true
-                               ,select_line : true
-                               ,select_block : true
-                               ,select_character : true
-                               ,visual_line : true
-                               ,visual_block : true
-                               ,visual_character : true
-                               ,insert_mode : true
-                               ,command_mode : true
-                               
-               }
-       ,
-			action : function(){
-				
-
-					//exit states
-					 
-
-		var statesExited = [];
-		var lca = in_mode;
-
-		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
-
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
-
-			
-					if(state.ancestors.indexOf(lca)
-			 !== -1
-			){
-						
-				do{
-					statesExited.push(state);
-				}while((state = state.parent) &&
-					state != lca && 
-					statesExited.indexOf(state)
-			 == -1)
-			
-					}
-				
-		}
-	
-	
-
-		//sort by depth
-		statesExited.sort(sortByDepthDeepToShallow);
-
-		//execute actions for each of these states
-
-		
-
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
-
-			
-				state.exitAction();
-			
-		}
-	
-	
-
-				//transition action
-				
-							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
-						
-
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
-
-			
-							//transition id
-							
-								listener.onTransition(
-									"",
-									"insert_mode",
-									"select_mode_*_15" );
-							
-		}
-	
-	
-					//enter states
-					insert_mode.enterAction();
-					
-
-					//update configuration
-					
-
-		currentConfiguration.splice(
-			currentConfiguration.indexOf(statesExited[0])
-			
-			,1,
-			insert_mode 
-		); 
-	
-			}
-		}
-
-		
-
-			return visual_or_select_mode['zero_keypress']();
-		}
-	
-
 		this.h_keypress = function(){
 
 			
@@ -5311,11 +5324,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5342,11 +5355,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -5360,11 +5373,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -5430,11 +5443,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5461,11 +5474,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -5479,11 +5492,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -5549,11 +5562,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5580,11 +5593,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -5598,11 +5611,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -5668,11 +5681,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5699,11 +5712,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -5717,11 +5730,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -5787,11 +5800,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5818,11 +5831,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -5836,11 +5849,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -5906,11 +5919,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -5937,11 +5950,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -5955,11 +5968,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6025,11 +6038,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6056,11 +6069,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -6074,11 +6087,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6144,11 +6157,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6175,11 +6188,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -6193,11 +6206,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6232,10 +6245,129 @@
 			return visual_or_select_mode['down_keypress']();
 		}
 	
+
+		this.g = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       normal_mode : true
+                               ,select_line : true
+                               ,select_block : true
+                               ,select_character : true
+                               ,visual_line : true
+                               ,visual_block : true
+                               ,visual_character : true
+                               ,insert_mode : true
+                               ,command_mode : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = in_mode;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
+						
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"insert_mode",
+									"select_mode_*_15" );
+							
+		}
+	
+	
+					//enter states
+					insert_mode.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(statesExited[0])
+			
+			,1,
+			insert_mode 
+		); 
+	
+			}
+		}
+
+		
+
+			return visual_or_select_mode['g']();
+		}
+	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(star_Regexp_id2803962)
+				if(e.match(star_Regexp_id2762473)
 					
 						&& (_event.data.charCode !== 0)
 					){
@@ -6267,11 +6399,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -6298,11 +6430,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -6316,11 +6448,11 @@
 							controller.replaceSelectedTextIntoRegister(_event.data.charCode);  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6384,7 +6516,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -6405,11 +6537,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -6423,11 +6555,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2794865_iterator=0, 
-			id2794865_hoist=listeners.length;
-				id2794865_iterator < id2794865_hoist;
-				id2794865_iterator++){
-			var listener = listeners[id2794865_iterator];
+		for(var id2752148_iterator=0, 
+			id2752148_hoist=listeners.length;
+				id2752148_iterator < id2752148_hoist;
+				id2752148_iterator++){
+			var listener = listeners[id2752148_iterator];
 
 			
 								//from
@@ -6465,11 +6597,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6537,7 +6669,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -6559,11 +6691,11 @@
 								controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 							
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -6577,11 +6709,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2795944_iterator=0, 
-			id2795944_hoist=listeners.length;
-				id2795944_iterator < id2795944_hoist;
-				id2795944_iterator++){
-			var listener = listeners[id2795944_iterator];
+		for(var id2752301_iterator=0, 
+			id2752301_hoist=listeners.length;
+				id2752301_iterator < id2752301_hoist;
+				id2752301_iterator++){
+			var listener = listeners[id2752301_iterator];
 
 			
 								//from
@@ -6617,11 +6749,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6680,11 +6812,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6747,11 +6879,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6790,7 +6922,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_keypress_Regexp_id2803940)
+				if(e.match(ctrl_v_keypress_Regexp_id2762450)
 					){
 					
 		return {
@@ -6813,11 +6945,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6851,7 +6983,7 @@
 				}
 			
 				
-				if(e.match(v_keypress_Regexp_id2803929)
+				if(e.match(v_keypress_Regexp_id2762439)
 					){
 					
 		return {
@@ -6874,11 +7006,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -6912,7 +7044,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_keypress_Regexp_id2803968)
+				if(e.match(ctrl_g_keypress_Regexp_id2762479)
 					){
 					
 		return {
@@ -6939,11 +7071,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7008,7 +7140,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -7030,11 +7162,11 @@
 								controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 							
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -7048,11 +7180,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2796224_iterator=0, 
-			id2796224_hoist=listeners.length;
-				id2796224_iterator < id2796224_hoist;
-				id2796224_iterator++){
-			var listener = listeners[id2796224_iterator];
+		for(var id2752582_iterator=0, 
+			id2752582_hoist=listeners.length;
+				id2752582_iterator < id2752582_hoist;
+				id2752582_iterator++){
+			var listener = listeners[id2752582_iterator];
 
 			
 								//from
@@ -7088,11 +7220,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7151,11 +7283,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7218,11 +7350,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7261,7 +7393,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(v_keypress_Regexp_id2803929)
+				if(e.match(v_keypress_Regexp_id2762439)
 					){
 					
 		return {
@@ -7284,11 +7416,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7322,7 +7454,7 @@
 				}
 			
 				
-				if(e.match(V_keypress_Regexp_id2803934)
+				if(e.match(V_keypress_Regexp_id2762445)
 					){
 					
 		return {
@@ -7345,11 +7477,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7383,7 +7515,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_keypress_Regexp_id2803968)
+				if(e.match(ctrl_g_keypress_Regexp_id2762479)
 					){
 					
 		return {
@@ -7410,11 +7542,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7479,7 +7611,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -7501,11 +7633,11 @@
 								controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 							
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -7519,11 +7651,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2797781_iterator=0, 
-			id2797781_hoist=listeners.length;
-				id2797781_iterator < id2797781_hoist;
-				id2797781_iterator++){
-			var listener = listeners[id2797781_iterator];
+		for(var id2755584_iterator=0, 
+			id2755584_hoist=listeners.length;
+				id2755584_iterator < id2755584_hoist;
+				id2755584_iterator++){
+			var listener = listeners[id2755584_iterator];
 
 			
 								//from
@@ -7559,11 +7691,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7622,11 +7754,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7689,11 +7821,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7732,7 +7864,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_keypress_Regexp_id2803940)
+				if(e.match(ctrl_v_keypress_Regexp_id2762450)
 					){
 					
 		return {
@@ -7755,11 +7887,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7793,7 +7925,7 @@
 				}
 			
 				
-				if(e.match(V_keypress_Regexp_id2803934)
+				if(e.match(V_keypress_Regexp_id2762445)
 					){
 					
 		return {
@@ -7816,11 +7948,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7854,7 +7986,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_keypress_Regexp_id2803968)
+				if(e.match(ctrl_g_keypress_Regexp_id2762479)
 					){
 					
 		return {
@@ -7881,11 +8013,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -7957,11 +8089,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -7975,11 +8107,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2798069_iterator=0, 
-			id2798069_hoist=listeners.length;
-				id2798069_iterator < id2798069_hoist;
-				id2798069_iterator++){
-			var listener = listeners[id2798069_iterator];
+		for(var id2755873_iterator=0, 
+			id2755873_hoist=listeners.length;
+				id2755873_iterator < id2755873_hoist;
+				id2755873_iterator++){
+			var listener = listeners[id2755873_iterator];
 
 			
 								//from
@@ -8022,11 +8154,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8053,11 +8185,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -8071,11 +8203,11 @@
 							controller.copySelectedTextIntoRegister();  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -8141,11 +8273,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8172,11 +8304,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -8190,11 +8322,11 @@
 							controller.deleteSelectedTextIntoRegister();  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -8260,11 +8392,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8291,11 +8423,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -8309,11 +8441,11 @@
 							controller.deleteSelectedTextIntoRegister();  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -8379,11 +8511,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8410,11 +8542,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -8428,11 +8560,11 @@
 							controller.deleteSelectedTextIntoRegister();  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -8470,7 +8602,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(y_keypress_Regexp_id2803974)
+				if(e.match(y_keypress_Regexp_id2762484)
 					){
 					
 		return {
@@ -8500,11 +8632,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8531,11 +8663,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -8549,11 +8681,11 @@
 							controller.copySelectedTextIntoRegister();  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -8587,7 +8719,7 @@
 				}
 			
 				
-				if(e.match(x_keypress_Regexp_id2803979)
+				if(e.match(x_keypress_Regexp_id2762490)
 					){
 					
 		return {
@@ -8617,11 +8749,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8648,11 +8780,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -8666,11 +8798,11 @@
 							controller.deleteSelectedTextIntoRegister();  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -8704,7 +8836,7 @@
 				}
 			
 				
-				if(e.match(d_keypress_Regexp_id2803985)
+				if(e.match(d_keypress_Regexp_id2762496)
 					){
 					
 		return {
@@ -8734,11 +8866,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8765,11 +8897,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -8783,11 +8915,11 @@
 							controller.deleteSelectedTextIntoRegister();  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -8821,7 +8953,7 @@
 				}
 			
 				
-				if(e.match(c_keypress_Regexp_id2803990)
+				if(e.match(c_keypress_Regexp_id2762501)
 					){
 					
 		return {
@@ -8851,11 +8983,11 @@
 
 		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
 
 			
 					if(state.ancestors.indexOf(lca)
@@ -8882,11 +9014,11 @@
 
 		
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=statesExited.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = statesExited[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
 
 			
 				state.exitAction();
@@ -8900,11 +9032,11 @@
 							controller.deleteSelectedTextIntoRegister();  
 						
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -8968,7 +9100,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -8989,11 +9121,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -9007,11 +9139,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2802791_iterator=0, 
-			id2802791_hoist=listeners.length;
-				id2802791_iterator < id2802791_hoist;
-				id2802791_iterator++){
-			var listener = listeners[id2802791_iterator];
+		for(var id2760882_iterator=0, 
+			id2760882_hoist=listeners.length;
+				id2760882_iterator < id2760882_hoist;
+				id2760882_iterator++){
+			var listener = listeners[id2760882_iterator];
 
 			
 								//from
@@ -9049,11 +9181,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9121,7 +9253,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -9143,11 +9275,11 @@
 								controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 							
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -9161,11 +9293,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2803144_iterator=0, 
-			id2803144_hoist=listeners.length;
-				id2803144_iterator < id2803144_hoist;
-				id2803144_iterator++){
-			var listener = listeners[id2803144_iterator];
+		for(var id2761235_iterator=0, 
+			id2761235_hoist=listeners.length;
+				id2761235_iterator < id2761235_hoist;
+				id2761235_iterator++){
+			var listener = listeners[id2761235_iterator];
 
 			
 								//from
@@ -9201,11 +9333,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9264,11 +9396,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9331,11 +9463,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9374,7 +9506,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_keypress_Regexp_id2803940)
+				if(e.match(ctrl_v_keypress_Regexp_id2762450)
 					){
 					
 		return {
@@ -9397,11 +9529,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9435,7 +9567,7 @@
 				}
 			
 				
-				if(e.match(v_keypress_Regexp_id2803929)
+				if(e.match(v_keypress_Regexp_id2762439)
 					){
 					
 		return {
@@ -9458,11 +9590,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9496,7 +9628,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_keypress_Regexp_id2803968)
+				if(e.match(ctrl_g_keypress_Regexp_id2762479)
 					){
 					
 		return {
@@ -9523,11 +9655,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9592,7 +9724,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -9614,11 +9746,11 @@
 								controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 							
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -9632,11 +9764,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2803425_iterator=0, 
-			id2803425_hoist=listeners.length;
-				id2803425_iterator < id2803425_hoist;
-				id2803425_iterator++){
-			var listener = listeners[id2803425_iterator];
+		for(var id2761516_iterator=0, 
+			id2761516_hoist=listeners.length;
+				id2761516_iterator < id2761516_hoist;
+				id2761516_iterator++){
+			var listener = listeners[id2761516_iterator];
 
 			
 								//from
@@ -9672,11 +9804,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9735,11 +9867,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9802,11 +9934,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9845,7 +9977,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(v_keypress_Regexp_id2803929)
+				if(e.match(v_keypress_Regexp_id2762439)
 					){
 					
 		return {
@@ -9868,11 +10000,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9906,7 +10038,7 @@
 				}
 			
 				
-				if(e.match(V_keypress_Regexp_id2803934)
+				if(e.match(V_keypress_Regexp_id2762445)
 					){
 					
 		return {
@@ -9929,11 +10061,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -9967,7 +10099,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_keypress_Regexp_id2803968)
+				if(e.match(ctrl_g_keypress_Regexp_id2762479)
 					){
 					
 		return {
@@ -9994,11 +10126,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10063,7 +10195,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -10085,11 +10217,11 @@
 								controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 							
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -10103,11 +10235,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2803705_iterator=0, 
-			id2803705_hoist=listeners.length;
-				id2803705_iterator < id2803705_hoist;
-				id2803705_iterator++){
-			var listener = listeners[id2803705_iterator];
+		for(var id2761796_iterator=0, 
+			id2761796_hoist=listeners.length;
+				id2761796_iterator < id2761796_hoist;
+				id2761796_iterator++){
+			var listener = listeners[id2761796_iterator];
 
 			
 								//from
@@ -10143,11 +10275,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10206,11 +10338,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10273,11 +10405,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10316,7 +10448,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(ctrl_v_keypress_Regexp_id2803940)
+				if(e.match(ctrl_v_keypress_Regexp_id2762450)
 					){
 					
 		return {
@@ -10339,11 +10471,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10377,7 +10509,7 @@
 				}
 			
 				
-				if(e.match(V_keypress_Regexp_id2803934)
+				if(e.match(V_keypress_Regexp_id2762445)
 					){
 					
 		return {
@@ -10400,11 +10532,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10438,7 +10570,7 @@
 				}
 			
 				
-				if(e.match(ctrl_g_keypress_Regexp_id2803968)
+				if(e.match(ctrl_g_keypress_Regexp_id2762479)
 					){
 					
 		return {
@@ -10465,11 +10597,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10534,7 +10666,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -10552,11 +10684,11 @@
 						controller.updateModeText("-- INSERT --")
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -10570,11 +10702,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2804826_iterator=0, 
-			id2804826_hoist=listeners.length;
-				id2804826_iterator < id2804826_hoist;
-				id2804826_iterator++){
-			var listener = listeners[id2804826_iterator];
+		for(var id2762360_iterator=0, 
+			id2762360_hoist=listeners.length;
+				id2762360_iterator < id2762360_hoist;
+				id2762360_iterator++){
+			var listener = listeners[id2762360_iterator];
 
 			
 								//from
@@ -10605,11 +10737,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10644,11 +10776,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10683,11 +10815,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10722,11 +10854,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10761,11 +10893,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10800,11 +10932,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10839,11 +10971,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10878,11 +11010,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10917,11 +11049,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10956,11 +11088,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -10995,11 +11127,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11034,11 +11166,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11073,11 +11205,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11112,11 +11244,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11164,11 +11296,11 @@
 						controller.moveLeft()
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11214,11 +11346,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11253,11 +11385,11 @@
 						controller.writeNewLine()
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11284,11 +11416,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11323,11 +11455,11 @@
 						controller.writeBackspace()
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11354,11 +11486,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11372,6 +11504,45 @@
 		
 
 			return in_mode['backspace_keypress']();
+		}
+	
+
+		this.zero_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+						controller.writeChar(_event.data.charCode)
+					
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return in_mode['zero_keypress']();
 		}
 	
 
@@ -11393,11 +11564,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11432,11 +11603,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11471,11 +11642,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11510,11 +11681,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11528,45 +11699,6 @@
 		
 
 			return in_mode['b_keypress']();
-		}
-	
-
-		this.zero_keypress = function(){
-
-			
-		return {
-			preemptedBasicStates : 
-               
-               {
-                       
-               }
-       ,
-			action : function(){
-				
-
-				//transition action
-				
-						controller.writeChar(_event.data.charCode)
-					
-
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
-
-			
-							//transition id
-							
-		}
-	
-	
-			}
-		}
-
-		
-
-			return in_mode['zero_keypress']();
 		}
 	
 
@@ -11588,11 +11720,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11627,11 +11759,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11666,11 +11798,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11705,11 +11837,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11744,11 +11876,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11783,11 +11915,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11822,11 +11954,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11861,11 +11993,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11881,10 +12013,49 @@
 			return in_mode['down_keypress']();
 		}
 	
+
+		this.g = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+						controller.writeChar(_event.data.charCode)
+					
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return in_mode['g']();
+		}
+	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(esc_keypress_Regexp_id2803957)
+				if(e.match(esc_keypress_Regexp_id2762467)
 					){
 					
 		return {
@@ -11915,11 +12086,11 @@
 						controller.moveLeft()
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11953,7 +12124,7 @@
 				}
 			
 				
-				if(e.match(enter_keypress_Regexp_id2803996)
+				if(e.match(enter_keypress_Regexp_id2762507)
 					){
 					
 		return {
@@ -11971,11 +12142,11 @@
 						controller.writeNewLine()
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -11990,7 +12161,7 @@
 				}
 			
 				
-				if(e.match(backspace_keypress_Regexp_id2804002)
+				if(e.match(backspace_keypress_Regexp_id2762512)
 					){
 					
 		return {
@@ -12008,11 +12179,11 @@
 						controller.writeBackspace()
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12027,7 +12198,7 @@
 				}
 			
 				
-				if(e.match(star_Regexp_id2803962)
+				if(e.match(star_Regexp_id2762473)
 					
 						&& (_event.data.charCode)
 					){
@@ -12047,11 +12218,11 @@
 						controller.writeChar(_event.data.charCode)
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12096,7 +12267,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -12113,11 +12284,11 @@
 						controller.updateModeText("-- COMMAND --")
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -12131,11 +12302,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2805038_iterator=0, 
-			id2805038_hoist=listeners.length;
-				id2805038_iterator < id2805038_hoist;
-				id2805038_iterator++){
-			var listener = listeners[id2805038_iterator];
+		for(var id2763145_iterator=0, 
+			id2763145_hoist=listeners.length;
+				id2763145_iterator < id2763145_hoist;
+				id2763145_iterator++){
+			var listener = listeners[id2763145_iterator];
 
 			
 								//from
@@ -12177,11 +12348,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12219,7 +12390,7 @@
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(esc_keypress_Regexp_id2803957)
+				if(e.match(esc_keypress_Regexp_id2762467)
 					){
 					
 		return {
@@ -12248,11 +12419,11 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12323,11 +12494,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -12341,11 +12512,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2805596_iterator=0, 
-			id2805596_hoist=listeners.length;
-				id2805596_iterator < id2805596_hoist;
-				id2805596_iterator++){
-			var listener = listeners[id2805596_iterator];
+		for(var id2763717_iterator=0, 
+			id2763717_hoist=listeners.length;
+				id2763717_iterator < id2763717_hoist;
+				id2763717_iterator++){
+			var listener = listeners[id2763717_iterator];
 
 			
 								//from
@@ -12390,7 +12561,7 @@
 						true;
 					
 					this.ancestors = [
-						scxml_id2792596
+						scxml_id2751382
 								,
 							main
 								,
@@ -12407,11 +12578,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -12425,11 +12596,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2805602_iterator=0, 
-			id2805602_hoist=listeners.length;
-				id2805602_iterator < id2805602_hoist;
-				id2805602_iterator++){
-			var listener = listeners[id2805602_iterator];
+		for(var id2763723_iterator=0, 
+			id2763723_hoist=listeners.length;
+				id2763723_iterator < id2763723_hoist;
+				id2763723_iterator++){
+			var listener = listeners[id2763723_iterator];
 
 			
 								//from
@@ -12449,7 +12620,9 @@
 			preemptedBasicStates : 
                
                {
-                       main_dispatching_events : true
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               ,after_g : true
                                
                }
        ,
@@ -12465,18 +12638,18 @@
 				//transition action
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
 							
 								listener.onTransition(
 									"",
-									"main_dispatching_events",
+									"main_dispatching_events_initial",
 									"dispatching_events_initial_$default_41" );
 							
 		}
@@ -12484,6 +12657,7 @@
 	
 					//enter states
 					main_dispatching_events.enterAction();
+					main_dispatching_events_initial.enterAction();
 					
 
 					//update configuration
@@ -12493,7 +12667,7 @@
 			currentConfiguration.indexOf(dispatching_events_initial)
 			
 			,1,
-			main_dispatching_events 
+			main_dispatching_events_initial 
 		); 
 	
 			}
@@ -12534,16 +12708,8 @@
 				//these variables facilitate fast In predicate
 				this.isBasic = 
 				
-						true;
+						false;
 					
-					this.ancestors = [
-						scxml_id2792596
-								,
-							main
-								,
-							dispatching_events
-					];
-				
 				
 				this.toString = function(){
 					return "main_dispatching_events"
@@ -12552,11 +12718,11 @@
 				this.enterAction = function(){
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 								//to
@@ -12570,11 +12736,11 @@
 				this.exitAction = function(){
 					
 
-		for(var id2805679_iterator=0, 
-			id2805679_hoist=listeners.length;
-				id2805679_iterator < id2805679_hoist;
-				id2805679_iterator++){
-			var listener = listeners[id2805679_iterator];
+		for(var id2763815_iterator=0, 
+			id2763815_hoist=listeners.length;
+				id2763815_iterator < id2763815_hoist;
+				id2763815_iterator++){
+			var listener = listeners[id2763815_iterator];
 
 			
 								//from
@@ -12605,11 +12771,11 @@
 						controller.moveDown(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12644,11 +12810,11 @@
 						controller.moveLeft(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12683,11 +12849,11 @@
 						controller.moveToEndOfLine(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12722,11 +12888,11 @@
 						controller.moveToStartOfNextWord(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12761,11 +12927,11 @@
 						controller.moveToEndOfNextWord(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12800,11 +12966,11 @@
 						controller.moveToStartOfPreviousWord(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12818,45 +12984,6 @@
 		
 
 			return dispatching_events['b_keypress']();
-		}
-	
-
-		this.zero_keypress = function(){
-
-			
-		return {
-			preemptedBasicStates : 
-               
-               {
-                       
-               }
-       ,
-			action : function(){
-				
-
-				//transition action
-				
-						controller.moveToStartOfLine(updateSelection());
-					
-
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
-
-			
-							//transition id
-							
-		}
-	
-	
-			}
-		}
-
-		
-
-			return dispatching_events['zero_keypress']();
 		}
 	
 
@@ -12878,11 +13005,11 @@
 						controller.moveLeft(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12917,11 +13044,11 @@
 						controller.moveRight(false,updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12956,11 +13083,11 @@
 						controller.moveUp(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -12995,11 +13122,11 @@
 						controller.moveDown(updateSelection())
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13034,11 +13161,11 @@
 						controller.moveLeft(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13073,11 +13200,11 @@
 						controller.moveRight(false,updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13112,11 +13239,11 @@
 						controller.moveUp(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13151,11 +13278,11 @@
 						controller.moveDown(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13171,10 +13298,121 @@
 			return dispatching_events['down_keypress']();
 		}
 	
+
+		this.g = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               ,after_g : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = dispatching_events;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_g",
+									"main_dispatching_events_g_43" );
+							
+		}
+	
+	
+					//enter states
+					after_g.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(statesExited[0])
+			
+			,1,
+			after_g 
+		); 
+	
+			}
+		}
+
+		
+
+			return dispatching_events['g']();
+		}
+	
 		this.$dispatchPrefixEvent = function(e){
 			
 				
-				if(e.match(bling_keypress_Regexp_id2804008)
+				if(e.match(bling_keypress_Regexp_id2762518)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13194,11 +13432,11 @@
 						controller.moveToEndOfLine(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13213,7 +13451,7 @@
 				}
 			
 				
-				if(e.match(backspace_keypress_Regexp_id2804002)
+				if(e.match(backspace_keypress_Regexp_id2762512)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13233,11 +13471,11 @@
 						controller.moveLeft(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13252,7 +13490,7 @@
 				}
 			
 				
-				if(e.match(enter_keypress_Regexp_id2803996)
+				if(e.match(enter_keypress_Regexp_id2762507)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13272,11 +13510,11 @@
 						controller.moveDown(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13291,7 +13529,7 @@
 				}
 			
 				
-				if(e.match(w_keypress_Regexp_id2804013)
+				if(e.match(w_keypress_Regexp_id2762524)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13311,11 +13549,11 @@
 						controller.moveToStartOfNextWord(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13330,7 +13568,7 @@
 				}
 			
 				
-				if(e.match(e_keypress_Regexp_id2804019)
+				if(e.match(e_keypress_Regexp_id2762529)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13350,11 +13588,11 @@
 						controller.moveToEndOfNextWord(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13369,7 +13607,7 @@
 				}
 			
 				
-				if(e.match(b_keypress_Regexp_id2804024)
+				if(e.match(b_keypress_Regexp_id2762535)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13389,11 +13627,11 @@
 						controller.moveToStartOfPreviousWord(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13408,46 +13646,7 @@
 				}
 			
 				
-				if(e.match(zero_keypress_Regexp_id2804030)
-					
-						&& (In(visual_mode) || In(normal_mode))
-					){
-					
-		return {
-			preemptedBasicStates : 
-               
-               {
-                       
-               }
-       ,
-			action : function(){
-				
-
-				//transition action
-				
-						controller.moveToStartOfLine(updateSelection());
-					
-
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
-
-			
-							//transition id
-							
-		}
-	
-	
-			}
-		}
-
-	
-				}
-			
-				
-				if(e.match(h_keypress_Regexp_id2804036)
+				if(e.match(h_keypress_Regexp_id2762541)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13467,11 +13666,11 @@
 						controller.moveLeft(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13486,7 +13685,7 @@
 				}
 			
 				
-				if(e.match(l_keypress_Regexp_id2804041)
+				if(e.match(l_keypress_Regexp_id2762546)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13506,11 +13705,11 @@
 						controller.moveRight(false,updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13525,7 +13724,7 @@
 				}
 			
 				
-				if(e.match(k_keypress_Regexp_id2804047)
+				if(e.match(k_keypress_Regexp_id2762552)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13545,11 +13744,11 @@
 						controller.moveUp(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13564,7 +13763,7 @@
 				}
 			
 				
-				if(e.match(j_keypress_Regexp_id2804053)
+				if(e.match(j_keypress_Regexp_id2762558)
 					
 						&& (In(visual_mode) || In(normal_mode))
 					){
@@ -13584,11 +13783,11 @@
 						controller.moveDown(updateSelection())
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13603,7 +13802,7 @@
 				}
 			
 				
-				if(e.match(left_keypress_Regexp_id2804058)
+				if(e.match(left_keypress_Regexp_id2762563)
 					
 						&& (In(insert_mode) || In(visual_or_select_mode) || In(normal_mode))
 					){
@@ -13623,11 +13822,11 @@
 						controller.moveLeft(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13642,7 +13841,7 @@
 				}
 			
 				
-				if(e.match(right_keypress_Regexp_id2804064)
+				if(e.match(right_keypress_Regexp_id2762569)
 					
 						&& (In(insert_mode) || In(visual_or_select_mode) || In(normal_mode))
 					){
@@ -13662,11 +13861,11 @@
 						controller.moveRight(false,updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13681,7 +13880,7 @@
 				}
 			
 				
-				if(e.match(up_keypress_Regexp_id2804070)
+				if(e.match(up_keypress_Regexp_id2762575)
 					
 						&& (In(insert_mode) || In(visual_or_select_mode) || In(normal_mode))
 					){
@@ -13701,11 +13900,11 @@
 						controller.moveUp(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
@@ -13720,7 +13919,7 @@
 				}
 			
 				
-				if(e.match(down_keypress_Regexp_id2804075)
+				if(e.match(down_keypress_Regexp_id2762580)
 					
 						&& (In(insert_mode) || In(visual_or_select_mode) || In(normal_mode))
 					){
@@ -13740,17 +13939,126 @@
 						controller.moveDown(updateSelection());
 					
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=listeners.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var listener = listeners[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
 
 			
 							//transition id
 							
 		}
 	
+	
+			}
+		}
+
+	
+				}
+			
+				
+				if(e.match(g_Regexp_id2762586)
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               ,after_g : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					 
+
+		var statesExited = [];
+		var lca = dispatching_events;
+
+		var nonBasicTriggerDispatcherExitBlockIteratorExpression = currentConfiguration;
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=nonBasicTriggerDispatcherExitBlockIteratorExpression.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = nonBasicTriggerDispatcherExitBlockIteratorExpression[id2751211_iterator];
+
+			
+					if(state.ancestors.indexOf(lca)
+			 !== -1
+			){
+						
+				do{
+					statesExited.push(state);
+				}while((state = state.parent) &&
+					state != lca && 
+					statesExited.indexOf(state)
+			 == -1)
+			
+					}
+				
+		}
+	
+	
+
+		//sort by depth
+		statesExited.sort(sortByDepthDeepToShallow);
+
+		//execute actions for each of these states
+
+		
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=statesExited.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = statesExited[id2751211_iterator];
+
+			
+				state.exitAction();
+			
+		}
+	
+	
+
+				//transition action
+				
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"main_dispatching_events",
+									"after_g",
+									"main_dispatching_events_g_43" );
+							
+		}
+	
+	
+					//enter states
+					after_g.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(statesExited[0])
+			
+			,1,
+			after_g 
+		); 
 	
 			}
 		}
@@ -13772,12 +14080,3856 @@
 
 	
 
+		var main_dispatching_events_initial = (function(){
+
+			function main_dispatching_events_initialConstructor(){
+				this.parent = main_dispatching_events;
+
+				this.initial = null;
+
+				this.depth = 4;
+
+				this.historyState = null;
+
+				//these variables facilitate fast In predicate
+				this.isBasic = 
+				
+						true;
+					
+					this.ancestors = [
+						scxml_id2751382
+								,
+							main
+								,
+							dispatching_events
+								,
+							main_dispatching_events
+					];
+				
+					this.parent.initial = this; //init parent's pointer to initial state
+				
+				
+				this.toString = function(){
+					return "main_dispatching_events_initial"
+				}
+
+				this.enterAction = function(){
+					
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+								//to
+								listener.onEntry("main_dispatching_events_initial");
+							
+		}
+	
+	
+				}
+
+				this.exitAction = function(){
+					
+
+		for(var id2763831_iterator=0, 
+			id2763831_hoist=listeners.length;
+				id2763831_iterator < id2763831_hoist;
+				id2763831_iterator++){
+			var listener = listeners[id2763831_iterator];
+
+			
+								//from
+								listener.onExit("main_dispatching_events_initial");
+							
+		}
+	
+	
+				}
+
+				
+
+		this.$default = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+					hasTakenDefaultTransition = true;
+				
+
+					//exit states
+					main_dispatching_events_initial.exitAction();
+							
+
+				//transition action
+				
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"before_nonzero_digit",
+									"main_dispatching_events_initial_$default_42" );
+							
+		}
+	
+	
+					//enter states
+					before_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(main_dispatching_events_initial)
+			
+			,1,
+			before_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['$default']();
+		}
+	
+		this.$dispatchPrefixEvent = function(e){
+				
+
+			return main_dispatching_events.$dispatchPrefixEvent(e);
+		}
+		
+	
+				
+
+			}
+			main_dispatching_events_initialConstructor.prototype = main_dispatching_events;
+			return new main_dispatching_events_initialConstructor();
+		})();
+
+	
+
+		var before_nonzero_digit = (function(){
+
+			function before_nonzero_digitConstructor(){
+				this.parent = main_dispatching_events;
+
+				this.initial = null;
+
+				this.depth = 4;
+
+				this.historyState = null;
+
+				//these variables facilitate fast In predicate
+				this.isBasic = 
+				
+						true;
+					
+					this.ancestors = [
+						scxml_id2751382
+								,
+							main
+								,
+							dispatching_events
+								,
+							main_dispatching_events
+					];
+				
+				
+				this.toString = function(){
+					return "before_nonzero_digit"
+				}
+
+				this.enterAction = function(){
+					
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+								//to
+								listener.onEntry("before_nonzero_digit");
+							
+		}
+	
+	
+				}
+
+				this.exitAction = function(){
+					
+
+		for(var id2764182_iterator=0, 
+			id2764182_hoist=listeners.length;
+				id2764182_iterator < id2764182_hoist;
+				id2764182_iterator++){
+			var listener = listeners[id2764182_iterator];
+
+			
+								//from
+								listener.onExit("before_nonzero_digit");
+							
+		}
+	
+	
+				}
+
+				
+
+		this.init = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['init']();
+		}
+	
+
+		this.P_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['P_keypress']();
+		}
+	
+
+		this.p_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['p_keypress']();
+		}
+	
+
+		this.colon_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['colon_keypress']();
+		}
+	
+
+		this.v_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['v_keypress']();
+		}
+	
+
+		this.V_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['V_keypress']();
+		}
+	
+
+		this.ctrl_v_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['ctrl_v_keypress']();
+		}
+	
+
+		this.i_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['i_keypress']();
+		}
+	
+
+		this.a_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['a_keypress']();
+		}
+	
+
+		this.ctrl_g_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['ctrl_g_keypress']();
+		}
+	
+
+		this.y_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['y_keypress']();
+		}
+	
+
+		this.x_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['x_keypress']();
+		}
+	
+
+		this.d_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['d_keypress']();
+		}
+	
+
+		this.c_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['c_keypress']();
+		}
+	
+
+		this.esc_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['esc_keypress']();
+		}
+	
+
+		this.enter_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['enter_keypress']();
+		}
+	
+
+		this.backspace_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['backspace_keypress']();
+		}
+	
+
+		this.zero_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+							controller.moveToStartOfLine(updateSelection());
+						
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+	
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['zero_keypress']();
+		}
+	
+
+		this.bling_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['bling_keypress']();
+		}
+	
+
+		this.w_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['w_keypress']();
+		}
+	
+
+		this.e_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['e_keypress']();
+		}
+	
+
+		this.b_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['b_keypress']();
+		}
+	
+
+		this.h_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['h_keypress']();
+		}
+	
+
+		this.l_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['l_keypress']();
+		}
+	
+
+		this.k_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['k_keypress']();
+		}
+	
+
+		this.j_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['j_keypress']();
+		}
+	
+
+		this.left_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['left_keypress']();
+		}
+	
+
+		this.right_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['right_keypress']();
+		}
+	
+
+		this.up_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['up_keypress']();
+		}
+	
+
+		this.down_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['down_keypress']();
+		}
+	
+
+		this.g = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['g']();
+		}
+	
+		this.$dispatchPrefixEvent = function(e){
+			
+				
+				if(e.match(zero_keypress_Regexp_id2762591)
+					
+						&& (In(visual_mode) || In(normal_mode))
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				
+							controller.moveToStartOfLine(updateSelection());
+						
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+	
+				}
+			
+				
+				if(e.match(star_Regexp_id2762473)
+					
+						&& (/[1-9]/.exec(String.fromCharCode(_event.data.charCode)) &&         (In(normal_mode) || In(visual_mode)))
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					before_nonzero_digit.exitAction();
+							
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"before_nonzero_digit",
+									"after_nonzero_digit",
+									"before_nonzero_digit_*_44" );
+							
+		}
+	
+	
+					//enter states
+					after_nonzero_digit.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(before_nonzero_digit)
+			
+			,1,
+			after_nonzero_digit 
+		); 
+	
+			}
+		}
+
+	
+				}
+				
+
+			return main_dispatching_events.$dispatchPrefixEvent(e);
+		}
+		
+	
+				
+
+			}
+			before_nonzero_digitConstructor.prototype = main_dispatching_events;
+			return new before_nonzero_digitConstructor();
+		})();
+
+	
+
+		var after_nonzero_digit = (function(){
+
+			function after_nonzero_digitConstructor(){
+				this.parent = main_dispatching_events;
+
+				this.initial = null;
+
+				this.depth = 4;
+
+				this.historyState = null;
+
+				//these variables facilitate fast In predicate
+				this.isBasic = 
+				
+						true;
+					
+					this.ancestors = [
+						scxml_id2751382
+								,
+							main
+								,
+							dispatching_events
+								,
+							main_dispatching_events
+					];
+				
+				
+				this.toString = function(){
+					return "after_nonzero_digit"
+				}
+
+				this.enterAction = function(){
+					
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+								//to
+								listener.onEntry("after_nonzero_digit");
+							
+		}
+	
+	
+				}
+
+				this.exitAction = function(){
+					
+
+		for(var id2764287_iterator=0, 
+			id2764287_hoist=listeners.length;
+				id2764287_iterator < id2764287_hoist;
+				id2764287_iterator++){
+			var listener = listeners[id2764287_iterator];
+
+			
+								//from
+								listener.onExit("after_nonzero_digit");
+							
+		}
+	
+	
+				}
+
+				
+
+		this.init = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['init']();
+		}
+	
+
+		this.P_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['P_keypress']();
+		}
+	
+
+		this.p_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['p_keypress']();
+		}
+	
+
+		this.colon_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['colon_keypress']();
+		}
+	
+
+		this.v_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['v_keypress']();
+		}
+	
+
+		this.V_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['V_keypress']();
+		}
+	
+
+		this.ctrl_v_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['ctrl_v_keypress']();
+		}
+	
+
+		this.i_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['i_keypress']();
+		}
+	
+
+		this.a_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['a_keypress']();
+		}
+	
+
+		this.ctrl_g_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['ctrl_g_keypress']();
+		}
+	
+
+		this.y_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['y_keypress']();
+		}
+	
+
+		this.x_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['x_keypress']();
+		}
+	
+
+		this.d_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['d_keypress']();
+		}
+	
+
+		this.c_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['c_keypress']();
+		}
+	
+
+		this.esc_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['esc_keypress']();
+		}
+	
+
+		this.enter_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['enter_keypress']();
+		}
+	
+
+		this.backspace_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['backspace_keypress']();
+		}
+	
+
+		this.zero_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['zero_keypress']();
+		}
+	
+
+		this.bling_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['bling_keypress']();
+		}
+	
+
+		this.w_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['w_keypress']();
+		}
+	
+
+		this.e_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['e_keypress']();
+		}
+	
+
+		this.b_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['b_keypress']();
+		}
+	
+
+		this.h_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['h_keypress']();
+		}
+	
+
+		this.l_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['l_keypress']();
+		}
+	
+
+		this.k_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['k_keypress']();
+		}
+	
+
+		this.j_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['j_keypress']();
+		}
+	
+
+		this.left_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['left_keypress']();
+		}
+	
+
+		this.right_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['right_keypress']();
+		}
+	
+
+		this.up_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['up_keypress']();
+		}
+	
+
+		this.down_keypress = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['down_keypress']();
+		}
+	
+
+		this.g = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+		
+
+			return main_dispatching_events['g']();
+		}
+	
+		this.$dispatchPrefixEvent = function(e){
+			
+				
+				if(e.match(star_Regexp_id2762473)
+					
+						&& (/\d/.exec(String.fromCharCode(_event.data.charCode)) &&         (In(normal_mode) || In(visual_mode)))
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       
+               }
+       ,
+			action : function(){
+				
+
+				//transition action
+				repeatInput = repeatInput + String.fromCharCode(_event.data.charCode);
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+		}
+	
+	
+			}
+		}
+
+	
+				}
+				
+
+			return main_dispatching_events.$dispatchPrefixEvent(e);
+		}
+		
+	
+				
+
+			}
+			after_nonzero_digitConstructor.prototype = main_dispatching_events;
+			return new after_nonzero_digitConstructor();
+		})();
+
+	
+
+		var after_g = (function(){
+
+			function after_gConstructor(){
+				this.parent = dispatching_events;
+
+				this.initial = null;
+
+				this.depth = 3;
+
+				this.historyState = null;
+
+				//these variables facilitate fast In predicate
+				this.isBasic = 
+				
+						true;
+					
+					this.ancestors = [
+						scxml_id2751382
+								,
+							main
+								,
+							dispatching_events
+					];
+				
+				
+				this.toString = function(){
+					return "after_g"
+				}
+
+				this.enterAction = function(){
+					
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+								//to
+								listener.onEntry("after_g");
+							
+		}
+	
+	
+				}
+
+				this.exitAction = function(){
+					
+
+		for(var id2763820_iterator=0, 
+			id2763820_hoist=listeners.length;
+				id2763820_iterator < id2763820_hoist;
+				id2763820_iterator++){
+			var listener = listeners[id2763820_iterator];
+
+			
+								//from
+								listener.onExit("after_g");
+							
+		}
+	
+	
+				}
+
+				
+
+		this.g = function(){
+
+			
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               ,after_g : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					after_g.exitAction();
+							
+
+				//transition action
+				
+						var parsedRepeatInput = parseInt(repeatInput);
+						if(parsedRepeatInput){ 
+							controller.moveCursorToLine(parsedRepeatInput-1);
+						}else{
+							controller.moveToFirstLineOfDocument();
+						}
+					repeatInput = '';
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"",
+									"main_dispatching_events_initial",
+									"after_g_g_45" );
+							
+		}
+	
+	
+					//enter states
+					main_dispatching_events.enterAction();
+					main_dispatching_events_initial.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(after_g)
+			
+			,1,
+			main_dispatching_events_initial 
+		); 
+	
+			}
+		}
+
+		
+
+			return dispatching_events['g']();
+		}
+	
+		this.$dispatchPrefixEvent = function(e){
+			
+				
+				if(e.match(g_Regexp_id2762586)
+					){
+					
+		return {
+			preemptedBasicStates : 
+               
+               {
+                       before_nonzero_digit : true
+                               ,after_nonzero_digit : true
+                               ,after_g : true
+                               
+               }
+       ,
+			action : function(){
+				
+
+					//exit states
+					after_g.exitAction();
+							
+
+				//transition action
+				
+						var parsedRepeatInput = parseInt(repeatInput);
+						if(parsedRepeatInput){ 
+							controller.moveCursorToLine(parsedRepeatInput-1);
+						}else{
+							controller.moveToFirstLineOfDocument();
+						}
+					repeatInput = '';
+	
+
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=listeners.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var listener = listeners[id2751211_iterator];
+
+			
+							//transition id
+							
+								listener.onTransition(
+									"after_g",
+									"main_dispatching_events_initial",
+									"after_g_g_45" );
+							
+		}
+	
+	
+					//enter states
+					main_dispatching_events.enterAction();
+					main_dispatching_events_initial.enterAction();
+					
+
+					//update configuration
+					
+
+		currentConfiguration.splice(
+			currentConfiguration.indexOf(after_g)
+			
+			,1,
+			main_dispatching_events_initial 
+		); 
+	
+			}
+		}
+
+	
+				}
+				
+
+			return dispatching_events.$dispatchPrefixEvent(e);
+		}
+		
+	
+				
+
+			}
+			after_gConstructor.prototype = dispatching_events;
+			return new after_gConstructor();
+		})();
+
+	
+
 		
 				//states enum for glass-box unit testing
 				
 
 		this._states = {
-			_initial : _initial,initial_default : initial_default,main_initial : main_initial,in_mode_initial : in_mode_initial,normal_mode : normal_mode,visual_or_select_mode_initial : visual_or_select_mode_initial,select_mode_initial : select_mode_initial,select_line : select_line,select_block : select_block,select_character : select_character,visual_mode_initial : visual_mode_initial,visual_line : visual_line,visual_block : visual_block,visual_character : visual_character,insert_mode : insert_mode,command_mode : command_mode,dispatching_events_initial : dispatching_events_initial,main_dispatching_events : main_dispatching_events
+			_initial : _initial,initial_default : initial_default,main_initial : main_initial,in_mode_initial : in_mode_initial,normal_mode : normal_mode,visual_or_select_mode_initial : visual_or_select_mode_initial,select_mode_initial : select_mode_initial,select_line : select_line,select_block : select_block,select_character : select_character,visual_mode_initial : visual_mode_initial,visual_line : visual_line,visual_block : visual_block,visual_character : visual_character,insert_mode : insert_mode,command_mode : command_mode,dispatching_events_initial : dispatching_events_initial,main_dispatching_events_initial : main_dispatching_events_initial,before_nonzero_digit : before_nonzero_digit,after_nonzero_digit : after_nonzero_digit,after_g : after_g
 		}
 
 	
@@ -14137,22 +18289,6 @@
 		}
 	
 
-		this["zero_keypress"] = function(data){
-			if(isInStableState && !destroyed){
-				runToCompletion(
-				//TODO: conditionally wrap in quotes for enumerated pattern
-					
-
-		"zero_keypress"
-	
-				,data,
-				true)
-			}else{
-				return undefined;
-			}
-		}
-	
-
 		this["h_keypress"] = function(data){
 			if(isInStableState && !destroyed){
 				runToCompletion(
@@ -14281,6 +18417,38 @@
 		}
 	
 
+		this["g"] = function(data){
+			if(isInStableState && !destroyed){
+				runToCompletion(
+				//TODO: conditionally wrap in quotes for enumerated pattern
+					
+
+		"g"
+	
+				,data,
+				true)
+			}else{
+				return undefined;
+			}
+		}
+	
+
+		this["zero_keypress"] = function(data){
+			if(isInStableState && !destroyed){
+				runToCompletion(
+				//TODO: conditionally wrap in quotes for enumerated pattern
+					
+
+		"zero_keypress"
+	
+				,data,
+				true)
+			}else{
+				return undefined;
+			}
+		}
+	
+
 				//initialization script
 				
 		function updateSelection(){
@@ -14379,11 +18547,11 @@
 				//e does not contain a dot, so dispatch as an enumerated event
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=currentConfiguration.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = currentConfiguration[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=currentConfiguration.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = currentConfiguration[id2751211_iterator];
 
 			
 						//check to make sure he is not preempted
@@ -14403,11 +18571,11 @@
 				//e contains a dot, so dispatch as a prefix event
 				
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=currentConfiguration.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var state = currentConfiguration[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=currentConfiguration.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var state = currentConfiguration[id2751211_iterator];
 
 			
 						//check to make sure he is not preempted
@@ -14429,11 +18597,11 @@
 			//invoke selected transitions
 			
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=enabledTransitions.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var t = enabledTransitions[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=enabledTransitions.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var t = enabledTransitions[id2751211_iterator];
 
 			 t(); 
 		}
@@ -14490,11 +18658,11 @@
 
 		var toReturn = false;
 
-		for(var id2793350_iterator=0, 
-			id2793350_hoist=currentConfiguration.length;
-				id2793350_iterator < id2793350_hoist;
-				id2793350_iterator++){
-			var s = currentConfiguration[id2793350_iterator];
+		for(var id2751211_iterator=0, 
+			id2751211_hoist=currentConfiguration.length;
+				id2751211_iterator < id2751211_hoist;
+				id2751211_iterator++){
+			var s = currentConfiguration[id2751211_iterator];
 
 			if(s.ancestors
 							.indexOf(state)

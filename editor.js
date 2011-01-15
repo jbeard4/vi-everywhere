@@ -99,9 +99,12 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 		if(updateSelection){doUpdateSelection()};
 	};
 	this.moveToFirstLineOfDocument = function(updateSelection){
-		//TODO
+		cursor.moveToLine(0);
 		if(updateSelection){doUpdateSelection()};
 	};
+	this.moveCursorToLine = function(line){
+		cursor.moveToLine(line);
+	}
 
 	this.install = function(sc){
 
@@ -275,6 +278,15 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	function moveCursorTo(point){
 			cursorNode.x.baseVal.value=point.x;
 			cursorNode.y.baseVal.value=point.y;
+	}
+
+	this.moveToLine = function(lineNum,colNum){
+		colNum = colNum || 0;
+		var lineCount = lineManager.getLineCount();
+		lineNum = Math.min(lineNum,lineCount-1);
+		var line = lineManager.getLine(lineNum);
+		colNum = Math.min(colNum,line.getTotalNumberOfChars()-1);
+		this.moveCursorTo(colNum,lineNum);
 	}
 
 	this.writeChar = function(c,colOffset,rowOffset){
@@ -942,6 +954,10 @@ function LineManager(textNode,displayManager){
 		coords.y += heightOflinesExceptCurrent;
 
 		return coords;
+	}
+
+	this.getLineCount = function(){
+		return lines.length;
 	}
 }
 
