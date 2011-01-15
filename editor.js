@@ -367,7 +367,9 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 	};
 
 	this.clearCmdLine = function(){
-		cmdCursor.deleteCurrentLineText();
+		while(cmdCursor.colNum){
+			cmdCursor.writeBackspace();
+		}
 	}
 
 	this.executeCommand = function(){
