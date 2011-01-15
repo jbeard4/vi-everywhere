@@ -35,17 +35,6 @@
 					</script>
 				</onentry>
 
-				<!--
-				TODO : remove
-				<vi:macro name="printable_keys_used_to_move_cursor">
-					<vi:param name="updateSelection" value="false"/>
-				</vi:macro>
-				-->
-
-				<vi:macro name="nonprintable_keys_used_to_move_cursor">
-					<vi:param name="updateSelection" value="true"/>
-				</vi:macro>
-
 				<transition event="P_keypress">
 					<script>
 						controller.putTextFromRegisterBeforeCursor();
@@ -105,11 +94,7 @@
 						controller.clearSelection(); 
 					</script>
 				</onexit>
-
-				<vi:macro name="nonprintable_keys_used_to_move_cursor">
-					<vi:param name="updateSelection" value="true"/>
-				</vi:macro>
-
+		
 				<transition event="esc_keypress" target="normal_mode"/>
 
 				<state id="select_mode" initial="select_character">
@@ -189,14 +174,6 @@
 						</script>
 					</transition>
 
-					<!--
-					TODO: remove
-					<vi:macro name="printable_keys_used_to_move_cursor">
-						<vi:param name="updateSelection" value="true"/>
-					</vi:macro>
-					-->
-
-
 					<!-- TODO: figure out what kind of API we want for selection stuff -->
 					<state id="visual_line">
 						<onentry>
@@ -249,10 +226,6 @@
 					</script>
 				</onentry>
 
-				<vi:macro name="nonprintable_keys_used_to_move_cursor">
-					<vi:param name="updateSelection" value="true"/>
-				</vi:macro>
-
 				<transition event="esc_keypress" target="normal_mode">
 					<script>
 						controller.moveLeft()
@@ -273,7 +246,7 @@
 
 
 				<!-- everything else -->
-				<transition event="*">
+				<transition event="*" cond="_event.data.charCode">
 					<script>
 						controller.writeChar(_event.data.charCode)
 					</script>
@@ -360,6 +333,32 @@
 				<transition event="j_keypress" cond="In(visual_mode) || In(normal_mode)">
 					<script>
 						controller.moveDown(updateSelection())
+					</script>
+				</transition>
+
+				<!-- non-printable movement keys -->
+				<transition event="left_keypress" 
+					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
+					<script>
+						controller.moveLeft(updateSelection());
+					</script>
+				</transition>
+				<transition event="right_keypress"
+					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
+					<script>
+						controller.moveRight(false,updateSelection());
+					</script>
+				</transition>
+				<transition event="up_keypress"
+					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
+					<script>
+						controller.moveUp(updateSelection());
+					</script>
+				</transition>
+				<transition event="down_keypress"
+					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
+					<script>
+						controller.moveDown(updateSelection());
 					</script>
 				</transition>
 			</state>
