@@ -431,6 +431,7 @@
 					<script>
 						controller.executeCommand();
 					</script>
+					<send event="command_executed" c:contentexpr="{}"/>
 				</transition>
 
 				<transition event="*" cond="In(command_mode) &amp;&amp; _event.data.charCode">

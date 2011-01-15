@@ -32,6 +32,7 @@ CommandManager = {
 			switch(cmds[0]){
 				case "help":
 					this.helpCmd();
+					break;
 				default:
 					this.notRecongizedCmd();
 					
