@@ -46,6 +46,13 @@
 
 		<state id="in_mode" initial="normal_mode">
 
+			<onentry>
+				<script>	
+					controller.unhideCursor();
+					controller.hideCmdCursor();
+				</script>
+			</onentry>
+
 			<state id="normal_mode">
 
 				<onentry>
@@ -264,6 +271,7 @@
 
 
 				<!-- everything else -->
+				<!-- TODO: move to dispatching events. for consistency -->
 				<transition event="*" cond="_event.data.charCode">
 					<script>
 						controller.writeChar(_event.data.charCode)
@@ -275,13 +283,27 @@
 			<state id="command_mode">
 				<onentry>
 					<script>
-						controller.updateModeText("-- COMMAND --")
+						controller.updateModeText("")
+
+						controller.hideCursor();
+						controller.unhideCmdCursor();
+
+						controller.writeCmdChar(":");
 					</script>
 				</onentry>
+				<onexit>
+					<script>	
+						controller.unhideCursor();
+						controller.hideCmdCursor();
+						controller.clearCmdLine();
+					</script>
+				</onexit>
 
-				<!-- printable characters: add to command buffer -->
-				<!-- newline: run command -->
-				
+				<!-- user-generated event triggered by cursor deleting last character -->
+				<transition event="last_char_deleted" target="normal_mode"/>
+
+				<transition event="command_executed" target="normal_mode"/>
+
 				<transition event="esc_keypress" target="normal_mode"/>
 			</state>
 		</state>
@@ -386,6 +408,37 @@
 						controller.moveDown(updateSelection(),repeatInput);
 					</script>
 				</transition>
+
+
+				<!-- command mode stuff -->
+				<transition event="left_keypress" cond="In(command_mode)">
+					<script>
+						controller.moveCmdLeft();
+					</script>
+				</transition>
+				<transition event="right_keypress" cond="In(command_mode)">
+					<script>
+						controller.moveCmdRight();
+					</script>
+				</transition>
+				<transition event="backspace_keypress" cond="In(command_mode)">
+					<script>
+						controller.writeCmdBackspace();
+					</script>
+				</transition>
+
+				<transition event="enter_keypress" cond="In(command_mode)">
+					<script>
+						controller.executeCommand();
+					</script>
+				</transition>
+
+				<transition event="*" cond="In(command_mode) &amp;&amp; _event.data.charCode">
+					<script>
+						controller.writeCmdChar(_event.data.charCode)
+					</script>
+				</transition>
+
 
 				<transition event="g_keypress" target="after_g"/>
 

@@ -16,6 +16,8 @@
 	<text id="main" x="0" y="0" stroke="none" fill="black" xml:space="preserve"></text>
 	<rect id="cursor" x="0" y="0" width="1" height="12pt" stroke="none" fill="black"/>
 	<text id="mode-text" x="0" y="100%" stroke="none" fill="black"></text>
+	<text id="command-text" x="0" y="100%" stroke="none" fill="black" xml:space="preserve"></text>
+	<rect id="command-cursor" x="0" y="0" width="1" height="12pt" stroke="none" fill="black"/>
 	<text id="location-text" x="300" y="400"></text>
 	<script>
 		svgNS = "http://www.w3.org/2000/svg";
@@ -32,6 +34,8 @@
 			var modeText = document.getElementById("mode-text")
 			var locationText = document.getElementById("location-text")
 			var selectionParent = document.getElementById("selectionParent")
+			var commandText = document.getElementById("command-text")
+			var commandCursorNode = document.getElementById("command-cursor");
 				
 			//there may be a nicer way to do this, but we assume a fixed-width font, so here we create a character, insert it into DOM to get its dimensions, then remove it
 			var textExtent;
@@ -44,10 +48,12 @@
 
 			//TODO: figure out how to make this dynamic with width="100%"
 			var width = document.documentElement.width.baseVal.value;
+			var height = document.documentElement.height.baseVal.value;
 
 			txt.setAttributeNS(null,"y",-textExtent.height);
+			commandText.setAttributeNS(null,"y",height - (textExtent.height*2));
 
-			var editor = SVGEditorFactory.createNewSVGEditorInstance(root,txt,cursorNode,modeText,locationText,selectionParent,textExtent,width);
+			var editor = SVGEditorFactory.createNewSVGEditorInstance(root,txt,cursorNode,commandCursorNode,modeText,locationText,commandText,selectionParent,textExtent,width);
 			editor.install(); 
 		}
 

@@ -19,13 +19,43 @@ SELECTION_MODE = {
 	BLOCK:2
 }
 
-function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
+CommandManager = {
+	processCommand : function(cmdString){
+		//very simple, only two commands now
+
+		if(cmdString.length && cmdString[0] === "!"){
+			//!	
+			eval(cmdString.slice(1));
+		}else{
+			var cmds = cmdString.split();
+			//help
+			switch(cmds[0]){
+				case "help":
+					this.helpCmd();
+				default:
+					this.notRecongizedCmd();
+					
+			}
+		}
+
+	},
+
+	helpCmd : function(){
+		alert("Help command triggered");
+	},
+
+	notRecongizedCmd : function(){
+		alert("Unrecognized command triggered");
+	}
+}
+
+function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManager){
 
 	this.SELECTION_MODE = SELECTION_MODE;	//expose enum on controller so that it can be used byt he statechart
 
 	var register = {};	//each application instance has a register
 	var DEFAULT_REGISTER_NAME = "default"
-	register[DEFAULT_REGISTER_NAME] = ["",SELECTION_MODE.LINE];
+	register[DEFAULT_REGISTER_NAME] = ["",SELECTION_MODE.CHARACTER];
 
 	function currentConfigurationToSelectionMode(){
 		if(scInstance.$in(scInstance._states.visual_character) || scInstance.$in(scInstance._states.select_character)){
@@ -149,7 +179,8 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 			49 : "one",
 			50 : "two",
 			51 : "three",
-			52 : "four"
+			52 : "four",
+			58 : "colon"
 			
 		}
 
@@ -297,6 +328,49 @@ function SVGEditor(cursor,modeText,scInstance,rootNode,selectionManager){
 
 		cursor.writeString(registerValue[0],true,registerValue[1]);
 	}
+
+	this.hideCursor = function(){
+		cursor.hide();
+	}
+
+	this.unhideCursor = function(){
+		cursor.unhide();
+	}
+
+	this.hideCmdCursor = function(){
+		cmdCursor.hide();
+	}
+
+	this.unhideCmdCursor = function(){
+		cmdCursor.unhide();
+	}
+
+	//command interface
+	this.moveCmdLeft = function(){
+		cmdCursor.moveLeft();
+	};
+	this.moveCmdRight = function(){
+		cmdCursor.moveRight(true);
+	};
+
+	this.writeCmdChar = function(c){
+		cmdCursor.writeChar(c);
+	};
+
+	this.writeCmdBackspace = function(){
+		cmdCursor.writeBackspace();
+	};
+
+	this.clearCmdLine = function(){
+		cmdCursor.deleteCurrentLineText();
+	}
+
+	this.executeCommand = function(){
+		text = cmdCursor.getCurrentLineText();
+		text = text.slice(1);	//remove the ":" at start
+		CommandManager.processCommand(text);
+	}
+
 }
 
 function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNode){
@@ -315,6 +389,14 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	function moveCursorTo(point){
 			cursorNode.x.baseVal.value=point.x;
 			cursorNode.y.baseVal.value=point.y;
+	}
+
+	this.hide = function(){
+		cursorNode.setAttributeNS(null,"visibility","hidden");
+	}
+
+	this.unhide = function(){
+		cursorNode.removeAttributeNS(null,"visibility");
 	}
 
 	this.getCurrentLineText = function(){
@@ -1309,9 +1391,10 @@ function DisplayManager(textExtent,displayWidth){
 SVGEditorFactory = {
 
 	//responsible for bootstrapping the system
-	createNewSVGEditorInstance : function(rootNode,textNode,cursorNode,modeTextNode,locationTextNode,selectionGroupNode,textExtent,displayWidth){
+	createNewSVGEditorInstance : function(rootNode,textNode,cursorNode,commandCursorNode,modeTextNode,locationTextNode,commandTextNode,selectionGroupNode,textExtent,displayWidth){
 
 		var displayManager = new DisplayManager(textExtent,displayWidth);
+
 
 		var lineManager = new LineManager(textNode,displayManager);
 
@@ -1321,9 +1404,17 @@ SVGEditorFactory = {
 
 		var cursor = new Cursor(0,0,lineManager,displayManager,cursorNode);
 
+
+		var cmdLineManager = new LineManager(commandTextNode,displayManager);
+
+		cmdLineManager.createLine(0);
+
+		var cmdCursor = new Cursor(0,0,cmdLineManager,displayManager,commandCursorNode);
+
+
 		var scInstance = new viBehaviourStatechartExecutionContext();
 
-		var editor = new SVGEditor(cursor,modeTextNode,scInstance,rootNode,selectionManager);
+		var editor = new SVGEditor(cursor,cmdCursor,modeTextNode,scInstance,rootNode,selectionManager);
 
 		return editor;
 	}
