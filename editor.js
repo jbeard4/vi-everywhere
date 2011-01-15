@@ -373,9 +373,11 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 
 }
 
-function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNode){
+function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNode,startX,startY){
 	this.colNum = initialColNum || 0;
 	this.rowNum = initialRowNum || 0;
+	startX = startX || 0;
+	startY = startY || 0;
 
 	cursorNode.y.baseVal.value=0;
 	cursorNode.width.baseVal.value = displayManager.textExtent.width;
@@ -387,8 +389,8 @@ function Cursor(initialColNum,initialRowNum,lineManager,displayManager,cursorNod
 	}
 
 	function moveCursorTo(point){
-			cursorNode.x.baseVal.value=point.x;
-			cursorNode.y.baseVal.value=point.y;
+			cursorNode.x.baseVal.value=point.x + startX;
+			cursorNode.y.baseVal.value=point.y + startY;
 	}
 
 	this.hide = function(){
@@ -1409,7 +1411,7 @@ SVGEditorFactory = {
 
 		cmdLineManager.createLine(0);
 
-		var cmdCursor = new Cursor(0,0,cmdLineManager,displayManager,commandCursorNode);
+		var cmdCursor = new Cursor(0,0,cmdLineManager,displayManager,commandCursorNode,commandCursorNode.x.baseVal.value,commandCursorNode.y.baseVal.value);
 
 
 		var scInstance = new viBehaviourStatechartExecutionContext();
