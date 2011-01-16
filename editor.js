@@ -181,8 +181,8 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 			50 : "two",
 			51 : "three",
 			52 : "four",
-			58 : "colon"
-			
+			58 : "colon",
+			64 : "at"
 		}
 
 		rootNode.addEventListener("keypress",function(e){
@@ -376,6 +376,14 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 		text = cmdCursor.getCurrentLineText();
 		text = text.slice(1);	//remove the ":" at start
 		CommandManager.processCommand(text);
+	}
+
+	this.appendToModeText = function(s){
+		modeText.textContent += s; 
+	}
+
+	this.removeStringFromModeText = function(s){
+		modeText.textContent = modeText.textContent.slice(0,modeText.textContent.indexOf(s));
 	}
 
 }

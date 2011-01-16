@@ -11,6 +11,9 @@
 		<data id="controller"/>
 		<data id="repeatInput" expr="0"/>
 		<data id="registerName" />
+		<data id="recordedMacroEventsMap" expr="{}"/>
+		<data id="recordedMacroEventName"/>
+		<data id="recordedMacroEventList"/>
 	</datamodel>
 
 	<script><![CDATA[
@@ -24,15 +27,23 @@
 			}
 		}
 
-		function curry (fn, scope) {
-			var scope = scope || window;
-			var args = [];
-			for (var i=2, len = arguments.length; i <len; ++i) {
-				args.push(arguments[i]);
-			};
-			return function() {
-				fn.apply(scope, args);
-			};
+		function updateModeText(txt){
+			if(In(recording_on)){
+				controller.updateModeText(txt + " recording");
+			}
+			else{
+				controller.updateModeText(txt);
+			}
+		}
+
+		function clone(o){
+			var toReturn = {};
+			for(var p in o){
+				if(o.hasOwnProperty(p)){
+					toReturn[p] = o[p];
+				}
+			}
+			return toReturn;
 		}
 	]]></script>
 
@@ -58,7 +69,7 @@
 				<onentry>
 					<script>
 						controller.makeCursorFat();
-						controller.updateModeText("-- NORMAL --")
+						updateModeText("-- NORMAL --");
 					</script>
 				</onentry>
 
@@ -96,10 +107,10 @@
 
 				<!-- TODO: more checks like this -->
 				<transition event="i_keypress" target="insert_mode"
-					cond="!In(after_double_quote)"/>
+					cond="!In(after_double_quote) &amp;&amp; !In(after_at) &amp;&amp; !In(after_q_keypress_selecting_register)"/>
 
 				<transition event="a_keypress" target="insert_mode"
-					cond="!In(after_double_quote)">
+					cond="!In(after_double_quote) &amp;&amp; !In(after_at) &amp;&amp; !In(after_q_keypress_selecting_register)">
 					<script>
 						controller.moveRight(true);
 					</script>
@@ -137,7 +148,7 @@
 					<state id="select_line">
 						<onentry>
 							<script>
-								controller.updateModeText("-- SELECT LINE --")
+								updateModeText("-- SELECT LINE --")
 								controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 							</script>
 						</onentry>
@@ -150,7 +161,7 @@
 					<state id="select_block">
 						<onentry>
 							<script>
-								controller.updateModeText("-- SELECT BLOCK --")
+								updateModeText("-- SELECT BLOCK --")
 								controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 							</script>
 						</onentry>
@@ -163,7 +174,7 @@
 					<state id="select_character">
 						<onentry>
 							<script>
-								controller.updateModeText("-- SELECT --")
+								updateModeText("-- SELECT --")
 								controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 							</script>
 						</onentry>
@@ -203,7 +214,7 @@
 					<state id="visual_line">
 						<onentry>
 							<script>
-								controller.updateModeText("-- VISUAL LINE --")
+								updateModeText("-- VISUAL LINE --")
 								controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 							</script>
 						</onentry>
@@ -216,7 +227,7 @@
 					<state id="visual_block">
 						<onentry>
 							<script>
-								controller.updateModeText("-- VISUAL BLOCK --")
+								updateModeText("-- VISUAL BLOCK --")
 								controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 							</script>
 						</onentry>
@@ -229,7 +240,7 @@
 					<state id="visual_character">
 						<onentry>
 							<script>
-								controller.updateModeText("-- VISUAL --")
+								updateModeText("-- VISUAL --")
 								controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 							</script>
 						</onentry>
@@ -247,7 +258,7 @@
 				<onentry>
 					<script>
 						controller.makeCursorThin()
-						controller.updateModeText("-- INSERT --")
+						updateModeText("-- INSERT --")
 					</script>
 				</onentry>
 
@@ -440,6 +451,7 @@
 					</script>
 				</transition>
 
+				<transition event="at_keypress" cond="In(normal_mode)" target="after_at"/>
 
 				<transition event="g_keypress" target="after_g"/>
 
@@ -530,10 +542,63 @@
 					</transition>
 				</state>
 
+				<state id="after_at">
+					<transition event="*" cond="_event.data.charCode" target="main_dispatching_events">
+						<script>
+							var eventsList = recordedMacroEventsMap[String.fromCharCode(_event.data.charCode)];
+							eventsList.forEach(function(e){
+								innerEventQueue.push(e.name,e.data,false);	//send event. FIXME: inner or outer queue?
+							});
+						</script>
+					</transition>
+				</state>
+
 				<!-- anything else, go back to main without executing anything -->
 				<transition event="*" target="main_dispatching_events"/>
 				
 			</state>
+		</state>
+
+		<state id="recording_macro" initial="recording_off">
+			<state id="recording_off" initial="before_q_keypress">
+				<state id="before_q_keypress">
+					<transition event="q_keypress" cond="In(normal_mode)" target="after_q_keypress_selecting_register"/>
+				</state>
+		
+				<state id="after_q_keypress_selecting_register">
+					<transition event="*" cond="_event.data.charCode" target="recording_on">
+						<script>
+							recordedMacroEventName = String.fromCharCode(_event.data.charCode);
+
+							//reset register
+							recordedMacroEventList = [];
+							recordedMacroEventsMap[recordedMacroEventName] = recordedMacroEventList; 
+						</script>
+					</transition>
+				</state>
+			</state>
+
+			<state id="recording_on">
+				<onentry>
+					<script>
+						controller.appendToModeText(" recording"); 
+					</script>
+				</onentry>
+				<onexit>
+					<script>
+						controller.removeStringFromModeText(" recording"); 
+					</script>
+				</onexit>
+
+				<transition event="q_keypress" cond="In(normal_mode)" target="recording_off"/>
+
+				<transition event="*">
+					<script>
+						recordedMacroEventList.push(clone(_event));
+					</script>
+				</transition>
+			</state>
+			
 		</state>
 	</parallel>
 </scxml>
