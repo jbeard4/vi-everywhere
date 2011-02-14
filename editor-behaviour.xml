@@ -14,6 +14,7 @@
 		<data id="recordedMacroEventsMap" expr="{}"/>
 		<data id="recordedMacroEventName"/>
 		<data id="recordedMacroEventList"/>
+		<data id="visualOrSelectUpdateModeTextFunction" expr="updateVisualAndSelectModeText"/>
 	</datamodel>
 
 	<script><![CDATA[
@@ -34,6 +35,57 @@
 			else{
 				controller.updateModeText(txt);
 			}
+		}
+
+		function updateVisualAndSelectModeText(arg1){
+		
+			function firstInnerUpdateVisualAndSelectModeText(arg2){
+
+				var visual_or_select_state = arg1.visual_or_select_state || arg2.visual_or_select_state,
+					line_or_block_or_char_state = arg1.line_or_block_or_char_state || arg2.line_or_block_or_char_state;
+
+				function doUpdateVisualAndSelectModeText(){
+
+					var visual_or_select_string, line_or_block_or_char_string;
+
+					switch(visual_or_select_state){
+						case visual_mode:
+							visual_or_select_string = "VISUAL";
+							break;
+						case select_mode:
+							visual_or_select_string = "SELECT";
+							break;
+					}
+
+					switch(line_or_block_or_char_state){
+						case character_mode:
+							line_or_block_or_char_string = "CHARACTER";
+							break;
+						case line_mode:
+							line_or_block_or_char_string = "LINE";
+							break;
+						case block_mode:
+							line_or_block_or_char_string = "BLOCK";
+					}
+
+					var mode_text_string = "-- " + visual_or_select_string + " " + line_or_block_or_char_string + " --";
+
+					updateModeText(mode_text_string);
+
+					return secondUpdateVisualAndSelectModeText;
+				}
+
+				function secondUpdateVisualAndSelectModeText(arg3){
+					visual_or_select_state = visual_or_select_state || arg3.visual_or_select_state,
+						line_or_block_or_char_state = line_or_block_or_char_state || arg3.line_or_block_or_char_state;
+
+					return doUpdateVisualAndSelectModeText();
+				}
+
+				return doUpdateVisualAndSelectModeText();
+			}
+
+			return firstInnerUpdateVisualAndSelectModeText;
 		}
 
 		function clone(o){
@@ -89,21 +141,9 @@
 
 				<transition event="colon_keypress" target="command_mode"/>
 					
-				<transition event="v_keypress" target="visual_character"/>
-				<transition event="V_keypress" target="visual_line"/>
-				<transition event="ctrl_v_keypress" target="visual_block"/>
-
-
-				<!--
-				<transition event="G" target="normal_mode">
-					<script>	
-						controller.moveToLastLineOfDocument()
-					</script>
-				</transition>
-
-				<transition event="g" target="after_g"/>
-
-				-->
+				<transition event="v_keypress" target="visual_mode character_mode"/>
+				<transition event="V_keypress" target="visual_mode line_mode"/>
+				<transition event="ctrl_v_keypress" target="visual_mode block_mode"/>
 
 				<!-- TODO: more checks like this -->
 				<transition event="i_keypress" target="insert_mode"
@@ -118,7 +158,7 @@
 
 			</state>
 
-			<state id="visual_or_select_mode" initial="visual_mode">
+			<parallel id="visual_and_select_modes">
 
 				<onentry>
 					<script>
@@ -130,128 +170,107 @@
 				<onexit>
 					<script>
 						controller.clearSelection(); 
+						visualOrSelectUpdateModeTextFunction = updateVisualAndSelectModeText;
 					</script>
 				</onexit>
-		
+
 				<transition event="esc_keypress" target="normal_mode"/>
 
-				<state id="select_mode" initial="select_character">
+				<state id="visual_or_select_mode" initial="visual_mode">
 
-					<transition event="*" target="insert_mode"
-						cond="_event.data.charCode !== 0">
-						<script>
-							controller.replaceSelectedTextIntoRegister(_event.data.charCode,registerName);  
-							registerName = null;
-						</script>
-					</transition>
-
-					<state id="select_line">
+					<state id="select_mode">
 						<onentry>
 							<script>
-								updateModeText("-- SELECT LINE --")
-								controller.setSelectionMode(controller.SELECTION_MODE.LINE);
+								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({visual_or_select_state:select_mode});
 							</script>
 						</onentry>
-						<transition event="ctrl_v_keypress" target="select_block"/>
-						<transition event="v_keypress" target="select_character"/>
 
-						<transition event="ctrl_g_keypress" target="visual_line" />
+						<transition event="ctrl_g_keypress" target="visual_mode" />
+
+						<transition event="*" target="insert_mode"
+							cond="_event.data.charCode !== 0">
+							<script>
+								controller.replaceSelectedTextIntoRegister(_event.data.charCode,registerName);  
+								registerName = null;
+							</script>
+						</transition>
+
 					</state>
 
-					<state id="select_block">
+					<state id="visual_mode">
 						<onentry>
 							<script>
-								updateModeText("-- SELECT BLOCK --")
-								controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
+								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({visual_or_select_state:visual_mode});
 							</script>
 						</onentry>
-						<transition event="v_keypress" target="select_character"/>
-						<transition event="V_keypress" target="select_line"/>
 
-						<transition event="ctrl_g_keypress" target="visual_block" />
-					</state>
+						<transition event="ctrl_g_keypress" target="select_mode" />
 
-					<state id="select_character">
-						<onentry>
+						<transition event="yank_executed" target="normal_mode" />
+
+						<transition event="x_keypress" target="normal_mode">
 							<script>
-								updateModeText("-- SELECT --")
-								controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
+								controller.deleteSelectedTextIntoRegister(registerName);  
+								registerName = null;
 							</script>
-						</onentry>
-						<transition event="ctrl_v_keypress" target="select_block"/>
-						<transition event="V_keypress" target="select_line"/>
+						</transition>
 
-						<transition event="ctrl_g_keypress" target="visual_character" />
+						<transition event="d_keypress" target="normal_mode">
+							<script>
+								controller.deleteSelectedTextIntoRegister(registerName);  
+								registerName = null;
+							</script>
+						</transition>
+
+						<transition event="c_keypress" target="insert_mode">
+							<script>
+								controller.deleteSelectedTextIntoRegister(registerName);  
+								registerName = null;
+							</script>
+						</transition>
+
 					</state>
 				</state>
 
-				<state id="visual_mode" initial="visual_character">
-
-					<transition event="yank_executed" target="normal_mode" />
-
-					<transition event="x_keypress" target="normal_mode">
-						<script>
-							controller.deleteSelectedTextIntoRegister(registerName);  
-							registerName = null;
-						</script>
-					</transition>
-
-					<transition event="d_keypress" target="normal_mode">
-						<script>
-							controller.deleteSelectedTextIntoRegister(registerName);  
-							registerName = null;
-						</script>
-					</transition>
-
-					<transition event="c_keypress" target="insert_mode">
-						<script>
-							controller.deleteSelectedTextIntoRegister(registerName);  
-							registerName = null;
-						</script>
-					</transition>
-
-					<!-- TODO: figure out what kind of API we want for selection stuff -->
-					<state id="visual_line">
+				<state id="line_or_block_or_character_mode" initial="character_mode">
+					<state id="line_mode">
 						<onentry>
 							<script>
-								updateModeText("-- VISUAL LINE --")
+								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({line_or_block_or_char_state:line_mode});
 								controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 							</script>
 						</onentry>
-						<transition event="ctrl_v_keypress" target="visual_block"/>
-						<transition event="v_keypress" target="visual_character"/>
 
-						<transition event="ctrl_g_keypress" target="select_line" />
+						<transition event="ctrl_v_keypress" target="block_mode"/>
+						<transition event="v_keypress" target="character_mode"/>
 					</state>
 
-					<state id="visual_block">
+					<state id="block_mode">
 						<onentry>
 							<script>
-								updateModeText("-- VISUAL BLOCK --")
+								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({line_or_block_or_char_state:block_mode});
 								controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 							</script>
 						</onentry>
-						<transition event="v_keypress" target="visual_character"/>
-						<transition event="V_keypress" target="visual_line"/>
 
-						<transition event="ctrl_g_keypress" target="select_block" />
+						<transition event="v_keypress" target="character_mode"/>
+						<transition event="V_keypress" target="line_mode"/>
 					</state>
 
-					<state id="visual_character">
+					<state id="character_mode">
 						<onentry>
 							<script>
-								updateModeText("-- VISUAL --")
+								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({line_or_block_or_char_state:character_mode});
 								controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 							</script>
 						</onentry>
-						<transition event="ctrl_v_keypress" target="visual_block"/>
-						<transition event="V_keypress" target="visual_line"/>
 
-						<transition event="ctrl_g_keypress" target="select_character" />
+						<transition event="ctrl_v_keypress" target="block_mode"/>
+						<transition event="V_keypress" target="line_mode"/>
 					</state>
-
 				</state>
-			</state>
+
+			</parallel>
 
 
 			<state id="insert_mode">

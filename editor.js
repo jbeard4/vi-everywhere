@@ -59,14 +59,12 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 	register[DEFAULT_REGISTER_NAME] = ["",SELECTION_MODE.CHARACTER];
 
 	function currentConfigurationToSelectionMode(){
-		if(scInstance.$in(scInstance._states.visual_character) || scInstance.$in(scInstance._states.select_character)){
+		if(scInstance.$in(scInstance._states.character_mode)){
 			return SELECTION_MODE.CHARACTER;
-		}else if(scInstance.$in(scInstance._states.visual_line) || scInstance.$in(scInstance._states.select_line)){
+		}else if(scInstance.$in(scInstance._states.line_mode)){
 			return SELECTION_MODE.LINE;
-		}else if(scInstance.$in(scInstance._states.visual_block) || scInstance.$in(scInstance._states.select_block)){
+		}else if(scInstance.$in(scInstance._states.block_mode)){
 			return SELECTION_MODE.BLOCK;
-		}else{
-			//pass
 		}	
 	}
 
