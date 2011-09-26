@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
+<!--
+Copyright (C) 2011 Jacob Beard
+Released under GNU GPL, read the file 'COPYING' for more information
+-->
+
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="300">
 	<style type="text/css">
 		text,tspan {
