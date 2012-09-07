@@ -19,14 +19,9 @@ Released under GNU GPL, read the file 'COPYING' for more information
 		<data id="recordedMacroEventsMap" expr="{}"/>
 		<data id="recordedMacroEventName"/>
 		<data id="recordedMacroEventList"/>
-		<data id="visualOrSelectUpdateModeTextFunction" expr="updateVisualAndSelectModeText"/>
 	</datamodel>
 
 	<script><![CDATA[
-		function updateSelection(){
-			return In(visual_or_select_mode);
-		}
-
 		function repeatCommand(fn,count){
 			for(var i=0;i<count;i++){
 				fn();
@@ -34,7 +29,7 @@ Released under GNU GPL, read the file 'COPYING' for more information
 		}
 
 		function updateModeText(txt){
-			if(In(recording_on)){
+			if(In('recording_on')){
 				controller.updateModeText(txt + " recording");
 			}
 			else{
@@ -42,66 +37,6 @@ Released under GNU GPL, read the file 'COPYING' for more information
 			}
 		}
 
-		function updateVisualAndSelectModeText(arg1){
-		
-			function firstInnerUpdateVisualAndSelectModeText(arg2){
-
-				var visual_or_select_state = arg1.visual_or_select_state || arg2.visual_or_select_state,
-					line_or_block_or_char_state = arg1.line_or_block_or_char_state || arg2.line_or_block_or_char_state;
-
-				function doUpdateVisualAndSelectModeText(){
-
-					var visual_or_select_string, line_or_block_or_char_string;
-
-					switch(visual_or_select_state){
-						case visual_mode:
-							visual_or_select_string = "VISUAL";
-							break;
-						case select_mode:
-							visual_or_select_string = "SELECT";
-							break;
-					}
-
-					switch(line_or_block_or_char_state){
-						case character_mode:
-							line_or_block_or_char_string = "CHARACTER";
-							break;
-						case line_mode:
-							line_or_block_or_char_string = "LINE";
-							break;
-						case block_mode:
-							line_or_block_or_char_string = "BLOCK";
-					}
-
-					var mode_text_string = "-- " + visual_or_select_string + " " + line_or_block_or_char_string + " --";
-
-					updateModeText(mode_text_string);
-
-					return secondUpdateVisualAndSelectModeText;
-				}
-
-				function secondUpdateVisualAndSelectModeText(arg3){
-					visual_or_select_state = visual_or_select_state || arg3.visual_or_select_state,
-						line_or_block_or_char_state = line_or_block_or_char_state || arg3.line_or_block_or_char_state;
-
-					return doUpdateVisualAndSelectModeText();
-				}
-
-				return doUpdateVisualAndSelectModeText();
-			}
-
-			return firstInnerUpdateVisualAndSelectModeText;
-		}
-
-		function clone(o){
-			var toReturn = {};
-			for(var p in o){
-				if(o.hasOwnProperty(p)){
-					toReturn[p] = o[p];
-				}
-			}
-			return toReturn;
-		}
 	]]></script>
 
 	<state id="initial_default">
@@ -152,10 +87,10 @@ Released under GNU GPL, read the file 'COPYING' for more information
 
 				<!-- TODO: more checks like this -->
 				<transition event="i_keypress" target="insert_mode"
-					cond="!In(after_double_quote) &amp;&amp; !In(after_at) &amp;&amp; !In(after_q_keypress_selecting_register)"/>
+					cond="!In('after_double_quote') &amp;&amp; !In('after_at') &amp;&amp; !In('after_q_keypress_selecting_register')"/>
 
 				<transition event="a_keypress" target="insert_mode"
-					cond="!In(after_double_quote) &amp;&amp; !In(after_at) &amp;&amp; !In(after_q_keypress_selecting_register)">
+					cond="!In('after_double_quote') &amp;&amp; !In('after_at') &amp;&amp; !In('after_q_keypress_selecting_register')">
 					<script>
 						controller.moveRight(true);
 					</script>
@@ -164,6 +99,11 @@ Released under GNU GPL, read the file 'COPYING' for more information
 			</state>
 
 			<parallel id="visual_and_select_modes">
+
+                <datamodel>
+                    <data id="selectText"/>
+                    <data id="blockText"/>
+                </datamodel>
 
 				<onentry>
 					<script>
@@ -175,7 +115,6 @@ Released under GNU GPL, read the file 'COPYING' for more information
 				<onexit>
 					<script>
 						controller.clearSelection(); 
-						visualOrSelectUpdateModeTextFunction = updateVisualAndSelectModeText;
 					</script>
 				</onexit>
 
@@ -185,9 +124,8 @@ Released under GNU GPL, read the file 'COPYING' for more information
 
 					<state id="select_mode">
 						<onentry>
-							<script>
-								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({visual_or_select_state:select_mode});
-							</script>
+						    <assign location="selectText" expr="'SELECT'"/>
+							<raise event="UPDATE_TEXT"/>
 						</onentry>
 
 						<transition event="ctrl_g_keypress" target="visual_mode" />
@@ -204,9 +142,8 @@ Released under GNU GPL, read the file 'COPYING' for more information
 
 					<state id="visual_mode">
 						<onentry>
-							<script>
-								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({visual_or_select_state:visual_mode});
-							</script>
+						    <assign location="selectText" expr="'VISUAL'"/>
+							<raise event="UPDATE_TEXT"/>
 						</onentry>
 
 						<transition event="ctrl_g_keypress" target="select_mode" />
@@ -240,10 +177,11 @@ Released under GNU GPL, read the file 'COPYING' for more information
 				<state id="line_or_block_or_character_mode" initial="character_mode">
 					<state id="line_mode">
 						<onentry>
+						    <assign location="blockText" expr="'LINE'"/>
 							<script>
-								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({line_or_block_or_char_state:line_mode});
 								controller.setSelectionMode(controller.SELECTION_MODE.LINE);
 							</script>
+							<raise event="UPDATE_TEXT"/>
 						</onentry>
 
 						<transition event="ctrl_v_keypress" target="block_mode"/>
@@ -252,10 +190,11 @@ Released under GNU GPL, read the file 'COPYING' for more information
 
 					<state id="block_mode">
 						<onentry>
+						    <assign location="blockText" expr="'BLOCK'"/>
 							<script>
-								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({line_or_block_or_char_state:block_mode});
 								controller.setSelectionMode(controller.SELECTION_MODE.BLOCK);
 							</script>
+							<raise event="UPDATE_TEXT"/>
 						</onentry>
 
 						<transition event="v_keypress" target="character_mode"/>
@@ -264,16 +203,28 @@ Released under GNU GPL, read the file 'COPYING' for more information
 
 					<state id="character_mode">
 						<onentry>
+						    <assign location="blockText" expr="'CHARACTER'"/>
 							<script>
-								visualOrSelectUpdateModeTextFunction = visualOrSelectUpdateModeTextFunction({line_or_block_or_char_state:character_mode});
 								controller.setSelectionMode(controller.SELECTION_MODE.CHARACTER);
 							</script>
+							<raise event="UPDATE_TEXT"/>
 						</onentry>
 
 						<transition event="ctrl_v_keypress" target="block_mode"/>
 						<transition event="V_keypress" target="line_mode"/>
 					</state>
 				</state>
+
+                <state id="updating-text">
+                    <state id="now-updating-text">
+                        <onentry>
+                            <script>
+                                updateModeText('-- ' + selectText + ' ' + blockText + ' --')
+                            </script>
+                        </onentry>
+                        <transition target="now-updating-text" event="UPDATE_TEXT"/>
+                    </state>
+                </state>
 
 			</parallel>
 
@@ -349,138 +300,138 @@ Released under GNU GPL, read the file 'COPYING' for more information
 				</onentry>
 
 				<transition event="bling_keypress" target="main_dispatching_events"
-					cond="In(visual_mode) || In(normal_mode)">
+					cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveToEndOfLine(updateSelection());
+						controller.moveToEndOfLine(In('visual_or_select_mode'));
 					</script>
 				</transition>
 
 				<transition event="backspace_keypress" target="main_dispatching_events"
-					 cond="In(visual_mode) || In(normal_mode)">
+					 cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveLeft(updateSelection(),repeatInput);
+						controller.moveLeft(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 				<transition event="enter_keypress" target="main_dispatching_events"
-					 cond="In(visual_mode) || In(normal_mode)">
+					 cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveDown(updateSelection(),repeatInput);
+						controller.moveDown(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 				<transition event="w_keypress" target="main_dispatching_events"
-					 cond="In(visual_mode) || In(normal_mode)">
+					 cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveToStartOfNextWord(updateSelection(),repeatInput);
+						controller.moveToStartOfNextWord(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 				<transition event="e_keypress" target="main_dispatching_events"
-					 cond="In(visual_mode) || In(normal_mode)">
+					 cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveToEndOfNextWord(updateSelection(),repeatInput);
+						controller.moveToEndOfNextWord(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 				<transition event="b_keypress" target="main_dispatching_events"
-					 cond="In(visual_mode) || In(normal_mode)">
+					 cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveToStartOfPreviousWord(updateSelection(),repeatInput);
+						controller.moveToStartOfPreviousWord(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 				<transition event="h_keypress" target="main_dispatching_events"
-					 cond="In(visual_mode) || In(normal_mode)">
+					 cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveLeft(updateSelection(),repeatInput);
+						controller.moveLeft(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 				<transition event="l_keypress" target="main_dispatching_events"
-					 cond="In(visual_mode) || In(normal_mode)">
+					 cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveRight(false,updateSelection(),repeatInput);
+						controller.moveRight(false,In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 				<transition event="k_keypress" target="main_dispatching_events"
-					 cond="In(visual_mode) || In(normal_mode)">
+					 cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveUp(updateSelection(),repeatInput);
+						controller.moveUp(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 				<transition event="j_keypress" target="main_dispatching_events"
-					 cond="In(visual_mode) || In(normal_mode)">
+					 cond="In('visual_mode') || In('normal_mode')">
 					<script>
-						controller.moveDown(updateSelection(),repeatInput);
+						controller.moveDown(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 				<!-- non-printable movement keys -->
 				<transition event="left_keypress" target="main_dispatching_events" 
-					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
+					cond="In('insert_mode') || In('visual_or_select_mode') || In('normal_mode')">
 					<script>
-						controller.moveLeft(updateSelection(),repeatInput);
+						controller.moveLeft(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 				<transition event="right_keypress" target="main_dispatching_events"	
-					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
+					cond="In('insert_mode') || In('visual_or_select_mode') || In('normal_mode')">
 					<script>
-						controller.moveRight(false,updateSelection(),repeatInput);
+						controller.moveRight(false,In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 				<transition event="up_keypress" target="main_dispatching_events"	
-					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
+					cond="In('insert_mode') || In('visual_or_select_mode') || In('normal_mode')">
 					<script>
-						controller.moveUp(updateSelection(),repeatInput);
+						controller.moveUp(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 				<transition event="down_keypress" target="main_dispatching_events"
-					cond="In(insert_mode) || In(visual_or_select_mode) || In(normal_mode)">
+					cond="In('insert_mode') || In('visual_or_select_mode') || In('normal_mode')">
 					<script>
-						controller.moveDown(updateSelection(),repeatInput);
+						controller.moveDown(In('visual_or_select_mode'),repeatInput);
 					</script>
 				</transition>
 
 
 				<!-- command mode stuff -->
-				<transition event="left_keypress" cond="In(command_mode)">
+				<transition event="left_keypress" cond="In('command_mode')">
 					<script>
 						controller.moveCmdLeft();
 					</script>
 				</transition>
-				<transition event="right_keypress" cond="In(command_mode)">
+				<transition event="right_keypress" cond="In('command_mode')">
 					<script>
 						controller.moveCmdRight();
 					</script>
 				</transition>
-				<transition event="backspace_keypress" cond="In(command_mode)">
+				<transition event="backspace_keypress" cond="In('command_mode')">
 					<script>
 						controller.writeCmdBackspace();
 					</script>
 				</transition>
 
-				<transition event="enter_keypress" cond="In(command_mode)">
+				<transition event="enter_keypress" cond="In('command_mode')">
 					<script>
 						controller.executeCommand();
 					</script>
 					<send event="command_executed" c:contentexpr="{}"/>
 				</transition>
 
-				<transition event="*" cond="In(command_mode) &amp;&amp; _event.data.charCode">
+				<transition event="*" cond="In('command_mode') &amp;&amp; _event.data.charCode">
 					<script>
 						controller.writeCmdChar(_event.data.charCode)
 					</script>
 				</transition>
 
-				<transition event="at_keypress" cond="In(normal_mode)" target="after_at"/>
+				<transition event="at_keypress" cond="In('normal_mode')" target="after_at"/>
 
 				<transition event="g_keypress" target="after_g"/>
 
 				<!-- FIXME: we can move this back over -->
-				<transition event="y_keypress" cond="In(visual_mode)">
+				<transition event="y_keypress" cond="In('visual_mode')">
 					<script>
 						controller.copySelectedTextIntoRegister(registerName); 
 						registerName = null;
@@ -488,22 +439,22 @@ Released under GNU GPL, read the file 'COPYING' for more information
 					<send event="yank_executed" c:contentexpr="{}"/>
 				</transition>
 
-				<transition event="y_keypress" target="after_y" cond="In(normal_mode)"/>
+				<transition event="y_keypress" target="after_y" cond="In('normal_mode')"/>
 
-				<transition event="d_keypress" target="after_d" cond="In(normal_mode)"/>
+				<transition event="d_keypress" target="after_d" cond="In('normal_mode')"/>
 
-				<transition event="double_quote_keypress" target="after_double_quote" cond="In(normal_mode) || In(visual_mode)"/>
+				<transition event="double_quote_keypress" target="after_double_quote" cond="In('normal_mode') || In('visual_mode')"/>
 
 				<state id="before_nonzero_digit">
-					<transition event="zero_keypress" cond="In(visual_mode) || In(normal_mode)">
+					<transition event="zero_keypress" cond="In('visual_mode') || In('normal_mode')">
 						<script>
-							controller.moveToStartOfLine(updateSelection());
+							controller.moveToStartOfLine(In('visual_or_select_mode'));
 						</script>
 					</transition>
 
 					<transition event="*" target="after_nonzero_digit"
 						cond="/[1-9]/.exec(String.fromCharCode(_event.data.charCode)) &amp;&amp; 
-							(In(normal_mode) || In(visual_mode))">
+							(In('normal_mode') || In('visual_mode'))">
 						<assign location="repeatInput" 
 							expr="parseInt(repeatInput + String.fromCharCode(_event.data.charCode))"/>
 					</transition>
@@ -513,7 +464,7 @@ Released under GNU GPL, read the file 'COPYING' for more information
 				<state id="after_nonzero_digit">
 					<transition event="*" 
 						cond="/\d/.exec(String.fromCharCode(_event.data.charCode)) &amp;&amp; 
-							(In(normal_mode) || In(visual_mode))">
+							(In('normal_mode') || In('visual_mode'))">
 						<assign location="repeatInput" 
 							expr="parseInt(repeatInput + String.fromCharCode(_event.data.charCode))"/>
 					</transition>
@@ -523,9 +474,7 @@ Released under GNU GPL, read the file 'COPYING' for more information
 
 			<state id="completing_two_part_command" initial="after_g">
 				<onexit>
-					<script>
-						<assign location="repeatInput" expr="0"/>
-					</script>
+                    <assign location="repeatInput" expr="0"/>
 				</onexit>
 
 				<state id="after_double_quote">
@@ -539,8 +488,8 @@ Released under GNU GPL, read the file 'COPYING' for more information
 				<state id="after_g">
 					<transition event="g_keypress" target="main_dispatching_events">
 						<script>
-							if(parsedRepeatInput){ 
-								controller.moveCursorToLine(parsedRepeatInput-1);
+							if(repeatInput){ 
+								controller.moveCursorToLine(repeatInput-1);
 							}else{
 								controller.moveToFirstLineOfDocument();
 							}
@@ -586,7 +535,7 @@ Released under GNU GPL, read the file 'COPYING' for more information
 		<state id="recording_macro" initial="recording_off">
 			<state id="recording_off" initial="before_q_keypress">
 				<state id="before_q_keypress">
-					<transition event="q_keypress" cond="In(normal_mode)" target="after_q_keypress_selecting_register"/>
+					<transition event="q_keypress" cond="In('normal_mode')" target="after_q_keypress_selecting_register"/>
 				</state>
 		
 				<state id="after_q_keypress_selecting_register">
@@ -614,11 +563,11 @@ Released under GNU GPL, read the file 'COPYING' for more information
 					</script>
 				</onexit>
 
-				<transition event="q_keypress" cond="In(normal_mode)" target="recording_off"/>
+				<transition event="q_keypress" cond="In('normal_mode')" target="recording_off"/>
 
 				<transition event="*">
 					<script>
-						recordedMacroEventList.push(clone(_event));
+						recordedMacroEventList.push(Object.create(_event));
 					</script>
 				</transition>
 			</state>

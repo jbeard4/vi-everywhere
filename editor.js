@@ -64,11 +64,11 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 	register[DEFAULT_REGISTER_NAME] = ["",SELECTION_MODE.CHARACTER];
 
 	function currentConfigurationToSelectionMode(){
-		if(scInstance.$in(scInstance._states.character_mode)){
+		if(scInstance.isIn("character_mode")){
 			return SELECTION_MODE.CHARACTER;
-		}else if(scInstance.$in(scInstance._states.line_mode)){
+		}else if(scInstance.isIn("line_mode")){
 			return SELECTION_MODE.LINE;
-		}else if(scInstance.$in(scInstance._states.block_mode)){
+		}else if(scInstance.isIn("block_mode")){
 			return SELECTION_MODE.BLOCK;
 		}	
 	}
@@ -163,7 +163,7 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 	this.install = function(sc){
 
 		//start mainloop
-		scInstance.initialize();  
+		scInstance.start();  
 
 		//FIXME: how do we capture <esc>? requires crazy hack? maybe...
 		var eventMap = {
@@ -189,7 +189,7 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 		}
 
 		rootNode.addEventListener("keypress",function(e){
-			//console.log(e);
+			console.log(e);
 			e.preventDefault();
 
 			var scEvent = eventMap[e.keyCode] || charCodeEventMap[e.charCode] || String.fromCharCode(e.charCode);
@@ -207,11 +207,11 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 			//we use GEN as opposed to method calls because we use * event in the statechart, 
 			//which means it can accept events which are not explicitly used
 			//such events do not have a method defined, and there's no way that I am aware of to define a "catchall" method in JavaScript 
-			scInstance.GEN(scEvent,e)
+			scInstance.gen(scEvent,e)
 		},true)
 
 		//send init event
-		scInstance.init(this);
+		scInstance.gen("init",this);
 
 		/*
 		var eventMap = {
@@ -365,7 +365,7 @@ function SVGEditor(cursor,cmdCursor,modeText,scInstance,rootNode,selectionManage
 		cmdCursor.writeBackspace();
 
 		if(cmdCursor.colNum === 0){
-			scInstance.GEN("first_command_line_char_deleted",{});		
+			scInstance.gen("first_command_line_char_deleted");		
 		}
 	};
 
@@ -1411,7 +1411,7 @@ function DisplayManager(textExtent,displayWidth){
 SVGEditorFactory = {
 
 	//responsible for bootstrapping the system
-	createNewSVGEditorInstance : function(rootNode,textNode,cursorNode,commandCursorNode,modeTextNode,locationTextNode,commandTextNode,selectionGroupNode,textExtent,displayWidth){
+	createNewSVGEditorInstance : function(rootNode,textNode,cursorNode,commandCursorNode,modeTextNode,locationTextNode,commandTextNode,selectionGroupNode,textExtent,displayWidth,scInstance){
 
 		var displayManager = new DisplayManager(textExtent,displayWidth);
 
@@ -1430,9 +1430,6 @@ SVGEditorFactory = {
 		cmdLineManager.createLine(0);
 
 		var cmdCursor = new Cursor(0,0,cmdLineManager,displayManager,commandCursorNode,commandCursorNode.x.baseVal.value,commandCursorNode.y.baseVal.value);
-
-
-		var scInstance = new viBehaviourStatechartExecutionContext();
 
 		var editor = new SVGEditor(cursor,cmdCursor,modeTextNode,scInstance,rootNode,selectionManager);
 

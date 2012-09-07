@@ -28,7 +28,8 @@ Released under GNU GPL, read the file 'COPYING' for more information
 		svgNS = "http://www.w3.org/2000/svg";
 	</script>
 	<script xlink:href="editor.js"/>
-	<script xlink:href="out.js"/>
+	<script xlink:href="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"/>
+	<script xlink:href="scion.js"/>
 	<script><![CDATA[
 		function main(){
 			//here we pull this out of the document, but, thanks to clean design, 
@@ -59,8 +60,17 @@ Released under GNU GPL, read the file 'COPYING' for more information
 			commandText.setAttributeNS(null,"y",height - (textExtent.height*2));
 			commandCursorNode.setAttributeNS(null,"y",height - textExtent.height);
 
-			var editor = SVGEditorFactory.createNewSVGEditorInstance(root,txt,cursorNode,commandCursorNode,modeText,locationText,commandText,selectionParent,textExtent,width);
-			editor.install(); 
+            var scion = require('scion');
+
+            scion.urlToModel('editor-behaviour.xml',function(err,model){
+                if(err) throw err;
+
+                var scInstance = new scion.SCXML(model);
+
+                var editor = SVGEditorFactory.createNewSVGEditorInstance(root,txt,cursorNode,commandCursorNode,modeText,locationText,commandText,selectionParent,textExtent,width,scInstance);
+                editor.install(); 
+            });
+
 		}
 
 		main();
